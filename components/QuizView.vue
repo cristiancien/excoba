@@ -8,10 +8,10 @@
       <h2 v-latex="question.question" style="font-size: 1.6rem; margin-bottom: 1rem; line-height: 1.4;"></h2>
     </div>
 
-    <!-- Options -->
+    <!-- Options (shuffled) -->
     <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
       <div 
-        v-for="(option, index) in question.options" 
+        v-for="(option, index) in shuffledOptions" 
         :key="option.id"
         class="option-card"
         :class="{ 
@@ -34,15 +34,15 @@
     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
       <div>
         <button 
-          v-if="!showHint && !showResult" 
-          @click="showHint = true; hintUsed = true; $emit('hint-used')" 
+          v-if="!showHint && !showResult && !hintAlreadyUsed" 
+          @click="useHint" 
           class="btn pulse-hint" 
           style="background: transparent; color: var(--warning); border: 2px solid var(--warning);"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           Pista (-3 pts)
         </button>
-        <div v-if="showHint" class="glass-panel" style="padding: 1rem; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); font-size: 0.95rem;">
+        <div v-if="showHint || hintAlreadyUsed" class="glass-panel" style="padding: 1rem; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); font-size: 0.95rem;">
           💡 <strong>Pista:</strong> {{ question.hint }}
         </div>
       </div>
@@ -59,11 +59,19 @@
 </template>
 
 <script>
-const { ref, watch } = Vue;
+const { ref, watch, computed } = Vue;
 
 export default {
   props: {
-    question: Object
+    question: Object,
+    pastAnswer: {
+      type: Object,
+      default: null
+    },
+    hintAlreadyUsed: {
+      type: Boolean,
+      default: false
+    }
   },
   emits: ['answer-selected', 'hint-used'],
   setup(props, { emit }) {
@@ -71,14 +79,44 @@ export default {
     const showResult = ref(false);
     const showHint = ref(false);
     const hintUsed = ref(false);
+    const shuffledOptions = ref([]);
+
+    // Fisher-Yates shuffle
+    const shuffleArray = (arr) => {
+      const shuffled = [...arr];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    const initQuestionState = () => {
+      if (props.pastAnswer) {
+        selectedOption.value = props.pastAnswer.selectedOptionId;
+        showResult.value = true;
+        showHint.value = false;
+        hintUsed.value = false;
+        // Use the saved shuffled order for answered questions so the review matches
+        if (props.pastAnswer.shuffledOptions) {
+          shuffledOptions.value = props.pastAnswer.shuffledOptions;
+        } else {
+          shuffledOptions.value = shuffleArray(props.question.options);
+        }
+      } else {
+        selectedOption.value = null;
+        showResult.value = false;
+        showHint.value = false;
+        hintUsed.value = false;
+        shuffledOptions.value = shuffleArray(props.question.options);
+      }
+    };
 
     // Reset state when question changes
-    watch(() => props.question, () => {
-      selectedOption.value = null;
-      showResult.value = false;
-      showHint.value = false;
-      hintUsed.value = false;
-    });
+    watch(() => props.question, initQuestionState);
+    
+    // Initialize on load
+    initQuestionState();
 
     const selectOption = (id) => {
       if (!showResult.value) {
@@ -86,17 +124,25 @@ export default {
       }
     };
 
+    const useHint = () => {
+      showHint.value = true;
+      hintUsed.value = true;
+      emit('hint-used');
+    };
+
     const submitAnswer = () => {
       if (!selectedOption.value) return;
       showResult.value = true;
       
-      const option = props.question.options.find(o => o.id === selectedOption.value);
+      const option = shuffledOptions.value.find(o => o.id === selectedOption.value);
       
-      // Esperar un poco para que el usuario vea la animación de correcto/incorrecto antes de abrir el modal
+      // Wait for feedback animation
       setTimeout(() => {
         emit('answer-selected', {
           isCorrect: option.isCorrect,
-          usedHint: hintUsed.value
+          usedHint: hintUsed.value,
+          selectedOptionId: selectedOption.value,
+          shuffledOptions: [...shuffledOptions.value]
         });
       }, 1000);
     };
@@ -106,7 +152,9 @@ export default {
       showResult,
       showHint,
       hintUsed,
+      shuffledOptions,
       selectOption,
+      useHint,
       submitAnswer
     };
   }

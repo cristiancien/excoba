@@ -266,6 +266,7 @@
                 v-if="!showFeedback && currentQuestion"
                 :question="currentQuestion"
                 :past-answer="answeredStatus[currentQuestion.id]"
+                :hint-already-used="!!hintsUsedStatus[currentQuestion.id]"
                 @answer-selected="handleAnswer"
                 @hint-used="handleHint"
               />
@@ -558,6 +559,7 @@ export default {
 
     const showFeedback = ref(false);
     const lastAnswerCorrect = ref(false);
+    const hintsUsedStatus = ref({});
 
     // Controles de interactividad y temporizador
     const sidebarCollapsed = ref(false);
@@ -661,6 +663,7 @@ export default {
       examTime.value = 0;
       score.value = 0;
       answeredStatus.value = {};
+      hintsUsedStatus.value = {};
       showFeedback.value = false;
       currentQuestionIndex.value = 0;
       isPaused.value = false;
@@ -843,8 +846,11 @@ export default {
     };
 
     const handleHint = () => {
-      // Deducimos 3 puntos inmediatamente al pedir pista (ahora permitimos bajar a negativos según solicitud)
-      score.value -= 3;
+      // Solo cobra puntos si es la primera vez que se usa en esta pregunta
+      if (!hintsUsedStatus.value[currentQuestion.value.id]) {
+        score.value -= 3;
+        hintsUsedStatus.value[currentQuestion.value.id] = true;
+      }
     };
 
     const handleAnswer = (result) => {
@@ -852,11 +858,12 @@ export default {
       if (result.isCorrect) {
         score.value += 10;
       } else {
-        score.value -= 2; // Penalización por equivocarse
+        score.value -= 2;
       }
       answeredStatus.value[currentQuestion.value.id] = {
         isCorrect: result.isCorrect,
-        selectedOptionId: result.selectedOptionId
+        selectedOptionId: result.selectedOptionId,
+        shuffledOptions: result.shuffledOptions
       };
       showFeedback.value = true;
     };
@@ -887,6 +894,7 @@ export default {
       currentQuestionIndex.value = 0;
       score.value = 0;
       answeredStatus.value = {};
+      hintsUsedStatus.value = {};
       showFeedback.value = false;
       expandedSections.value = {
         Primaria: true,
@@ -983,6 +991,7 @@ export default {
       lastAnswerCorrect,
       handleAnswer,
       handleHint,
+      hintsUsedStatus,
       nextQuestion,
       jumpToQuestion,
       resetQuiz,
