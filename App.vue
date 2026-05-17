@@ -265,6 +265,7 @@
                 v-if="!showFeedback && currentQuestion"
                 :question="currentQuestion"
                 @answer-selected="handleAnswer"
+                @hint-used="handleHint"
               />
               
               <div v-else-if="!currentQuestion" class="glass-panel" style="padding: 4rem 2rem; text-align: center;">
@@ -837,10 +838,15 @@ export default {
         .trim();
     };
 
+    const handleHint = () => {
+      // Deducimos 3 puntos inmediatamente al pedir pista (sin bajar de 0)
+      score.value = Math.max(0, score.value - 3);
+    };
+
     const handleAnswer = (result) => {
       lastAnswerCorrect.value = result.isCorrect;
       if (result.isCorrect) {
-        score.value += result.usedHint ? 5 : 10;
+        score.value += 10; // Siempre ganas 10 (la penalización de pista ya se dedujo al pedirla)
         answeredStatus.value[currentQuestion.value.id] = true;
       }
       showFeedback.value = true;
@@ -967,6 +973,7 @@ export default {
       showFeedback,
       lastAnswerCorrect,
       handleAnswer,
+      handleHint,
       nextQuestion,
       jumpToQuestion,
       resetQuiz,

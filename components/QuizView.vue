@@ -35,12 +35,12 @@
       <div>
         <button 
           v-if="!showHint && !showResult" 
-          @click="showHint = true; hintUsed = true" 
+          @click="showHint = true; hintUsed = true; $emit('hint-used')" 
           class="btn pulse-hint" 
           style="background: transparent; color: var(--warning); border: 2px solid var(--warning);"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          Pista (-5 pts)
+          Pista (-3 pts)
         </button>
         <div v-if="showHint" class="glass-panel" style="padding: 1rem; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); font-size: 0.95rem;">
           💡 <strong>Pista:</strong> {{ question.hint }}
@@ -65,7 +65,7 @@ export default {
   props: {
     question: Object
   },
-  emits: ['answer-selected'],
+  emits: ['answer-selected', 'hint-used'],
   setup(props, { emit }) {
     const selectedOption = ref(null);
     const showResult = ref(false);
