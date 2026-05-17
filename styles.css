@@ -717,31 +717,35 @@ p { margin-bottom: 1em; line-height: 1.6; }
     border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-.dark-theme .option-btn {
-    background: rgba(30, 41, 59, 0.6) !important;
+.dark-theme .option-card {
+    background: rgba(30, 41, 59, 0.65) !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
     color: #f8fafc !important;
 }
 
-.dark-theme .option-btn:hover {
+.dark-theme .option-card:hover {
     background: rgba(99, 102, 241, 0.1) !important;
     border-color: rgba(99, 102, 241, 0.3) !important;
+    color: #ffffff !important;
 }
 
-.dark-theme .option-btn.selected {
+.dark-theme .option-card.selected {
     background: rgba(99, 102, 241, 0.25) !important;
     border-color: #818cf8 !important;
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+    color: #ffffff !important;
 }
 
-.dark-theme .option-badge {
-    background: rgba(255, 255, 255, 0.08) !important;
-    color: #cbd5e1 !important;
+.dark-theme .option-card.correct {
+    background-color: rgba(16, 185, 129, 0.2) !important;
+    border-color: #10b981 !important;
+    color: #34d399 !important;
 }
 
-.dark-theme .option-btn.selected .option-badge {
-    background: #818cf8 !important;
-    color: white !important;
+.dark-theme .option-card.wrong {
+    background-color: rgba(239, 68, 68, 0.2) !important;
+    border-color: #ef4444 !important;
+    color: #fca5a5 !important;
 }
 
 .dark-theme .theme-toggle-btn {

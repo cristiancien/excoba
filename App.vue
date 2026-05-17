@@ -463,6 +463,14 @@
               </span>
             </div>
 
+            <!-- Selector de Tema en Pausa -->
+            <div style="margin: 0.2rem auto 0 auto; display: flex; justify-content: center;">
+              <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
+                <span v-if="isDarkMode">☀️ Modo Claro</span>
+                <span v-else>🌙 Modo Oscuro</span>
+              </button>
+            </div>
+
             <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">¿Listo para continuar?</p>
           </div>
 
