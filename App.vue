@@ -175,11 +175,12 @@
                         class="sidebar-q-dot"
                         :class="{ 
                           'active': currentQuestionIndex === q.originalIndex,
-                          'solved': answeredStatus[q.id]
+                          'solved-correct': answeredStatus[q.id]?.isCorrect === true,
+                          'solved-wrong': answeredStatus[q.id]?.isCorrect === false
                         }"
-                        :title="`Pregunta ${q.id}: ${cleanQuestionTextFull(q.question)}`"
+                        :title="`Pregunta ${q.displayId}: ${cleanQuestionTextFull(q.question)}`"
                       >
-                        {{ q.id }}
+                        {{ q.displayId }}
                       </button>
                     </div>
                   </div>
@@ -223,7 +224,7 @@
                   <span style="opacity: 0.5;">/</span>
                   <span style="color: var(--primary); font-weight: 800;">{{ currentQuestion?.topic }}</span>
                   <span style="opacity: 0.5;">/</span>
-                  <span style="color: var(--text-main); font-weight: 800;">Pregunta {{ currentQuestion?.id }}</span>
+                  <span style="color: var(--text-main); font-weight: 800;">Pregunta {{ currentQuestionIndex + 1 }}</span>
                 </nav>
                 
                 <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
@@ -264,6 +265,7 @@
               <QuizView 
                 v-if="!showFeedback && currentQuestion"
                 :question="currentQuestion"
+                :past-answer="answeredStatus[currentQuestion.id]"
                 @answer-selected="handleAnswer"
                 @hint-used="handleHint"
               />
@@ -744,6 +746,7 @@ export default {
         }
       ];
 
+      let displayId = 1;
       questions.value.forEach((q, idx) => {
         const sec = sections.find(s => s.name.toLowerCase() === q.section.toLowerCase());
         if (sec) {
@@ -751,7 +754,8 @@ export default {
           if (top) {
             top.questions.push({
               ...q,
-              originalIndex: idx
+              originalIndex: idx,
+              displayId: displayId++
             });
           }
         }
@@ -839,16 +843,21 @@ export default {
     };
 
     const handleHint = () => {
-      // Deducimos 3 puntos inmediatamente al pedir pista (sin bajar de 0)
-      score.value = Math.max(0, score.value - 3);
+      // Deducimos 3 puntos inmediatamente al pedir pista (ahora permitimos bajar a negativos según solicitud)
+      score.value -= 3;
     };
 
     const handleAnswer = (result) => {
       lastAnswerCorrect.value = result.isCorrect;
       if (result.isCorrect) {
-        score.value += 10; // Siempre ganas 10 (la penalización de pista ya se dedujo al pedirla)
-        answeredStatus.value[currentQuestion.value.id] = true;
+        score.value += 10;
+      } else {
+        score.value -= 2; // Penalización por equivocarse
       }
+      answeredStatus.value[currentQuestion.value.id] = {
+        isCorrect: result.isCorrect,
+        selectedOptionId: result.selectedOptionId
+      };
       showFeedback.value = true;
     };
 
