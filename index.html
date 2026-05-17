@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCOBA Arq - Simulador Gamificado</title>
+    
+    <!-- Google Fonts: Outfit para un look moderno y amigable -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX CSS para renderizado de Látex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71bZBTIQHQ" crossorigin="anonymous">
+    
+    <!-- Archivo de estilos principal (Glassmorphism) -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Background animado SVG para el efecto Glassmorphism inmersivo -->
+    <div class="animated-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Contenedor Vue -->
+    <div id="app"></div>
+
+    <!-- KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfPe468252n9PK" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbOxyj0O11mQfiIGY" crossorigin="anonymous"></script>
+
+    <!-- Vue 3 y SFC Loader -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+    
+    <!-- Datos de Preguntas -->
+    <script src="./data/questions.js"></script>
+
+    <!-- Inicializador de la App -->
+    <script>
+        const { loadModule } = window['vue3-sfc-loader'];
+
+        const options = {
+            moduleCache: {
+                vue: Vue,
+            },
+            async getFile(url) {
+                const res = await fetch(url);
+                if (!res.ok)
+                    throw Object.assign(new Error(res.statusText + ' ' + url), { res });
+                return {
+                    getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text(),
+                }
+            },
+            addStyle(textContent) {
+                const style = Object.assign(document.createElement('style'), { textContent });
+                const ref = document.head.getElementsByTagName('style')[0] || null;
+                document.head.insertBefore(style, ref);
+            },
+        };
+
+        const app = Vue.createApp({
+            components: {
+                'App': Vue.defineAsyncComponent(() => loadModule('./App.vue', options))
+            },
+            template: '<App/>'
+        });
+
+        // Configuración global para KaTeX en componentes
+        app.directive('latex', {
+            mounted(el, binding) {
+                katex.render(binding.value, el, {
+                    throwOnError: false,
+                    displayMode: binding.modifiers.block || false
+                });
+            },
+            updated(el, binding) {
+                katex.render(binding.value, el, {
+                    throwOnError: false,
+                    displayMode: binding.modifiers.block || false
+                });
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
