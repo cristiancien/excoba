@@ -5,6 +5,14 @@
     <transition name="fade" mode="out-in">
       <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
         
+        <!-- Theme Switcher (Claro/Oscuro) -->
+        <div style="position: absolute; top: 25px; right: 25px; z-index: 10;">
+          <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 10px 16px; border-radius: 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
+            <span v-if="isDarkMode">☀️ Modo Claro</span>
+            <span v-else>🌙 Modo Oscuro</span>
+          </button>
+        </div>
+
         <!-- Tarjeta Central Premium -->
         <div class="glass-panel menu-hero-card" style="max-width: 650px; width: 100%; padding: 3.5rem 2.5rem; text-align: center; display: flex; flex-direction: column; gap: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 24px;">
           
@@ -62,51 +70,44 @@
       <!-- 2. PANTALLA: EXAMEN ACTIVO -->
       <div v-else-if="currentScreen === 'exam'" style="display: flex; flex-direction: column; gap: 0;">
         
-        <!-- Header: Puntuación Global -->
-        <header class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-          <div>
-            <h1 style="font-size: 1.6rem; color: var(--primary); margin: 0; font-weight: 800;">EXCOBA Prep • Especialidad Arquitectura</h1>
-            <span style="font-size: 0.9rem; color: var(--text-muted);">Simulador Premium estilo Brilliant.org con herramientas científicas integradas</span>
-          </div>
+        <!-- Header: Barra de Controles Única Centrada -->
+        <header class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px;">
           
-          <!-- Controles del Header: Calculadora, Formulario, Puntos -->
-          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-            
-            <!-- Cronómetro Monospace -->
-            <div class="glass-panel timer-badge" style="display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 14px; background: rgba(79, 70, 229, 0.05); border-color: rgba(79, 70, 229, 0.2); border-style: solid; border-width: 1px;">
-              <svg class="timer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              <span style="font-family: monospace; font-size: 1.1rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px;">
-                {{ formattedTime }}
-              </span>
-            </div>
-
-            <!-- Botón Pausa -->
-            <button @click="pauseExam" class="btn btn-pause" title="Pausar Cuestionario" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 12px; cursor: pointer; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); transition: all 0.2s;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
-            </button>
-
-            <!-- Botón del Formulario Científico -->
-            <button @click="toggleFormulario" class="btn btn-secondary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #065f46; cursor: pointer; transition: all 0.2s;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
-            </button>
-
-            <!-- Botón de la Calculadora -->
-            <button @click="toggleCalculator" class="btn btn-primary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.3); color: var(--primary); cursor: pointer; transition: all 0.2s;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line><line x1="9" y1="15" x2="9.01" y2="15"></line><line x1="15" y1="15" x2="15.01" y2="15"></line></svg>
-              {{ showCalculator ? 'Ocultar Calculadora' : 'Calculadora Científica' }}
-            </button>
-
-            <!-- Marcador de Puntos -->
-            <div class="glass-panel" style="display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 14px;">
-              <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Puntos:</span>
-              <div style="display: flex; align-items: center; gap: 4px; color: var(--warning); font-weight: 800; font-size: 1.25rem;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                {{ score }}
-              </div>
-            </div>
-
+          <!-- Cronómetro Monospace -->
+          <div class="glass-panel timer-badge" style="display: flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 14px; background: rgba(79, 70, 229, 0.05); border-color: rgba(79, 70, 229, 0.2); border-style: solid; border-width: 1px;">
+            <svg class="timer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span style="font-family: monospace; font-size: 1.15rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px;">
+              {{ formattedTime }}
+            </span>
           </div>
+
+          <!-- Botón Pausa -->
+          <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            Pausar ⏸️
+          </button>
+
+          <!-- Botón del Formulario Científico -->
+          <button @click="toggleFormulario" class="btn btn-secondary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #065f46; cursor: pointer; transition: all 0.2s; font-weight: 700;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
+          </button>
+
+          <!-- Botón de la Calculadora -->
+          <button @click="toggleCalculator" class="btn btn-primary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.3); color: var(--primary); cursor: pointer; transition: all 0.2s; font-weight: 700;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line><line x1="9" y1="15" x2="9.01" y2="15"></line><line x1="15" y1="15" x2="15.01" y2="15"></line></svg>
+            {{ showCalculator ? 'Ocultar Calculadora' : 'Calculadora Científica' }}
+          </button>
+
+          <!-- Marcador de Puntos -->
+          <div class="glass-panel" style="display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 14px;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Puntos:</span>
+            <div style="display: flex; align-items: center; gap: 4px; color: var(--warning); font-weight: 800; font-size: 1.25rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              {{ score }}
+            </div>
+          </div>
+
         </header>
 
         <!-- Main Dynamic Layout: Sidebar + Main Workspace -->
@@ -451,8 +452,18 @@
             <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2.5s infinite;">⏸️</div>
             <h2 style="font-size: 1.8rem; color: var(--text-main); margin: 0; font-weight: 800;">Prueba Pausada</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
-              Tu tiempo se ha detenido en <strong>{{ formattedTime }}</strong>.<br>¿Listo para continuar?
+              Tu tiempo de examen se ha detenido en <strong>{{ formattedTime }}</strong>.
             </p>
+            
+            <!-- Cronómetro de Pausa -->
+            <div class="glass-panel" style="margin: 0.5rem auto; padding: 8px 18px; border-radius: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(239, 68, 68, 0.06); border-color: rgba(239, 68, 68, 0.2); border-style: solid; border-width: 1px; max-width: max-content;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">
+                Tiempo en pausa: <strong style="font-family: monospace; font-size: 1rem; color: #ef4444; margin-left: 2px;">{{ formattedPausedTime }}</strong>
+              </span>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">¿Listo para continuar?</p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
@@ -541,6 +552,39 @@ export default {
     const isPaused = ref(false);
     const showExitWarning = ref(false);
 
+    // Nuevos estados de Modo Oscuro y Tiempo en Pausa
+    const isDarkMode = ref(false);
+    const toggleTheme = () => {
+      isDarkMode.value = !isDarkMode.value;
+      document.body.classList.toggle('dark-theme', isDarkMode.value);
+    };
+
+    const pausedTime = ref(0);
+    const pausedTimerInterval = ref(null);
+
+    const startPausedTimer = () => {
+      if (pausedTimerInterval.value) clearInterval(pausedTimerInterval.value);
+      pausedTimerInterval.value = setInterval(() => {
+        pausedTime.value++;
+      }, 1000);
+    };
+
+    const stopPausedTimer = () => {
+      if (pausedTimerInterval.value) {
+        clearInterval(pausedTimerInterval.value);
+        pausedTimerInterval.value = null;
+      }
+    };
+
+    const formattedPausedTime = computed(() => {
+      const t = pausedTime.value;
+      const hours = Math.floor(t / 3600);
+      const minutes = Math.floor((t % 3600) / 60);
+      const seconds = t % 60;
+      const pad = (num) => String(num).padStart(2, '0');
+      return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    });
+
     // Métodos del cronómetro
     const startTimer = () => {
       if (timerInterval.value) clearInterval(timerInterval.value);
@@ -575,17 +619,21 @@ export default {
       currentQuestionIndex.value = 0;
       isPaused.value = false;
       showExitWarning.value = false;
+      pausedTime.value = 0;
+      stopPausedTimer();
       startTimer();
     };
 
     const pauseExam = () => {
       isPaused.value = true;
       stopTimer();
+      startPausedTimer();
     };
 
     const resumeExam = () => {
       isPaused.value = false;
       showExitWarning.value = false;
+      stopPausedTimer();
       startTimer();
     };
 
@@ -790,7 +838,9 @@ export default {
 
     const confirmExit = () => {
       stopTimer();
+      stopPausedTimer();
       examTime.value = 0;
+      pausedTime.value = 0;
       isPaused.value = false;
       showExitWarning.value = false;
       currentScreen.value = 'menu';
@@ -886,6 +936,12 @@ export default {
       pauseExam,
       resumeExam,
       confirmExit,
+      
+      // Modo Oscuro y Tiempo en Pausa
+      isDarkMode,
+      toggleTheme,
+      pausedTime,
+      formattedPausedTime,
       
       // Controles
       sidebarCollapsed,

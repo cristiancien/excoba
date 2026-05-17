@@ -566,3 +566,196 @@ p { margin-bottom: 1em; line-height: 1.6; }
     opacity: 0;
     transform: scale(0.98);
 }
+
+/* --- ESTILOS COMPLEMENTARIOS MODO OSCURO (DARK MODE) --- */
+.dark-theme {
+    --bg-color: #0f172a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .animated-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+}
+
+.dark-theme .blob-1 {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+.dark-theme .blob-2 {
+    background: rgba(30, 58, 138, 0.25);
+}
+
+.dark-theme .blob-3 {
+    background: rgba(6, 78, 59, 0.25);
+}
+
+/* Ajustes de scrollbars en modo oscuro */
+.dark-theme .sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.35);
+}
+
+.dark-theme .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.55);
+}
+
+/* Ajustes de botones del sidebar en modo oscuro */
+.dark-theme .sidebar-q-dot {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+}
+
+.dark-theme .sidebar-q-dot:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: #818cf8;
+    color: white;
+}
+
+.dark-theme .sidebar-q-dot.active {
+    background: #1e293b;
+    border-color: #818cf8;
+    color: #818cf8;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.dark-theme .section-accordion-header {
+    background: rgba(99, 102, 241, 0.12) !important;
+    border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.dark-theme .section-accordion-header span {
+    color: #818cf8 !important;
+}
+
+/* Hojas de fórmulas y calculadora en modo oscuro */
+.dark-theme .formula-category {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .formula-item {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+}
+
+.dark-theme .calculator-panel,
+.dark-theme .formula-panel {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-color: rgba(99, 102, 241, 0.4) !important;
+}
+
+.dark-theme .calc-btn {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .calc-btn:hover {
+    background: #334155;
+}
+
+.dark-theme .calc-btn.fn {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+.dark-theme .calc-btn.op {
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+}
+
+.dark-theme .calc-btn.num {
+    background: #1e293b;
+}
+
+.dark-theme .btn-pause {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-theme .btn-pause:hover {
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #818cf8 !important;
+}
+
+.dark-theme .pause-menu-card,
+.dark-theme .warning-card {
+    background: rgba(15, 23, 42, 0.92) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .warning-card {
+    border-color: #ef4444 !important;
+}
+
+.dark-theme .menu-hero-card {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Modificaciones adicionales de inputs, badges y contenedores */
+.dark-theme .btn-secondary-outline {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.4) !important;
+    color: #34d399 !important;
+}
+
+.dark-theme .btn-primary-outline {
+    background: rgba(99, 102, 241, 0.15) !important;
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    color: #818cf8 !important;
+}
+
+.dark-theme .quiz-card {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-theme .option-btn {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #f8fafc !important;
+}
+
+.dark-theme .option-btn:hover {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.dark-theme .option-btn.selected {
+    background: rgba(99, 102, 241, 0.25) !important;
+    border-color: #818cf8 !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+}
+
+.dark-theme .option-badge {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+}
+
+.dark-theme .option-btn.selected .option-badge {
+    background: #818cf8 !important;
+    color: white !important;
+}
+
+.dark-theme .theme-toggle-btn {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(30, 41, 59, 0.8) !important;
+    color: #f8fafc !important;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+    background: #1e293b !important;
+    transform: scale(1.05);
+}
+
+.dark-theme .menu-stats-grid .glass-panel {
+    background: rgba(15, 23, 42, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
