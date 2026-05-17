@@ -455,12 +455,19 @@
               Tu tiempo de examen se ha detenido en <strong>{{ formattedTime }}</strong>.
             </p>
             
-            <!-- Cronómetro de Pausa -->
-            <div class="glass-panel" style="margin: 0.5rem auto; padding: 8px 18px; border-radius: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(239, 68, 68, 0.06); border-color: rgba(239, 68, 68, 0.2); border-style: solid; border-width: 1px; max-width: max-content;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">
-                Tiempo en pausa: <strong style="font-family: monospace; font-size: 1rem; color: #ef4444; margin-left: 2px;">{{ formattedPausedTime }}</strong>
-              </span>
+            <!-- Cronómetros de Pausa -->
+            <div style="display: flex; flex-direction: column; gap: 8px; margin: 0.5rem auto;">
+              <div class="glass-panel" style="padding: 8px 18px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(239, 68, 68, 0.06); border-color: rgba(239, 68, 68, 0.2); border-style: solid; border-width: 1px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">
+                  Tiempo de esta pausa: <strong style="font-family: monospace; font-size: 1rem; color: #ef4444; margin-left: 2px;">{{ formattedCurrentPauseTime }}</strong>
+                </span>
+              </div>
+              <div class="glass-panel" style="padding: 6px 14px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(245, 158, 11, 0.06); border-color: rgba(245, 158, 11, 0.2); border-style: solid; border-width: 1px;">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                  Tiempo total acumulado: <strong style="font-family: monospace; font-size: 0.9rem; color: #d97706; margin-left: 2px;">{{ formattedTotalPauseTime }}</strong>
+                </span>
+              </div>
             </div>
 
             <!-- Selector de Tema en Pausa -->
@@ -541,7 +548,8 @@ export default {
     FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options))
   },
   setup() {
-    const questions = ref(window.EXCOBA_QUESTIONS || []);
+    const allQuestions = window.EXCOBA_QUESTIONS || [];
+    const questions = ref([]);
     const currentQuestionIndex = ref(0);
     const score = ref(0);
 
@@ -567,13 +575,16 @@ export default {
       document.body.classList.toggle('dark-theme', isDarkMode.value);
     };
 
-    const pausedTime = ref(0);
+    const currentPauseTime = ref(0);
+    const totalPauseTime = ref(0);
     const pausedTimerInterval = ref(null);
 
     const startPausedTimer = () => {
+      currentPauseTime.value = 0; // Se reinicia en cada pausa nueva
       if (pausedTimerInterval.value) clearInterval(pausedTimerInterval.value);
       pausedTimerInterval.value = setInterval(() => {
-        pausedTime.value++;
+        currentPauseTime.value++;
+        totalPauseTime.value++;
       }, 1000);
     };
 
@@ -584,14 +595,16 @@ export default {
       }
     };
 
-    const formattedPausedTime = computed(() => {
-      const t = pausedTime.value;
+    const formatSeconds = (t) => {
       const hours = Math.floor(t / 3600);
       const minutes = Math.floor((t % 3600) / 60);
       const seconds = t % 60;
       const pad = (num) => String(num).padStart(2, '0');
       return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-    });
+    };
+
+    const formattedCurrentPauseTime = computed(() => formatSeconds(currentPauseTime.value));
+    const formattedTotalPauseTime = computed(() => formatSeconds(totalPauseTime.value));
 
     // Métodos del cronómetro
     const startTimer = () => {
@@ -619,6 +632,28 @@ export default {
 
     // Métodos de control de flujo
     const startExam = () => {
+      // 1. Aleatorización del banco de preguntas (5 juegos -> 1 intento de 180 preguntas)
+      const newBank = [];
+      const subtemaMap = {
+        Primaria: ['Español', 'Matemáticas'],
+        Secundaria: ['Español', 'Matemáticas', 'Ciencias Naturales', 'Ciencias Sociales'],
+        Bachillerato: ['Matemáticas para cálculo', 'Física', 'Lenguaje']
+      };
+
+      for (const section in subtemaMap) {
+        for (const topic of subtemaMap[section]) {
+          // Filtrar todas las preguntas del banco total para esta sección y tema
+          const topicQuestions = allQuestions.filter(q => q.section === section && q.topic === topic);
+          // Mezclar usando algoritmo simple de Fisher-Yates (o sort random)
+          const shuffled = [...topicQuestions].sort(() => 0.5 - Math.random());
+          // Seleccionar 20 preguntas
+          newBank.push(...shuffled.slice(0, 20));
+        }
+      }
+      
+      questions.value = newBank;
+      
+      // 2. Reseteo de estados
       currentScreen.value = 'exam';
       examTime.value = 0;
       score.value = 0;
@@ -627,7 +662,8 @@ export default {
       currentQuestionIndex.value = 0;
       isPaused.value = false;
       showExitWarning.value = false;
-      pausedTime.value = 0;
+      currentPauseTime.value = 0;
+      totalPauseTime.value = 0;
       stopPausedTimer();
       startTimer();
     };
@@ -848,7 +884,8 @@ export default {
       stopTimer();
       stopPausedTimer();
       examTime.value = 0;
-      pausedTime.value = 0;
+      currentPauseTime.value = 0;
+      totalPauseTime.value = 0;
       isPaused.value = false;
       showExitWarning.value = false;
       currentScreen.value = 'menu';
@@ -948,8 +985,10 @@ export default {
       // Modo Oscuro y Tiempo en Pausa
       isDarkMode,
       toggleTheme,
-      pausedTime,
-      formattedPausedTime,
+      currentPauseTime,
+      totalPauseTime,
+      formattedCurrentPauseTime,
+      formattedTotalPauseTime,
       
       // Controles
       sidebarCollapsed,
