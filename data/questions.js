@@ -5585,7 +5585,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 181,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
+    "question": "Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
     "options": [
       {
         "id": "a",
@@ -5616,7 +5616,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 182,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
+    "question": "En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
     "options": [
       {
         "id": "a",
@@ -5647,7 +5647,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 183,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
+    "question": "¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
     "options": [
       {
         "id": "a",
@@ -5678,7 +5678,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 184,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
+    "question": "¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
     "options": [
       {
         "id": "a",
@@ -5709,7 +5709,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 185,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
+    "question": "Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
     "options": [
       {
         "id": "a",
@@ -5740,7 +5740,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 186,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
+    "question": "En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
     "options": [
       {
         "id": "a",
@@ -5771,7 +5771,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 187,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
+    "question": "¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
     "options": [
       {
         "id": "a",
@@ -5802,7 +5802,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 188,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál es el principal propósito de un texto de divulgación científica popular?",
+    "question": "¿Cuál es el principal propósito de un texto de divulgación científica popular?",
     "options": [
       {
         "id": "a",
@@ -5833,7 +5833,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 189,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
+    "question": "En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
     "options": [
       {
         "id": "a",
@@ -5864,7 +5864,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 190,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
+    "question": "Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
     "options": [
       {
         "id": "a",
@@ -5895,7 +5895,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 191,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
+    "question": "Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
     "options": [
       {
         "id": "a",
@@ -5926,7 +5926,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 192,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
+    "question": "Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
     "options": [
       {
         "id": "a",
@@ -5957,7 +5957,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 193,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
+    "question": "Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
     "options": [
       {
         "id": "a",
@@ -5988,7 +5988,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 194,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
+    "question": "Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
     "options": [
       {
         "id": "a",
@@ -6019,7 +6019,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 195,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
+    "question": "¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
     "options": [
       {
         "id": "a",
@@ -6050,7 +6050,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 196,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
+    "question": "¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
     "options": [
       {
         "id": "a",
@@ -6081,7 +6081,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 197,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
+    "question": "¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
     "options": [
       {
         "id": "a",
@@ -6112,7 +6112,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 198,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
+    "question": "Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
     "options": [
       {
         "id": "a",
@@ -6143,7 +6143,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 199,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
+    "question": "¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
     "options": [
       {
         "id": "a",
@@ -6174,7 +6174,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 200,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
+    "question": "¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
     "options": [
       {
         "id": "a",
@@ -6205,7 +6205,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 201,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
+    "question": "Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
     "options": [
       {
         "id": "a",
@@ -6236,7 +6236,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 202,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
+    "question": "En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
     "options": [
       {
         "id": "a",
@@ -6267,7 +6267,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 203,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
+    "question": "Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
     "options": [
       {
         "id": "a",
@@ -6298,7 +6298,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 204,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
+    "question": "Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
     "options": [
       {
         "id": "a",
@@ -6329,7 +6329,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 205,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
+    "question": "Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
     "options": [
       {
         "id": "a",
@@ -6360,7 +6360,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 206,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
+    "question": "Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
     "options": [
       {
         "id": "a",
@@ -6391,7 +6391,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 207,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
+    "question": "Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
     "options": [
       {
         "id": "a",
@@ -6422,7 +6422,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 208,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
+    "question": "Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
     "options": [
       {
         "id": "a",
@@ -6453,7 +6453,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 209,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] ¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
+    "question": "¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
     "options": [
       {
         "id": "a",
@@ -6484,7 +6484,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 210,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
+    "question": "Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
     "options": [
       {
         "id": "a",
@@ -6515,7 +6515,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 211,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
+    "question": "Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
     "options": [
       {
         "id": "a",
@@ -6546,7 +6546,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 212,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] ¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
+    "question": "¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
     "options": [
       {
         "id": "a",
@@ -6577,7 +6577,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 213,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
+    "question": "Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
     "options": [
       {
         "id": "a",
@@ -6608,7 +6608,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 214,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
+    "question": "Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
     "options": [
       {
         "id": "a",
@@ -6639,7 +6639,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 215,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
+    "question": "Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
     "options": [
       {
         "id": "a",
@@ -6670,7 +6670,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 216,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
+    "question": "En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
     "options": [
       {
         "id": "a",
@@ -6701,7 +6701,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 217,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
+    "question": "Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
     "options": [
       {
         "id": "a",
@@ -6732,7 +6732,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 218,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
+    "question": "Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
     "options": [
       {
         "id": "a",
@@ -6763,7 +6763,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 219,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
+    "question": "En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
     "options": [
       {
         "id": "a",
@@ -6794,7 +6794,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 220,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
+    "question": "Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
     "options": [
       {
         "id": "a",
@@ -6825,7 +6825,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 221,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
+    "question": "¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
     "options": [
       {
         "id": "a",
@@ -6856,7 +6856,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 222,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
+    "question": "Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
     "options": [
       {
         "id": "a",
@@ -6887,7 +6887,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 223,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
+    "question": "En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
     "options": [
       {
         "id": "a",
@@ -6918,7 +6918,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 224,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
+    "question": "¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
     "options": [
       {
         "id": "a",
@@ -6949,7 +6949,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 225,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
+    "question": "¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
     "options": [
       {
         "id": "a",
@@ -6980,7 +6980,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 226,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué es la **oración temática** en la estructura de un párrafo?",
+    "question": "¿Qué es la **oración temática** en la estructura de un párrafo?",
     "options": [
       {
         "id": "a",
@@ -7011,7 +7011,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 227,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
+    "question": "¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
     "options": [
       {
         "id": "a",
@@ -7042,7 +7042,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 228,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
+    "question": "Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
     "options": [
       {
         "id": "a",
@@ -7073,7 +7073,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 229,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
+    "question": "¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
     "options": [
       {
         "id": "a",
@@ -7104,7 +7104,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 230,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
+    "question": "¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
     "options": [
       {
         "id": "a",
@@ -7135,7 +7135,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 231,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
+    "question": "Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
     "options": [
       {
         "id": "a",
@@ -7166,7 +7166,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 232,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
+    "question": "¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
     "options": [
       {
         "id": "a",
@@ -7197,7 +7197,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 233,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la opción redactada utilizando el **discurso indirecto**:",
+    "question": "Identifica la opción redactada utilizando el **discurso indirecto**:",
     "options": [
       {
         "id": "a",
@@ -7228,7 +7228,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 234,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
+    "question": "En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
     "options": [
       {
         "id": "a",
@@ -7259,7 +7259,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 235,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
+    "question": "Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
     "options": [
       {
         "id": "a",
@@ -7290,7 +7290,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 236,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
+    "question": "¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
     "options": [
       {
         "id": "a",
@@ -7321,7 +7321,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 237,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
+    "question": "Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
     "options": [
       {
         "id": "a",
@@ -7352,7 +7352,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 238,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
+    "question": "¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
     "options": [
       {
         "id": "a",
@@ -7383,7 +7383,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 239,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
+    "question": "Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
     "options": [
       {
         "id": "a",
@@ -7414,7 +7414,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 240,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 2] ¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
+    "question": "¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
     "options": [
       {
         "id": "a",
@@ -7445,7 +7445,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 241,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
+    "question": "Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
     "options": [
       {
         "id": "a",
@@ -7476,7 +7476,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 242,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
+    "question": "Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
     "options": [
       {
         "id": "a",
@@ -7507,7 +7507,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 243,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
+    "question": "Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
     "options": [
       {
         "id": "a",
@@ -7538,7 +7538,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 244,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
+    "question": "Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
     "options": [
       {
         "id": "a",
@@ -7569,7 +7569,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 245,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
+    "question": "Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
     "options": [
       {
         "id": "a",
@@ -7600,7 +7600,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 246,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
+    "question": "Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
     "options": [
       {
         "id": "a",
@@ -7631,7 +7631,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 247,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
+    "question": "Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
     "options": [
       {
         "id": "a",
@@ -7662,7 +7662,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 248,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
+    "question": "El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
     "options": [
       {
         "id": "a",
@@ -7693,7 +7693,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 249,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
+    "question": "Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
     "options": [
       {
         "id": "a",
@@ -7724,7 +7724,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 250,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
+    "question": "Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
     "options": [
       {
         "id": "a",
@@ -7755,7 +7755,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 251,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
     "options": [
       {
         "id": "a",
@@ -7786,7 +7786,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 252,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
+    "question": "Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
     "options": [
       {
         "id": "a",
@@ -7817,7 +7817,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 253,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
+    "question": "Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -7848,7 +7848,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 254,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] ¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
+    "question": "¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
     "options": [
       {
         "id": "a",
@@ -7879,7 +7879,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 255,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
+    "question": "Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
     "options": [
       {
         "id": "a",
@@ -7910,7 +7910,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 256,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
+    "question": "Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
     "options": [
       {
         "id": "a",
@@ -7941,7 +7941,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 257,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
+    "question": "En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
     "options": [
       {
         "id": "a",
@@ -7972,7 +7972,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 258,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
+    "question": "Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
     "options": [
       {
         "id": "a",
@@ -8003,7 +8003,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 259,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
+    "question": "En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
     "options": [
       {
         "id": "a",
@@ -8034,7 +8034,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 260,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 2] Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
+    "question": "Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
     "options": [
       {
         "id": "a",
@@ -8065,7 +8065,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 261,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
+    "question": "¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
     "options": [
       {
         "id": "a",
@@ -8096,7 +8096,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 262,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
+    "question": "¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
     "options": [
       {
         "id": "a",
@@ -8127,7 +8127,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 263,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
+    "question": "¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
     "options": [
       {
         "id": "a",
@@ -8158,7 +8158,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 264,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
+    "question": "¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
     "options": [
       {
         "id": "a",
@@ -8189,7 +8189,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 265,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
+    "question": "¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
     "options": [
       {
         "id": "a",
@@ -8220,7 +8220,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 266,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
+    "question": "¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
     "options": [
       {
         "id": "a",
@@ -8251,7 +8251,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 267,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
+    "question": "En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
     "options": [
       {
         "id": "a",
@@ -8282,7 +8282,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 268,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
+    "question": "Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
     "options": [
       {
         "id": "a",
@@ -8313,7 +8313,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 269,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
+    "question": "Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
     "options": [
       {
         "id": "a",
@@ -8344,7 +8344,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 270,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
+    "question": "¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
     "options": [
       {
         "id": "a",
@@ -8375,7 +8375,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 271,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
+    "question": "Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
     "options": [
       {
         "id": "a",
@@ -8406,7 +8406,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 272,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
+    "question": "¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
     "options": [
       {
         "id": "a",
@@ -8437,7 +8437,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 273,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
+    "question": "Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
     "options": [
       {
         "id": "a",
@@ -8468,7 +8468,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 274,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -8499,7 +8499,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 275,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
+    "question": "¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
     "options": [
       {
         "id": "a",
@@ -8530,7 +8530,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 276,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
+    "question": "¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
     "options": [
       {
         "id": "a",
@@ -8561,7 +8561,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 277,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
+    "question": "¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
     "options": [
       {
         "id": "a",
@@ -8592,7 +8592,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 278,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
+    "question": "En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
     "options": [
       {
         "id": "a",
@@ -8623,7 +8623,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 279,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] ¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
+    "question": "¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
     "options": [
       {
         "id": "a",
@@ -8654,7 +8654,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 280,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 2] Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
+    "question": "Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
     "options": [
       {
         "id": "a",
@@ -8685,7 +8685,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 281,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
+    "question": "Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
     "options": [
       {
         "id": "a",
@@ -8716,7 +8716,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 282,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
+    "question": "¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
     "options": [
       {
         "id": "a",
@@ -8747,7 +8747,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 283,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
+    "question": "¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
     "options": [
       {
         "id": "a",
@@ -8778,7 +8778,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 284,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
+    "question": "¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
     "options": [
       {
         "id": "a",
@@ -8809,7 +8809,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 285,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
+    "question": "¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
     "options": [
       {
         "id": "a",
@@ -8840,7 +8840,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 286,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
+    "question": "¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
     "options": [
       {
         "id": "a",
@@ -8871,7 +8871,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 287,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
+    "question": "¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
     "options": [
       {
         "id": "a",
@@ -8902,7 +8902,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 288,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
+    "question": "¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
     "options": [
       {
         "id": "a",
@@ -8933,7 +8933,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 289,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
+    "question": "¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
     "options": [
       {
         "id": "a",
@@ -8964,7 +8964,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 290,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
+    "question": "¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
     "options": [
       {
         "id": "a",
@@ -8995,7 +8995,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 291,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
+    "question": "Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
     "options": [
       {
         "id": "a",
@@ -9026,7 +9026,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 292,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
+    "question": "¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
     "options": [
       {
         "id": "a",
@@ -9057,7 +9057,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 293,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
+    "question": "Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
     "options": [
       {
         "id": "a",
@@ -9088,7 +9088,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 294,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
+    "question": "¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
     "options": [
       {
         "id": "a",
@@ -9119,7 +9119,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 295,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
+    "question": "¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
     "options": [
       {
         "id": "a",
@@ -9150,7 +9150,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 296,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
+    "question": "¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
     "options": [
       {
         "id": "a",
@@ -9181,7 +9181,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 297,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
+    "question": "Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
     "options": [
       {
         "id": "a",
@@ -9212,7 +9212,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 298,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
+    "question": "¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
     "options": [
       {
         "id": "a",
@@ -9243,7 +9243,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 299,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
+    "question": "La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
     "options": [
       {
         "id": "a",
@@ -9274,7 +9274,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 300,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 2] ¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
+    "question": "¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
     "options": [
       {
         "id": "a",
@@ -9305,7 +9305,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 301,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
+    "question": "Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
     "options": [
       {
         "id": "a",
@@ -9336,7 +9336,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 302,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
+    "question": "Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
     "options": [
       {
         "id": "a",
@@ -9367,7 +9367,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 303,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
+    "question": "Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
     "options": [
       {
         "id": "a",
@@ -9398,7 +9398,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 304,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
+    "question": "Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
     "options": [
       {
         "id": "a",
@@ -9429,7 +9429,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 305,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
     "options": [
       {
         "id": "a",
@@ -9460,7 +9460,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 306,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
+    "question": "Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
     "options": [
       {
         "id": "a",
@@ -9491,7 +9491,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 307,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
+    "question": "Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
     "options": [
       {
         "id": "a",
@@ -9522,7 +9522,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 308,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
+    "question": "Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -9553,7 +9553,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 309,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
+    "question": "Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
     "options": [
       {
         "id": "a",
@@ -9584,7 +9584,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 310,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
+    "question": "Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
     "options": [
       {
         "id": "a",
@@ -9615,7 +9615,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 311,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
+    "question": "Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
     "options": [
       {
         "id": "a",
@@ -9646,7 +9646,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 312,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
+    "question": "Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
     "options": [
       {
         "id": "a",
@@ -9677,7 +9677,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 313,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
+    "question": "Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
     "options": [
       {
         "id": "a",
@@ -9708,7 +9708,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 314,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
+    "question": "Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
     "options": [
       {
         "id": "a",
@@ -9739,7 +9739,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 315,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
+    "question": "Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
     "options": [
       {
         "id": "a",
@@ -9770,7 +9770,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 316,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
+    "question": "Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
     "options": [
       {
         "id": "a",
@@ -9801,7 +9801,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 317,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
+    "question": "Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
     "options": [
       {
         "id": "a",
@@ -9832,7 +9832,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 318,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
+    "question": "Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
     "options": [
       {
         "id": "a",
@@ -9863,7 +9863,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 319,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] ¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
+    "question": "¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
     "options": [
       {
         "id": "a",
@@ -9894,7 +9894,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 320,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 2] En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
+    "question": "En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
     "options": [
       {
         "id": "a",
@@ -9925,7 +9925,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 321,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
+    "question": "Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
     "options": [
       {
         "id": "a",
@@ -9956,7 +9956,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 322,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
+    "question": "Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
     "options": [
       {
         "id": "a",
@@ -9987,7 +9987,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 323,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
+    "question": "En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
     "options": [
       {
         "id": "a",
@@ -10018,7 +10018,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 324,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] ¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
+    "question": "¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
     "options": [
       {
         "id": "a",
@@ -10049,7 +10049,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 325,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
+    "question": "Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
     "options": [
       {
         "id": "a",
@@ -10080,7 +10080,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 326,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -10111,7 +10111,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 327,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
+    "question": "Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
     "options": [
       {
         "id": "a",
@@ -10142,7 +10142,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 328,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -10173,7 +10173,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 329,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] ¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
+    "question": "¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
     "options": [
       {
         "id": "a",
@@ -10204,7 +10204,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 330,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
+    "question": "En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
     "options": [
       {
         "id": "a",
@@ -10235,7 +10235,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 331,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
+    "question": "Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
     "options": [
       {
         "id": "a",
@@ -10266,7 +10266,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 332,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] ¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
+    "question": "¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
     "options": [
       {
         "id": "a",
@@ -10297,7 +10297,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 333,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
+    "question": "Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
     "options": [
       {
         "id": "a",
@@ -10328,7 +10328,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 334,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] ¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
+    "question": "¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
     "options": [
       {
         "id": "a",
@@ -10359,7 +10359,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 335,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
+    "question": "Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
     "options": [
       {
         "id": "a",
@@ -10390,7 +10390,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 336,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
+    "question": "Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
     "options": [
       {
         "id": "a",
@@ -10421,7 +10421,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 337,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
+    "question": "Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
     "options": [
       {
         "id": "a",
@@ -10452,7 +10452,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 338,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
+    "question": "Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
     "options": [
       {
         "id": "a",
@@ -10483,7 +10483,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 339,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] ¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
+    "question": "¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
     "options": [
       {
         "id": "a",
@@ -10514,7 +10514,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 340,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 2] [Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
+    "question": "[Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
     "options": [
       {
         "id": "a",
@@ -10545,7 +10545,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 341,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
+    "question": "En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
     "options": [
       {
         "id": "a",
@@ -10576,7 +10576,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 342,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
+    "question": "En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
     "options": [
       {
         "id": "a",
@@ -10607,7 +10607,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 343,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
+    "question": "Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
     "options": [
       {
         "id": "a",
@@ -10638,7 +10638,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 344,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
+    "question": "¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
     "options": [
       {
         "id": "a",
@@ -10669,7 +10669,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 345,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
+    "question": "Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
     "options": [
       {
         "id": "a",
@@ -10700,7 +10700,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 346,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
+    "question": "El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
     "options": [
       {
         "id": "a",
@@ -10731,7 +10731,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 347,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
+    "question": "El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
     "options": [
       {
         "id": "a",
@@ -10762,7 +10762,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 348,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
+    "question": "¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
     "options": [
       {
         "id": "a",
@@ -10793,7 +10793,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 349,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
+    "question": "¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
     "options": [
       {
         "id": "a",
@@ -10824,7 +10824,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 350,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
+    "question": "Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
     "options": [
       {
         "id": "a",
@@ -10855,7 +10855,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 351,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
+    "question": "¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
     "options": [
       {
         "id": "a",
@@ -10886,7 +10886,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 352,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
+    "question": "¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
     "options": [
       {
         "id": "a",
@@ -10917,7 +10917,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 353,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
+    "question": "¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
     "options": [
       {
         "id": "a",
@@ -10948,7 +10948,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 354,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
+    "question": "¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
     "options": [
       {
         "id": "a",
@@ -10979,7 +10979,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 355,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
+    "question": "¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
     "options": [
       {
         "id": "a",
@@ -11010,7 +11010,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 356,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
+    "question": "En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
     "options": [
       {
         "id": "a",
@@ -11041,7 +11041,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 357,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
+    "question": "¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
     "options": [
       {
         "id": "a",
@@ -11072,7 +11072,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 358,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
+    "question": "En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
     "options": [
       {
         "id": "a",
@@ -11103,7 +11103,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 359,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] ¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
+    "question": "¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
     "options": [
       {
         "id": "a",
@@ -11134,7 +11134,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 360,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 2] En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
+    "question": "En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
     "options": [
       {
         "id": "a",
@@ -11165,7 +11165,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 361,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
+    "question": "Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
     "options": [
       {
         "id": "a",
@@ -11196,7 +11196,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 362,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
+    "question": "En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
     "options": [
       {
         "id": "a",
@@ -11227,7 +11227,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 363,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
+    "question": "¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
     "options": [
       {
         "id": "a",
@@ -11258,7 +11258,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 364,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
+    "question": "¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
     "options": [
       {
         "id": "a",
@@ -11289,7 +11289,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 365,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
+    "question": "Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
     "options": [
       {
         "id": "a",
@@ -11320,7 +11320,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 366,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
+    "question": "En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
     "options": [
       {
         "id": "a",
@@ -11351,7 +11351,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 367,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
+    "question": "¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
     "options": [
       {
         "id": "a",
@@ -11382,7 +11382,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 368,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál es el principal propósito de un texto de divulgación científica popular?",
+    "question": "¿Cuál es el principal propósito de un texto de divulgación científica popular?",
     "options": [
       {
         "id": "a",
@@ -11413,7 +11413,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 369,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
+    "question": "En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
     "options": [
       {
         "id": "a",
@@ -11444,7 +11444,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 370,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
+    "question": "Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
     "options": [
       {
         "id": "a",
@@ -11475,7 +11475,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 371,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
+    "question": "Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
     "options": [
       {
         "id": "a",
@@ -11506,7 +11506,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 372,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
+    "question": "Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
     "options": [
       {
         "id": "a",
@@ -11537,7 +11537,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 373,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
+    "question": "Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
     "options": [
       {
         "id": "a",
@@ -11568,7 +11568,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 374,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
+    "question": "Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
     "options": [
       {
         "id": "a",
@@ -11599,7 +11599,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 375,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
+    "question": "¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
     "options": [
       {
         "id": "a",
@@ -11630,7 +11630,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 376,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
+    "question": "¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
     "options": [
       {
         "id": "a",
@@ -11661,7 +11661,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 377,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
+    "question": "¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
     "options": [
       {
         "id": "a",
@@ -11692,7 +11692,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 378,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
+    "question": "Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
     "options": [
       {
         "id": "a",
@@ -11723,7 +11723,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 379,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
+    "question": "¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
     "options": [
       {
         "id": "a",
@@ -11754,7 +11754,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 380,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
+    "question": "¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
     "options": [
       {
         "id": "a",
@@ -11785,7 +11785,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 381,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
+    "question": "Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
     "options": [
       {
         "id": "a",
@@ -11816,7 +11816,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 382,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
+    "question": "En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
     "options": [
       {
         "id": "a",
@@ -11847,7 +11847,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 383,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
+    "question": "Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
     "options": [
       {
         "id": "a",
@@ -11878,7 +11878,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 384,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
+    "question": "Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
     "options": [
       {
         "id": "a",
@@ -11909,7 +11909,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 385,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
+    "question": "Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
     "options": [
       {
         "id": "a",
@@ -11940,7 +11940,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 386,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
+    "question": "Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
     "options": [
       {
         "id": "a",
@@ -11971,7 +11971,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 387,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
+    "question": "Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
     "options": [
       {
         "id": "a",
@@ -12002,7 +12002,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 388,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
+    "question": "Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
     "options": [
       {
         "id": "a",
@@ -12033,7 +12033,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 389,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] ¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
+    "question": "¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
     "options": [
       {
         "id": "a",
@@ -12064,7 +12064,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 390,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
+    "question": "Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
     "options": [
       {
         "id": "a",
@@ -12095,7 +12095,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 391,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
+    "question": "Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
     "options": [
       {
         "id": "a",
@@ -12126,7 +12126,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 392,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] ¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
+    "question": "¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
     "options": [
       {
         "id": "a",
@@ -12157,7 +12157,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 393,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
+    "question": "Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
     "options": [
       {
         "id": "a",
@@ -12188,7 +12188,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 394,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
+    "question": "Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
     "options": [
       {
         "id": "a",
@@ -12219,7 +12219,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 395,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
+    "question": "Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
     "options": [
       {
         "id": "a",
@@ -12250,7 +12250,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 396,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
+    "question": "En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
     "options": [
       {
         "id": "a",
@@ -12281,7 +12281,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 397,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
+    "question": "Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
     "options": [
       {
         "id": "a",
@@ -12312,7 +12312,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 398,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
+    "question": "Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
     "options": [
       {
         "id": "a",
@@ -12343,7 +12343,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 399,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
+    "question": "En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
     "options": [
       {
         "id": "a",
@@ -12374,7 +12374,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 400,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
+    "question": "Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
     "options": [
       {
         "id": "a",
@@ -12405,7 +12405,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 401,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
+    "question": "¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
     "options": [
       {
         "id": "a",
@@ -12436,7 +12436,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 402,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
+    "question": "Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
     "options": [
       {
         "id": "a",
@@ -12467,7 +12467,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 403,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
+    "question": "En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
     "options": [
       {
         "id": "a",
@@ -12498,7 +12498,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 404,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
+    "question": "¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
     "options": [
       {
         "id": "a",
@@ -12529,7 +12529,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 405,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
+    "question": "¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
     "options": [
       {
         "id": "a",
@@ -12560,7 +12560,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 406,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué es la **oración temática** en la estructura de un párrafo?",
+    "question": "¿Qué es la **oración temática** en la estructura de un párrafo?",
     "options": [
       {
         "id": "a",
@@ -12591,7 +12591,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 407,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
+    "question": "¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
     "options": [
       {
         "id": "a",
@@ -12622,7 +12622,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 408,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
+    "question": "Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
     "options": [
       {
         "id": "a",
@@ -12653,7 +12653,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 409,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
+    "question": "¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
     "options": [
       {
         "id": "a",
@@ -12684,7 +12684,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 410,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
+    "question": "¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
     "options": [
       {
         "id": "a",
@@ -12715,7 +12715,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 411,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
+    "question": "Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
     "options": [
       {
         "id": "a",
@@ -12746,7 +12746,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 412,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
+    "question": "¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
     "options": [
       {
         "id": "a",
@@ -12777,7 +12777,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 413,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la opción redactada utilizando el **discurso indirecto**:",
+    "question": "Identifica la opción redactada utilizando el **discurso indirecto**:",
     "options": [
       {
         "id": "a",
@@ -12808,7 +12808,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 414,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
+    "question": "En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
     "options": [
       {
         "id": "a",
@@ -12839,7 +12839,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 415,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
+    "question": "Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
     "options": [
       {
         "id": "a",
@@ -12870,7 +12870,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 416,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
+    "question": "¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
     "options": [
       {
         "id": "a",
@@ -12901,7 +12901,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 417,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
+    "question": "Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
     "options": [
       {
         "id": "a",
@@ -12932,7 +12932,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 418,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
+    "question": "¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
     "options": [
       {
         "id": "a",
@@ -12963,7 +12963,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 419,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
+    "question": "Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
     "options": [
       {
         "id": "a",
@@ -12994,7 +12994,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 420,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 3] ¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
+    "question": "¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
     "options": [
       {
         "id": "a",
@@ -13025,7 +13025,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 421,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
+    "question": "Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
     "options": [
       {
         "id": "a",
@@ -13056,7 +13056,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 422,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
+    "question": "Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
     "options": [
       {
         "id": "a",
@@ -13087,7 +13087,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 423,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
+    "question": "Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
     "options": [
       {
         "id": "a",
@@ -13118,7 +13118,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 424,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
+    "question": "Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
     "options": [
       {
         "id": "a",
@@ -13149,7 +13149,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 425,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
+    "question": "Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
     "options": [
       {
         "id": "a",
@@ -13180,7 +13180,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 426,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
+    "question": "Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
     "options": [
       {
         "id": "a",
@@ -13211,7 +13211,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 427,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
+    "question": "Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
     "options": [
       {
         "id": "a",
@@ -13242,7 +13242,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 428,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
+    "question": "El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
     "options": [
       {
         "id": "a",
@@ -13273,7 +13273,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 429,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
+    "question": "Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
     "options": [
       {
         "id": "a",
@@ -13304,7 +13304,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 430,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
+    "question": "Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
     "options": [
       {
         "id": "a",
@@ -13335,7 +13335,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 431,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
     "options": [
       {
         "id": "a",
@@ -13366,7 +13366,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 432,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
+    "question": "Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
     "options": [
       {
         "id": "a",
@@ -13397,7 +13397,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 433,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
+    "question": "Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -13428,7 +13428,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 434,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] ¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
+    "question": "¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
     "options": [
       {
         "id": "a",
@@ -13459,7 +13459,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 435,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
+    "question": "Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
     "options": [
       {
         "id": "a",
@@ -13490,7 +13490,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 436,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
+    "question": "Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
     "options": [
       {
         "id": "a",
@@ -13521,7 +13521,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 437,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
+    "question": "En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
     "options": [
       {
         "id": "a",
@@ -13552,7 +13552,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 438,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
+    "question": "Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
     "options": [
       {
         "id": "a",
@@ -13583,7 +13583,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 439,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
+    "question": "En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
     "options": [
       {
         "id": "a",
@@ -13614,7 +13614,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 440,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 3] Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
+    "question": "Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
     "options": [
       {
         "id": "a",
@@ -13645,7 +13645,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 441,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
+    "question": "¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
     "options": [
       {
         "id": "a",
@@ -13676,7 +13676,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 442,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
+    "question": "¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
     "options": [
       {
         "id": "a",
@@ -13707,7 +13707,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 443,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
+    "question": "¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
     "options": [
       {
         "id": "a",
@@ -13738,7 +13738,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 444,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
+    "question": "¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
     "options": [
       {
         "id": "a",
@@ -13769,7 +13769,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 445,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
+    "question": "¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
     "options": [
       {
         "id": "a",
@@ -13800,7 +13800,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 446,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
+    "question": "¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
     "options": [
       {
         "id": "a",
@@ -13831,7 +13831,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 447,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
+    "question": "En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
     "options": [
       {
         "id": "a",
@@ -13862,7 +13862,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 448,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
+    "question": "Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
     "options": [
       {
         "id": "a",
@@ -13893,7 +13893,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 449,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
+    "question": "Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
     "options": [
       {
         "id": "a",
@@ -13924,7 +13924,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 450,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
+    "question": "¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
     "options": [
       {
         "id": "a",
@@ -13955,7 +13955,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 451,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
+    "question": "Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
     "options": [
       {
         "id": "a",
@@ -13986,7 +13986,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 452,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
+    "question": "¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
     "options": [
       {
         "id": "a",
@@ -14017,7 +14017,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 453,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
+    "question": "Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
     "options": [
       {
         "id": "a",
@@ -14048,7 +14048,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 454,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -14079,7 +14079,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 455,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
+    "question": "¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
     "options": [
       {
         "id": "a",
@@ -14110,7 +14110,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 456,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
+    "question": "¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
     "options": [
       {
         "id": "a",
@@ -14141,7 +14141,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 457,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
+    "question": "¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
     "options": [
       {
         "id": "a",
@@ -14172,7 +14172,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 458,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
+    "question": "En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
     "options": [
       {
         "id": "a",
@@ -14203,7 +14203,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 459,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] ¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
+    "question": "¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
     "options": [
       {
         "id": "a",
@@ -14234,7 +14234,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 460,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 3] Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
+    "question": "Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
     "options": [
       {
         "id": "a",
@@ -14265,7 +14265,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 461,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
+    "question": "Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
     "options": [
       {
         "id": "a",
@@ -14296,7 +14296,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 462,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
+    "question": "¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
     "options": [
       {
         "id": "a",
@@ -14327,7 +14327,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 463,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
+    "question": "¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
     "options": [
       {
         "id": "a",
@@ -14358,7 +14358,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 464,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
+    "question": "¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
     "options": [
       {
         "id": "a",
@@ -14389,7 +14389,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 465,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
+    "question": "¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
     "options": [
       {
         "id": "a",
@@ -14420,7 +14420,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 466,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
+    "question": "¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
     "options": [
       {
         "id": "a",
@@ -14451,7 +14451,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 467,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
+    "question": "¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
     "options": [
       {
         "id": "a",
@@ -14482,7 +14482,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 468,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
+    "question": "¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
     "options": [
       {
         "id": "a",
@@ -14513,7 +14513,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 469,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
+    "question": "¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
     "options": [
       {
         "id": "a",
@@ -14544,7 +14544,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 470,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
+    "question": "¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
     "options": [
       {
         "id": "a",
@@ -14575,7 +14575,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 471,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
+    "question": "Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
     "options": [
       {
         "id": "a",
@@ -14606,7 +14606,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 472,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
+    "question": "¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
     "options": [
       {
         "id": "a",
@@ -14637,7 +14637,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 473,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
+    "question": "Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
     "options": [
       {
         "id": "a",
@@ -14668,7 +14668,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 474,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
+    "question": "¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
     "options": [
       {
         "id": "a",
@@ -14699,7 +14699,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 475,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
+    "question": "¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
     "options": [
       {
         "id": "a",
@@ -14730,7 +14730,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 476,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
+    "question": "¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
     "options": [
       {
         "id": "a",
@@ -14761,7 +14761,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 477,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
+    "question": "Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
     "options": [
       {
         "id": "a",
@@ -14792,7 +14792,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 478,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
+    "question": "¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
     "options": [
       {
         "id": "a",
@@ -14823,7 +14823,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 479,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
+    "question": "La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
     "options": [
       {
         "id": "a",
@@ -14854,7 +14854,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 480,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 3] ¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
+    "question": "¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
     "options": [
       {
         "id": "a",
@@ -14885,7 +14885,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 481,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
+    "question": "Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
     "options": [
       {
         "id": "a",
@@ -14916,7 +14916,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 482,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
+    "question": "Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
     "options": [
       {
         "id": "a",
@@ -14947,7 +14947,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 483,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
+    "question": "Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
     "options": [
       {
         "id": "a",
@@ -14978,7 +14978,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 484,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
+    "question": "Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
     "options": [
       {
         "id": "a",
@@ -15009,7 +15009,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 485,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
     "options": [
       {
         "id": "a",
@@ -15040,7 +15040,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 486,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
+    "question": "Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
     "options": [
       {
         "id": "a",
@@ -15071,7 +15071,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 487,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
+    "question": "Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
     "options": [
       {
         "id": "a",
@@ -15102,7 +15102,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 488,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
+    "question": "Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -15133,7 +15133,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 489,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
+    "question": "Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
     "options": [
       {
         "id": "a",
@@ -15164,7 +15164,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 490,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
+    "question": "Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
     "options": [
       {
         "id": "a",
@@ -15195,7 +15195,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 491,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
+    "question": "Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
     "options": [
       {
         "id": "a",
@@ -15226,7 +15226,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 492,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
+    "question": "Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
     "options": [
       {
         "id": "a",
@@ -15257,7 +15257,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 493,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
+    "question": "Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
     "options": [
       {
         "id": "a",
@@ -15288,7 +15288,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 494,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
+    "question": "Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
     "options": [
       {
         "id": "a",
@@ -15319,7 +15319,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 495,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
+    "question": "Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
     "options": [
       {
         "id": "a",
@@ -15350,7 +15350,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 496,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
+    "question": "Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
     "options": [
       {
         "id": "a",
@@ -15381,7 +15381,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 497,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
+    "question": "Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
     "options": [
       {
         "id": "a",
@@ -15412,7 +15412,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 498,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
+    "question": "Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
     "options": [
       {
         "id": "a",
@@ -15443,7 +15443,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 499,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] ¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
+    "question": "¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
     "options": [
       {
         "id": "a",
@@ -15474,7 +15474,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 500,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 3] En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
+    "question": "En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
     "options": [
       {
         "id": "a",
@@ -15505,7 +15505,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 501,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
+    "question": "Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
     "options": [
       {
         "id": "a",
@@ -15536,7 +15536,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 502,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
+    "question": "Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
     "options": [
       {
         "id": "a",
@@ -15567,7 +15567,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 503,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
+    "question": "En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
     "options": [
       {
         "id": "a",
@@ -15598,7 +15598,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 504,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] ¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
+    "question": "¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
     "options": [
       {
         "id": "a",
@@ -15629,7 +15629,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 505,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
+    "question": "Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
     "options": [
       {
         "id": "a",
@@ -15660,7 +15660,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 506,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -15691,7 +15691,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 507,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
+    "question": "Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
     "options": [
       {
         "id": "a",
@@ -15722,7 +15722,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 508,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -15753,7 +15753,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 509,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] ¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
+    "question": "¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
     "options": [
       {
         "id": "a",
@@ -15784,7 +15784,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 510,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
+    "question": "En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
     "options": [
       {
         "id": "a",
@@ -15815,7 +15815,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 511,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
+    "question": "Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
     "options": [
       {
         "id": "a",
@@ -15846,7 +15846,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 512,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] ¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
+    "question": "¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
     "options": [
       {
         "id": "a",
@@ -15877,7 +15877,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 513,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
+    "question": "Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
     "options": [
       {
         "id": "a",
@@ -15908,7 +15908,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 514,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] ¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
+    "question": "¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
     "options": [
       {
         "id": "a",
@@ -15939,7 +15939,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 515,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
+    "question": "Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
     "options": [
       {
         "id": "a",
@@ -15970,7 +15970,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 516,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
+    "question": "Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
     "options": [
       {
         "id": "a",
@@ -16001,7 +16001,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 517,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
+    "question": "Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
     "options": [
       {
         "id": "a",
@@ -16032,7 +16032,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 518,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
+    "question": "Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
     "options": [
       {
         "id": "a",
@@ -16063,7 +16063,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 519,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] ¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
+    "question": "¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
     "options": [
       {
         "id": "a",
@@ -16094,7 +16094,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 520,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 3] [Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
+    "question": "[Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
     "options": [
       {
         "id": "a",
@@ -16125,7 +16125,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 521,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
+    "question": "En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
     "options": [
       {
         "id": "a",
@@ -16156,7 +16156,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 522,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
+    "question": "En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
     "options": [
       {
         "id": "a",
@@ -16187,7 +16187,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 523,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
+    "question": "Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
     "options": [
       {
         "id": "a",
@@ -16218,7 +16218,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 524,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
+    "question": "¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
     "options": [
       {
         "id": "a",
@@ -16249,7 +16249,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 525,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
+    "question": "Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
     "options": [
       {
         "id": "a",
@@ -16280,7 +16280,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 526,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
+    "question": "El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
     "options": [
       {
         "id": "a",
@@ -16311,7 +16311,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 527,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
+    "question": "El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
     "options": [
       {
         "id": "a",
@@ -16342,7 +16342,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 528,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
+    "question": "¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
     "options": [
       {
         "id": "a",
@@ -16373,7 +16373,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 529,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
+    "question": "¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
     "options": [
       {
         "id": "a",
@@ -16404,7 +16404,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 530,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
+    "question": "Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
     "options": [
       {
         "id": "a",
@@ -16435,7 +16435,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 531,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
+    "question": "¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
     "options": [
       {
         "id": "a",
@@ -16466,7 +16466,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 532,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
+    "question": "¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
     "options": [
       {
         "id": "a",
@@ -16497,7 +16497,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 533,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
+    "question": "¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
     "options": [
       {
         "id": "a",
@@ -16528,7 +16528,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 534,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
+    "question": "¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
     "options": [
       {
         "id": "a",
@@ -16559,7 +16559,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 535,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
+    "question": "¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
     "options": [
       {
         "id": "a",
@@ -16590,7 +16590,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 536,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
+    "question": "En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
     "options": [
       {
         "id": "a",
@@ -16621,7 +16621,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 537,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
+    "question": "¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
     "options": [
       {
         "id": "a",
@@ -16652,7 +16652,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 538,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
+    "question": "En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
     "options": [
       {
         "id": "a",
@@ -16683,7 +16683,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 539,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] ¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
+    "question": "¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
     "options": [
       {
         "id": "a",
@@ -16714,7 +16714,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 540,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 3] En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
+    "question": "En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
     "options": [
       {
         "id": "a",
@@ -16745,7 +16745,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 541,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
+    "question": "Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
     "options": [
       {
         "id": "a",
@@ -16776,7 +16776,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 542,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
+    "question": "En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
     "options": [
       {
         "id": "a",
@@ -16807,7 +16807,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 543,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
+    "question": "¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
     "options": [
       {
         "id": "a",
@@ -16838,7 +16838,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 544,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
+    "question": "¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
     "options": [
       {
         "id": "a",
@@ -16869,7 +16869,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 545,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
+    "question": "Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
     "options": [
       {
         "id": "a",
@@ -16900,7 +16900,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 546,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
+    "question": "En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
     "options": [
       {
         "id": "a",
@@ -16931,7 +16931,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 547,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
+    "question": "¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
     "options": [
       {
         "id": "a",
@@ -16962,7 +16962,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 548,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál es el principal propósito de un texto de divulgación científica popular?",
+    "question": "¿Cuál es el principal propósito de un texto de divulgación científica popular?",
     "options": [
       {
         "id": "a",
@@ -16993,7 +16993,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 549,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
+    "question": "En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
     "options": [
       {
         "id": "a",
@@ -17024,7 +17024,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 550,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
+    "question": "Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
     "options": [
       {
         "id": "a",
@@ -17055,7 +17055,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 551,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
+    "question": "Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
     "options": [
       {
         "id": "a",
@@ -17086,7 +17086,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 552,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
+    "question": "Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
     "options": [
       {
         "id": "a",
@@ -17117,7 +17117,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 553,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
+    "question": "Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
     "options": [
       {
         "id": "a",
@@ -17148,7 +17148,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 554,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
+    "question": "Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
     "options": [
       {
         "id": "a",
@@ -17179,7 +17179,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 555,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
+    "question": "¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
     "options": [
       {
         "id": "a",
@@ -17210,7 +17210,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 556,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
+    "question": "¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
     "options": [
       {
         "id": "a",
@@ -17241,7 +17241,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 557,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
+    "question": "¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
     "options": [
       {
         "id": "a",
@@ -17272,7 +17272,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 558,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
+    "question": "Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
     "options": [
       {
         "id": "a",
@@ -17303,7 +17303,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 559,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
+    "question": "¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
     "options": [
       {
         "id": "a",
@@ -17334,7 +17334,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 560,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
+    "question": "¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
     "options": [
       {
         "id": "a",
@@ -17365,7 +17365,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 561,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
+    "question": "Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
     "options": [
       {
         "id": "a",
@@ -17396,7 +17396,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 562,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
+    "question": "En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
     "options": [
       {
         "id": "a",
@@ -17427,7 +17427,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 563,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
+    "question": "Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
     "options": [
       {
         "id": "a",
@@ -17458,7 +17458,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 564,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
+    "question": "Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
     "options": [
       {
         "id": "a",
@@ -17489,7 +17489,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 565,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
+    "question": "Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
     "options": [
       {
         "id": "a",
@@ -17520,7 +17520,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 566,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
+    "question": "Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
     "options": [
       {
         "id": "a",
@@ -17551,7 +17551,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 567,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
+    "question": "Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
     "options": [
       {
         "id": "a",
@@ -17582,7 +17582,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 568,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
+    "question": "Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
     "options": [
       {
         "id": "a",
@@ -17613,7 +17613,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 569,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] ¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
+    "question": "¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
     "options": [
       {
         "id": "a",
@@ -17644,7 +17644,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 570,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
+    "question": "Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
     "options": [
       {
         "id": "a",
@@ -17675,7 +17675,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 571,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
+    "question": "Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
     "options": [
       {
         "id": "a",
@@ -17706,7 +17706,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 572,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] ¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
+    "question": "¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
     "options": [
       {
         "id": "a",
@@ -17737,7 +17737,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 573,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
+    "question": "Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
     "options": [
       {
         "id": "a",
@@ -17768,7 +17768,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 574,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
+    "question": "Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
     "options": [
       {
         "id": "a",
@@ -17799,7 +17799,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 575,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
+    "question": "Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
     "options": [
       {
         "id": "a",
@@ -17830,7 +17830,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 576,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
+    "question": "En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
     "options": [
       {
         "id": "a",
@@ -17861,7 +17861,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 577,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
+    "question": "Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
     "options": [
       {
         "id": "a",
@@ -17892,7 +17892,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 578,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
+    "question": "Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
     "options": [
       {
         "id": "a",
@@ -17923,7 +17923,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 579,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
+    "question": "En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
     "options": [
       {
         "id": "a",
@@ -17954,7 +17954,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 580,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
+    "question": "Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
     "options": [
       {
         "id": "a",
@@ -17985,7 +17985,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 581,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
+    "question": "¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
     "options": [
       {
         "id": "a",
@@ -18016,7 +18016,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 582,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
+    "question": "Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
     "options": [
       {
         "id": "a",
@@ -18047,7 +18047,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 583,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
+    "question": "En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
     "options": [
       {
         "id": "a",
@@ -18078,7 +18078,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 584,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
+    "question": "¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
     "options": [
       {
         "id": "a",
@@ -18109,7 +18109,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 585,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
+    "question": "¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
     "options": [
       {
         "id": "a",
@@ -18140,7 +18140,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 586,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué es la **oración temática** en la estructura de un párrafo?",
+    "question": "¿Qué es la **oración temática** en la estructura de un párrafo?",
     "options": [
       {
         "id": "a",
@@ -18171,7 +18171,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 587,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
+    "question": "¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
     "options": [
       {
         "id": "a",
@@ -18202,7 +18202,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 588,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
+    "question": "Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
     "options": [
       {
         "id": "a",
@@ -18233,7 +18233,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 589,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
+    "question": "¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
     "options": [
       {
         "id": "a",
@@ -18264,7 +18264,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 590,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
+    "question": "¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
     "options": [
       {
         "id": "a",
@@ -18295,7 +18295,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 591,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
+    "question": "Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
     "options": [
       {
         "id": "a",
@@ -18326,7 +18326,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 592,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
+    "question": "¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
     "options": [
       {
         "id": "a",
@@ -18357,7 +18357,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 593,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la opción redactada utilizando el **discurso indirecto**:",
+    "question": "Identifica la opción redactada utilizando el **discurso indirecto**:",
     "options": [
       {
         "id": "a",
@@ -18388,7 +18388,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 594,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
+    "question": "En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
     "options": [
       {
         "id": "a",
@@ -18419,7 +18419,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 595,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
+    "question": "Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
     "options": [
       {
         "id": "a",
@@ -18450,7 +18450,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 596,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
+    "question": "¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
     "options": [
       {
         "id": "a",
@@ -18481,7 +18481,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 597,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
+    "question": "Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
     "options": [
       {
         "id": "a",
@@ -18512,7 +18512,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 598,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
+    "question": "¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
     "options": [
       {
         "id": "a",
@@ -18543,7 +18543,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 599,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
+    "question": "Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
     "options": [
       {
         "id": "a",
@@ -18574,7 +18574,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 600,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 4] ¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
+    "question": "¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
     "options": [
       {
         "id": "a",
@@ -18605,7 +18605,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 601,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
+    "question": "Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
     "options": [
       {
         "id": "a",
@@ -18636,7 +18636,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 602,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
+    "question": "Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
     "options": [
       {
         "id": "a",
@@ -18667,7 +18667,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 603,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
+    "question": "Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
     "options": [
       {
         "id": "a",
@@ -18698,7 +18698,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 604,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
+    "question": "Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
     "options": [
       {
         "id": "a",
@@ -18729,7 +18729,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 605,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
+    "question": "Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
     "options": [
       {
         "id": "a",
@@ -18760,7 +18760,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 606,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
+    "question": "Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
     "options": [
       {
         "id": "a",
@@ -18791,7 +18791,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 607,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
+    "question": "Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
     "options": [
       {
         "id": "a",
@@ -18822,7 +18822,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 608,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
+    "question": "El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
     "options": [
       {
         "id": "a",
@@ -18853,7 +18853,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 609,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
+    "question": "Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
     "options": [
       {
         "id": "a",
@@ -18884,7 +18884,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 610,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
+    "question": "Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
     "options": [
       {
         "id": "a",
@@ -18915,7 +18915,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 611,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
     "options": [
       {
         "id": "a",
@@ -18946,7 +18946,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 612,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
+    "question": "Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
     "options": [
       {
         "id": "a",
@@ -18977,7 +18977,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 613,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
+    "question": "Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -19008,7 +19008,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 614,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] ¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
+    "question": "¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
     "options": [
       {
         "id": "a",
@@ -19039,7 +19039,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 615,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
+    "question": "Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
     "options": [
       {
         "id": "a",
@@ -19070,7 +19070,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 616,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
+    "question": "Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
     "options": [
       {
         "id": "a",
@@ -19101,7 +19101,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 617,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
+    "question": "En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
     "options": [
       {
         "id": "a",
@@ -19132,7 +19132,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 618,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
+    "question": "Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
     "options": [
       {
         "id": "a",
@@ -19163,7 +19163,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 619,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
+    "question": "En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
     "options": [
       {
         "id": "a",
@@ -19194,7 +19194,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 620,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 4] Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
+    "question": "Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
     "options": [
       {
         "id": "a",
@@ -19225,7 +19225,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 621,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
+    "question": "¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
     "options": [
       {
         "id": "a",
@@ -19256,7 +19256,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 622,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
+    "question": "¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
     "options": [
       {
         "id": "a",
@@ -19287,7 +19287,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 623,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
+    "question": "¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
     "options": [
       {
         "id": "a",
@@ -19318,7 +19318,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 624,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
+    "question": "¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
     "options": [
       {
         "id": "a",
@@ -19349,7 +19349,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 625,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
+    "question": "¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
     "options": [
       {
         "id": "a",
@@ -19380,7 +19380,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 626,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
+    "question": "¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
     "options": [
       {
         "id": "a",
@@ -19411,7 +19411,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 627,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
+    "question": "En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
     "options": [
       {
         "id": "a",
@@ -19442,7 +19442,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 628,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
+    "question": "Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
     "options": [
       {
         "id": "a",
@@ -19473,7 +19473,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 629,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
+    "question": "Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
     "options": [
       {
         "id": "a",
@@ -19504,7 +19504,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 630,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
+    "question": "¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
     "options": [
       {
         "id": "a",
@@ -19535,7 +19535,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 631,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
+    "question": "Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
     "options": [
       {
         "id": "a",
@@ -19566,7 +19566,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 632,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
+    "question": "¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
     "options": [
       {
         "id": "a",
@@ -19597,7 +19597,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 633,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
+    "question": "Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
     "options": [
       {
         "id": "a",
@@ -19628,7 +19628,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 634,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -19659,7 +19659,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 635,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
+    "question": "¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
     "options": [
       {
         "id": "a",
@@ -19690,7 +19690,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 636,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
+    "question": "¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
     "options": [
       {
         "id": "a",
@@ -19721,7 +19721,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 637,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
+    "question": "¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
     "options": [
       {
         "id": "a",
@@ -19752,7 +19752,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 638,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
+    "question": "En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
     "options": [
       {
         "id": "a",
@@ -19783,7 +19783,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 639,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] ¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
+    "question": "¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
     "options": [
       {
         "id": "a",
@@ -19814,7 +19814,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 640,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 4] Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
+    "question": "Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
     "options": [
       {
         "id": "a",
@@ -19845,7 +19845,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 641,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
+    "question": "Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
     "options": [
       {
         "id": "a",
@@ -19876,7 +19876,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 642,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
+    "question": "¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
     "options": [
       {
         "id": "a",
@@ -19907,7 +19907,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 643,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
+    "question": "¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
     "options": [
       {
         "id": "a",
@@ -19938,7 +19938,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 644,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
+    "question": "¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
     "options": [
       {
         "id": "a",
@@ -19969,7 +19969,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 645,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
+    "question": "¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
     "options": [
       {
         "id": "a",
@@ -20000,7 +20000,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 646,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
+    "question": "¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
     "options": [
       {
         "id": "a",
@@ -20031,7 +20031,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 647,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
+    "question": "¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
     "options": [
       {
         "id": "a",
@@ -20062,7 +20062,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 648,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
+    "question": "¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
     "options": [
       {
         "id": "a",
@@ -20093,7 +20093,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 649,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
+    "question": "¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
     "options": [
       {
         "id": "a",
@@ -20124,7 +20124,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 650,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
+    "question": "¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
     "options": [
       {
         "id": "a",
@@ -20155,7 +20155,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 651,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
+    "question": "Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
     "options": [
       {
         "id": "a",
@@ -20186,7 +20186,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 652,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
+    "question": "¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
     "options": [
       {
         "id": "a",
@@ -20217,7 +20217,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 653,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
+    "question": "Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
     "options": [
       {
         "id": "a",
@@ -20248,7 +20248,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 654,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
+    "question": "¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
     "options": [
       {
         "id": "a",
@@ -20279,7 +20279,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 655,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
+    "question": "¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
     "options": [
       {
         "id": "a",
@@ -20310,7 +20310,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 656,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
+    "question": "¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
     "options": [
       {
         "id": "a",
@@ -20341,7 +20341,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 657,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
+    "question": "Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
     "options": [
       {
         "id": "a",
@@ -20372,7 +20372,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 658,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
+    "question": "¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
     "options": [
       {
         "id": "a",
@@ -20403,7 +20403,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 659,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
+    "question": "La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
     "options": [
       {
         "id": "a",
@@ -20434,7 +20434,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 660,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 4] ¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
+    "question": "¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
     "options": [
       {
         "id": "a",
@@ -20465,7 +20465,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 661,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
+    "question": "Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
     "options": [
       {
         "id": "a",
@@ -20496,7 +20496,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 662,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
+    "question": "Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
     "options": [
       {
         "id": "a",
@@ -20527,7 +20527,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 663,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
+    "question": "Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
     "options": [
       {
         "id": "a",
@@ -20558,7 +20558,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 664,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
+    "question": "Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
     "options": [
       {
         "id": "a",
@@ -20589,7 +20589,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 665,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
     "options": [
       {
         "id": "a",
@@ -20620,7 +20620,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 666,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
+    "question": "Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
     "options": [
       {
         "id": "a",
@@ -20651,7 +20651,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 667,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
+    "question": "Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
     "options": [
       {
         "id": "a",
@@ -20682,7 +20682,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 668,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
+    "question": "Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -20713,7 +20713,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 669,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
+    "question": "Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
     "options": [
       {
         "id": "a",
@@ -20744,7 +20744,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 670,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
+    "question": "Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
     "options": [
       {
         "id": "a",
@@ -20775,7 +20775,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 671,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
+    "question": "Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
     "options": [
       {
         "id": "a",
@@ -20806,7 +20806,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 672,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
+    "question": "Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
     "options": [
       {
         "id": "a",
@@ -20837,7 +20837,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 673,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
+    "question": "Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
     "options": [
       {
         "id": "a",
@@ -20868,7 +20868,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 674,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
+    "question": "Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
     "options": [
       {
         "id": "a",
@@ -20899,7 +20899,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 675,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
+    "question": "Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
     "options": [
       {
         "id": "a",
@@ -20930,7 +20930,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 676,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
+    "question": "Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
     "options": [
       {
         "id": "a",
@@ -20961,7 +20961,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 677,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
+    "question": "Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
     "options": [
       {
         "id": "a",
@@ -20992,7 +20992,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 678,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
+    "question": "Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
     "options": [
       {
         "id": "a",
@@ -21023,7 +21023,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 679,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] ¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
+    "question": "¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
     "options": [
       {
         "id": "a",
@@ -21054,7 +21054,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 680,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 4] En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
+    "question": "En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
     "options": [
       {
         "id": "a",
@@ -21085,7 +21085,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 681,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
+    "question": "Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
     "options": [
       {
         "id": "a",
@@ -21116,7 +21116,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 682,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
+    "question": "Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
     "options": [
       {
         "id": "a",
@@ -21147,7 +21147,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 683,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
+    "question": "En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
     "options": [
       {
         "id": "a",
@@ -21178,7 +21178,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 684,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] ¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
+    "question": "¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
     "options": [
       {
         "id": "a",
@@ -21209,7 +21209,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 685,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
+    "question": "Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
     "options": [
       {
         "id": "a",
@@ -21240,7 +21240,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 686,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -21271,7 +21271,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 687,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
+    "question": "Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
     "options": [
       {
         "id": "a",
@@ -21302,7 +21302,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 688,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -21333,7 +21333,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 689,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] ¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
+    "question": "¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
     "options": [
       {
         "id": "a",
@@ -21364,7 +21364,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 690,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
+    "question": "En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
     "options": [
       {
         "id": "a",
@@ -21395,7 +21395,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 691,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
+    "question": "Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
     "options": [
       {
         "id": "a",
@@ -21426,7 +21426,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 692,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] ¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
+    "question": "¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
     "options": [
       {
         "id": "a",
@@ -21457,7 +21457,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 693,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
+    "question": "Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
     "options": [
       {
         "id": "a",
@@ -21488,7 +21488,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 694,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] ¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
+    "question": "¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
     "options": [
       {
         "id": "a",
@@ -21519,7 +21519,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 695,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
+    "question": "Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
     "options": [
       {
         "id": "a",
@@ -21550,7 +21550,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 696,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
+    "question": "Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
     "options": [
       {
         "id": "a",
@@ -21581,7 +21581,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 697,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
+    "question": "Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
     "options": [
       {
         "id": "a",
@@ -21612,7 +21612,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 698,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
+    "question": "Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
     "options": [
       {
         "id": "a",
@@ -21643,7 +21643,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 699,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] ¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
+    "question": "¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
     "options": [
       {
         "id": "a",
@@ -21674,7 +21674,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 700,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 4] [Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
+    "question": "[Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
     "options": [
       {
         "id": "a",
@@ -21705,7 +21705,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 701,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
+    "question": "En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
     "options": [
       {
         "id": "a",
@@ -21736,7 +21736,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 702,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
+    "question": "En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
     "options": [
       {
         "id": "a",
@@ -21767,7 +21767,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 703,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
+    "question": "Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
     "options": [
       {
         "id": "a",
@@ -21798,7 +21798,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 704,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
+    "question": "¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
     "options": [
       {
         "id": "a",
@@ -21829,7 +21829,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 705,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
+    "question": "Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
     "options": [
       {
         "id": "a",
@@ -21860,7 +21860,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 706,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
+    "question": "El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
     "options": [
       {
         "id": "a",
@@ -21891,7 +21891,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 707,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
+    "question": "El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
     "options": [
       {
         "id": "a",
@@ -21922,7 +21922,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 708,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
+    "question": "¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
     "options": [
       {
         "id": "a",
@@ -21953,7 +21953,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 709,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
+    "question": "¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
     "options": [
       {
         "id": "a",
@@ -21984,7 +21984,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 710,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
+    "question": "Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
     "options": [
       {
         "id": "a",
@@ -22015,7 +22015,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 711,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
+    "question": "¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
     "options": [
       {
         "id": "a",
@@ -22046,7 +22046,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 712,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
+    "question": "¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
     "options": [
       {
         "id": "a",
@@ -22077,7 +22077,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 713,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
+    "question": "¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
     "options": [
       {
         "id": "a",
@@ -22108,7 +22108,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 714,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
+    "question": "¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
     "options": [
       {
         "id": "a",
@@ -22139,7 +22139,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 715,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
+    "question": "¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
     "options": [
       {
         "id": "a",
@@ -22170,7 +22170,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 716,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
+    "question": "En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
     "options": [
       {
         "id": "a",
@@ -22201,7 +22201,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 717,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
+    "question": "¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
     "options": [
       {
         "id": "a",
@@ -22232,7 +22232,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 718,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
+    "question": "En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
     "options": [
       {
         "id": "a",
@@ -22263,7 +22263,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 719,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] ¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
+    "question": "¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
     "options": [
       {
         "id": "a",
@@ -22294,7 +22294,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 720,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 4] En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
+    "question": "En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
     "options": [
       {
         "id": "a",
@@ -22325,7 +22325,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 721,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
+    "question": "Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
     "options": [
       {
         "id": "a",
@@ -22356,7 +22356,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 722,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
+    "question": "En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
     "options": [
       {
         "id": "a",
@@ -22387,7 +22387,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 723,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
+    "question": "¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
     "options": [
       {
         "id": "a",
@@ -22418,7 +22418,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 724,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
+    "question": "¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
     "options": [
       {
         "id": "a",
@@ -22449,7 +22449,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 725,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
+    "question": "Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
     "options": [
       {
         "id": "a",
@@ -22480,7 +22480,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 726,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
+    "question": "En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
     "options": [
       {
         "id": "a",
@@ -22511,7 +22511,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 727,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
+    "question": "¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
     "options": [
       {
         "id": "a",
@@ -22542,7 +22542,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 728,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál es el principal propósito de un texto de divulgación científica popular?",
+    "question": "¿Cuál es el principal propósito de un texto de divulgación científica popular?",
     "options": [
       {
         "id": "a",
@@ -22573,7 +22573,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 729,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
+    "question": "En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
     "options": [
       {
         "id": "a",
@@ -22604,7 +22604,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 730,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
+    "question": "Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
     "options": [
       {
         "id": "a",
@@ -22635,7 +22635,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 731,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
+    "question": "Identifica la oración redactada ortográficamente de forma **correcta** con el uso de **b** y **v**:",
     "options": [
       {
         "id": "a",
@@ -22666,7 +22666,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 732,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
+    "question": "Elige la opción que completa correctamente las grafías de la siguiente frase: 'La actri_ de_idió reali_ar una e_cena fantá_tica'.",
     "options": [
       {
         "id": "a",
@@ -22697,7 +22697,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 733,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
+    "question": "Completa la frase con las letras correctas: 'El extran_ero diri_ió al _efe de gara_e un _esto de agradecimiento'.",
     "options": [
       {
         "id": "a",
@@ -22728,7 +22728,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 734,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
+    "question": "Selecciona el par de palabras **homófonas** que completan correctamente: 'Vamos a ______ el ganado antes de que empiece a ______ la tormenta'.",
     "options": [
       {
         "id": "a",
@@ -22759,7 +22759,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 735,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
+    "question": "¿Cuál de las siguientes palabras es **aguda** y debe llevar tilde obligatoriamente?",
     "options": [
       {
         "id": "a",
@@ -22790,7 +22790,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 736,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
+    "question": "¿Cuál de las siguientes palabras es **grave o llana** y lleva tilde por su terminación?",
     "options": [
       {
         "id": "a",
@@ -22821,7 +22821,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 737,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
+    "question": "¿Por qué la palabra **brújula** siempre lleva acento ortográfico?",
     "options": [
       {
         "id": "a",
@@ -22852,7 +22852,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 738,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
+    "question": "Identifica el **sujeto** de la siguiente oración simple: 'Durante el frío invierno de diciembre, los leñadores cortaban pinos'.",
     "options": [
       {
         "id": "a",
@@ -22883,7 +22883,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 739,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
+    "question": "¿En qué parte de la estructura de un cuento se presenta el conflicto principal o punto álgido de la historia?",
     "options": [
       {
         "id": "a",
@@ -22914,7 +22914,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 740,
     "section": "Primaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
+    "question": "¿Qué figura retórica se está utilizando en la frase: 'Sus cabellos eran hilos de oro puro que brillaban al sol'?",
     "options": [
       {
         "id": "a",
@@ -22945,7 +22945,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 741,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
+    "question": "Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
     "options": [
       {
         "id": "a",
@@ -22976,7 +22976,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 742,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
+    "question": "En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
     "options": [
       {
         "id": "a",
@@ -23007,7 +23007,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 743,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
+    "question": "Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
     "options": [
       {
         "id": "a",
@@ -23038,7 +23038,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 744,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
+    "question": "Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
     "options": [
       {
         "id": "a",
@@ -23069,7 +23069,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 745,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
+    "question": "Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
     "options": [
       {
         "id": "a",
@@ -23100,7 +23100,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 746,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
+    "question": "Un atleta corre $3.45\\text{ kilómetros}$ por la mañana y $2.8\\text{ kilómetros}$ por la tarde. ¿Cuántos kilómetros corre en total durante el día?",
     "options": [
       {
         "id": "a",
@@ -23131,7 +23131,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 747,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
+    "question": "Si multiplicas el número decimal $0.075$ por $1000$, ¿qué resultado obtienes?",
     "options": [
       {
         "id": "a",
@@ -23162,7 +23162,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 748,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
+    "question": "Un terreno de forma rectangular mide $15\\text{ metros}$ de largo y $8\\text{ metros}$ de ancho. ¿Cuál es su **perímetro**?",
     "options": [
       {
         "id": "a",
@@ -23193,7 +23193,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 749,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] ¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
+    "question": "¿Cuál es el **área** de un triángulo cuya base mide $12\\text{ cm}$ y su altura es de $5\\text{ cm}$?",
     "options": [
       {
         "id": "a",
@@ -23224,7 +23224,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 750,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
+    "question": "Calcula el **área** aproximada de un círculo que tiene un radio de $10\\text{ cm}$ (considera $\\pi \\approx 3.14$):",
     "options": [
       {
         "id": "a",
@@ -23255,7 +23255,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 751,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
+    "question": "Una caja tiene forma de prisma rectangular con $10\\text{ cm}$ de largo, $5\\text{ cm}$ de ancho y $8\\text{ cm}$ de altura. ¿Cuál es su **volumen**?",
     "options": [
       {
         "id": "a",
@@ -23286,7 +23286,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 752,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] ¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
+    "question": "¿Cuántas caras, vértices y aristas tiene un cubo o hexaedro regular?",
     "options": [
       {
         "id": "a",
@@ -23317,7 +23317,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 753,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
+    "question": "Si un trozo de tela mide $4.5\\text{ metros}$ de longitud, ¿a cuántos **centímetros** equivale?",
     "options": [
       {
         "id": "a",
@@ -23348,7 +23348,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 754,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
+    "question": "Una bolsa de frijoles pesa $2.25\\text{ kilogramos}$. ¿Cuál es su peso equivalente expresado en **gramos**?",
     "options": [
       {
         "id": "a",
@@ -23379,7 +23379,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 755,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
+    "question": "Si $3\\text{ lápices}$ cuestan $15\\text{ pesos}$, ¿cuánto se pagará por una caja que contiene $12\\text{ lápices}$ del mismo tipo?",
     "options": [
       {
         "id": "a",
@@ -23410,7 +23410,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 756,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
+    "question": "En un mapa escolar la escala indica que $1\\text{ cm}$ en el papel representa $50\\text{ km}$ reales en el terreno. Si dos ciudades distan $4.5\\text{ cm}$ en el mapa, ¿cuál es su distancia real?",
     "options": [
       {
         "id": "a",
@@ -23441,7 +23441,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 757,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
+    "question": "Si lanzas una moneda justa al aire, ¿cuál es la probabilidad matemática de que caiga del lado de 'Águila'?",
     "options": [
       {
         "id": "a",
@@ -23472,7 +23472,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 758,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
+    "question": "Una urna contiene $4$ canicas rojas y $6$ canicas azules. Si se extrae una canica al azar, ¿cuál es la probabilidad de que sea roja?",
     "options": [
       {
         "id": "a",
@@ -23503,7 +23503,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 759,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
+    "question": "En una encuesta sobre la fruta favorita de 20 niños, 8 eligieron manzana, 6 plátano, 4 naranja y 2 fresa. ¿Cuál es el porcentaje que representa a los niños que prefieren la manzana?",
     "options": [
       {
         "id": "a",
@@ -23534,7 +23534,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 760,
     "section": "Primaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
+    "question": "Si observas una gráfica de barras donde la barra de 'Alumnos aprobados' llega al nivel 15 y la de 'Reprobados' llega al nivel 5, ¿cuál es la razón de aprobados respecto al total del grupo?",
     "options": [
       {
         "id": "a",
@@ -23565,7 +23565,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 761,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
+    "question": "¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
     "options": [
       {
         "id": "a",
@@ -23596,7 +23596,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 762,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
+    "question": "Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
     "options": [
       {
         "id": "a",
@@ -23627,7 +23627,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 763,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
+    "question": "En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
     "options": [
       {
         "id": "a",
@@ -23658,7 +23658,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 764,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
+    "question": "¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
     "options": [
       {
         "id": "a",
@@ -23689,7 +23689,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 765,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
+    "question": "¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
     "options": [
       {
         "id": "a",
@@ -23720,7 +23720,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 766,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué es la **oración temática** en la estructura de un párrafo?",
+    "question": "¿Qué es la **oración temática** en la estructura de un párrafo?",
     "options": [
       {
         "id": "a",
@@ -23751,7 +23751,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 767,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
+    "question": "¿Cuál de los siguientes recursos gráficos es idóneo para organizar la información de forma jerárquica mediante conceptos conectados por palabras de enlace?",
     "options": [
       {
         "id": "a",
@@ -23782,7 +23782,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 768,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
+    "question": "Identifica la opción redactada bajo las normas estrictas de la **comunicación formal** escrita:",
     "options": [
       {
         "id": "a",
@@ -23813,7 +23813,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 769,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
+    "question": "¿Qué nexos son utilizados específicamente para **jerarquizar** la información en un texto expositivo?",
     "options": [
       {
         "id": "a",
@@ -23844,7 +23844,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 770,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
+    "question": "¿En cuál de las siguientes opciones se usa de manera **correcta** la coma para delimitar una **coordinada adversativa**?",
     "options": [
       {
         "id": "a",
@@ -23875,7 +23875,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 771,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
+    "question": "Identifica el uso correcto de la coma al estructurar una oración con una **subordinada condicional antepuesta** (prótasis):",
     "options": [
       {
         "id": "a",
@@ -23906,7 +23906,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 772,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
+    "question": "¿Cuál es el principal propósito y característica del **reporte de una entrevista**?",
     "options": [
       {
         "id": "a",
@@ -23937,7 +23937,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 773,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la opción redactada utilizando el **discurso indirecto**:",
+    "question": "Identifica la opción redactada utilizando el **discurso indirecto**:",
     "options": [
       {
         "id": "a",
@@ -23968,7 +23968,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 774,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
+    "question": "En la narración: '_______ amaneció, los soldados marcharon; _______, acamparon cerca del río'. ¿Qué nexos temporales completan lógicamente?",
     "options": [
       {
         "id": "a",
@@ -23999,7 +23999,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 775,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
+    "question": "Elige la opción que presenta un uso **correcto** del **acento diacrítico** para diferenciar significados:",
     "options": [
       {
         "id": "a",
@@ -24030,7 +24030,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 776,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
+    "question": "¿Qué recurso lingüístico es fundamental al redactar un **informe técnico descriptivo** en ingeniería o ciencias?",
     "options": [
       {
         "id": "a",
@@ -24061,7 +24061,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 777,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
+    "question": "Identifica la opción redactada utilizando la **forma impersonal** y la **voz pasiva**, ideal para reportes científicos:",
     "options": [
       {
         "id": "a",
@@ -24092,7 +24092,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 778,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
+    "question": "¿Qué recurso gramatical se utiliza para evitar la repetición innecesaria de palabras en un texto y asegurar su cohesión?",
     "options": [
       {
         "id": "a",
@@ -24123,7 +24123,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 779,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
+    "question": "Clasifica los tres grandes géneros literarios clásicos de la literatura occidental:",
     "options": [
       {
         "id": "a",
@@ -24154,7 +24154,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 780,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "[Variación 5] ¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
+    "question": "¿Cuál de los siguientes elementos es indispensable en una **carta de reclamación administrativa** dirigida a una empresa de servicios?",
     "options": [
       {
         "id": "a",
@@ -24185,7 +24185,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 781,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
+    "question": "Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
     "options": [
       {
         "id": "a",
@@ -24216,7 +24216,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 782,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
+    "question": "Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
     "options": [
       {
         "id": "a",
@@ -24247,7 +24247,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 783,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
+    "question": "Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
     "options": [
       {
         "id": "a",
@@ -24278,7 +24278,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 784,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
+    "question": "Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
     "options": [
       {
         "id": "a",
@@ -24309,7 +24309,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 785,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
+    "question": "Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
     "options": [
       {
         "id": "a",
@@ -24340,7 +24340,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 786,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
+    "question": "Multiplica el monomio $3x^2$ por el binomio $(2x - 5)$:",
     "options": [
       {
         "id": "a",
@@ -24371,7 +24371,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 787,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
+    "question": "Resuelve la siguiente ecuación lineal de primer grado para encontrar el valor de $x$:\n$$3(x - 2) + 5 = 2x + 9$$",
     "options": [
       {
         "id": "a",
@@ -24402,7 +24402,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 788,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
+    "question": "El triple de un número aumentado en $8$ es igual al doble del mismo número sumado con $15$. ¿Cuál es el número?",
     "options": [
       {
         "id": "a",
@@ -24433,7 +24433,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 789,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
+    "question": "Encuentra las raíces de la siguiente ecuación cuadrática por factorización:\n$$x^2 - 5x + 6 = 0$$",
     "options": [
       {
         "id": "a",
@@ -24464,7 +24464,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 790,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
+    "question": "Usa la fórmula general cuadrática para hallar las soluciones de la ecuación:\n$$x^2 - 4x + 3 = 0$$",
     "options": [
       {
         "id": "a",
@@ -24495,7 +24495,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 791,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales $2 \\times 2$:\n$$x + y = 10$$\n$$2x - y = 8$$",
     "options": [
       {
         "id": "a",
@@ -24526,7 +24526,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 792,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
+    "question": "Para el sistema de ecuaciones:\n$$2x + 3y = 12$$\n$$x - y = 1$$",
     "options": [
       {
         "id": "a",
@@ -24557,7 +24557,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 793,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
+    "question": "Determina la **pendiente** ($m$) de la recta que pasa por los puntos $A(2, 3)$ y $B(5, 9)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -24588,7 +24588,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 794,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] ¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
+    "question": "¿Cuál es la representación gráfica de la función lineal $y = -2x + 4$?",
     "options": [
       {
         "id": "a",
@@ -24619,7 +24619,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 795,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
+    "question": "Calcula las coordenadas del **vértice** de la parábola dada por la función cuadrática:\n$$y = x^2 - 4x + 5$$",
     "options": [
       {
         "id": "a",
@@ -24650,7 +24650,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 796,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
+    "question": "Dos rectas paralelas son cortadas por una secante. Si uno de los ángulos alternos internos mide $75^\\circ$, ¿cuánto mide el otro ángulo alterno interno?",
     "options": [
       {
         "id": "a",
@@ -24681,7 +24681,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 797,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
+    "question": "En un triángulo rectángulo, los catetos miden $6\\text{ cm}$ y $8\\text{ cm}$. ¿Cuál es la longitud de la **hipotenusa**?",
     "options": [
       {
         "id": "a",
@@ -24712,7 +24712,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 798,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
+    "question": "Un poste vertical de $3\\text{ metros}$ de altura proyecta una sombra de $1.5\\text{ metros}$. A la misma hora, un árbol proyecta una sombra de $6\\text{ metros}$. ¿Qué altura tiene el árbol?",
     "options": [
       {
         "id": "a",
@@ -24743,7 +24743,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 799,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
+    "question": "En un triángulo rectángulo, el cateto opuesto al ángulo $\\theta$ mide $3\\text{ cm}$ y la hipotenusa mide $5\\text{ cm}$. ¿Cuál es el valor del $\\cos(\\theta)$?",
     "options": [
       {
         "id": "a",
@@ -24774,7 +24774,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 800,
     "section": "Secundaria",
     "topic": "Matemáticas",
-    "question": "[Variación 5] Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
+    "question": "Si $4\\text{ pintores}$ tardan $12\\text{ horas}$ en pintar una casa, ¿cuántas horas tardarán $6\\text{ pintores}$ trabajando al mismo ritmo?",
     "options": [
       {
         "id": "a",
@@ -24805,7 +24805,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 801,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
+    "question": "¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
     "options": [
       {
         "id": "a",
@@ -24836,7 +24836,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 802,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
+    "question": "¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
     "options": [
       {
         "id": "a",
@@ -24867,7 +24867,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 803,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
+    "question": "¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
     "options": [
       {
         "id": "a",
@@ -24898,7 +24898,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 804,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
+    "question": "¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
     "options": [
       {
         "id": "a",
@@ -24929,7 +24929,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 805,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
+    "question": "¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
     "options": [
       {
         "id": "a",
@@ -24960,7 +24960,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 806,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
+    "question": "¿Cuál es la diferencia celular y genética entre la división celular por **mitosis** y por **meiosis**?",
     "options": [
       {
         "id": "a",
@@ -24991,7 +24991,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 807,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
+    "question": "En genética mendeliana, si cruzas dos plantas heterocigotas de flores rojas ($Rr$) donde el rojo es dominante sobre el blanco ($r$), ¿cuál es la proporción fenotípica de la descendencia?",
     "options": [
       {
         "id": "a",
@@ -25022,7 +25022,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 808,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
+    "question": "Un corredor viaja con una velocidad constante de $5\\text{ m/s}$ en una trayectoria recta. ¿Qué distancia recorrerá en un lapso de $2\\text{ minutos}$?",
     "options": [
       {
         "id": "a",
@@ -25053,7 +25053,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 809,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
+    "question": "Un objeto en reposo acelera uniformemente a razón de $2\\text{ m/s}^2$ durante $6\\text{ s}$. ¿Cuál será su velocidad final?",
     "options": [
       {
         "id": "a",
@@ -25084,7 +25084,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 810,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
+    "question": "¿Qué establece de forma fundamental la **Primera Ley de Newton** o Ley de la Inercia?",
     "options": [
       {
         "id": "a",
@@ -25115,7 +25115,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 811,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
+    "question": "Si aplicas una fuerza neta de $15\\text{ N}$ a un carrito de juguete que tiene una masa de $3\\text{ kg}$, ¿cuál será la aceleración resultante del juguete?",
     "options": [
       {
         "id": "a",
@@ -25146,7 +25146,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 812,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
+    "question": "¿Cuál de las siguientes situaciones cotidianas ejemplifica de manera perfecta la **Tercera Ley de Newton** (Acción y Reacción)?",
     "options": [
       {
         "id": "a",
@@ -25177,7 +25177,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 813,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
+    "question": "Calcula la **energía cinética** de una pelota de fútbol de $0.5\\text{ kg}$ que se desplaza a una velocidad de $10\\text{ m/s}$:",
     "options": [
       {
         "id": "a",
@@ -25208,7 +25208,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 814,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un objeto de $2\\text{ kg}$ se eleva a una altura de $10\\text{ metros}$ sobre el nivel del suelo. ¿Cuál es su **energía potencial gravitacional**? (considera $g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -25239,7 +25239,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 815,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
+    "question": "¿Cuál de las siguientes opciones describe una propiedad **intensiva** de la materia (independiente de la cantidad de masa)?",
     "options": [
       {
         "id": "a",
@@ -25270,7 +25270,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 816,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
+    "question": "¿Qué postulado químico enuncia la **Ley de Conservación de la Materia** de Antoine Lavoisier?",
     "options": [
       {
         "id": "a",
@@ -25301,7 +25301,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 817,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
+    "question": "¿Cuál de las siguientes mezclas clasifica como **heterogénea** debido a que posee múltiples fases visibles a simple vista?",
     "options": [
       {
         "id": "a",
@@ -25332,7 +25332,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 818,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
+    "question": "En un átomo neutro de Carbono ($Z=6, A=12$), ¿cuál es el número exacto de protones, electrones y neutrones?",
     "options": [
       {
         "id": "a",
@@ -25363,7 +25363,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 819,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] ¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
+    "question": "¿Qué tipo de enlace químico se forma específicamente por la **transferencia completa de electrones** entre un metal y un no metal?",
     "options": [
       {
         "id": "a",
@@ -25394,7 +25394,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 820,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "[Variación 5] Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
+    "question": "Si medimos el pH de una sustancia y obtenemos un valor de $3.0$, ¿cómo se clasifica químicamente la solución?",
     "options": [
       {
         "id": "a",
@@ -25425,7 +25425,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 821,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
+    "question": "Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
     "options": [
       {
         "id": "a",
@@ -25456,7 +25456,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 822,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
+    "question": "¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
     "options": [
       {
         "id": "a",
@@ -25487,7 +25487,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 823,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
+    "question": "¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
     "options": [
       {
         "id": "a",
@@ -25518,7 +25518,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 824,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
+    "question": "¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
     "options": [
       {
         "id": "a",
@@ -25549,7 +25549,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 825,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
+    "question": "¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
     "options": [
       {
         "id": "a",
@@ -25580,7 +25580,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 826,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
+    "question": "¿Qué conforma de manera primordial el **patrimonio cultural inmaterial** de un pueblo?",
     "options": [
       {
         "id": "a",
@@ -25611,7 +25611,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 827,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
+    "question": "¿Qué consecuencia científica y demográfica trajo consigo el colonialismo europeo en América a partir del siglo XVI?",
     "options": [
       {
         "id": "a",
@@ -25642,7 +25642,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 828,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
+    "question": "¿Qué ideología del siglo XVIII sirvió de sustento intelectual para las Revoluciones Atlánticas (Independencia de EE.UU. y Revolución Francesa)?",
     "options": [
       {
         "id": "a",
@@ -25673,7 +25673,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 829,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
+    "question": "¿Cuál fue la innovación tecnológica medular que detonó la **Revolución Industrial** en la Inglaterra del siglo XVIII?",
     "options": [
       {
         "id": "a",
@@ -25704,7 +25704,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 830,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
+    "question": "¿Qué hecho histórico detonó de forma inmediata el estallido de la **Primera Guerra Mundial** en 1914?",
     "options": [
       {
         "id": "a",
@@ -25735,7 +25735,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 831,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
+    "question": "Identifica las dos coaliciones de naciones que se enfrentaron a muerte durante la **Segunda Guerra Mundial**:",
     "options": [
       {
         "id": "a",
@@ -25766,7 +25766,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 832,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
+    "question": "¿Qué caracterizó geopolíticamente al periodo conocido como la **Guerra Fría** (1945-1991)?",
     "options": [
       {
         "id": "a",
@@ -25797,7 +25797,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 833,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
+    "question": "Identifica la cultura prehispánica de Mesoamérica considerada como la 'Cultura Madre' debido a su antigüedad y aportaciones basales:",
     "options": [
       {
         "id": "a",
@@ -25828,7 +25828,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 834,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
+    "question": "¿Qué avance científico sobresaliente caracterizó a la gran civilización **Maya** del periodo clásico?",
     "options": [
       {
         "id": "a",
@@ -25859,7 +25859,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 835,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
+    "question": "¿Qué sistema político-social y económico dominó la estructura de la **Nueva España** durante la época colonial?",
     "options": [
       {
         "id": "a",
@@ -25890,7 +25890,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 836,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
+    "question": "¿Cuál fue una causa interna clave que motivó el inicio de la guerra de **Independencia de México** en 1810?",
     "options": [
       {
         "id": "a",
@@ -25921,7 +25921,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 837,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
+    "question": "Identifica a los principales caudillos militares de la **Revolución Mexicana** y sus demandas agrarias plasmadas en planes de lucha:",
     "options": [
       {
         "id": "a",
@@ -25952,7 +25952,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 838,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
+    "question": "¿Qué artículo de la Constitución Política Mexicana de 1917 consagra el derecho humano a una **educación laica, gratuita y obligatoria**?",
     "options": [
       {
         "id": "a",
@@ -25983,7 +25983,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 839,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
+    "question": "La soberanía popular reside en el pueblo, el cual delega su ejercicio en los tres poderes de la Unión. ¿Cuáles son estos poderes en México?",
     "options": [
       {
         "id": "a",
@@ -26014,7 +26014,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 840,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "[Variación 5] ¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
+    "question": "¿Qué significa vivir en una **sociedad multicultural e intercultural** democrática?",
     "options": [
       {
         "id": "a",
@@ -26045,7 +26045,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 841,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
+    "question": "Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
     "options": [
       {
         "id": "a",
@@ -26076,7 +26076,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 842,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
+    "question": "Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
     "options": [
       {
         "id": "a",
@@ -26107,7 +26107,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 843,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
+    "question": "Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
     "options": [
       {
         "id": "a",
@@ -26138,7 +26138,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 844,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
+    "question": "Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
     "options": [
       {
         "id": "a",
@@ -26169,7 +26169,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 845,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
+    "question": "Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
     "options": [
       {
         "id": "a",
@@ -26200,7 +26200,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 846,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
+    "question": "Un arquitecto compra $2\\text{ bultos de cal}$ y $3\\text{ de cemento}$ por $340\\text{ pesos}$. Otro día compra $4\\text{ bultos de cal}$ y $1\\text{ de cemento}$ por $280\\text{ pesos}$. Escribe el modelo matemático en forma de sistema de ecuaciones lineales:",
     "options": [
       {
         "id": "a",
@@ -26231,7 +26231,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 847,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
+    "question": "Determina las raíces complejas de la siguiente ecuación de segundo grado:\n$$x^2 - 4x + 5 = 0$$",
     "options": [
       {
         "id": "a",
@@ -26262,7 +26262,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 848,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
+    "question": "Calcula la **distancia** euclidiana exacta entre los puntos $P_1(-1, 3)$ y $P_2(3, 6)$ en el plano cartesiano:",
     "options": [
       {
         "id": "a",
@@ -26293,7 +26293,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 849,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
+    "question": "Determina la pendiente ($m$) y el ángulo de inclinación aproximado ($\\theta$) de la recta dada por la ecuación general:\n$$3x - 3y + 9 = 0$$",
     "options": [
       {
         "id": "a",
@@ -26324,7 +26324,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 850,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
+    "question": "Si la recta $L_1$ tiene ecuación $y = 3x - 5$, ¿cuál debe ser la pendiente de una recta $L_2$ que sea perpendicular a ella?",
     "options": [
       {
         "id": "a",
@@ -26355,7 +26355,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 851,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
+    "question": "Escribe la ecuación punto-pendiente de la recta que pasa por $P(2, -3)$ y cuya pendiente es $m = 4$:",
     "options": [
       {
         "id": "a",
@@ -26386,7 +26386,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 852,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
+    "question": "Identifica el centro ($C$) y el radio ($r$) de la circunferencia dada por la ecuación ordinaria:\n$$(x - 3)^2 + (y + 5)^2 = 16$$",
     "options": [
       {
         "id": "a",
@@ -26417,7 +26417,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 853,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
+    "question": "Determina las coordenadas de los focos y la longitud del eje mayor de la elipse dada por la ecuación:\n$$\\frac{x^2}{25} + \\frac{y^2}{9} = 1$$",
     "options": [
       {
         "id": "a",
@@ -26448,7 +26448,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 854,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
+    "question": "Determina el **dominio** de la siguiente función racional en el campo de los números reales:\n$$f(x) = \\frac{2x + 1}{x^2 - 9}$$",
     "options": [
       {
         "id": "a",
@@ -26479,7 +26479,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 855,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
+    "question": "Encuentra las **asíntotas verticales** y **horizontales** de la siguiente función racional:\n$$f(x) = \\frac{3x - 6}{x + 2}$$",
     "options": [
       {
         "id": "a",
@@ -26510,7 +26510,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 856,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
+    "question": "Simplifica la siguiente expresión logarítmica utilizando las leyes de los logaritmos:\n$$\\log_b(x^3) - \\log_b(y^2)$$",
     "options": [
       {
         "id": "a",
@@ -26541,7 +26541,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 857,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
+    "question": "Resuelve la siguiente ecuación exponencial para obtener el valor numérico exacto de $x$:\n$$e^{2x - 4} = 1$$",
     "options": [
       {
         "id": "a",
@@ -26572,7 +26572,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 858,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
+    "question": "Dada la función periódica $y = 3\\sin(2x - \\pi)$, ¿cuál es su **amplitud** ($A$) y su **periodo** ($T$)?",
     "options": [
       {
         "id": "a",
@@ -26603,7 +26603,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 859,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] ¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
+    "question": "¿Cuál es la **frecuencia** ($f$) de oscilación de la función senoidal dada por $y = 5\\sin(4\\pi t)$?",
     "options": [
       {
         "id": "a",
@@ -26634,7 +26634,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 860,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
-    "question": "[Variación 5] En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
+    "question": "En un triángulo oblicuángulo, se conocen los lados $a = 6$, $b = 8$ y el ángulo comprendido $C = 60^\\circ$. Aplica la **Ley de Cosenos** para calcular el lado opuesto $c$:",
     "options": [
       {
         "id": "a",
@@ -26665,7 +26665,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 861,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
+    "question": "Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
     "options": [
       {
         "id": "a",
@@ -26696,7 +26696,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 862,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
+    "question": "Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
     "options": [
       {
         "id": "a",
@@ -26727,7 +26727,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 863,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
+    "question": "En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
     "options": [
       {
         "id": "a",
@@ -26758,7 +26758,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 864,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] ¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
+    "question": "¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
     "options": [
       {
         "id": "a",
@@ -26789,7 +26789,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 865,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
+    "question": "Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
     "options": [
       {
         "id": "a",
@@ -26820,7 +26820,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 866,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Un bloque de $2\\text{ kg}$ se desliza sobre una rampa desde una altura de $5\\text{ m}$. Al llegar abajo, su velocidad es de $8\\text{ m/s}$. ¿Qué energía mecánica se disipó en forma de calor por fricción? ($g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -26851,7 +26851,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 867,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
+    "question": "Un motor realiza un trabajo mecánico de $12,000\\text{ Joules}$ en un tiempo de $30\\text{ segundos}$. ¿Cuál es su **potencia mecánica** media?",
     "options": [
       {
         "id": "a",
@@ -26882,7 +26882,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 868,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
+    "question": "Calcula la **presión hidrostática** en el fondo de una alberca de $3\\text{ metros}$ de profundidad llena de agua (densidad $\\rho = 1000\\text{ kg/m}^3, g \\approx 9.8\\text{ m/s}^2$):",
     "options": [
       {
         "id": "a",
@@ -26913,7 +26913,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 869,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] ¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
+    "question": "¿Qué magnitud física determina la **fuerza de flotación o empuje** que recibe un cuerpo sumergido en un fluido según el Principio de Arquímedes?",
     "options": [
       {
         "id": "a",
@@ -26944,7 +26944,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 870,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
+    "question": "En una prensa hidráulica, el émbolo pequeño tiene un área de $0.02\\text{ m}^2$ y el grande tiene $0.5\\text{ m}^2$. Si aplicas una fuerza de $100\\text{ N}$ en el pequeño, ¿qué fuerza resulta en el grande?",
     "options": [
       {
         "id": "a",
@@ -26975,7 +26975,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 871,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
+    "question": "Una varilla de acero mide $2.0\\text{ metros}$ de longitud a una temperatura de $10^\\circ\\text{C}$. Si se calienta hasta $110^\\circ\\text{C}$, ¿cuánto aumentará su longitud? (coeficiente de dilatación lineal del acero $\\alpha = 1.2 \\times 10^{-5} \\text{ } ^\\circ\\text{C}^{-1}$):",
     "options": [
       {
         "id": "a",
@@ -27006,7 +27006,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 872,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] ¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
+    "question": "¿Cuánta energía térmica se requiere para elevar la temperatura de $0.5\\text{ kg}$ de agua líquida desde $20^\\circ\\text{C}$ hasta $80^\\circ\\text{C}$? (calor específico del agua $c = 4186\\text{ J/kg}^\\circ\\text{C}$):",
     "options": [
       {
         "id": "a",
@@ -27037,7 +27037,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 873,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
+    "question": "Si mantienes el volumen constante de un gas ideal y duplicas su temperatura absoluta, ¿qué le ocurre a su **presión** de acuerdo a la Ley de Gay-Lussac?",
     "options": [
       {
         "id": "a",
@@ -27068,7 +27068,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 874,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] ¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
+    "question": "¿Qué caracteriza a un proceso termodinámico de tipo **adiabático**?",
     "options": [
       {
         "id": "a",
@@ -27099,7 +27099,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 875,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
+    "question": "Dos cargas eléctricas de $+2\\mu\\text{C}$ y $-3\\mu\\text{C}$ se sitúan a una distancia de $0.3\\text{ metros}$ en el vacío. Calcula la magnitud de la fuerza electrostática entre ellas:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
     "options": [
       {
         "id": "a",
@@ -27130,7 +27130,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 876,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
+    "question": "Calcula la intensidad del campo eléctrico ($E$) a una distancia de $2\\text{ metros}$ de una carga puntual de $+4\\mu\\text{C}$:\n(considera la constante de Coulomb $k_e \\approx 9 \\times 10^9$)",
     "options": [
       {
         "id": "a",
@@ -27161,7 +27161,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 877,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
+    "question": "Un calentador de agua opera a una tensión eléctrica de $120\\text{ V}$ y tiene una resistencia interna de $12\\text{ ohms}$. ¿Cuál es la intensidad de la corriente eléctrica circulante?",
     "options": [
       {
         "id": "a",
@@ -27192,7 +27192,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 878,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
+    "question": "Si tienes dos resistencias de $6\\text{ ohms}$ cada una y las conectas en **paralelo**, ¿cuál es la resistencia equivalente de la combinación?",
     "options": [
       {
         "id": "a",
@@ -27223,7 +27223,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 879,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] ¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
+    "question": "¿Qué ley física enuncia que un flujo magnético variable en el tiempo a través de una espira conductora induce una fuerza electromotriz (FEM)?",
     "options": [
       {
         "id": "a",
@@ -27254,7 +27254,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 880,
     "section": "Bachillerato",
     "topic": "Física",
-    "question": "[Variación 5] [Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
+    "question": "[Especialidad Arquitectura] Si despliegas completamente en 2D las caras de un cubo perfecto de arista $a$, ¿cuántos cuadrados planos idénticos y en qué número de orientaciones o 'cruces' mínimos puedes disponerlos?",
     "options": [
       {
         "id": "a",
@@ -27285,7 +27285,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 881,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
+    "question": "En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
     "options": [
       {
         "id": "a",
@@ -27316,7 +27316,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 882,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
+    "question": "En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
     "options": [
       {
         "id": "a",
@@ -27347,7 +27347,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 883,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
+    "question": "Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
     "options": [
       {
         "id": "a",
@@ -27378,7 +27378,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 884,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
+    "question": "¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
     "options": [
       {
         "id": "a",
@@ -27409,7 +27409,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 885,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
+    "question": "Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
     "options": [
       {
         "id": "a",
@@ -27440,7 +27440,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 886,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
+    "question": "El prefijo griego **hemo-** o **hemato-** significa 'sangre'. ¿Cuál de las siguientes palabras lo incorpora lógicamente?",
     "options": [
       {
         "id": "a",
@@ -27471,7 +27471,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 887,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
+    "question": "El sufijo latino **-cidio** significa 'matar o destruir'. Identifica la palabra que no guarda relación con esta etimología:",
     "options": [
       {
         "id": "a",
@@ -27502,7 +27502,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 888,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
+    "question": "¿Qué vicio de dicción o error lingüístico se comete en la siguiente frase: 'Salió para afuera de la casa y subió para arriba del camión'?",
     "options": [
       {
         "id": "a",
@@ -27533,7 +27533,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 889,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
+    "question": "¿Cuál de los siguientes es un elemento **externo** indispensable en un **texto persuasivo** como el artículo de opinión?",
     "options": [
       {
         "id": "a",
@@ -27564,7 +27564,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 890,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
+    "question": "Identifica un ejemplo de **texto recreativo popular** que sirva para transmitir enseñanzas de forma graciosa mediante el uso del doble sentido o ingenio:",
     "options": [
       {
         "id": "a",
@@ -27595,7 +27595,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 891,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
+    "question": "¿Qué corriente o movimiento literario europeo del siglo XVI se caracterizó por rescatar los cánones clásicos grecolatinos, la proporción de las formas y el humanismo?",
     "options": [
       {
         "id": "a",
@@ -27626,7 +27626,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 892,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
+    "question": "¿Qué movimiento literario del siglo XIX exaltó de forma máxima los **sentimientos individuales**, la libertad creadora y el rechazo a las normas clásicas?",
     "options": [
       {
         "id": "a",
@@ -27657,7 +27657,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 893,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
+    "question": "¿Qué movimiento de vanguardia artística literaria de inicios del siglo XX buscó retratar el subconsciente y el mundo de los sueños de forma automática y libre?",
     "options": [
       {
         "id": "a",
@@ -27688,7 +27688,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 894,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
+    "question": "¿Cuál de los siguientes enunciados define de manera inequívoca la diferencia formal entre la **fábula** y la **epopeya**?",
     "options": [
       {
         "id": "a",
@@ -27719,7 +27719,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 895,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
+    "question": "¿Cuál es la distinción estructural entre un **mito** y una **leyenda** popular?",
     "options": [
       {
         "id": "a",
@@ -27750,7 +27750,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 896,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
+    "question": "En el análisis literario de un cuento, ¿qué implica estudiar el **nivel contextual**?",
     "options": [
       {
         "id": "a",
@@ -27781,7 +27781,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 897,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
+    "question": "¿Qué tipo de novela literaria se caracteriza por estar escrita en forma de una serie de cartas intercambiadas entre los personajes?",
     "options": [
       {
         "id": "a",
@@ -27812,7 +27812,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 898,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
+    "question": "En la métrica lírica española, ¿cómo se le denomina a un verso que contiene exactamente **ocho sílabas poéticas**?",
     "options": [
       {
         "id": "a",
@@ -27843,7 +27843,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 899,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] ¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
+    "question": "¿Qué subgénero dramático combina de manera equilibrada elementos trágicos y cómicos, reflejando de forma fiel los matices de la vida real?",
     "options": [
       {
         "id": "a",
@@ -27874,7 +27874,7 @@ window.EXCOBA_QUESTIONS = [
     "id": 900,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "[Variación 5] En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
+    "question": "En la estructura de la tragedia clásica, ¿qué es la **catarsis**?",
     "options": [
       {
         "id": "a",
