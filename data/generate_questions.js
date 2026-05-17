@@ -37,17 +37,10 @@ const shuffleOptions = (options) => {
 
 for (let set = 1; set <= totalSets; set++) {
   baseQuestions.forEach(q => {
-    let newQuestionText = q.question;
-    if (set > 1) {
-      // Modificación simple para simular variaciones (en un caso real aquí entraría un LLM o motor NLP)
-      newQuestionText = `[Variación ${set}] ${q.question}`;
-    }
-
     generatedQuestions.push({
       ...q,
       id: currentId++,
-      question: newQuestionText,
-      options: shuffleOptions(q.options) // Opciones aleatorias por variación
+      options: shuffleOptions(q.options)
     });
   });
 }
