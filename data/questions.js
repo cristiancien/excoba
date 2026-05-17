@@ -437,6 +437,146 @@ const extraQuestions = [
         hint: "Las fábulas son relatos cortos con animales personificados orientados a enseñar valores morales a los niños.",
         explanation: "La **fábula** es un relato breve, generalmente en prosa o verso, protagonizado por animales humanizados que concluye con una **moraleja** (enseñanza moral). Por otro lado, la **epopeya** es una composición poética extensa que narra las hazañas heroicas y legendarias de los héroes de una nación (ej. la *Ilíada* o la *Odisea*).",
         level: 2
+    },
+    {
+        id: 31,
+        topic: "Física - Cinemática (MRUA)",
+        question: "Un auto parte del reposo y acelera uniformemente a razón de $3\\text{ m/s}^2$ durante $4\\text{ s}$. ¿Qué distancia recorre en ese tiempo?",
+        options: [
+            { id: "a", text: "$24\\text{ m}$", isCorrect: true },
+            { id: "b", text: "$12\\text{ m}$", isCorrect: false },
+            { id: "c", text: "$48\\text{ m}$", isCorrect: false },
+            { id: "d", text: "$16\\text{ m}$", isCorrect: false }
+        ],
+        hint: "Como parte del reposo, su velocidad inicial es $v_0 = 0$. Usa la fórmula: $d = v_0 t + \\frac{1}{2} a t^2$.",
+        explanation: "El **Movimiento Rectilíneo Uniformemente Acelerado (MRUA)** modela este comportamiento con la fórmula:\n$$d = v_0 t + \\frac{1}{2} a t^2$$\n\nSustituyendo los datos del problema:\n- Velocidad inicial ($v_0$) = $0\\text{ m/s}$ (parte del reposo)\n- Aceleración ($a$) = $3\\text{ m/s}^2$\n- Tiempo ($t$) = $4\\text{ s}$\n\n$$d = 0 \\times 4 + \\frac{1}{2} \\times 3 \\times 4^2$$\n$$d = 0 + \\frac{1}{2} \\times 3 \\times 16$$\n$$d = 1.5 \\times 16 = 24\\text{ metros (m)}$$\n\n¡Por lo tanto, recorre exactamente **$24\\text{ m}$**!",
+        level: 2
+    },
+    {
+        id: 32,
+        topic: "Matemáticas - Funciones Racionales",
+        question: "¿Cuál es la ecuación de la asíntota vertical de la función racional $f(x) = \\frac{2x + 3}{x - 4}$?",
+        options: [
+            { id: "a", text: "$x = 4$", isCorrect: true },
+            { id: "b", text: "$x = -4$", isCorrect: false },
+            { id: "c", text: "$y = 2$", isCorrect: false },
+            { id: "d", text: "$x = 2$", isCorrect: false }
+        ],
+        hint: "La asíntota vertical ocurre en los valores de $x$ que hacen que el denominador de la función sea igual a cero.",
+        explanation: "Las **asíntotas verticales** son rectas verticales que corresponden a los valores de $x$ donde la función racional no está definida (el denominador se anula y la función tiende al infinito).\n\n1. Tomamos el denominador de la función $f(x) = \\frac{2x+3}{x-4}$:\n   $$x - 4 = 0$$\n2. Despejamos $x$:\n   $$x = 4$$\n\nPor tanto, la recta **$x = 4$** es la asíntota vertical. (Nota: $y = 2$ es la asíntota horizontal).",
+        level: 3
+    },
+    {
+        id: 33,
+        topic: "Español - Léxico y Semántica",
+        question: "En el enunciado: 'El científico mostró un comportamiento *altruista* al donar la patente de su vacuna', ¿cuál es el sinónimo más adecuado para la palabra en cursiva?",
+        options: [
+            { id: "a", text: "Desinteresado", isCorrect: true },
+            { id: "b", text: "Egoísta", isCorrect: false },
+            { id: "c", text: "Avaricioso", isCorrect: false },
+            { id: "d", text: "Orgulloso", isCorrect: false }
+        ],
+        hint: "Analiza el contexto: donar una patente médica beneficia a toda la humanidad sin buscar ganancia personal directa.",
+        explanation: "La palabra **altruista** hace referencia a una persona que procura el bien ajeno de manera desinteresada, incluso a costa de su propio interés. Por lo tanto, el sinónimo perfecto en este contexto es **desinteresado**.",
+        level: 1
+    },
+    {
+        id: 34,
+        topic: "Historia - La Ilustración colonial",
+        question: "¿Qué movimiento intelectual del siglo XVIII promovía el uso de la razón, el progreso científico y la crítica al absolutismo, influyendo directamente en la futura independencia de América?",
+        options: [
+            { id: "a", text: "La Ilustración", isCorrect: true },
+            { id: "b", text: "El Renacimiento", isCorrect: false },
+            { id: "c", text: "El Humanismo", isCorrect: false },
+            { id: "d", text: "La Reforma Protestante", isCorrect: false }
+        ],
+        hint: "También se le conoce como el 'Siglo de las Luces' y sus exponentes fueron pensadores como Rousseau, Montesquieu y Voltaire.",
+        explanation: "La **Ilustración** fue un movimiento filosófico y cultural europeo del siglo XVIII que sostenía que la razón humana podía combatir la ignorancia, la superstición y la tiranía para construir un mundo mejor. Sus ideas de libertad e igualdad sirvieron de base doctrinal para las revoluciones e independencias americanas.",
+        level: 2
+    },
+    {
+        id: 35,
+        topic: "Biología - Genética de Mendel",
+        question: "Si cruzamos dos plantas heterocigotas de flores rojas ($Rr$, donde el rojo $R$ es dominante sobre el blanco $r$), ¿cuál es la proporción fenotípica esperada en la descendencia?",
+        options: [
+            { id: "a", text: "$3$ plantas rojas y $1$ planta blanca", isCorrect: true },
+            { id: "b", text: "$1$ planta roja y $3$ plantas blancas", isCorrect: false },
+            { id: "c", text: "$2$ plantas rojas y $2$ plantas blancas", isCorrect: false },
+            { id: "d", text: "Todas las plantas serán rojas", isCorrect: false }
+        ],
+        hint: "Haz el cuadro de Punnett cruzando $R$ y $r$ con otro $R$ y $r$. Los genotipos resultantes son $RR$, $Rr$, $Rr$, y $rr$.",
+        explanation: "Al cruzar dos plantas heterocigotas ($Rr \\times Rr$), elaboramos el **Cuadro de Punnett**:\n\n$$\\begin{array}{c|cc} & R & r \\\\ \\hline R & RR & Rr \\\\ r & Rr & rr \\end{array}$$\n\n1. **Análisis de Genotipos**:\n   - $1/4$ Homocigoto dominante ($RR$)\n   - $2/4$ Heterocigoto ($Rr$)\n   - $1/4$ Homocigoto recesivo ($rr$)\n2. **Análisis de Fenotipos (Aspecto físico)**:\n   - Tanto $RR$ como $Rr$ expresan el color dominante (flores rojas): $1 + 2 = 3$ partes.\n   - Solo $rr$ expresa el color recesivo (flores blancas): $1$ parte.\n\nPor tanto, la proporción fenotípica esperada es **$3$ rojas por cada $1$ blanca** ($3:1$).",
+        level: 2
+    },
+    {
+        id: 36,
+        topic: "Matemáticas - Logaritmos",
+        question: "Resuelve la siguiente ecuación para hallar el valor de $x$: $\\log_2(x) = 5$",
+        options: [
+            { id: "a", text: "$32$", isCorrect: true },
+            { id: "b", text: "$10$", isCorrect: false },
+            { id: "c", text: "$25$", isCorrect: false },
+            { id: "d", text: "$16$", isCorrect: false }
+        ],
+        hint: "Usa la definición fundamental de los logaritmos: si $\\log_b(y) = x$, entonces $b^x = y$.",
+        explanation: "Aplicando la definición de un **logaritmo**:\n$$\\log_b(y) = x \\Longleftrightarrow b^x = y$$\n\nEn la ecuación dada:\n$$\\log_2(x) = 5$$\n\nLa base es $2$, el exponente es $5$, por lo tanto:\n$$x = 2^5$$\n$$x = 2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$$\n\n¡Por lo tanto, la respuesta correcta es **$32$**!",
+        level: 3
+    },
+    {
+        id: 37,
+        topic: "Química - Balanceo de Ecuaciones",
+        question: "¿Qué coeficiente debe colocarse frente al $O_2$ para balancear completamente la siguiente ecuación de combustión?\n$$CH_4 + \\_\\_ O_2 \\longrightarrow CO_2 + 2H_2O$$",
+        options: [
+            { id: "a", text: "$2$", isCorrect: true },
+            { id: "b", text: "$1$", isCorrect: false },
+            { id: "c", text: "$3$", isCorrect: false },
+            { id: "d", text: "$4$", isCorrect: false }
+        ],
+        hint: "Cuenta el número total de átomos de Oxígeno ($O$) en el lado derecho de la ecuación (productos) y asegúrate de tener el mismo número en el lado izquierdo (reactivos).",
+        explanation: "Siguiendo la **Ley de Conservación de la Materia**, el número de átomos de cada elemento debe ser igual en reactivos y productos:\n\n1. Contamos los átomos en los productos (lado derecho):\n   - Carbono ($C$): $1$ (en $CO_2$)\n   - Hidrógeno ($H$): $4$ (en $2H_2O$)\n   - Oxígeno ($O$): $2$ (de $CO_2$) + $2$ (de $2H_2O$) = $4$ átomos de Oxígeno en total.\n2. Lado izquierdo (reactivos):\n   - Tenemos $CH_4$ ($1C$ y $4H$, balanceados).\n   - Para tener $4$ átomos de Oxígeno ($O$), necesitamos colocar un coeficiente **$2$** delante de la molécula diatómica de Oxígeno ($O_2$):\n     $$2 \\times O_2 = 4\\text{ átomos de O}$$\n\nLa ecuación balanceada es: **$CH_4 + 2O_2 \\longrightarrow CO_2 + 2H_2O$**.",
+        level: 2
+    },
+    {
+        id: 38,
+        topic: "Física - Leyes de Kepler",
+        question: "¿Qué establece la Primera Ley de Kepler sobre el movimiento de los planetas alrededor del Sol?",
+        options: [
+            { id: "a", text: "Los planetas se mueven en órbitas elípticas con el Sol en uno de los focos.", isCorrect: true },
+            { id: "b", text: "Las órbitas son perfectamente circulares con el Sol en el centro.", isCorrect: false },
+            { id: "c", text: "El cuadrado del período orbital es proporcional al cubo de la distancia.", isCorrect: false },
+            { id: "d", text: "Los planetas se mueven más rápido cuando están más lejos del Sol.", isCorrect: false }
+        ],
+        hint: "Kepler revolucionó la astronomía al descartar los círculos perfectos de Copérnico e introducir una figura cónica ovalada.",
+        explanation: "La **Primera Ley de Kepler (Ley de las Órbitas)** establece que todos los planetas se desplazan alrededor del Sol describiendo **órbitas elípticas**, donde el Sol no está en el centro, sino en uno de los dos **focos** de la elipse.",
+        level: 2
+    },
+    {
+        id: 39,
+        topic: "Literatura - Géneros Literarios",
+        question: "¿A qué género literario pertenece una obra escrita en verso o prosa estructurada principalmente en diálogos y acotaciones, diseñada para ser representada en un escenario ante un público?",
+        options: [
+            { id: "a", text: "Género Dramático", isCorrect: true },
+            { id: "b", text: "Género Lírico", isCorrect: false },
+            { id: "c", text: "Género Narrativo", isCorrect: false },
+            { id: "d", text: "Género Didáctico", isCorrect: false }
+        ],
+        hint: "Es el género del teatro, donde la historia se cuenta a través de las acciones y conversaciones de los actores, sin narrador.",
+        explanation: "El **Género Dramático** comprende aquellas obras creadas para ser representadas en un teatro por actores que asumen personajes. Sus herramientas estructurales fundamentales son los **diálogos** de los personajes y las **acotaciones** (indicaciones del autor sobre vestuario, movimientos o escenografía).",
+        level: 2
+    },
+    {
+        id: 40,
+        topic: "Arquitectura - Razonamiento Espacial",
+        question: "Si doblamos una plantilla plana en cruz de $6$ cuadrados para formar un cubo tridimensional, ¿cuántos vértices tendrá la figura final resultante?",
+        options: [
+            { id: "a", text: "$8$ vértices", isCorrect: true },
+            { id: "b", text: "$6$ vértices", isCorrect: false },
+            { id: "c", text: "$12$ vértices", isCorrect: false },
+            { id: "d", text: "$16$ vértices", isCorrect: false }
+        ],
+        hint: "No te confundas entre caras (lados planos), aristas (bordes) y vértices (puntos o esquinas donde se unen las líneas). Un cubo tiene 6 caras.",
+        explanation: "Esta es una pregunta fundamental de **razonamiento espacial** para aspirantes de Arquitectura:\n\n- Un **cubo** es un poliedro regular de tres dimensiones.\n- Consta de **$6$ caras** cuadradas.\n- Posee **$12$ aristas** (las líneas de unión de las caras).\n- Posee **$8$ vértices** (las esquinas de unión de las aristas, $4$ en la base inferior y $4$ en la tapa superior).\n\nIndependientemente del patrón bidimensional del que partas para doblarlo, la figura final tridimensional (el cubo) siempre conserva exactamente **$8$ vértices**.",
+        level: 3
     }
 ];
 

@@ -2,7 +2,7 @@
   <div class="overlay" :class="isCorrect ? 'bg-success' : 'bg-error'">
     <div class="feedback-panel glass-panel" :class="{ 'shake': !isCorrect }">
       
-      <!-- Icon/Character Header -->
+      <!-- Icon/Character Header (Brilliant style: encouraging & positive) -->
       <div class="feedback-header">
         <div v-if="isCorrect" class="icon-container success-icon">
           <svg class="svg-character" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,27 +12,40 @@
             <circle cx="65" cy="40" r="4" fill="#10B981"/>
             <path d="M40 75 Q50 85 60 75" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
           </svg>
-          <h2 style="color: var(--secondary);">¡Excelente Trabajo!</h2>
+          <h2 style="color: var(--secondary); font-weight: 900; font-size: 1.8rem; margin: 0;">¡Excelente deducción! 🎯</h2>
+          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Tu razonamiento ha sido impecable.</span>
         </div>
+        
         <div v-else class="icon-container error-icon">
           <svg class="svg-character" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="#EF4444" opacity="0.2"/>
-            <path d="M35 35L65 65M65 35L35 65" stroke="#EF4444" stroke-width="8" stroke-linecap="round"/>
-            <circle cx="35" cy="40" r="4" fill="#EF4444"/>
-            <circle cx="65" cy="40" r="4" fill="#EF4444"/>
-            <path d="M40 80 Q50 70 60 80" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="45" fill="#F59E0B" opacity="0.2"/>
+            <!-- Cute thinking lightbulb / brain icon in SVG -->
+            <path d="M50 25C40 25 35 32 35 40C35 48 42 50 45 55V62H55V55C58 50 65 48 65 40C65 32 60 25 50 25Z" fill="#F59E0B" opacity="0.4"/>
+            <rect x="46" y="64" width="8" height="4" rx="2" fill="#F59E0B"/>
+            <rect x="48" y="70" width="4" height="4" rx="2" fill="#F59E0B"/>
+            <circle cx="38" cy="40" r="3" fill="#F59E0B"/>
+            <circle cx="62" cy="40" r="3" fill="#F59E0B"/>
+            <path d="M45 48 Q50 52 55 48" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
           </svg>
-          <h2 style="color: var(--danger);">¡No te preocupes!</h2>
+          <h2 style="color: #d97706; font-weight: 900; font-size: 1.8rem; margin: 0;">💡 ¡Momento de Aprendizaje!</h2>
+          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Resolver errores es el camino más rápido para dominar el concepto.</span>
         </div>
       </div>
 
-      <!-- Explanation Content (Learn by example) -->
+      <!-- Explanation Content (Brilliant-style visual & interactive logic breakdown) -->
       <div class="feedback-body" style="margin-top: 1.5rem; text-align: left;">
-        <h3 v-if="!isCorrect" style="color: var(--text-main); margin-bottom: 1rem; border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem;">
-          Aprende paso a paso:
+        
+        <!-- Bloque de Respuesta Correcta (estilo Brilliant) si el usuario falló -->
+        <div v-if="!isCorrect" class="correct-answer-box" style="background: rgba(16, 185, 129, 0.08); border: 2px solid rgba(16, 185, 129, 0.25); border-radius: 16px; padding: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.8px;">Respuesta Correcta:</span>
+          <div v-latex="correctOptionText" style="font-size: 1.15rem; color: #065f46; font-weight: 700;"></div>
+        </div>
+
+        <h3 style="color: var(--text-main); margin-bottom: 0.8rem; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">
+          {{ isCorrect ? 'Concepto clave:' : 'Desglose lógico del concepto:' }}
         </h3>
         
-        <div class="explanation-content" style="background: rgba(255,255,255,0.5); padding: 1.5rem; border-radius: 12px; font-size: 1.05rem; line-height: 1.6;">
+        <div class="explanation-content" style="background: rgba(255,255,255,0.65); padding: 1.6rem; border-radius: 18px; font-size: 1.05rem; line-height: 1.6; border: 1px solid rgba(0,0,0,0.05); color: #334155;">
            <span v-latex="explanation"></span>
         </div>
       </div>
@@ -43,9 +56,9 @@
           class="btn" 
           :class="isCorrect ? 'btn-secondary' : 'btn-primary'" 
           @click="$emit('continue')"
-          style="width: 100%; max-width: 300px; padding: 16px; font-size: 1.2rem;"
+          style="width: 100%; max-width: 320px; padding: 15px; font-size: 1.15rem; border-radius: 16px;"
         >
-          Continuar
+          Entendido, Continuar
         </button>
       </div>
       
@@ -57,7 +70,8 @@
 export default {
   props: {
     isCorrect: Boolean,
-    explanation: String
+    explanation: String,
+    correctOptionText: String
   },
   emits: ['continue']
 }
@@ -76,18 +90,18 @@ export default {
   transition: background-color 0.4s ease;
 }
 
-.bg-success { background-color: rgba(16, 185, 129, 0.1); }
-.bg-error { background-color: rgba(239, 68, 68, 0.1); }
+.bg-success { background-color: rgba(16, 185, 129, 0.12); }
+.bg-error { background-color: rgba(245, 158, 11, 0.12); }
 
 .feedback-panel {
-  width: 90%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.85);
+  width: 92%;
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.92);
   padding: 2.5rem;
-  border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-height: 90vh;
+  max-height: 88vh;
   overflow-y: auto;
 }
 
@@ -95,11 +109,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-}
-
-.explanation-content {
-  color: #334155;
+  gap: 0.8rem;
 }
 
 .explanation-content :deep(p) { margin-bottom: 1rem; }

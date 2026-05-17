@@ -321,3 +321,98 @@ p { margin-bottom: 1em; line-height: 1.6; }
         width: 100% !important;
     }
 }
+
+/* Sidebar Collapsed State */
+.sidebar.collapsed {
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Calculator keys styling */
+.calc-btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 10px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: center;
+    background: white;
+    color: var(--text-main);
+    user-select: none;
+}
+.calc-btn:active {
+    transform: scale(0.93);
+}
+.calc-btn:hover {
+    background: #f8fafc;
+}
+.calc-btn.num {
+    background: #ffffff;
+    color: var(--text-main);
+}
+.calc-btn.fn {
+    background: #f1f5f9;
+    color: var(--primary);
+    border-color: #cbd5e1;
+}
+.calc-btn.fn:hover {
+    background: #e2e8f0;
+}
+.calc-btn.op {
+    background: rgba(79, 70, 229, 0.08);
+    color: var(--primary);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+.calc-btn.op:hover {
+    background: var(--primary);
+    color: white;
+}
+.calc-btn.clear {
+    background: #fee2e2;
+    color: var(--danger);
+    border-color: #fca5a5;
+}
+.calc-btn.clear:hover {
+    background: var(--danger);
+    color: white;
+}
+.calc-btn.eq {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+.calc-btn.eq:hover {
+    background: var(--secondary-hover);
+}
+
+/* Formula sheet styles */
+.formula-category {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255,255,255,0.5);
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.formula-item {
+    padding: 8px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+.formula-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+}
