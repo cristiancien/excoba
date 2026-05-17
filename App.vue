@@ -55,26 +55,62 @@
           </button>
         </div>
         
-        <div class="sidebar-scroll" style="overflow-y: auto; max-height: 60vh; display: flex; flex-direction: column; gap: 1.2rem; padding-right: 5px;">
-          <div v-for="(group, topicName) in groupedQuestions" :key="topicName" class="topic-group">
-            <h3 style="font-size: 0.85rem; color: var(--primary); margin-bottom: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; display: flex; align-items: center; gap: 6px;">
-              <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--primary); border-radius: 50%;"></span>
-              {{ topicName }}
-            </h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <button 
-                v-for="q in group" 
-                :key="q.id"
-                @click="jumpToQuestion(q.originalIndex)"
-                class="sidebar-q-btn"
-                :class="{ 'active': currentQuestionIndex === q.originalIndex }"
-              >
-                <span class="q-badge">Q{{ q.id }}</span>
-                <span class="q-text">{{ cleanQuestionText(q.question) }}</span>
-              </button>
+        <div class="sidebar-scroll" style="overflow-y: auto; max-height: 65vh; display: flex; flex-direction: column; gap: 1rem; padding-right: 5px;">
+          
+          <div v-for="section in sectionsData" :key="section.name" class="section-group" style="margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 6px;">
+            <!-- Encabezado de Sección Colapsable (Acordeón) -->
+            <div 
+              @click="toggleSection(section.name)" 
+              class="section-accordion-header"
+              style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(79, 70, 229, 0.06); border: 1px solid rgba(79, 70, 229, 0.12); border-radius: 12px; cursor: pointer; transition: all 0.2s; user-select: none;"
+            >
+              <span style="font-weight: 800; font-size: 0.85rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">
+                {{ section.name }}
+              </span>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); background: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.05);">
+                  {{ getSectionProgressText(section.name) }}
+                </span>
+                <span style="font-size: 0.75rem; color: var(--primary); font-weight: 800;">
+                  {{ expandedSections[section.name] ? '▼' : '▶' }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Contenido de la Sección (Subtemas y Preguntas) -->
+            <div v-show="expandedSections[section.name]" class="section-content" style="padding: 4px 2px 8px 6px; display: flex; flex-direction: column; gap: 10px;">
+              <div v-for="topic in section.topics" :key="topic.name" class="topic-group" style="display: flex; flex-direction: column; gap: 6px;">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; padding: 0 4px;">
+                  <h4 style="font-size: 0.8rem; color: var(--text-main); font-weight: 800; margin: 0; display: flex; align-items: center; gap: 4px; text-transform: capitalize;">
+                    <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--secondary); border-radius: 50%;"></span>
+                    {{ topic.name }}
+                  </h4>
+                  <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 800;">
+                    {{ getTopicProgressText(section.name, topic.name) }}
+                  </span>
+                </div>
+
+                <!-- Cuadrícula compacta de 5 columnas para las 20 preguntas del subtema -->
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
+                  <button 
+                    v-for="q in topic.questions" 
+                    :key="q.id"
+                    @click="jumpToQuestion(q.originalIndex)"
+                    class="sidebar-q-dot"
+                    :class="{ 
+                      'active': currentQuestionIndex === q.originalIndex,
+                      'solved': answeredStatus[q.id]
+                    }"
+                    :title="`Pregunta ${q.id}: ${cleanQuestionTextFull(q.question)}`"
+                  >
+                    {{ q.id }}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </aside>
 
@@ -92,8 +128,8 @@
       <!-- Contenido Principal: Breadcrumb, Progreso y Pregunta -->
       <main style="flex: 1; display: flex; flex-direction: column; gap: 1.5rem; min-width: 0;">
         
-        <!-- Breadcrumb & Progreso -->
-        <div class="glass-panel" style="padding: 1.2rem 1.8rem; display: flex; flex-direction: column; gap: 0.8rem; position: relative;">
+        <!-- Breadcrumb & Doble Progreso Segmentado -->
+        <div class="glass-panel" style="padding: 1.2rem 1.8rem; display: flex; flex-direction: column; gap: 1rem; position: relative;">
           
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
             <nav class="breadcrumb" style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); flex-wrap: wrap;">
@@ -108,24 +144,43 @@
               </button>
               <span style="cursor: pointer; transition: color 0.2s;" @click="resetQuiz">EXCOBA</span>
               <span style="opacity: 0.5;">/</span>
-              <span>{{ activeTopicGroup }}</span>
+              <span style="text-transform: uppercase; font-size: 0.85rem; font-weight: 700; color: var(--secondary);">{{ currentQuestion?.section }}</span>
               <span style="opacity: 0.5;">/</span>
-              <span style="color: var(--primary); font-weight: 800;">Pregunta {{ currentQuestionIndex + 1 }}</span>
+              <span style="color: var(--primary); font-weight: 800;">{{ currentQuestion?.topic }}</span>
+              <span style="opacity: 0.5;">/</span>
+              <span style="color: var(--text-main); font-weight: 800;">Pregunta {{ currentQuestion?.id }}</span>
             </nav>
             
             <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
-              Pregunta {{ currentQuestionIndex + 1 }} de {{ totalQuestions }}
+              Progreso General: {{ overallSolvedCount }} / 180 resueltas
             </div>
           </div>
           
-          <!-- Barra de Progreso Integrada en el Breadcrumb -->
-          <div style="display: flex; align-items: center; gap: 15px; width: 100%;">
-            <div class="progress-container" style="flex: 1; height: 10px; background: rgba(0, 0, 0, 0.08);">
-              <div class="progress-bar" :style="{ width: progressPercentage + '%' }"></div>
+          <!-- Doble Barra de Progreso Lúdica por Sección y Subtema -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="progress-grid-split">
+            
+            <!-- Progreso Sección -->
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                <span>Progreso Sección: {{ currentQuestion?.section }}</span>
+                <span style="color: var(--primary);">{{ activeSectionProgress }}% ({{ activeSectionSolved }}/{{ activeSectionTotal }})</span>
+              </div>
+              <div class="progress-container" style="height: 8px; background: rgba(0, 0, 0, 0.08); border-radius: 4px; overflow: hidden;">
+                <div class="progress-bar-section" :style="{ width: activeSectionProgress + '%' }"></div>
+              </div>
             </div>
-            <span style="font-size: 0.9rem; font-weight: 800; color: var(--primary); min-width: 45px; text-align: right;">
-              {{ progressPercentage }}%
-            </span>
+
+            <!-- Progreso Subtema -->
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                <span>Progreso Subtema: {{ currentQuestion?.topic }}</span>
+                <span style="color: var(--secondary);">{{ activeTopicProgress }}% ({{ activeTopicSolved }}/{{ activeTopicTotal }})</span>
+              </div>
+              <div class="progress-container" style="height: 8px; background: rgba(0, 0, 0, 0.08); border-radius: 4px; overflow: hidden;">
+                <div class="progress-bar-topic" :style="{ width: activeTopicProgress + '%' }"></div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -343,6 +398,19 @@ export default {
     const showCalculator = ref(false);
     const showFormulario = ref(false);
 
+    // Estado de acordeón por Sección (Primaria, Secundaria, Bachillerato)
+    const expandedSections = ref({
+      Primaria: true,
+      Secundaria: true,
+      Bachillerato: true
+    });
+    const toggleSection = (secName) => {
+      expandedSections.value[secName] = !expandedSections.value[secName];
+    };
+
+    // Estado interno de preguntas correctamente contestadas (para checkmarks y barras de progreso)
+    const answeredStatus = ref({});
+
     // Estado interno calculadora
     const calcDisplay = ref('');
     const calcExpression = ref('');
@@ -363,21 +431,110 @@ export default {
       return Math.round((currentQuestionIndex.value / totalQuestions.value) * 100);
     });
 
-    // Agrupar preguntas dinámicamente por la primera sección de su temática
-    const groupedQuestions = computed(() => {
-      const groups = {};
-      questions.value.forEach((q, idx) => {
-        const mainTopic = q.topic.split(' - ')[0] || q.topic;
-        if (!groups[mainTopic]) {
-          groups[mainTopic] = [];
+    // Estructurar el temario jerárquicamente en 3 secciones grandes y sus respectivos subtemas
+    const sectionsData = computed(() => {
+      const sections = [
+        {
+          name: "Primaria",
+          topics: [
+            { name: "Español", questions: [] },
+            { name: "Matemáticas", questions: [] }
+          ]
+        },
+        {
+          name: "Secundaria",
+          topics: [
+            { name: "Español", questions: [] },
+            { name: "Matemáticas", questions: [] },
+            { name: "Ciencias Naturales", questions: [] },
+            { name: "Ciencias Sociales", questions: [] }
+          ]
+        },
+        {
+          name: "Bachillerato",
+          topics: [
+            { name: "Matemáticas para cálculo", questions: [] },
+            { name: "Física", questions: [] },
+            { name: "Lenguaje", questions: [] }
+          ]
         }
-        groups[mainTopic].push({
-          ...q,
-          originalIndex: idx
-        });
+      ];
+
+      questions.value.forEach((q, idx) => {
+        const sec = sections.find(s => s.name.toLowerCase() === q.section.toLowerCase());
+        if (sec) {
+          const top = sec.topics.find(t => t.name.toLowerCase() === q.topic.toLowerCase());
+          if (top) {
+            top.questions.push({
+              ...q,
+              originalIndex: idx
+            });
+          }
+        }
       });
-      return groups;
+
+      return sections;
     });
+
+    // Cálculos para el Progreso de la Sección Activa
+    const activeSectionTotal = computed(() => {
+      if (!currentQuestion.value) return 0;
+      return questions.value.filter(q => q.section.toLowerCase() === currentQuestion.value.section.toLowerCase()).length;
+    });
+    const activeSectionSolved = computed(() => {
+      if (!currentQuestion.value) return 0;
+      return questions.value.filter(q => q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && answeredStatus.value[q.id]).length;
+    });
+    const activeSectionProgress = computed(() => {
+      if (activeSectionTotal.value === 0) return 0;
+      return Math.round((activeSectionSolved.value / activeSectionTotal.value) * 100);
+    });
+
+    // Cálculos para el Progreso del Subtema Activo
+    const activeTopicTotal = computed(() => {
+      if (!currentQuestion.value) return 0;
+      return questions.value.filter(q => 
+        q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && 
+        q.topic.toLowerCase() === currentQuestion.value.topic.toLowerCase()
+      ).length;
+    });
+    const activeTopicSolved = computed(() => {
+      if (!currentQuestion.value) return 0;
+      return questions.value.filter(q => 
+        q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && 
+        q.topic.toLowerCase() === currentQuestion.value.topic.toLowerCase() && 
+        answeredStatus.value[q.id]
+      ).length;
+    });
+    const activeTopicProgress = computed(() => {
+      if (activeTopicTotal.value === 0) return 0;
+      return Math.round((activeTopicSolved.value / activeTopicTotal.value) * 100);
+    });
+
+    // Total de preguntas resueltas en general
+    const overallSolvedCount = computed(() => {
+      return Object.keys(answeredStatus.value).filter(k => answeredStatus.value[k]).length;
+    });
+
+    // Progreso del menú lateral por sección y tema
+    const getSectionProgressText = (secName) => {
+      const total = questions.value.filter(q => q.section.toLowerCase() === secName.toLowerCase()).length;
+      const solved = questions.value.filter(q => q.section.toLowerCase() === secName.toLowerCase() && answeredStatus.value[q.id]).length;
+      return `${solved}/${total}`;
+    };
+
+    const getTopicProgressText = (secName, topName) => {
+      const total = questions.value.filter(q => 
+        q.section.toLowerCase() === secName.toLowerCase() && 
+        q.topic.toLowerCase() === topName.toLowerCase()
+      ).length;
+      const solved = questions.value.filter(q => 
+        q.section.toLowerCase() === secName.toLowerCase() && 
+        q.topic.toLowerCase() === topName.toLowerCase() && 
+        answeredStatus.value[q.id]
+      ).length;
+      return `${solved}/${total}`;
+    };
 
     // Obtener la categoría activa de la pregunta actual para el Breadcrumb
     const activeTopicGroup = computed(() => {
@@ -385,41 +542,55 @@ export default {
       return currentQuestion.value.topic.split(' - ')[0];
     });
 
-    // Limpiar el formato de LaTeX y saltos de línea para mostrar un extracto limpio en el menú
-    const cleanQuestionText = (text) => {
+    // Limpiar el formato de LaTeX y saltos de línea para mostrar un extracto en los tooltips
+    const cleanQuestionTextFull = (text) => {
       if (!text) return '';
       return text
-        .replace(/\$(.*?)\$/g, '$1') // quitar delimitadores LaTeX
-        .replace(/\\(.*?)\b/g, '') // limpiar escapes LaTeX comunes
+        .replace(/\$(.*?)\$/g, '$1')
+        .replace(/\\(.*?)\b/g, '')
         .replace(/<br>/g, ' ')
         .replace(/\n/g, ' ')
         .replace(/\*\*/g, '')
-        .trim()
-        .substring(0, 24) + '...';
+        .trim();
     };
 
     const handleAnswer = (result) => {
       lastAnswerCorrect.value = result.isCorrect;
       if (result.isCorrect) {
         score.value += result.usedHint ? 5 : 10;
+        answeredStatus.value[currentQuestion.value.id] = true;
       }
       showFeedback.value = true;
     };
 
     const nextQuestion = () => {
       showFeedback.value = false;
+      // Auto-expandir la sección del siguiente ejercicio si es diferente
+      const prevSection = currentQuestion.value ? currentQuestion.value.section : '';
       currentQuestionIndex.value++;
+      if (currentQuestion.value && currentQuestion.value.section !== prevSection) {
+        expandedSections.value[currentQuestion.value.section] = true;
+      }
     };
 
     const jumpToQuestion = (idx) => {
       showFeedback.value = false;
       currentQuestionIndex.value = idx;
+      if (currentQuestion.value) {
+        expandedSections.value[currentQuestion.value.section] = true;
+      }
     };
 
     const resetQuiz = () => {
       currentQuestionIndex.value = 0;
       score.value = 0;
+      answeredStatus.value = {};
       showFeedback.value = false;
+      expandedSections.value = {
+        Primaria: true,
+        Secundaria: true,
+        Bachillerato: true
+      };
     };
 
     const toggleCalculator = () => {
@@ -479,9 +650,20 @@ export default {
       correctOptionText,
       totalQuestions,
       progressPercentage,
-      groupedQuestions,
-      activeTopicGroup,
-      cleanQuestionText,
+      sectionsData,
+      expandedSections,
+      toggleSection,
+      answeredStatus,
+      activeSectionTotal,
+      activeSectionSolved,
+      activeSectionProgress,
+      activeTopicTotal,
+      activeTopicSolved,
+      activeTopicProgress,
+      overallSolvedCount,
+      getSectionProgressText,
+      getTopicProgressText,
+      cleanQuestionTextFull,
       score,
       showFeedback,
       lastAnswerCorrect,
