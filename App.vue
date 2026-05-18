@@ -496,7 +496,7 @@
                       type="number" 
                       v-model="convertValue" 
                       placeholder="1"
-                      style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--text-main); text-align: right; outline: none; box-shadow: var(--glass-shadow);"
+                      style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--text-main); background: white; text-align: right; outline: none; box-shadow: var(--glass-shadow);"
                     />
                   </div>
 

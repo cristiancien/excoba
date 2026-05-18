@@ -827,3 +827,15 @@ p { margin-bottom: 1em; line-height: 1.6; }
     background-color: #1e293b !important;
     color: #f8fafc !important;
 }
+
+/* Explicit style overrides for HTML inputs in Dark Theme */
+.dark-theme input {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-theme input::placeholder {
+    color: #64748b !important;
+    opacity: 0.8;
+}
