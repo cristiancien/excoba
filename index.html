@@ -3,56 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXCOBA Arq - Simulador Gamificado</title>
+    <title>EXCOBA Prep - Simulador de Preparación Universitaria</title>
+    <meta name="description" content="Simulador interactivo de preparación para el examen EXCOBA. Practica con 180 reactivos oficiales estilo Brilliant.org con pistas, explicaciones y seguimiento de progreso.">
     
-    <!-- Google Fonts: Outfit para un look moderno y amigable -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png">
+    
+    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <!-- KaTeX CSS para renderizado de Látex -->
+    <!-- KaTeX CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     
-    <!-- Archivo de estilos principal (Glassmorphism) -->
+    <!-- App Styles -->
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <!-- Background animado SVG para el efecto Glassmorphism inmersivo -->
+    <!-- Animated background blobs -->
     <div class="animated-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
-    <!-- Contenedor Vue -->
+    <!-- Vue mount point -->
     <div id="app"></div>
 
     <!-- KaTeX JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
-    <!-- Vue 3 y SFC Loader -->
+    <!-- Vue 3 & SFC Loader -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
     
-    <!-- Datos de Preguntas -->
+    <!-- Question Data -->
     <script src="./data/questions.js"></script>
 
-    <!-- Inicializador de la App -->
+    <!-- Composables (DI via window, loaded before App) -->
+    <script src="./composables/useTimer.js"></script>
+    <script src="./composables/useScoring.js"></script>
+    <script src="./composables/useTheme.js"></script>
+    <script src="./composables/useQuestionBank.js"></script>
+    <script src="./composables/useCalculator.js"></script>
+
+    <!-- App Bootstrap -->
     <script>
         const { loadModule } = window['vue3-sfc-loader'];
 
-        const options = {
-            moduleCache: {
-                vue: Vue,
-            },
+        const sfcLoaderOptions = {
+            moduleCache: { vue: Vue },
             async getFile(url) {
                 const res = await fetch(url);
-                if (!res.ok)
-                    throw Object.assign(new Error(res.statusText + ' ' + url), { res });
-                return {
-                    getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text(),
-                }
+                if (!res.ok) throw Object.assign(new Error(`${res.statusText} ${url}`), { res });
+                return { getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text() };
             },
             addStyle(textContent) {
                 const style = Object.assign(document.createElement('style'), { textContent });
@@ -61,46 +67,35 @@
             },
         };
 
+        // Make loader options globally available for child component loading
+        window.__SFC_OPTIONS__ = sfcLoaderOptions;
+
         const app = Vue.createApp({
             components: {
-                'App': Vue.defineAsyncComponent(() => loadModule('./App.vue', options))
+                'App': Vue.defineAsyncComponent(() => loadModule('./App.vue', sfcLoaderOptions))
             },
             template: '<App/>'
         });
 
-        app.directive('latex', {
-            mounted(el, binding) {
-                let val = binding.value || '';
-                // Formatear saltos de línea y negritas básicas de markdown
-                val = val.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                el.innerHTML = val;
-                
-                if (window.renderMathInElement) {
-                    renderMathInElement(el, {
-                        delimiters: [
-                            {left: '$$', right: '$$', display: true},
-                            {left: '$', right: '$', display: false}
-                        ],
-                        throwOnError: false
-                    });
-                }
-            },
-            updated(el, binding) {
-                let val = binding.value || '';
-                // Formatear saltos de línea y negritas básicas de markdown
-                val = val.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                el.innerHTML = val;
-                
-                if (window.renderMathInElement) {
-                    renderMathInElement(el, {
-                        delimiters: [
-                            {left: '$$', right: '$$', display: true},
-                            {left: '$', right: '$', display: false}
-                        ],
-                        throwOnError: false
-                    });
-                }
+        // v-latex directive (DRY: single definition, used across all components)
+        const renderLatex = (el, binding) => {
+            let val = binding.value || '';
+            val = val.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            el.innerHTML = val;
+            if (window.renderMathInElement) {
+                renderMathInElement(el, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
             }
+        };
+
+        app.directive('latex', {
+            mounted: renderLatex,
+            updated: renderLatex
         });
 
         app.mount('#app');

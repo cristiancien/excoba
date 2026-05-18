@@ -176,11 +176,13 @@
                         :class="{ 
                           'active': currentQuestionIndex === q.originalIndex,
                           'solved-correct': answeredStatus[q.id]?.isCorrect === true,
-                          'solved-wrong': answeredStatus[q.id]?.isCorrect === false
+                          'solved-wrong': answeredStatus[q.id]?.isCorrect === false,
+                          'hint-used': hintsUsedStatus[q.id]
                         }"
                         :title="`Pregunta ${q.displayId}: ${cleanQuestionTextFull(q.question)}`"
                       >
                         {{ q.displayId }}
+                        <span v-if="hintsUsedStatus[q.id]" class="hint-pin">💡</span>
                       </button>
                     </div>
                   </div>
@@ -534,17 +536,7 @@
 const { ref, computed } = Vue;
 
 const { loadModule } = window['vue3-sfc-loader'];
-const options = {
-    moduleCache: { vue: Vue },
-    async getFile(url) {
-        const res = await fetch(url);
-        return { getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text() }
-    },
-    addStyle(textContent) {
-        const style = Object.assign(document.createElement('style'), { textContent });
-        document.head.appendChild(style);
-    }
-};
+const options = window.__SFC_OPTIONS__;
 
 export default {
   components: {
@@ -552,479 +544,163 @@ export default {
     FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options))
   },
   setup() {
-    const allQuestions = window.EXCOBA_QUESTIONS || [];
-    const questions = ref([]);
-    const currentQuestionIndex = ref(0);
-    const score = ref(0);
+    // --- Composable Injection (DI pattern via window) ---
+    const timer = window.useTimer();
+    const scoring = window.useScoring();
+    const theme = window.useTheme();
+    const bank = window.useQuestionBank();
+    const calc = window.useCalculator();
 
-    const showFeedback = ref(false);
-    const lastAnswerCorrect = ref(false);
-    const hintsUsedStatus = ref({});
-
-    // Controles de interactividad y temporizador
-    const sidebarCollapsed = ref(false);
-    const showCalculator = ref(false);
-    const showFormulario = ref(false);
-
-    // Nuevos estados reactivos
-    const currentScreen = ref('menu'); // 'menu' o 'exam'
-    const examTime = ref(0);
-    const timerInterval = ref(null);
+    // --- Local UI State ---
+    const currentScreen = ref('menu');
     const isPaused = ref(false);
     const showExitWarning = ref(false);
+    const showFeedback = ref(false);
+    const lastAnswerCorrect = ref(false);
+    const sidebarCollapsed = ref(false);
 
-    // Nuevos estados de Modo Oscuro y Tiempo en Pausa
-    const isDarkMode = ref(false);
-    const toggleTheme = () => {
-      isDarkMode.value = !isDarkMode.value;
-      document.body.classList.toggle('dark-theme', isDarkMode.value);
-    };
-
-    const currentPauseTime = ref(0);
-    const totalPauseTime = ref(0);
-    const pausedTimerInterval = ref(null);
-
-    const startPausedTimer = () => {
-      currentPauseTime.value = 0; // Se reinicia en cada pausa nueva
-      if (pausedTimerInterval.value) clearInterval(pausedTimerInterval.value);
-      pausedTimerInterval.value = setInterval(() => {
-        currentPauseTime.value++;
-        totalPauseTime.value++;
-      }, 1000);
-    };
-
-    const stopPausedTimer = () => {
-      if (pausedTimerInterval.value) {
-        clearInterval(pausedTimerInterval.value);
-        pausedTimerInterval.value = null;
-      }
-    };
-
-    const formatSeconds = (t) => {
-      const hours = Math.floor(t / 3600);
-      const minutes = Math.floor((t % 3600) / 60);
-      const seconds = t % 60;
-      const pad = (num) => String(num).padStart(2, '0');
-      return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-    };
-
-    const formattedCurrentPauseTime = computed(() => formatSeconds(currentPauseTime.value));
-    const formattedTotalPauseTime = computed(() => formatSeconds(totalPauseTime.value));
-
-    // Métodos del cronómetro
-    const startTimer = () => {
-      if (timerInterval.value) clearInterval(timerInterval.value);
-      timerInterval.value = setInterval(() => {
-        examTime.value++;
-      }, 1000);
-    };
-
-    const stopTimer = () => {
-      if (timerInterval.value) {
-        clearInterval(timerInterval.value);
-        timerInterval.value = null;
-      }
-    };
-
-    const formattedTime = computed(() => {
-      const t = examTime.value;
-      const hours = Math.floor(t / 3600);
-      const minutes = Math.floor((t % 3600) / 60);
-      const seconds = t % 60;
-      const pad = (num) => String(num).padStart(2, '0');
-      return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-    });
-
-    // Métodos de control de flujo
-    const startExam = () => {
-      // 1. Aleatorización del banco de preguntas (5 juegos -> 1 intento de 180 preguntas)
-      const newBank = [];
-      const subtemaMap = {
-        Primaria: ['Español', 'Matemáticas'],
-        Secundaria: ['Español', 'Matemáticas', 'Ciencias Naturales', 'Ciencias Sociales'],
-        Bachillerato: ['Matemáticas para cálculo', 'Física', 'Lenguaje']
-      };
-
-      for (const section in subtemaMap) {
-        for (const topic of subtemaMap[section]) {
-          // Filtrar todas las preguntas del banco total para esta sección y tema
-          const topicQuestions = allQuestions.filter(q => q.section === section && q.topic === topic);
-          // Mezclar usando algoritmo simple de Fisher-Yates (o sort random)
-          const shuffled = [...topicQuestions].sort(() => 0.5 - Math.random());
-          // Seleccionar 20 preguntas
-          newBank.push(...shuffled.slice(0, 20));
-        }
-      }
-      
-      questions.value = newBank;
-      
-      // 2. Reseteo de estados
-      currentScreen.value = 'exam';
-      examTime.value = 0;
-      score.value = 0;
-      answeredStatus.value = {};
-      hintsUsedStatus.value = {};
-      showFeedback.value = false;
-      currentQuestionIndex.value = 0;
-      isPaused.value = false;
-      showExitWarning.value = false;
-      currentPauseTime.value = 0;
-      totalPauseTime.value = 0;
-      stopPausedTimer();
-      startTimer();
-    };
-
-    const pauseExam = () => {
-      isPaused.value = true;
-      stopTimer();
-      startPausedTimer();
-    };
-
-    const resumeExam = () => {
-      isPaused.value = false;
-      showExitWarning.value = false;
-      stopPausedTimer();
-      startTimer();
-    };
-
-    // Estado de acordeón por Sección (Primaria, Secundaria, Bachillerato)
     const expandedSections = ref({
       Primaria: true,
       Secundaria: true,
       Bachillerato: true
     });
-    const toggleSection = (secName) => {
-      expandedSections.value[secName] = !expandedSections.value[secName];
+
+    const toggleSection = (name) => {
+      expandedSections.value[name] = !expandedSections.value[name];
     };
 
-    // Estado interno de preguntas correctamente contestadas (para checkmarks y barras de progreso)
-    const answeredStatus = ref({});
-
-    // Estado interno calculadora
-    const calcDisplay = ref('');
-    const calcExpression = ref('');
-
-    const currentQuestion = computed(() => questions.value[currentQuestionIndex.value]);
-    const totalQuestions = computed(() => questions.value.length);
-
-    // Texto de la opción correcta para mostrar al usuario estilo Brilliant
-    const correctOptionText = computed(() => {
-      if (!currentQuestion.value) return '';
-      const correctOpt = currentQuestion.value.options.find(o => o.isCorrect);
-      return correctOpt ? correctOpt.text : '';
-    });
-
-    // Calcular el porcentaje de progreso acumulado basado en el índice
-    const progressPercentage = computed(() => {
-      if (totalQuestions.value === 0) return 0;
-      return Math.round((currentQuestionIndex.value / totalQuestions.value) * 100);
-    });
-
-    // Estructurar el temario jerárquicamente en 3 secciones grandes y sus respectivos subtemas
-    const sectionsData = computed(() => {
-      const sections = [
-        {
-          name: "Primaria",
-          topics: [
-            { name: "Español", questions: [] },
-            { name: "Matemáticas", questions: [] }
-          ]
-        },
-        {
-          name: "Secundaria",
-          topics: [
-            { name: "Español", questions: [] },
-            { name: "Matemáticas", questions: [] },
-            { name: "Ciencias Naturales", questions: [] },
-            { name: "Ciencias Sociales", questions: [] }
-          ]
-        },
-        {
-          name: "Bachillerato",
-          topics: [
-            { name: "Matemáticas para cálculo", questions: [] },
-            { name: "Física", questions: [] },
-            { name: "Lenguaje", questions: [] }
-          ]
-        }
-      ];
-
-      let displayId = 1;
-      questions.value.forEach((q, idx) => {
-        const sec = sections.find(s => s.name.toLowerCase() === q.section.toLowerCase());
-        if (sec) {
-          const top = sec.topics.find(t => t.name.toLowerCase() === q.topic.toLowerCase());
-          if (top) {
-            top.questions.push({
-              ...q,
-              originalIndex: idx,
-              displayId: displayId++
-            });
-          }
-        }
-      });
-
-      return sections;
-    });
-
-    // Cálculos para el Progreso de la Sección Activa
-    const activeSectionTotal = computed(() => {
-      if (!currentQuestion.value) return 0;
-      return questions.value.filter(q => q.section.toLowerCase() === currentQuestion.value.section.toLowerCase()).length;
-    });
-    const activeSectionSolved = computed(() => {
-      if (!currentQuestion.value) return 0;
-      return questions.value.filter(q => q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && answeredStatus.value[q.id]).length;
-    });
-    const activeSectionProgress = computed(() => {
-      if (activeSectionTotal.value === 0) return 0;
-      return Math.round((activeSectionSolved.value / activeSectionTotal.value) * 100);
-    });
-
-    // Cálculos para el Progreso del Subtema Activo
-    const activeTopicTotal = computed(() => {
-      if (!currentQuestion.value) return 0;
-      return questions.value.filter(q => 
-        q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && 
-        q.topic.toLowerCase() === currentQuestion.value.topic.toLowerCase()
-      ).length;
-    });
-    const activeTopicSolved = computed(() => {
-      if (!currentQuestion.value) return 0;
-      return questions.value.filter(q => 
-        q.section.toLowerCase() === currentQuestion.value.section.toLowerCase() && 
-        q.topic.toLowerCase() === currentQuestion.value.topic.toLowerCase() && 
-        answeredStatus.value[q.id]
-      ).length;
-    });
-    const activeTopicProgress = computed(() => {
-      if (activeTopicTotal.value === 0) return 0;
-      return Math.round((activeTopicSolved.value / activeTopicTotal.value) * 100);
-    });
-
-    // Total de preguntas resueltas en general
-    const overallSolvedCount = computed(() => {
-      return Object.keys(answeredStatus.value).filter(k => answeredStatus.value[k]).length;
-    });
-
-    // Progreso del menú lateral por sección y tema
-    const getSectionProgressText = (secName) => {
-      const total = questions.value.filter(q => q.section.toLowerCase() === secName.toLowerCase()).length;
-      const solved = questions.value.filter(q => q.section.toLowerCase() === secName.toLowerCase() && answeredStatus.value[q.id]).length;
-      return `${solved}/${total}`;
+    // --- Exam Flow Orchestration ---
+    const startExam = () => {
+      bank.buildExamBank();
+      bank.resetBank();
+      scoring.resetScoring();
+      timer.resetTimers();
+      showFeedback.value = false;
+      isPaused.value = false;
+      showExitWarning.value = false;
+      currentScreen.value = 'exam';
+      timer.startTimer();
     };
 
-    const getTopicProgressText = (secName, topName) => {
-      const total = questions.value.filter(q => 
-        q.section.toLowerCase() === secName.toLowerCase() && 
-        q.topic.toLowerCase() === topName.toLowerCase()
-      ).length;
-      const solved = questions.value.filter(q => 
-        q.section.toLowerCase() === secName.toLowerCase() && 
-        q.topic.toLowerCase() === topName.toLowerCase() && 
-        answeredStatus.value[q.id]
-      ).length;
-      return `${solved}/${total}`;
+    const pauseExam = () => {
+      isPaused.value = true;
+      timer.stopTimer();
+      timer.startPausedTimer();
     };
 
-    // Obtener la categoría activa de la pregunta actual para el Breadcrumb
-    const activeTopicGroup = computed(() => {
-      if (!currentQuestion.value) return 'Finalizado';
-      return currentQuestion.value.topic.split(' - ')[0];
-    });
-
-    // Limpiar el formato de LaTeX y saltos de línea para mostrar un extracto en los tooltips
-    const cleanQuestionTextFull = (text) => {
-      if (!text) return '';
-      return text
-        .replace(/\$(.*?)\$/g, '$1')
-        .replace(/\\(.*?)\b/g, '')
-        .replace(/<br>/g, ' ')
-        .replace(/\n/g, ' ')
-        .replace(/\*\*/g, '')
-        .trim();
+    const resumeExam = () => {
+      isPaused.value = false;
+      showExitWarning.value = false;
+      timer.stopPausedTimer();
+      timer.startTimer();
     };
 
+    const confirmExit = () => {
+      timer.resetTimers();
+      isPaused.value = false;
+      showExitWarning.value = false;
+      currentScreen.value = 'menu';
+      bank.resetBank();
+      scoring.resetScoring();
+      showFeedback.value = false;
+      expandedSections.value = { Primaria: true, Secundaria: true, Bachillerato: true };
+    };
+
+    // --- Answer & Hint Handlers (Mediator pattern) ---
     const handleHint = () => {
-      // Solo cobra puntos si es la primera vez que se usa en esta pregunta
-      if (!hintsUsedStatus.value[currentQuestion.value.id]) {
-        score.value -= 3;
-        hintsUsedStatus.value[currentQuestion.value.id] = true;
+      if (bank.currentQuestion.value) {
+        scoring.applyHint(bank.currentQuestion.value.id);
       }
     };
 
     const handleAnswer = (result) => {
       lastAnswerCorrect.value = result.isCorrect;
-      if (result.isCorrect) {
-        score.value += 10;
-      } else {
-        score.value -= 2;
-      }
-      answeredStatus.value[currentQuestion.value.id] = {
-        isCorrect: result.isCorrect,
-        selectedOptionId: result.selectedOptionId,
-        shuffledOptions: result.shuffledOptions
-      };
+      scoring.applyAnswer(result.isCorrect);
+      bank.recordAnswer(bank.currentQuestion.value.id, result);
       showFeedback.value = true;
     };
 
     const nextQuestion = () => {
       showFeedback.value = false;
-      // Auto-expandir la sección del siguiente ejercicio si es diferente
-      const prevSection = currentQuestion.value ? currentQuestion.value.section : '';
-      currentQuestionIndex.value++;
-      
-      // Detener el cronómetro si el usuario termina el examen
-      if (currentQuestionIndex.value >= totalQuestions.value) {
-        stopTimer();
-      } else if (currentQuestion.value && currentQuestion.value.section !== prevSection) {
-        expandedSections.value[currentQuestion.value.section] = true;
+      const prevSection = bank.currentQuestion.value?.section ?? '';
+      bank.currentQuestionIndex.value++;
+
+      if (bank.currentQuestionIndex.value >= bank.totalQuestions.value) {
+        timer.stopTimer();
+      } else if (bank.currentQuestion.value?.section !== prevSection) {
+        expandedSections.value[bank.currentQuestion.value.section] = true;
       }
     };
 
     const jumpToQuestion = (idx) => {
       showFeedback.value = false;
-      currentQuestionIndex.value = idx;
-      if (currentQuestion.value) {
-        expandedSections.value[currentQuestion.value.section] = true;
+      bank.currentQuestionIndex.value = idx;
+      if (bank.currentQuestion.value) {
+        expandedSections.value[bank.currentQuestion.value.section] = true;
       }
     };
 
-    const resetQuiz = () => {
-      currentQuestionIndex.value = 0;
-      score.value = 0;
-      answeredStatus.value = {};
-      hintsUsedStatus.value = {};
-      showFeedback.value = false;
-      expandedSections.value = {
-        Primaria: true,
-        Secundaria: true,
-        Bachillerato: true
-      };
-    };
-
-    const confirmExit = () => {
-      stopTimer();
-      stopPausedTimer();
-      examTime.value = 0;
-      currentPauseTime.value = 0;
-      totalPauseTime.value = 0;
-      isPaused.value = false;
-      showExitWarning.value = false;
-      currentScreen.value = 'menu';
-      resetQuiz();
-    };
-
-    const toggleCalculator = () => {
-      showCalculator.value = !showCalculator.value;
-      if (showCalculator.value) showFormulario.value = false; // cerrar el otro panel
-    };
-
-    const toggleFormulario = () => {
-      showFormulario.value = !showFormulario.value;
-      if (showFormulario.value) showCalculator.value = false; // cerrar el otro panel
-    };
-
-    // Lógica e interactividad de la Calculadora Científica
-    const pressCalcKey = (key) => {
-      if (key === 'C') {
-        calcDisplay.value = '';
-        calcExpression.value = '';
-      } else if (key === 'Del') {
-        calcDisplay.value = calcDisplay.value.slice(0, -1);
-      } else if (key === '=') {
-        try {
-          let expr = calcDisplay.value
-            .replace(/÷/g, '/')
-            .replace(/×/g, '*')
-            .replace(/sqrt\(/g, 'Math.sqrt(')
-            .replace(/sin\(/g, 'Math.sin(')
-            .replace(/cos\(/g, 'Math.cos(')
-            .replace(/tan\(/g, 'Math.tan(')
-            .replace(/log\(/g, 'Math.log10(')
-            .replace(/\^/g, '**');
-
-          // Cierre automático de paréntesis para evitar errores
-          const openParentheses = (expr.match(/\(/g) || []).length;
-          const closeParentheses = (expr.match(/\)/g) || []).length;
-          if (openParentheses > closeParentheses) {
-            expr += ')'.repeat(openParentheses - closeParentheses);
-          }
-
-          const res = new Function(`return ${expr}`)();
-          calcExpression.value = calcDisplay.value + ' =';
-          calcDisplay.value = Number(res.toFixed(6)).toString();
-        } catch (err) {
-          calcDisplay.value = 'Error';
-        }
-      } else {
-        let displayChar = key;
-        if (key === '/') displayChar = '÷';
-        if (key === '*') displayChar = '×';
-        calcDisplay.value += displayChar;
-      }
-    };
-
+    // --- Public API (flat spread for template simplicity) ---
     return {
-      questions,
-      currentQuestionIndex,
-      currentQuestion,
-      correctOptionText,
-      totalQuestions,
-      progressPercentage,
-      sectionsData,
-      expandedSections,
-      toggleSection,
-      answeredStatus,
-      activeSectionTotal,
-      activeSectionSolved,
-      activeSectionProgress,
-      activeTopicTotal,
-      activeTopicSolved,
-      activeTopicProgress,
-      overallSolvedCount,
-      getSectionProgressText,
-      getTopicProgressText,
-      cleanQuestionTextFull,
-      score,
-      showFeedback,
-      lastAnswerCorrect,
+      // Question bank
+      questions: bank.questions,
+      currentQuestionIndex: bank.currentQuestionIndex,
+      currentQuestion: bank.currentQuestion,
+      correctOptionText: bank.correctOptionText,
+      totalQuestions: bank.totalQuestions,
+      progressPercentage: bank.progressPercentage,
+      sectionsData: bank.sectionsData,
+      answeredStatus: bank.answeredStatus,
+      activeSectionTotal: bank.activeSectionTotal,
+      activeSectionSolved: bank.activeSectionSolved,
+      activeSectionProgress: bank.activeSectionProgress,
+      activeTopicTotal: bank.activeTopicTotal,
+      activeTopicSolved: bank.activeTopicSolved,
+      activeTopicProgress: bank.activeTopicProgress,
+      overallSolvedCount: bank.overallSolvedCount,
+      getSectionProgressText: bank.getSectionProgressText,
+      getTopicProgressText: bank.getTopicProgressText,
+      cleanQuestionTextFull: bank.cleanQuestionText,
+
+      // Scoring
+      score: scoring.score,
+      hintsUsedStatus: scoring.hintsUsedStatus,
       handleAnswer,
       handleHint,
-      hintsUsedStatus,
-      nextQuestion,
-      jumpToQuestion,
-      resetQuiz,
-      
-      // Nuevos controles de flujo y cronómetro
+
+      // Timer
+      formattedTime: timer.formattedTime,
+      formattedCurrentPauseTime: timer.formattedCurrentPauseTime,
+      formattedTotalPauseTime: timer.formattedTotalPauseTime,
+
+      // Theme
+      isDarkMode: theme.isDarkMode,
+      toggleTheme: theme.toggleTheme,
+
+      // Calculator
+      showCalculator: calc.showCalculator,
+      showFormulario: calc.showFormulario,
+      toggleCalculator: calc.toggleCalculator,
+      toggleFormulario: calc.toggleFormulario,
+      calcDisplay: calc.calcDisplay,
+      calcExpression: calc.calcExpression,
+      pressCalcKey: calc.pressCalcKey,
+
+      // UI state
       currentScreen,
-      examTime,
-      formattedTime,
       isPaused,
       showExitWarning,
+      showFeedback,
+      lastAnswerCorrect,
+      sidebarCollapsed,
+      expandedSections,
+      toggleSection,
+
+      // Flow
       startExam,
       pauseExam,
       resumeExam,
       confirmExit,
-      
-      // Modo Oscuro y Tiempo en Pausa
-      isDarkMode,
-      toggleTheme,
-      currentPauseTime,
-      totalPauseTime,
-      formattedCurrentPauseTime,
-      formattedTotalPauseTime,
-      
-      // Controles
-      sidebarCollapsed,
-      showCalculator,
-      showFormulario,
-      toggleCalculator,
-      toggleFormulario,
-      
-      // Calculadora
-      calcDisplay,
-      calcExpression,
       pressCalcKey
     };
   }

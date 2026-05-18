@@ -309,6 +309,20 @@ p { margin-bottom: 1em; line-height: 1.6; }
     transform: scale(1.1);
 }
 
+/* Hint pin indicator */
+.sidebar-q-dot {
+    position: relative;
+}
+
+.hint-pin {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    font-size: 0.55rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
 /* Double segmented progress bars */
 .progress-bar-section {
     height: 100%;
