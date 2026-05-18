@@ -295,7 +295,7 @@
 
           <!-- Panel Flotante de la CALCULADORA CIENTÍFICA -->
           <transition name="fade">
-            <div v-if="showCalculator" class="glass-panel calculator-panel" style="position: absolute; right: 20px; top: 10px; width: 320px; z-index: 100; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(79,70,229,0.3); background: rgba(255,255,255,0.92);">
+            <div v-if="showCalculator" class="glass-panel calculator-panel" style="position: absolute; right: 20px; top: 10px; width: 340px; z-index: 100; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(79,70,229,0.3); background: rgba(255,255,255,0.94);">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem;">
                 <h3 style="font-size: 1rem; color: var(--primary); margin: 0; font-weight: 800; display: flex; align-items: center; gap: 6px;">
                   🧮 Calculadora Científica
@@ -309,47 +309,56 @@
                 <div style="font-weight: 700; font-size: 1.3rem;">{{ calcDisplay || '0' }}</div>
               </div>
 
-              <!-- Teclas de la calculadora -->
-              <div class="calc-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-                <button @click="pressCalcKey('sin(')" class="calc-btn fn">sin</button>
-                <button @click="pressCalcKey('cos(')" class="calc-btn fn">cos</button>
-                <button @click="pressCalcKey('tan(')" class="calc-btn fn">tan</button>
-                <button @click="pressCalcKey('sqrt(')" class="calc-btn fn">√</button>
+              <!-- Teclas de la calculadora (Grid 5x7) -->
+              <div class="calc-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
+                <button @click="pressCalcKey('sin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">sin</button>
+                <button @click="pressCalcKey('cos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">cos</button>
+                <button @click="pressCalcKey('tan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">tan</button>
+                <button @click="pressCalcKey('sqrt(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">√</button>
+                <button @click="pressCalcKey('^')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">xʸ</button>
 
-                <button @click="pressCalcKey('^')" class="calc-btn fn">xʸ</button>
-                <button @click="pressCalcKey('log(')" class="calc-btn fn">log</button>
-                <button @click="pressCalcKey('(')" class="calc-btn fn">(</button>
-                <button @click="pressCalcKey(')')" class="calc-btn fn">)</button>
+                <button @click="pressCalcKey('asin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">asin</button>
+                <button @click="pressCalcKey('acos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">acos</button>
+                <button @click="pressCalcKey('atan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">atan</button>
+                <button @click="pressCalcKey('fact(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">x!</button>
+                <button @click="pressCalcKey('abs(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">abs</button>
 
-                <button @click="pressCalcKey('C')" class="calc-btn clear">C</button>
-                <button @click="pressCalcKey('Del')" class="calc-btn clear">⌫</button>
-                <button @click="pressCalcKey('/')" class="calc-btn op">÷</button>
-                <button @click="pressCalcKey('*')" class="calc-btn op">×</button>
+                <button @click="pressCalcKey('log(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">log</button>
+                <button @click="pressCalcKey('ln(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">ln</button>
+                <button @click="pressCalcKey('pi')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">π</button>
+                <button @click="pressCalcKey('e')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">e</button>
+                <button @click="pressCalcKey('%')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">mod</button>
 
-                <button @click="pressCalcKey('7')" class="calc-btn num">7</button>
-                <button @click="pressCalcKey('8')" class="calc-btn num">8</button>
-                <button @click="pressCalcKey('9')" class="calc-btn num">9</button>
-                <button @click="pressCalcKey('-')" class="calc-btn op">-</button>
+                <button @click="pressCalcKey('(')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">(</button>
+                <button @click="pressCalcKey(')')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">)</button>
+                <button @click="pressCalcKey('C')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">C</button>
+                <button @click="pressCalcKey('Del')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">⌫</button>
+                <button @click="pressCalcKey('/')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">÷</button>
 
-                <button @click="pressCalcKey('4')" class="calc-btn num">4</button>
-                <button @click="pressCalcKey('5')" class="calc-btn num">5</button>
-                <button @click="pressCalcKey('6')" class="calc-btn num">6</button>
-                <button @click="pressCalcKey('+')" class="calc-btn op">+</button>
+                <button @click="pressCalcKey('7')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">7</button>
+                <button @click="pressCalcKey('8')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">8</button>
+                <button @click="pressCalcKey('9')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">9</button>
+                <button @click="pressCalcKey('*')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">×</button>
+                <button @click="pressCalcKey('-')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">-</button>
 
-                <button @click="pressCalcKey('1')" class="calc-btn num">1</button>
-                <button @click="pressCalcKey('2')" class="calc-btn num">2</button>
-                <button @click="pressCalcKey('3')" class="calc-btn num">3</button>
-                <button @click="pressCalcKey('=')" class="calc-btn eq" style="grid-row: span 2; height: 100%;">=</button>
+                <button @click="pressCalcKey('4')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">4</button>
+                <button @click="pressCalcKey('5')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">5</button>
+                <button @click="pressCalcKey('6')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">6</button>
+                <button @click="pressCalcKey('+')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">+</button>
+                <button @click="pressCalcKey('=')" class="calc-btn eq" style="grid-row: span 2; height: 100%; font-size: 1.1rem;">=</button>
 
-                <button @click="pressCalcKey('0')" class="calc-btn num" style="grid-column: span 2;">0</button>
-                <button @click="pressCalcKey('.')" class="calc-btn num">.</button>
+                <button @click="pressCalcKey('1')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">1</button>
+                <button @click="pressCalcKey('2')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">2</button>
+                <button @click="pressCalcKey('3')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">3</button>
+                <button @click="pressCalcKey('0')" class="calc-btn num" style="grid-column: span 2; font-size: 0.9rem; padding: 8px 0;">0</button>
+                <button @click="pressCalcKey('.')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">.</button>
               </div>
             </div>
           </transition>
 
           <!-- Panel Flotante del FORMULARIO CIENTÍFICO -->
           <transition name="fade">
-            <div v-if="showFormulario" class="glass-panel formula-panel" style="position: absolute; right: 20px; top: 10px; width: 360px; z-index: 99; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(16, 185, 129, 0.3); background: rgba(255,255,255,0.94); max-height: 80vh; display: flex; flex-direction: column;">
+            <div v-if="showFormulario" class="glass-panel formula-panel" style="position: absolute; right: 20px; top: 10px; width: 380px; z-index: 99; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(16, 185, 129, 0.3); background: rgba(255,255,255,0.94); max-height: 80vh; display: flex; flex-direction: column;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; flex-shrink: 0;">
                 <h3 style="font-size: 1rem; color: #065f46; margin: 0; font-weight: 800; display: flex; align-items: center; gap: 6px;">
                   📖 Formulario de Estudio EXCOBA
@@ -404,6 +413,46 @@
                   <div class="formula-item">
                     <span class="formula-title">Ecuación de la elipse (horizontal):</span>
                     <div v-latex="'$$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$$'"></div>
+                  </div>
+                </div>
+
+                <div class="formula-category">
+                  <h4 style="color: var(--primary); font-size: 0.9rem; font-weight: 800; border-left: 3px solid var(--primary); padding-left: 6px; margin-bottom: 0.5rem; text-transform: uppercase;">Cálculo Diferencial e Integral</h4>
+                  <div class="formula-item">
+                    <span class="formula-title">Límite notable trigonométrico:</span>
+                    <div v-latex="'$$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Derivada de una potencia:</span>
+                    <div v-latex="'$$\\frac{d}{dx}[x^n] = n x^{n-1}$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Derivada de un producto de funciones:</span>
+                    <div v-latex="'$$(u \\cdot v)\' = u\'v + u v\'$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Integral definida (TFC):</span>
+                    <div v-latex="'$$\\int_{a}^{b} f(x)dx = F(b) - F(a)$$'"></div>
+                  </div>
+                </div>
+
+                <div class="formula-category">
+                  <h4 style="color: var(--primary); font-size: 0.9rem; font-weight: 800; border-left: 3px solid var(--primary); padding-left: 6px; margin-bottom: 0.5rem; text-transform: uppercase;">Arquitectura & Diseño Temático</h4>
+                  <div class="formula-item">
+                    <span class="formula-title">La Proporción Áurea (Número de Oro):</span>
+                    <div v-latex="'$$\\Phi = \\frac{1 + \\sqrt{5}}{2} \\approx 1.618033$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Ley de la Iluminación (Nivel de Lux):</span>
+                    <div v-latex="'$$E = \\frac{I}{d^2}$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Relación de Escalas de Dibujo Técnico:</span>
+                    <div v-latex="'$$\\text{Escala} = \\frac{\\text{Medida del Dibujo}}{\\text{Medida Real}}$$'"></div>
+                  </div>
+                  <div class="formula-item">
+                    <span class="formula-title">Relación de Esbeltez de una Columna:</span>
+                    <div v-latex="'$$\\lambda = \\frac{L_e}{r}$$'"></div>
                   </div>
                 </div>
 
