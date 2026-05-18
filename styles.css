@@ -18,6 +18,15 @@
 
     /* Typography */
     --font-main: 'Outfit', sans-serif;
+
+    /* Calculator & Converter Theme Variables */
+    --calc-screen-bg: #e2e8f0;
+    --calc-screen-text: #0f172a;
+    --calc-tab-wrapper-bg: rgba(0, 0, 0, 0.05);
+    --calc-tab-bg-active: #ffffff;
+    --calc-tab-text-active: var(--primary);
+    --calc-tab-bg-inactive: transparent;
+    --calc-tab-text-inactive: var(--text-muted);
 }
 
 * {
@@ -326,13 +335,13 @@ p { margin-bottom: 1em; line-height: 1.6; }
 /* Double segmented progress bars */
 .progress-bar-section {
     height: 100%;
-    background: linear-gradient(90deg, #6366f1, #a855f7);
+    background: linear-gradient(90deg, #10b981, #34d399); /* Green */
     transition: width 0.4s ease;
 }
 
 .progress-bar-topic {
     height: 100%;
-    background: linear-gradient(90deg, #10b981, #34d399);
+    background: linear-gradient(90deg, #6366f1, #a855f7); /* Indigo/purple */
     transition: width 0.4s ease;
 }
 
@@ -597,6 +606,15 @@ p { margin-bottom: 1em; line-height: 1.6; }
     --glass-bg: rgba(30, 41, 59, 0.7);
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    /* Calculator & Converter Theme Variables (Dark Mode) */
+    --calc-screen-bg: #1e293b;
+    --calc-screen-text: #38bdf8;
+    --calc-tab-wrapper-bg: rgba(255, 255, 255, 0.08);
+    --calc-tab-bg-active: #0f172a;
+    --calc-tab-text-active: #818cf8;
+    --calc-tab-bg-inactive: transparent;
+    --calc-tab-text-inactive: #94a3b8;
 }
 
 .dark-theme .animated-bg {
@@ -796,4 +814,16 @@ p { margin-bottom: 1em; line-height: 1.6; }
 .dark-theme .menu-stats-grid .glass-panel {
     background: rgba(15, 23, 42, 0.4) !important;
     border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Explicit style overrides for HTML dropdowns in Dark Theme */
+.dark-theme select {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-theme select option {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
 }

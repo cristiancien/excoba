@@ -16,14 +16,10 @@
         <!-- Tarjeta Central Premium -->
         <div class="glass-panel menu-hero-card" style="max-width: 650px; width: 100%; padding: 3.5rem 2.5rem; text-align: center; display: flex; flex-direction: column; gap: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 24px;">
           
-          <!-- Logo / Icono Lúdico Académico -->
+          <!-- Logo / Icono Lúdico Académico con Favicon -->
           <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="pulse-icon" style="background: linear-gradient(135deg, var(--primary), #818cf8); width: 85px; height: 85px; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4); animation: float 3s ease-in-out infinite;">
-              <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
+            <div class="pulse-icon" style="background: linear-gradient(135deg, var(--primary), #818cf8); width: 90px; height: 90px; border-radius: 26px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4); animation: float 3s ease-in-out infinite; padding: 4px;">
+              <img src="favicon.png" alt="EXCOBA Prep Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 22px;" />
             </div>
           </div>
 
@@ -127,41 +123,60 @@
       <!-- 2. PANTALLA: EXAMEN ACTIVO -->
       <div v-else-if="currentScreen === 'exam'" style="display: flex; flex-direction: column; gap: 0;">
         
-        <!-- Header: Barra de Controles Única Centrada -->
-        <header class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <!-- Header: Barra de Controles Única con Logo y Utilidades -->
+        <header class="glass-panel" style="padding: 1rem 2rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           
-          <!-- Cronómetro Monospace -->
-          <div class="glass-panel timer-badge" style="display: flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 14px; background: rgba(79, 70, 229, 0.05); border-color: rgba(79, 70, 229, 0.2); border-style: solid; border-width: 1px;">
-            <svg class="timer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span style="font-family: monospace; font-size: 1.15rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px;">
-              {{ formattedTime }}
-            </span>
+          <!-- Logo de EXCOBA Prep (Favicon) -->
+          <div style="display: flex; align-items: center; gap: 10px;" class="header-logo-group">
+            <img src="favicon.png" alt="EXCOBA Prep Logo" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);" />
+            <span style="font-weight: 800; font-size: 1.15rem; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EXCOBA Prep</span>
           </div>
 
-          <!-- Botón Pausa -->
-          <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
-            Pausar ⏸️
-          </button>
+          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px;" class="header-controls-group">
+            <!-- Botón para ver el Banco si está colapsado -->
+            <button 
+              v-if="sidebarCollapsed" 
+              @click="sidebarCollapsed = false" 
+              class="btn" 
+              title="Mostrar menú"
+              style="padding: 8px 12px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;"
+            >
+              📂 Ver Temas
+            </button>
 
-          <!-- Botón del Formulario Científico -->
-          <button @click="toggleFormulario" class="btn btn-secondary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #065f46; cursor: pointer; transition: all 0.2s; font-weight: 700;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
-          </button>
+            <!-- Cronómetro Monospace -->
+            <div class="glass-panel timer-badge" style="display: flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 14px; background: rgba(79, 70, 229, 0.05); border-color: rgba(79, 70, 229, 0.2); border-style: solid; border-width: 1px;">
+              <svg class="timer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span style="font-family: monospace; font-size: 1.15rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px;">
+                {{ formattedTime }}
+              </span>
+            </div>
 
-          <!-- Botón de la Calculadora -->
-          <button @click="toggleCalculator" class="btn btn-primary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.3); color: var(--primary); cursor: pointer; transition: all 0.2s; font-weight: 700;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line><line x1="9" y1="15" x2="9.01" y2="15"></line><line x1="15" y1="15" x2="15.01" y2="15"></line></svg>
-            {{ showCalculator ? 'Ocultar Calculadora' : 'Calculadora Científica' }}
-          </button>
+            <!-- Botón Pausa -->
+            <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              Pausar ⏸️
+            </button>
 
-          <!-- Marcador de Puntos -->
-          <div class="glass-panel" style="display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 14px;">
-            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Puntos:</span>
-            <div style="display: flex; align-items: center; gap: 4px; color: var(--warning); font-weight: 800; font-size: 1.25rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              {{ score }}
+            <!-- Botón del Formulario Científico -->
+            <button @click="toggleFormulario" class="btn btn-secondary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #065f46; cursor: pointer; transition: all 0.2s; font-weight: 700;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
+            </button>
+
+            <!-- Botón de la Calculadora -->
+            <button @click="toggleCalculator" class="btn btn-primary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.3); color: var(--primary); cursor: pointer; transition: all 0.2s; font-weight: 700;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line><line x1="9" y1="15" x2="9.01" y2="15"></line><line x1="15" y1="15" x2="15.01" y2="15"></line></svg>
+              {{ showCalculator ? 'Ocultar Herramientas' : 'Calculadora & Conversor 🧮' }}
+            </button>
+
+            <!-- Marcador de Puntos -->
+            <div class="glass-panel" style="display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 14px;">
+              <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Puntos:</span>
+              <div style="display: flex; align-items: center; gap: 4px; color: var(--warning); font-weight: 800; font-size: 1.25rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {{ score }}
+              </div>
             </div>
           </div>
 
@@ -298,7 +313,7 @@
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                   <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
                     <span>Progreso Sección: {{ currentQuestion?.section }}</span>
-                    <span style="color: var(--primary);">{{ activeSectionProgress }}% ({{ activeSectionSolved }}/{{ activeSectionTotal }})</span>
+                    <span style="color: var(--secondary);">{{ activeSectionProgress }}% ({{ activeSectionSolved }}/{{ activeSectionTotal }})</span>
                   </div>
                   <div class="progress-container" style="height: 8px; background: rgba(0, 0, 0, 0.08); border-radius: 4px; overflow: hidden;">
                     <div class="progress-bar-section" :style="{ width: activeSectionProgress + '%' }"></div>
@@ -309,7 +324,7 @@
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                   <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
                     <span>Progreso Subtema: {{ currentQuestion?.topic }}</span>
-                    <span style="color: var(--secondary);">{{ activeTopicProgress }}% ({{ activeTopicSolved }}/{{ activeTopicTotal }})</span>
+                    <span style="color: var(--primary);">{{ activeTopicProgress }}% ({{ activeTopicSolved }}/{{ activeTopicTotal }})</span>
                   </div>
                   <div class="progress-container" style="height: 8px; background: rgba(0, 0, 0, 0.08); border-radius: 4px; overflow: hidden;">
                     <div class="progress-bar-topic" :style="{ width: activeTopicProgress + '%' }"></div>
@@ -365,7 +380,7 @@
               </div>
 
               <!-- Selector de Pestañas (Calculadora vs Conversor) -->
-              <div style="display: flex; gap: 4px; margin-bottom: 0.8rem; background: rgba(0,0,0,0.05); padding: 3px; border-radius: 10px;">
+              <div style="display: flex; gap: 4px; margin-bottom: 0.8rem; background: var(--calc-tab-wrapper-bg); padding: 3px; border-radius: 10px;">
                 <button 
                   @click="activeTab = 'calc'" 
                   :style="{
@@ -376,8 +391,8 @@
                     borderRadius: '8px',
                     border: 'none',
                     cursor: 'pointer',
-                    background: activeTab === 'calc' ? 'white' : 'transparent',
-                    color: activeTab === 'calc' ? 'var(--primary)' : 'var(--text-muted)',
+                    background: activeTab === 'calc' ? 'var(--calc-tab-bg-active)' : 'var(--calc-tab-bg-inactive)',
+                    color: activeTab === 'calc' ? 'var(--calc-tab-text-active)' : 'var(--calc-tab-text-inactive)',
                     boxShadow: activeTab === 'calc' ? '0 2px 4px rgba(0,0,0,0.08)' : 'none',
                     transition: 'all 0.15s ease'
                   }"
@@ -394,8 +409,8 @@
                     borderRadius: '8px',
                     border: 'none',
                     cursor: 'pointer',
-                    background: activeTab === 'converter' ? 'white' : 'transparent',
-                    color: activeTab === 'converter' ? 'var(--primary)' : 'var(--text-muted)',
+                    background: activeTab === 'converter' ? 'var(--calc-tab-bg-active)' : 'var(--calc-tab-bg-inactive)',
+                    color: activeTab === 'converter' ? 'var(--calc-tab-text-active)' : 'var(--calc-tab-text-inactive)',
                     boxShadow: activeTab === 'converter' ? '0 2px 4px rgba(0,0,0,0.08)' : 'none',
                     transition: 'all 0.15s ease'
                   }"
@@ -407,7 +422,7 @@
               <!-- Tab 1: Calculadora Científica -->
               <div v-if="activeTab === 'calc'">
                 <!-- Pantalla de la calculadora -->
-                <div style="background: #1e293b; color: #38bdf8; border-radius: 12px; padding: 10px 14px; text-align: right; font-family: monospace; font-size: 1.2rem; margin-bottom: 0.8rem; min-height: 52px; word-break: break-all; display: flex; flex-direction: column; justify-content: center;">
+                <div style="background: var(--calc-screen-bg); color: var(--calc-screen-text); border-radius: 12px; padding: 10px 14px; text-align: right; font-family: monospace; font-size: 1.2rem; margin-bottom: 0.8rem; min-height: 52px; word-break: break-all; display: flex; flex-direction: column; justify-content: center;">
                   <div style="font-size: 0.85rem; color: #94a3b8; opacity: 0.8; height: 16px;">{{ calcExpression }}</div>
                   <div style="font-weight: 700; font-size: 1.3rem;">{{ calcDisplay || '0' }}</div>
                 </div>
