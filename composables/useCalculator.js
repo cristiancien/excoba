@@ -1,14 +1,66 @@
 /**
- * useCalculator - Composable for scientific calculator state and logic.
- * Follows SRP: Only handles calculator concerns.
+ * useCalculator - Composable for scientific calculator and unit comparison converter state and logic.
+ * Follows SRP: Only handles calculator and unit conversion concerns.
  */
 window.useCalculator = () => {
-  const { ref } = Vue;
+  const { ref, computed, watch } = Vue;
 
   const calcDisplay = ref('');
   const calcExpression = ref('');
   const showCalculator = ref(false);
   const showFormulario = ref(false);
+
+  // Unit Converter State
+  const activeTab = ref('calc'); // 'calc' or 'converter'
+  const convertCategory = ref('longitud'); // 'longitud', 'angulos', 'velocidad'
+  const convertValue = ref(1);
+  const convertFrom = ref('m');
+
+  const CATEGORY_UNITS = Object.freeze({
+    longitud: [
+      { id: 'm', name: 'Metros (m)', factor: 1 },
+      { id: 'cm', name: 'Centímetros (cm)', factor: 0.01 },
+      { id: 'in', name: 'Pulgadas (in)', factor: 0.0254 },
+      { id: 'ft', name: 'Pies (ft)', factor: 0.3048 },
+      { id: 'mi', name: 'Millas (mi)', factor: 1609.344 }
+    ],
+    angulos: [
+      { id: 'rad', name: 'Radianes (rad)', factor: 180 / Math.PI }, // base unit is degrees
+      { id: 'deg', name: 'Grados (°)', factor: 1 }
+    ],
+    velocidad: [
+      { id: 'm/s', name: 'Metros/segundo (m/s)', factor: 1 },
+      { id: 'km/h', name: 'Kilómetros/hora (km/h)', factor: 1 / 3.6 },
+      { id: 'mph', name: 'Millas/hora (mph)', factor: 0.44704 }
+    ]
+  });
+
+  watch(convertCategory, (newCat) => {
+    const list = CATEGORY_UNITS[newCat] || [];
+    if (list.length > 0) {
+      convertFrom.value = list[0].id;
+    }
+  });
+
+  const comparisonResults = computed(() => {
+    const list = CATEGORY_UNITS[convertCategory.value] || [];
+    const sourceUnit = list.find(u => u.id === convertFrom.value);
+    if (!sourceUnit) return [];
+
+    const val = Number(convertValue.value) || 0;
+    const baseValue = val * sourceUnit.factor;
+
+    return list.map(unit => {
+      const converted = baseValue / unit.factor;
+      // Truncate to maximum 6 decimals, but strip trailing zeroes
+      let displayVal = parseFloat(converted.toFixed(6));
+      return {
+        id: unit.id,
+        name: unit.name,
+        value: displayVal
+      };
+    });
+  });
 
   const DISPLAY_MAP = Object.freeze({
     '/': '÷',
@@ -96,6 +148,9 @@ window.useCalculator = () => {
 
   return {
     calcDisplay, calcExpression, showCalculator, showFormulario,
-    pressCalcKey, toggleCalculator, toggleFormulario
+    pressCalcKey, toggleCalculator, toggleFormulario,
+
+    // Converter exports
+    activeTab, convertCategory, convertValue, convertFrom, CATEGORY_UNITS, comparisonResults
   };
 };

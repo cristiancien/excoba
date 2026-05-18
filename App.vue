@@ -356,64 +356,176 @@
 
           <!-- Panel Flotante de la CALCULADORA CIENTÍFICA -->
           <transition name="fade">
-            <div v-if="showCalculator" class="glass-panel calculator-panel" style="position: absolute; right: 20px; top: 10px; width: 340px; z-index: 100; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(79,70,229,0.3); background: rgba(255,255,255,0.94);">
+            <div v-if="showCalculator" class="glass-panel calculator-panel" style="position: absolute; right: 20px; top: 10px; width: 340px; z-index: 100; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(79,70,229,0.3); background: rgba(255,255,255,0.95); border-radius: 20px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem;">
                 <h3 style="font-size: 1rem; color: var(--primary); margin: 0; font-weight: 800; display: flex; align-items: center; gap: 6px;">
-                  🧮 Calculadora Científica
+                  🧮 Panel de Herramientas
                 </h3>
                 <button @click="showCalculator = false" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--text-muted);">×</button>
               </div>
+
+              <!-- Selector de Pestañas (Calculadora vs Conversor) -->
+              <div style="display: flex; gap: 4px; margin-bottom: 0.8rem; background: rgba(0,0,0,0.05); padding: 3px; border-radius: 10px;">
+                <button 
+                  @click="activeTab = 'calc'" 
+                  :style="{
+                    flex: 1,
+                    padding: '8px 10px',
+                    fontSize: '0.8rem',
+                    fontWeight: '800',
+                    borderRadius: '8px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    background: activeTab === 'calc' ? 'white' : 'transparent',
+                    color: activeTab === 'calc' ? 'var(--primary)' : 'var(--text-muted)',
+                    boxShadow: activeTab === 'calc' ? '0 2px 4px rgba(0,0,0,0.08)' : 'none',
+                    transition: 'all 0.15s ease'
+                  }"
+                >
+                  🧮 Operaciones
+                </button>
+                <button 
+                  @click="activeTab = 'converter'" 
+                  :style="{
+                    flex: 1,
+                    padding: '8px 10px',
+                    fontSize: '0.8rem',
+                    fontWeight: '800',
+                    borderRadius: '8px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    background: activeTab === 'converter' ? 'white' : 'transparent',
+                    color: activeTab === 'converter' ? 'var(--primary)' : 'var(--text-muted)',
+                    boxShadow: activeTab === 'converter' ? '0 2px 4px rgba(0,0,0,0.08)' : 'none',
+                    transition: 'all 0.15s ease'
+                  }"
+                >
+                  🔄 Conversor
+                </button>
+              </div>
               
-              <!-- Pantalla de la calculadora -->
-              <div style="background: #1e293b; color: #38bdf8; border-radius: 12px; padding: 10px 14px; text-align: right; font-family: monospace; font-size: 1.2rem; margin-bottom: 0.8rem; min-height: 52px; word-break: break-all; display: flex; flex-direction: column; justify-content: center;">
-                <div style="font-size: 0.85rem; color: #94a3b8; opacity: 0.8; height: 16px;">{{ calcExpression }}</div>
-                <div style="font-weight: 700; font-size: 1.3rem;">{{ calcDisplay || '0' }}</div>
+              <!-- Tab 1: Calculadora Científica -->
+              <div v-if="activeTab === 'calc'">
+                <!-- Pantalla de la calculadora -->
+                <div style="background: #1e293b; color: #38bdf8; border-radius: 12px; padding: 10px 14px; text-align: right; font-family: monospace; font-size: 1.2rem; margin-bottom: 0.8rem; min-height: 52px; word-break: break-all; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="font-size: 0.85rem; color: #94a3b8; opacity: 0.8; height: 16px;">{{ calcExpression }}</div>
+                  <div style="font-weight: 700; font-size: 1.3rem;">{{ calcDisplay || '0' }}</div>
+                </div>
+
+                <!-- Teclas de la calculadora (Grid 5x7) -->
+                <div class="calc-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
+                  <button @click="pressCalcKey('sin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">sin</button>
+                  <button @click="pressCalcKey('cos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">cos</button>
+                  <button @click="pressCalcKey('tan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">tan</button>
+                  <button @click="pressCalcKey('sqrt(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">√</button>
+                  <button @click="pressCalcKey('^')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">xʸ</button>
+
+                  <button @click="pressCalcKey('asin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">asin</button>
+                  <button @click="pressCalcKey('acos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">acos</button>
+                  <button @click="pressCalcKey('atan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">atan</button>
+                  <button @click="pressCalcKey('fact(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">x!</button>
+                  <button @click="pressCalcKey('abs(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">abs</button>
+
+                  <button @click="pressCalcKey('log(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">log</button>
+                  <button @click="pressCalcKey('ln(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">ln</button>
+                  <button @click="pressCalcKey('pi')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">π</button>
+                  <button @click="pressCalcKey('e')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">e</button>
+                  <button @click="pressCalcKey('%')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">mod</button>
+
+                  <button @click="pressCalcKey('(')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">(</button>
+                  <button @click="pressCalcKey(')')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">)</button>
+                  <button @click="pressCalcKey('C')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">C</button>
+                  <button @click="pressCalcKey('Del')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">⌫</button>
+                  <button @click="pressCalcKey('/')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">÷</button>
+
+                  <button @click="pressCalcKey('7')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">7</button>
+                  <button @click="pressCalcKey('8')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">8</button>
+                  <button @click="pressCalcKey('9')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">9</button>
+                  <button @click="pressCalcKey('*')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">×</button>
+                  <button @click="pressCalcKey('-')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">-</button>
+
+                  <button @click="pressCalcKey('4')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">4</button>
+                  <button @click="pressCalcKey('5')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">5</button>
+                  <button @click="pressCalcKey('6')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">6</button>
+                  <button @click="pressCalcKey('+')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">+</button>
+                  <button @click="pressCalcKey('=')" class="calc-btn eq" style="grid-row: span 2; height: 100%; font-size: 1.1rem;">=</button>
+
+                  <button @click="pressCalcKey('1')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">1</button>
+                  <button @click="pressCalcKey('2')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">2</button>
+                  <button @click="pressCalcKey('3')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">3</button>
+                  <button @click="pressCalcKey('0')" class="calc-btn num" style="grid-column: span 2; font-size: 0.9rem; padding: 8px 0;">0</button>
+                  <button @click="pressCalcKey('.')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">.</button>
+                </div>
               </div>
 
-              <!-- Teclas de la calculadora (Grid 5x7) -->
-              <div class="calc-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
-                <button @click="pressCalcKey('sin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">sin</button>
-                <button @click="pressCalcKey('cos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">cos</button>
-                <button @click="pressCalcKey('tan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">tan</button>
-                <button @click="pressCalcKey('sqrt(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">√</button>
-                <button @click="pressCalcKey('^')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">xʸ</button>
+              <!-- Tab 2: Comparador de Unidades de Física y Matemáticas -->
+              <div v-else style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <!-- Seleccionar Categoría -->
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Categoría de Conversión</label>
+                  <select 
+                    v-model="convertCategory" 
+                    style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--text-main); background: white; cursor: pointer; outline: none; box-shadow: var(--glass-shadow);"
+                  >
+                    <option value="longitud">📏 Longitud (Metros, Pulgadas, Millas...)</option>
+                    <option value="angulos">📐 Ángulos (Radianes, Grados)</option>
+                    <option value="velocidad">⚡ Velocidad (m/s, km/h, mph)</option>
+                  </select>
+                </div>
 
-                <button @click="pressCalcKey('asin(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">asin</button>
-                <button @click="pressCalcKey('acos(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">acos</button>
-                <button @click="pressCalcKey('atan(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">atan</button>
-                <button @click="pressCalcKey('fact(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">x!</button>
-                <button @click="pressCalcKey('abs(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">abs</button>
+                <!-- Valor e Input -->
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 8px;">
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Valor a Comparar</label>
+                    <input 
+                      type="number" 
+                      v-model="convertValue" 
+                      placeholder="1"
+                      style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--text-main); text-align: right; outline: none; box-shadow: var(--glass-shadow);"
+                    />
+                  </div>
 
-                <button @click="pressCalcKey('log(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">log</button>
-                <button @click="pressCalcKey('ln(')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">ln</button>
-                <button @click="pressCalcKey('pi')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">π</button>
-                <button @click="pressCalcKey('e')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">e</button>
-                <button @click="pressCalcKey('%')" class="calc-btn fn" style="font-size: 0.8rem; padding: 8px 0;">mod</button>
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <label style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Desde Unidad</label>
+                    <select 
+                      v-model="convertFrom" 
+                      style="width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--text-main); background: white; cursor: pointer; outline: none; box-shadow: var(--glass-shadow);"
+                    >
+                      <option 
+                        v-for="unit in CATEGORY_UNITS[convertCategory]" 
+                        :key="unit.id" 
+                        :value="unit.id"
+                      >
+                        {{ unit.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
 
-                <button @click="pressCalcKey('(')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">(</button>
-                <button @click="pressCalcKey(')')" class="calc-btn fn" style="font-size: 0.85rem; padding: 8px 0;">)</button>
-                <button @click="pressCalcKey('C')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">C</button>
-                <button @click="pressCalcKey('Del')" class="calc-btn clear" style="font-size: 0.85rem; padding: 8px 0;">⌫</button>
-                <button @click="pressCalcKey('/')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">÷</button>
-
-                <button @click="pressCalcKey('7')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">7</button>
-                <button @click="pressCalcKey('8')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">8</button>
-                <button @click="pressCalcKey('9')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">9</button>
-                <button @click="pressCalcKey('*')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">×</button>
-                <button @click="pressCalcKey('-')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">-</button>
-
-                <button @click="pressCalcKey('4')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">4</button>
-                <button @click="pressCalcKey('5')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">5</button>
-                <button @click="pressCalcKey('6')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">6</button>
-                <button @click="pressCalcKey('+')" class="calc-btn op" style="font-size: 0.85rem; padding: 8px 0;">+</button>
-                <button @click="pressCalcKey('=')" class="calc-btn eq" style="grid-row: span 2; height: 100%; font-size: 1.1rem;">=</button>
-
-                <button @click="pressCalcKey('1')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">1</button>
-                <button @click="pressCalcKey('2')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">2</button>
-                <button @click="pressCalcKey('3')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">3</button>
-                <button @click="pressCalcKey('0')" class="calc-btn num" style="grid-column: span 2; font-size: 0.9rem; padding: 8px 0;">0</button>
-                <button @click="pressCalcKey('.')" class="calc-btn num" style="font-size: 0.9rem; padding: 8px 0;">.</button>
+                <!-- Lista de Comparación Comparativa -->
+                <div style="margin-top: 0.2rem;">
+                  <label style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 6px; letter-spacing: 0.5px;">
+                    📋 Valores Comparados Simultáneamente
+                  </label>
+                  <div style="background: rgba(0,0,0,0.03); border-radius: 12px; padding: 6px 10px; display: flex; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto;" class="sidebar-scroll">
+                    <div 
+                      v-for="res in comparisonResults" 
+                      :key="res.id"
+                      style="display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 0.85rem; border-radius: 6px;"
+                      :style="{ 
+                        fontWeight: res.id === convertFrom ? '800' : '600', 
+                        color: res.id === convertFrom ? 'white' : 'var(--text-main)',
+                        background: res.id === convertFrom ? 'linear-gradient(135deg, var(--primary), #818cf8)' : 'transparent',
+                        padding: res.id === convertFrom ? '6px 10px' : '6px 8px'
+                      }"
+                    >
+                      <span style="font-size: 0.8rem;">{{ res.name }}</span>
+                      <span style="font-family: monospace; font-size: 0.9rem; font-weight: 700;">{{ res.value }}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
           </transition>
 
@@ -826,6 +938,12 @@ export default {
       calcDisplay: calc.calcDisplay,
       calcExpression: calc.calcExpression,
       pressCalcKey: calc.pressCalcKey,
+      activeTab: calc.activeTab,
+      convertCategory: calc.convertCategory,
+      convertValue: calc.convertValue,
+      convertFrom: calc.convertFrom,
+      CATEGORY_UNITS: calc.CATEGORY_UNITS,
+      comparisonResults: calc.comparisonResults,
 
       // UI state
       currentScreen,
