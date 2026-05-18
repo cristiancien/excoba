@@ -701,7 +701,8 @@ export default {
       pauseExam,
       resumeExam,
       confirmExit,
-      pressCalcKey
+      nextQuestion,
+      jumpToQuestion
     };
   }
 }
