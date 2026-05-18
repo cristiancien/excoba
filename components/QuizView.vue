@@ -55,6 +55,26 @@
         Comprobar
       </button>
     </div>
+
+    <!-- Navigation Buttons -->
+    <div style="display: flex; gap: 10px; margin-top: 1.5rem; border-top: 1px solid var(--glass-border); padding-top: 1.2rem; justify-content: space-between; align-items: center;">
+      <button 
+        @click="$emit('prev')" 
+        class="btn btn-secondary-outline" 
+        :disabled="isFirst"
+        style="padding: 10px 20px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
+      >
+        <span>← Anterior</span>
+      </button>
+      <button 
+        @click="$emit('next')" 
+        class="btn btn-primary-outline" 
+        :disabled="isLast"
+        style="padding: 10px 20px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
+      >
+        <span>Siguiente →</span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -71,9 +91,17 @@ export default {
     hintAlreadyUsed: {
       type: Boolean,
       default: false
+    },
+    isFirst: {
+      type: Boolean,
+      default: false
+    },
+    isLast: {
+      type: Boolean,
+      default: false
     }
   },
-  emits: ['answer-selected', 'hint-used'],
+  emits: ['answer-selected', 'hint-used', 'prev', 'next'],
   setup(props, { emit }) {
     const selectedOption = ref(null);
     const showResult = ref(false);
