@@ -1,9 +1,9 @@
 /**
- * useQuestionBank - Composable for question selection and progress tracking.
+ * useQuestionBank - Composable for question selection and progress tracking with LocalStorage persistence.
  * Follows SRP: Only handles question data management.
  */
 window.useQuestionBank = () => {
-  const { ref, computed } = Vue;
+  const { ref, computed, watch } = Vue;
 
   const SUBTEMA_MAP = Object.freeze({
     Primaria: ['Español', 'Matemáticas'],
@@ -14,9 +14,21 @@ window.useQuestionBank = () => {
   const QUESTIONS_PER_TOPIC = 20;
 
   const allQuestions = window.EXCOBA_QUESTIONS || [];
-  const questions = ref([]);
-  const currentQuestionIndex = ref(0);
-  const answeredStatus = ref({});
+  const questions = ref(JSON.parse(localStorage.getItem('excoba_questions')) || []);
+  const currentQuestionIndex = ref(Number(localStorage.getItem('excoba_current_index')) || 0);
+  const answeredStatus = ref(JSON.parse(localStorage.getItem('excoba_answered_status')) || {});
+
+  watch(questions, (newVal) => {
+    localStorage.setItem('excoba_questions', JSON.stringify(newVal));
+  }, { deep: true });
+
+  watch(currentQuestionIndex, (newVal) => {
+    localStorage.setItem('excoba_current_index', newVal);
+  });
+
+  watch(answeredStatus, (newVal) => {
+    localStorage.setItem('excoba_answered_status', JSON.stringify(newVal));
+  }, { deep: true });
 
   // Fisher-Yates shuffle (proper randomization, avoids sort bias)
   const shuffle = (arr) => {
@@ -138,6 +150,9 @@ window.useQuestionBank = () => {
   const resetBank = () => {
     currentQuestionIndex.value = 0;
     answeredStatus.value = {};
+    localStorage.removeItem('excoba_questions');
+    localStorage.removeItem('excoba_current_index');
+    localStorage.removeItem('excoba_answered_status');
   };
 
   // Text cleaner for sidebar tooltips (DRY: single source of truth)

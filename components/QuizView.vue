@@ -30,9 +30,30 @@
       </div>
     </div>
 
-    <!-- Actions (Hint & Submit) -->
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
-      <div>
+    <!-- Actions (Hint & Submit & Navigation) -->
+    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <!-- Navigation (Anterior / Siguiente) -->
+      <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <button 
+          @click="$emit('prev')" 
+          class="btn btn-secondary" 
+          :disabled="!hasPrev"
+          style="padding: 10px 16px; border-radius: 12px; font-weight: 700; font-size: 0.9rem;"
+        >
+          ← Anterior
+        </button>
+        <button 
+          @click="$emit('next-nav')" 
+          class="btn btn-secondary" 
+          :disabled="!hasNext"
+          style="padding: 10px 16px; border-radius: 12px; font-weight: 700; font-size: 0.9rem;"
+        >
+          Siguiente →
+        </button>
+      </div>
+
+      <!-- Action Panel -->
+      <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
         <button 
           v-if="!showHint && !showResult && !hintAlreadyUsed" 
           @click="useHint" 
@@ -42,44 +63,25 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           Pista (-3 pts)
         </button>
-        <div v-if="showHint || hintAlreadyUsed" class="glass-panel" style="padding: 1rem; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); font-size: 0.95rem;">
+        <div v-if="showHint || hintAlreadyUsed" class="glass-panel" style="padding: 0.6rem 1.2rem; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); font-size: 0.9rem; border-radius: 12px; max-width: 280px;">
           💡 <strong>Pista:</strong> {{ question.hint }}
         </div>
+        
+        <button 
+          class="btn btn-primary" 
+          :disabled="!selectedOption || showResult"
+          @click="submitAnswer"
+          style="min-width: 120px;"
+        >
+          Comprobar
+        </button>
       </div>
-      
-      <button 
-        class="btn btn-primary" 
-        :disabled="!selectedOption || showResult"
-        @click="submitAnswer"
-      >
-        Comprobar
-      </button>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div style="display: flex; gap: 10px; margin-top: 1.5rem; border-top: 1px solid var(--glass-border); padding-top: 1.2rem; justify-content: space-between; align-items: center;">
-      <button 
-        @click="$emit('prev')" 
-        class="btn btn-secondary-outline" 
-        :disabled="isFirst"
-        style="padding: 10px 20px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
-      >
-        <span>← Anterior</span>
-      </button>
-      <button 
-        @click="$emit('next')" 
-        class="btn btn-primary-outline" 
-        :disabled="isLast"
-        style="padding: 10px 20px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s;"
-      >
-        <span>Siguiente →</span>
-      </button>
     </div>
   </div>
 </template>
 
 <script>
-const { ref, watch, computed } = Vue;
+const { ref, watch } = Vue;
 
 export default {
   props: {
@@ -92,16 +94,16 @@ export default {
       type: Boolean,
       default: false
     },
-    isFirst: {
+    hasPrev: {
       type: Boolean,
       default: false
     },
-    isLast: {
+    hasNext: {
       type: Boolean,
       default: false
     }
   },
-  emits: ['answer-selected', 'hint-used', 'prev', 'next'],
+  emits: ['answer-selected', 'hint-used', 'prev', 'next-nav'],
   setup(props, { emit }) {
     const selectedOption = ref(null);
     const showResult = ref(false);

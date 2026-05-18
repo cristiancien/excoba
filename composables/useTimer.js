@@ -1,15 +1,23 @@
 /**
- * useTimer - Composable for managing exam and pause timers.
+ * useTimer - Composable for managing exam and pause timers with LocalStorage persistence.
  * Follows SRP: Only handles time-tracking concerns.
  */
 window.useTimer = () => {
-  const { ref, computed } = Vue;
+  const { ref, computed, watch } = Vue;
 
-  const examTime = ref(0);
+  const examTime = ref(Number(localStorage.getItem('excoba_exam_time')) || 0);
   const timerInterval = ref(null);
   const currentPauseTime = ref(0);
-  const totalPauseTime = ref(0);
+  const totalPauseTime = ref(Number(localStorage.getItem('excoba_total_pause_time')) || 0);
   const pausedTimerInterval = ref(null);
+
+  watch(examTime, (newVal) => {
+    localStorage.setItem('excoba_exam_time', newVal);
+  });
+
+  watch(totalPauseTime, (newVal) => {
+    localStorage.setItem('excoba_total_pause_time', newVal);
+  });
 
   const formatSeconds = (t) => {
     const hours = Math.floor(t / 3600);
@@ -57,6 +65,8 @@ window.useTimer = () => {
     examTime.value = 0;
     currentPauseTime.value = 0;
     totalPauseTime.value = 0;
+    localStorage.removeItem('excoba_exam_time');
+    localStorage.removeItem('excoba_total_pause_time');
   };
 
   return {

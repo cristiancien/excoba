@@ -1,100 +1,12 @@
 <template>
   <div class="app-layout" style="max-width: 1300px; margin: 0 auto; padding: 1.5rem; position: relative; z-index: 1;">
     
-    <!-- 0. PANTALLA: AUTENTICACIÓN (LOGIN & REGISTRO POCKETBASE) -->
-    <transition name="fade" mode="out-in">
-      <div v-if="!isAuthenticated" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
-        
-        <!-- Tarjeta de Auth Premium -->
-        <div class="glass-panel menu-hero-card" style="max-width: 480px; width: 100%; padding: 3rem 2rem; display: flex; flex-direction: column; gap: 1.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 24px;">
-          
-          <div style="text-align: center;">
-            <div style="background: linear-gradient(135deg, var(--primary), #818cf8); width: 65px; height: 65px; border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); margin-bottom: 1rem;">
-              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <h2 style="font-size: 1.8rem; color: var(--text-main); font-weight: 800; margin-bottom: 0.3rem;">EXCOBA Prep</h2>
-            <p style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">
-              {{ authMode === 'login' ? 'Inicia sesión para guardar tu progreso' : 'Crea una cuenta en segundos' }}
-            </p>
-          </div>
-
-          <!-- Error Alert -->
-          <div v-if="authError" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #ef4444; padding: 10px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 600;">
-            ⚠️ {{ authError }}
-          </div>
-
-          <!-- Auth Form -->
-          <form @submit.prevent="handleAuthSubmit" style="display: flex; flex-direction: column; gap: 1rem;">
-            <div v-if="authMode === 'register'" style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Nombre Completo</label>
-              <input v-model="authName" type="text" placeholder="Ej. Juan Pérez" required style="padding: 12px; border-radius: 12px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-main); font-weight: 600; outline: none;" />
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Correo Electrónico</label>
-              <input v-model="authEmail" type="email" placeholder="ejemplo@correo.com" required style="padding: 12px; border-radius: 12px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-main); font-weight: 600; outline: none;" />
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Contraseña</label>
-              <input v-model="authPassword" type="password" placeholder="Mínimo 8 caracteres" required style="padding: 12px; border-radius: 12px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-main); font-weight: 600; outline: none;" />
-            </div>
-
-            <button type="submit" :disabled="authLoading" class="btn btn-primary" style="padding: 14px; border-radius: 12px; font-weight: 800; font-size: 1rem; margin-top: 0.5rem; display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%;">
-              <span v-if="authLoading" class="spinner" style="width:16px; height:16px; border:2px solid white; border-top-color:transparent; border-radius:50%; animation:spin 0.8s linear infinite;"></span>
-              <span>{{ authMode === 'login' ? 'Entrar al simulador' : 'Registrar y Comenzar' }}</span>
-            </button>
-          </form>
-
-          <!-- Toggle Mode link -->
-          <div style="text-align: center; font-size: 0.9rem; font-weight: 600;">
-            <span style="color: var(--text-muted);">{{ authMode === 'login' ? '¿No tienes cuenta?' : '¿Ya tienes una cuenta?' }}</span>
-            <a @click="toggleAuthMode" style="color: var(--primary); cursor: pointer; margin-left: 5px; font-weight: 700; text-decoration: underline;">
-              {{ authMode === 'login' ? 'Regístrate aquí' : 'Inicia sesión' }}
-            </a>
-          </div>
-
-          <!-- Divider -->
-          <div style="display: flex; align-items: center; gap: 10px; margin: 0.5rem 0;">
-            <div style="flex: 1; height: 1px; background: var(--glass-border);"></div>
-            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">O entra con</span>
-            <div style="flex: 1; height: 1px; background: var(--glass-border);"></div>
-          </div>
-
-          <!-- Social Buttons -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button @click="handleSocial('google')" class="btn glass-panel" style="padding: 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: 1px solid var(--glass-border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.1 14.54c-.66.86-1.57 1.48-2.61 1.76-1.04.28-2.14.2-3.12-.22-1-.42-1.83-1.18-2.38-2.14-.54-.96-.75-2.09-.59-3.19.16-1.1.7-2.1 1.54-2.82.84-.72 1.91-1.12 3.01-1.12 1.09 0 2.14.39 2.97 1.09.28.24.52.52.72.84-.52.52-1.04 1.04-1.56 1.56-.44-.39-.99-.61-1.57-.61-.64 0-1.25.26-1.7.71-.45.45-.71 1.06-.71 1.7 0 .64.26 1.25.71 1.7.45.45 1.06.71 1.7.71.56 0 1.09-.2 1.51-.55v-.73h-1.51v-1.75h3.25v2.86c-.05.41-.21.79-.44 1.13z"></path></svg>
-              <span>Google</span>
-            </button>
-            <button @click="handleSocial('github')" class="btn glass-panel" style="padding: 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; border: 1px solid var(--glass-border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              <span>GitHub</span>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </transition>
-
     <!-- 1. PANTALLA: MENÚ PRINCIPAL -->
     <transition name="fade" mode="out-in">
-      <div v-else-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
+      <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
         
-        <!-- Theme Switcher & User Session -->
-        <div style="position: absolute; top: 25px; right: 25px; z-index: 10; display: flex; gap: 12px; align-items: center;">
-          <!-- User info -->
-          <div v-if="isAuthenticated" class="glass-panel" style="display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 14px; font-size: 0.85rem; font-weight: 700; border: 1px solid var(--glass-border); background: var(--glass-bg);">
-            <span>👤 {{ user.name }}</span>
-          </div>
-          <button v-if="isAuthenticated" @click="handleLogout" class="btn" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); padding: 9px 15px; border-radius: 14px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s;">
-            Salir
-          </button>
-          
+        <!-- Theme Switcher (Claro/Oscuro) -->
+        <div style="position: absolute; top: 25px; right: 25px; z-index: 10;">
           <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 10px 16px; border-radius: 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
             <span v-if="isDarkMode">☀️ Modo Claro</span>
             <span v-else>🌙 Modo Oscuro</span>
@@ -144,12 +56,69 @@
             </div>
           </div>
 
-          <!-- Botón de Inicio Central -->
-          <div style="margin-top: 0.5rem;">
-            <button @click="startExam" class="btn btn-primary start-exam-btn" style="padding: 16px 45px; font-size: 1.25rem; border-radius: 20px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);">
-              Comenzar Prueba
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            </button>
+          <!-- Secciones de Estudio y Pruebas Disponibles -->
+          <div style="text-align: left; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <h3 style="font-size: 1.1rem; color: var(--text-main); font-weight: 800; display: flex; align-items: center; gap: 6px; border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem; margin: 0;">
+              📚 Secciones y Pruebas de Estudio
+            </h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Tarjeta 1: Especialidad de Arquitectura & Diseño (Activa) -->
+              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 2px solid var(--primary); background: rgba(79, 70, 229, 0.04); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 250px;">
+                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba de Arquitectura & Diseño</span>
+                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                    <span>📋 180 Preguntas</span>
+                    <span>•</span>
+                    <span>⚡ Simulación EXCOBA Completa</span>
+                  </div>
+                  <!-- Progreso Badge -->
+                  <div v-if="questions.length > 0 && overallSolvedCount > 0" style="margin-top: 6px; display: inline-flex;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); background: rgba(16, 185, 129, 0.1); padding: 3px 8px; border-radius: 8px;">
+                      Progreso: Resueltas {{ overallSolvedCount }} de 180 ({{ progressPercentage }}%)
+                    </span>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-shrink: 0;">
+                  <button v-if="questions.length > 0" @click="resumeExamFromMenu" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 12px; font-weight: 800;">
+                    Continuar
+                  </button>
+                  <button @click="startExam" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 12px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
+                    {{ questions.length > 0 ? 'Reiniciar' : 'Comenzar' }}
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tarjeta 2: Ciencias Físico-Matemáticas (Bloqueada) -->
+              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.65; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Ingeniería y Ciencias Exactas</span>
+                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                    <span>📋 180 Preguntas</span>
+                    <span>•</span>
+                    <span>📐 Cálculo, Física Avanzada y Química</span>
+                  </div>
+                </div>
+                <div>
+                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente 🔒</span>
+                </div>
+              </div>
+
+              <!-- Tarjeta 3: Ciencias de la Salud (Bloqueada) -->
+              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.65; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Medicina y Ciencias de la Salud</span>
+                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                    <span>📋 180 Preguntas</span>
+                    <span>•</span>
+                    <span>🧪 Biología, Anatomía Humana y Bioquímica</span>
+                  </div>
+                </div>
+                <div>
+                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente 🔒</span>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -357,12 +326,12 @@
                 :question="currentQuestion"
                 :past-answer="answeredStatus[currentQuestion.id]"
                 :hint-already-used="!!hintsUsedStatus[currentQuestion.id]"
-                :is-first="currentQuestionIndex === 0"
-                :is-last="currentQuestionIndex === totalQuestions - 1"
+                :has-prev="currentQuestionIndex > 0"
+                :has-next="currentQuestionIndex < totalQuestions - 1"
                 @answer-selected="handleAnswer"
                 @hint-used="handleHint"
                 @prev="prevQuestion"
-                @next="nextQuestion"
+                @next-nav="nextQuestionNav"
               />
               
               <div v-else-if="!currentQuestion" class="glass-panel" style="padding: 4rem 2rem; text-align: center;">
@@ -674,7 +643,7 @@
 </template>
 
 <script>
-const { ref, computed } = Vue;
+const { ref, computed, watch } = Vue;
 
 const { loadModule } = window['vue3-sfc-loader'];
 const options = window.__SFC_OPTIONS__;
@@ -686,137 +655,14 @@ export default {
   },
   setup() {
     // --- Composable Injection (DI pattern via window) ---
-    const auth = window.useAuth();
     const timer = window.useTimer();
     const scoring = window.useScoring();
     const theme = window.useTheme();
     const bank = window.useQuestionBank();
     const calc = window.useCalculator();
 
-    // --- Local Auth form State ---
-    const authEmail = ref('');
-    const authPassword = ref('');
-    const authName = ref('');
-
-    const toggleAuthMode = () => {
-      auth.authMode.value = auth.authMode.value === 'login' ? 'register' : 'login';
-      auth.authError.value = '';
-    };
-
-    const handleAuthSubmit = async () => {
-      let success = false;
-      if (auth.authMode.value === 'login') {
-        success = await auth.login(authEmail.value, authPassword.value);
-      } else {
-        success = await auth.register(authEmail.value, authPassword.value, authName.value);
-      }
-
-      if (success) {
-        await loadUserProgress();
-      }
-    };
-
-    const handleSocial = async (provider) => {
-      const success = await auth.socialLogin(provider);
-      if (success) {
-        await loadUserProgress();
-      }
-    };
-
-    const handleLogout = () => {
-      auth.logout();
-      scoring.resetScoring();
-      bank.answeredStatus.value = {};
-      currentScreen.value = 'menu';
-    };
-
-    // --- PocketBase Progress Syncing ---
-    const loadUserProgress = async () => {
-      if (!auth.isAuthenticated.value) return;
-      const userId = auth.user.value.id;
-      const token = auth.token.value;
-      try {
-        const res = await fetch(`http://localhost:8090/api/collections/progress/records?filter=(user='${userId}')&limit=250`, {
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (res.ok) {
-          const data = await res.json();
-          // Reset states before loading
-          scoring.resetScoring();
-          bank.answeredStatus.value = {};
-
-          let latestScore = 0;
-          data.items.forEach(item => {
-            bank.answeredStatus.value[item.questionId] = {
-              isCorrect: item.isCorrect,
-              selectedOptionId: item.selectedOptionId,
-              shuffledOptions: item.shuffledOptions
-            };
-            if (item.hintUsed) {
-              scoring.hintsUsedStatus.value[item.questionId] = true;
-            }
-            latestScore = item.score;
-          });
-
-          if (data.items.length > 0) {
-            scoring.score.value = latestScore;
-          }
-        }
-      } catch (e) {
-        console.error("Failed to load user progress:", e);
-      }
-    };
-
-    const saveUserProgress = async (questionId, isCorrect, selectedOptionId, shuffledOptions) => {
-      if (!auth.isAuthenticated.value) return;
-      const userId = auth.user.value.id;
-      const token = auth.token.value;
-      const hintUsed = !!scoring.hintsUsedStatus.value[questionId];
-      const currentScore = scoring.score.value;
-
-      try {
-        // Find existing record
-        const checkRes = await fetch(`http://localhost:8090/api/collections/progress/records?filter=(user='${userId}'%26%26questionId=${questionId})`, {
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        
-        let recordId = null;
-        if (checkRes.ok) {
-          const checkData = await checkRes.json();
-          if (checkData.items && checkData.items.length > 0) {
-            recordId = checkData.items[0].id;
-          }
-        }
-
-        const payload = {
-          user: userId,
-          questionId,
-          isCorrect,
-          selectedOptionId,
-          shuffledOptions,
-          hintUsed,
-          score: currentScore
-        };
-
-        const url = recordId 
-          ? `http://localhost:8090/api/collections/progress/records/${recordId}`
-          : `http://localhost:8090/api/collections/progress/records`;
-        
-        await fetch(url, {
-          method: recordId ? 'PATCH' : 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify(payload)
-        });
-      } catch (e) {
-        console.error("Failed to sync progress:", e);
-      }
-    };
-
     // --- Local UI State ---
-    const currentScreen = ref('menu');
+    const currentScreen = ref(localStorage.getItem('excoba_current_screen') || 'menu');
     const isPaused = ref(false);
     const showExitWarning = ref(false);
     const showFeedback = ref(false);
@@ -828,6 +674,15 @@ export default {
       Secundaria: true,
       Bachillerato: true
     });
+
+    watch(currentScreen, (newVal) => {
+      localStorage.setItem('excoba_current_screen', newVal);
+    });
+
+    // Auto-resume timer on load if we are on active exam screen and have loaded questions
+    if (currentScreen.value === 'exam' && bank.questions.value.length > 0) {
+      timer.startTimer();
+    }
 
     const toggleSection = (name) => {
       expandedSections.value[name] = !expandedSections.value[name];
@@ -844,10 +699,11 @@ export default {
       showExitWarning.value = false;
       currentScreen.value = 'exam';
       timer.startTimer();
-      // Load progress on exam start if authenticated
-      if (auth.isAuthenticated.value) {
-        loadUserProgress();
-      }
+    };
+
+    const resumeExamFromMenu = () => {
+      currentScreen.value = 'exam';
+      timer.startTimer();
     };
 
     const pauseExam = () => {
@@ -872,14 +728,13 @@ export default {
       scoring.resetScoring();
       showFeedback.value = false;
       expandedSections.value = { Primaria: true, Secundaria: true, Bachillerato: true };
+      localStorage.removeItem('excoba_current_screen');
     };
 
     // --- Answer & Hint Handlers (Mediator pattern) ---
     const handleHint = () => {
       if (bank.currentQuestion.value) {
-        const qId = bank.currentQuestion.value.id;
-        scoring.applyHint(qId);
-        saveUserProgress(qId, false, '', [], true);
+        scoring.applyHint(bank.currentQuestion.value.id);
       }
     };
 
@@ -888,17 +743,6 @@ export default {
       scoring.applyAnswer(result.isCorrect);
       bank.recordAnswer(bank.currentQuestion.value.id, result);
       showFeedback.value = true;
-      
-      saveUserProgress(bank.currentQuestion.value.id, result.isCorrect, result.selectedOptionId, result.shuffledOptions);
-    };
-
-    const prevQuestion = () => {
-      showFeedback.value = false;
-      if (bank.currentQuestionIndex.value > 0) {
-        bank.currentQuestionIndex.value--;
-        const prevSection = bank.currentQuestion.value?.section ?? '';
-        expandedSections.value[prevSection] = true;
-      }
     };
 
     const nextQuestion = () => {
@@ -913,6 +757,22 @@ export default {
       }
     };
 
+    const prevQuestion = () => {
+      if (bank.currentQuestionIndex.value > 0) {
+        showFeedback.value = false;
+        bank.currentQuestionIndex.value--;
+        expandedSections.value[bank.currentQuestion.value.section] = true;
+      }
+    };
+
+    const nextQuestionNav = () => {
+      if (bank.currentQuestionIndex.value < bank.totalQuestions.value - 1) {
+        showFeedback.value = false;
+        bank.currentQuestionIndex.value++;
+        expandedSections.value[bank.currentQuestion.value.section] = true;
+      }
+    };
+
     const jumpToQuestion = (idx) => {
       showFeedback.value = false;
       bank.currentQuestionIndex.value = idx;
@@ -921,28 +781,8 @@ export default {
       }
     };
 
-    // Initialize session from localStorage on application bootstrap
-    auth.initSession();
-    if (auth.isAuthenticated.value) {
-      loadUserProgress();
-    }
-
     // --- Public API (flat spread for template simplicity) ---
     return {
-      // Auth
-      user: auth.user,
-      isAuthenticated: auth.isAuthenticated,
-      authMode: auth.authMode,
-      authError: auth.authError,
-      authLoading: auth.isLoading,
-      authEmail,
-      authPassword,
-      authName,
-      toggleAuthMode,
-      handleAuthSubmit,
-      handleSocial,
-      handleLogout,
-
       // Question bank
       questions: bank.questions,
       currentQuestionIndex: bank.currentQuestionIndex,
@@ -999,11 +839,13 @@ export default {
 
       // Flow
       startExam,
+      resumeExamFromMenu,
       pauseExam,
       resumeExam,
       confirmExit,
-      prevQuestion,
       nextQuestion,
+      prevQuestion,
+      nextQuestionNav,
       jumpToQuestion
     };
   }
