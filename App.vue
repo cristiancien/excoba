@@ -85,29 +85,14 @@
                 </div>
               </div>
 
-              <!-- Tarjeta 2: Ciencias Físico-Matemáticas (Bloqueada) -->
-              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.65; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+              <!-- Tarjeta Genérica Próximamente -->
+              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.6; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
                 <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Ingeniería y Ciencias Exactas</span>
+                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba</span>
                   <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>📋 180 Preguntas</span>
+                    <span>📋 - Preguntas</span>
                     <span>•</span>
-                    <span>📐 Cálculo, Física Avanzada y Química</span>
-                  </div>
-                </div>
-                <div>
-                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente 🔒</span>
-                </div>
-              </div>
-
-              <!-- Tarjeta 3: Ciencias de la Salud (Bloqueada) -->
-              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.65; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Medicina y Ciencias de la Salud</span>
-                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>📋 180 Preguntas</span>
-                    <span>•</span>
-                    <span>🧪 Biología, Anatomía Humana y Bioquímica</span>
+                    <span>Tema</span>
                   </div>
                 </div>
                 <div>
