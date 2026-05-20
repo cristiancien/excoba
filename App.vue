@@ -1,6 +1,16 @@
 <template>
   <div class="app-layout" style="max-width: 1300px; margin: 0 auto; padding: 1.5rem; position: relative; z-index: 1;">
     
+    <teleport to=".animated-bg">
+      <transition name="fade">
+        <div v-if="currentScreen === 'exam' && currentQuestion" class="topic-icons-container">
+          <span v-for="(icon, index) in currentTopicIcons" :key="currentQuestion.topic + index" class="floating-icon" :class="'icon-' + index">
+            {{ icon }}
+          </span>
+        </div>
+      </transition>
+    </teleport>
+
     <!-- 1. PANTALLA: MENÚ PRINCIPAL -->
     <transition name="fade" mode="out-in">
       <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
@@ -809,6 +819,21 @@ export default {
       expandedSections.value[name] = !expandedSections.value[name];
     };
 
+    const TOPIC_ICONS = {
+      'Español': ['📚', '✍️', '📖', '📝', '✒️', 'abc'],
+      'Matemáticas': ['∑', 'π', '±', '÷', '√', '∞'],
+      'Ciencias Naturales': ['🔬', '🌿', '🧬', '🧪', '🌍', '🌱'],
+      'Ciencias Sociales': ['⚖️', '🏛️', '🗺️', '📜', '🤝', '🕰️'],
+      'Física': ['⚡', '⚛️', '🚀', '🍎', '🧲', '🌌'],
+      'Lenguaje': ['🗣️', '💭', '📝', '🎭', '📚', '💬'],
+      'Matemáticas para cálculo': ['∫', 'dx', 'lim', 'ƒ(x)', '∞', '∆']
+    };
+
+    const currentTopicIcons = computed(() => {
+      if (!bank.currentQuestion.value) return [];
+      return TOPIC_ICONS[bank.currentQuestion.value.topic] || ['📚', '✍️', '📖', '📝', '✒️', '🧠'];
+    });
+
     // --- Exam Flow Orchestration ---
     const startExam = () => {
       bank.buildExamBank();
@@ -963,6 +988,7 @@ export default {
       sidebarCollapsed,
       expandedSections,
       toggleSection,
+      currentTopicIcons,
 
       // Flow
       startExam,
