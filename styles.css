@@ -839,3 +839,41 @@ p { margin-bottom: 1em; line-height: 1.6; }
     color: #64748b !important;
     opacity: 0.8;
 }
+
+/* Custom styles for matching/classification table choice buttons */
+.table-choice-btn:hover:not(:disabled) {
+    background: rgba(79, 70, 229, 0.08) !important;
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+.table-choice-btn.selected {
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+}
+
+.table-choice-btn.correct {
+    background: var(--secondary) !important;
+    color: white !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+}
+
+.table-choice-btn.wrong {
+    background: var(--danger) !important;
+    color: white !important;
+    border-color: var(--danger) !important;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Custom borders for result feedback inside open questions */
+.correct-border {
+    border-color: var(--secondary) !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+.wrong-border {
+    border-color: var(--danger) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}

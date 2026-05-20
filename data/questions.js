@@ -66,248 +66,226 @@ window.EXCOBA_QUESTIONS = [
     "id": 3,
     "section": "Primaria",
     "topic": "Español",
-    "question": "¿Qué tipo de información es la más relevante para un recuento histórico sobre la Revolución Mexicana?",
+    "question": "¿Qué tipo de información posee mayor relevancia y rigor historiográfico para estructurar la base factual de un recuento histórico sobre la Revolución Mexicana?",
     "options": [
       {
         "id": "a",
-        "text": "La descripción del paisaje montañoso y el clima durante el invierno de 1910.",
+        "text": "Los testimonios directos grabados en cintas magnetofónicas a finales del siglo XIX por veteranos de guerra de origen campesino.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "La opinión personal de un soldado raso sobre la belleza del ferrocarril.",
+        "text": "La interpretación literaria y las prosopografías contenidas en novelas contemporáneas como 'Los de abajo' de Mariano Azuela.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "La lista de comidas típicas que preparaban las adelitas en los campamentos.",
+        "text": "Los editoriales periodísticos de opinión redactados en la prensa extranjera que especulaban sobre las riquezas minerales de la nación.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "Los nombres de los líderes revolucionarios, las fechas de los planes y las batallas principales.",
+        "text": "El registro contrastado de decretos políticos nacionales, tratados bélicos oficiales y partes de guerra emitidos por los mandos revolucionarios.",
         "isCorrect": true
       }
     ],
-    "hint": "Enfócate en la información estructurada que cambia el curso del conflicto nacional.",
-    "explanation": "Un recuento histórico se sustenta en hechos políticos y bélicos clave: líderes, planes de gobierno (como el Plan de San Luis) y batallas determinantes que definieron la transformación del país.",
+    "hint": "Enfócate en los documentos de archivo estatales y oficiales que reconfiguraron las instituciones políticas.",
+    "explanation": "El sustento de un recuento histórico de carácter científico exige documentos primarios verificables como planes políticos (por ejemplo, el Plan de San Luis o Ayala) y tratados firmados por las facciones beligerantes.",
     "level": 1
   },
   {
     "id": 4,
     "section": "Primaria",
     "topic": "Español",
-    "question": "¿Cuál es la característica general que define a un **reportaje** periodístico frente a una noticia simple?",
+    "question": "¿Cuál es el factor epistemológico y metodológico clave que distingue al género periodístico del **reportaje** frente a la estructura formal de una **noticia simple**?",
     "options": [
       {
         "id": "a",
-        "text": "Debe estar escrito en rima y con un lenguaje poético muy adornado.",
+        "text": "La inclusión obligatoria de opiniones sesgadas del redactor que favorezcan a una sola de las partes involucradas.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "Narra únicamente hechos ficticios protagonizados por personajes imaginarios.",
+        "text": "La rigidez narrativa impuesta por el modelo estricto de la pirámide invertida aplicado a testimonios ficcionales.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "Es más largo, incluye investigación documental, entrevistas y un análisis más profundo.",
+        "text": "Su carácter de largo aliento apoyado en investigación de archivo, triangulación de fuentes y contextualización sociopolítica del suceso.",
         "isCorrect": true
       },
       {
         "id": "d",
-        "text": "Se limita a informar en un solo párrafo un suceso de última hora.",
+        "text": "La inmediatez en la difusión de datos no validados en un único párrafo expositivo de última hora.",
         "isCorrect": false
       }
     ],
-    "hint": "El reportaje es un género periodístico híbrido y de largo aliento.",
-    "explanation": "A diferencia de la noticia rápida, el **reportaje** es un trabajo de investigación amplio que incorpora antecedentes, testimonios, análisis del entorno y opiniones informadas.",
+    "hint": "El reportaje es de largo aliento y posee carácter explicativo multicausal.",
+    "explanation": "A diferencia de la noticia puntual y efímera, el reportaje se caracteriza por la profundidad de su investigación documental, el contraste analítico de fuentes diversas y su contextualización social amplia.",
     "level": 1
   },
   {
     "id": 5,
     "section": "Primaria",
     "topic": "Español",
-    "question": "Lee el siguiente fragmento: 'El desabasto de agua potable afecta al 40% de los hogares en la periferia de la ciudad debido a fugas en la red y sequías severas'. ¿Cuál es la **idea principal**?",
+    "question": "Lee con atención el siguiente fragmento: 'El desabasto de agua potable en la periferia metropolitana obedece a un déficit en la presión de distribución, aunado a la obsolescencia técnica de la red de tuberías y la escasez pluvial acumulada.' ¿Cuál es la **idea principal** del fragmento anterior?",
     "options": [
       {
         "id": "a",
-        "text": "Las fugas de agua son divertidas para los niños de la zona.",
+        "text": "La sequía pluvial severa es el principal y único elemento detonante de las crisis de agua en las grandes urbes.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "El desabasto de agua afecta gravemente a un gran sector periférico de la población.",
-        "isCorrect": true
+        "text": "La obsolescencia estructural de la red de distribución es el factor más fácil de mitigar a mediano plazo.",
+        "isCorrect": false
       },
       {
         "id": "c",
-        "text": "La periferia de la ciudad tiene paisajes áridos muy llamativos.",
-        "isCorrect": false
+        "text": "El desabasto hídrico en la periferia metropolitana responde a factores técnicos, climáticos e infraestructurales concurrentes.",
+        "isCorrect": true
       },
       {
         "id": "d",
-        "text": "El 60% de los hogares de la periferia tiene agua limpia.",
+        "text": "La presión de distribución de agua en las colonias céntricas es superior a la observada en las colonias periféricas.",
         "isCorrect": false
       }
     ],
-    "hint": "Busca la afirmación central que resume todo el mensaje del texto.",
-    "explanation": "La idea principal sintetiza la problemática de fondo que el fragmento intenta comunicar: la escasez de agua y su impacto directo en la periferia urbana.",
+    "hint": "Busca la opción que resuma los tres componentes causales explicados en el fragmento original.",
+    "explanation": "La idea principal engloba de manera sintética la tesis central del autor: el desabasto periférico está multideterminado por deficiencias de presión, fallas físicas de tuberías y escasas lluvias.",
     "level": 1
   },
   {
     "id": 6,
     "section": "Primaria",
     "topic": "Español",
-    "question": "En la redacción de un reportaje sobre hábitos saludables, ¿cuál de los siguientes datos es relevante seleccionar?",
+    "question": "Durante la selección documental para un reportaje sobre hábitos alimenticios saludables, ¿cuál de las siguientes fuentes aporta mayor **validez y rigor** científico?",
     "options": [
       {
         "id": "a",
-        "text": "Una anécdota graciosa de la infancia del reportero sobre un pastel de fresa.",
+        "text": "El catálogo comercial de patrocinios y suplementos vitamínicos promocionados por figuras públicas en medios masivos.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "El origen histórico de la palabra 'deporte' en el latín antiguo.",
+        "text": "Una monografía filológica detallada que rastrea la evolución del vocablo griego de la palabra 'salud' a través del tiempo.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "Estadísticas de la OMS que correlacionan el ejercicio diario con la reducción de enfermedades cardíacas.",
+        "text": "Los meta-análisis y estudios de cohorte indexados en bases biomédicas de prestigio validados por la OMS.",
         "isCorrect": true
       },
       {
         "id": "d",
-        "text": "La marca y color de los tenis que usa el entrevistado estrella.",
+        "text": "La bitácora descriptiva de entrenamientos de un atleta local destacado sobre sus preferencias de vestimenta deportiva.",
         "isCorrect": false
       }
     ],
-    "hint": "Busca el dato con sustento científico y aplicabilidad directa en la salud.",
-    "explanation": "La información científica proveniente de organismos oficiales (como la OMS) otorga validez, sustento real y rigor periodístico al reportaje.",
+    "hint": "Busca la fuente avalada por arbitraje científico y recolección estadística confiable a nivel internacional.",
+    "explanation": "Los reportajes profesionales basan sus afirmaciones en datos rigurosos y estudios científicos arbitrados (como los indexados por la OMS), evitando anécdotas individuales o folletos comerciales.",
     "level": 1
   },
   {
     "id": 7,
     "section": "Primaria",
     "topic": "Español",
-    "question": "¿Qué elemento distingue claramente a un **texto científico** de uno de divulgación **popular**?",
+    "question": "¿Qué rasgo distintivo de registro lingüístico y pragmático separa conceptualmente a un **artículo de investigación científica** de un **artículo de divulgación científica popular**?",
     "options": [
       {
         "id": "a",
-        "text": "El texto científico utiliza un lenguaje formal especializado y riguroso dirigido a expertos.",
+        "text": "El artículo de investigación emplea terminología altamente unívoca y especializada dirigida a pares calificados, mientras que la divulgación adapta el léxico con analogías para el lector común.",
         "isCorrect": true
       },
       {
         "id": "b",
-        "text": "Los textos populares no tienen ningún tipo de estructura lógica.",
+        "text": "Los textos de divulgación científica prescinden de cualquier tipo de estructura formal que involucre introducción y conclusiones.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "El texto científico es breve, caricaturesco y fácil de entender por niños.",
+        "text": "El artículo de investigación original carece de referencias o citas al final de su cuerpo de estudio.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "El texto de divulgación popular solo se publica en libros de medicina avanzada.",
+        "text": "El texto divulgativo popular busca deliberadamente inducir sesgos ideológicos mediante la omisión sistemática del método experimental.",
         "isCorrect": false
       }
     ],
-    "hint": "Los textos científicos son escritos por investigadores para otros científicos.",
-    "explanation": "Los **textos científicos** emplean tecnicismos específicos de la disciplina y se dirigen a una comunidad especializada, mientras que la divulgación popular adapta esos conceptos para todo público.",
+    "hint": "Compara la terminología técnica y el nivel de familiaridad del lector meta.",
+    "explanation": "El artículo de investigación se escribe con rigor técnico e intradisciplinar para expertos. La divulgación transpone ese lenguaje mediante analogías cotidianas para hacerlo comprensible y atractivo.",
     "level": 1
   },
   {
     "id": 8,
     "section": "Primaria",
     "topic": "Español",
-    "question": "¿Cuál es el principal propósito de un texto de divulgación científica popular?",
+    "question": "¿Cuál es el principal propósito comunicativo y sociocultural de un texto periodístico de divulgación científica?",
     "options": [
       {
         "id": "a",
-        "text": "Hacer accesible el conocimiento científico al público en general utilizando un lenguaje claro.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Publicar chismes de la vida personal de los investigadores.",
+        "text": "La exposición minuciosa de demostraciones algebraicas complejas concebidas para especialistas académicos en ciencias puras.",
         "isCorrect": false
       },
       {
+        "id": "b",
+        "text": "La socialización y democratización del conocimiento científico a través de un registro accesible que fomente el criterio social.",
+        "isCorrect": true
+      },
+      {
         "id": "c",
-        "text": "Vender productos químicos y farmacéuticos de manera masiva.",
+        "text": "La comercialización directa y patrocinio publicitario de patentes biotecnológicas en el sector farmacéutico internacional.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "Demostrar fórmulas complejas que nadie pueda entender.",
+        "text": "El entretenimiento superficial del público lector apelando de forma prioritaria a anécdotas mágicas o mitos rurales.",
         "isCorrect": false
       }
     ],
-    "hint": "Tiene como meta educar y despertar el interés del público no experto.",
-    "explanation": "La divulgación popular científica funciona como puente: traduce hallazgos científicos rigurosos a un lenguaje común y ameno para la sociedad.",
+    "hint": "Piensa en el impacto educativo del conocimiento transferido a la sociedad civil.",
+    "explanation": "La divulgación científica busca dotar a la sociedad civil de herramientas analíticas explicadas con sencillez, promoviendo una opinión pública informada y libre de supersticiones.",
     "level": 1
   },
   {
     "id": 9,
     "section": "Primaria",
     "topic": "Español",
-    "question": "En un cuestionario de opción múltiple, ¿cuál es la forma de respuesta requerida?",
-    "options": [
+    "type": "table",
+    "question": "Determina si las siguientes afirmaciones sobre la estructura de un reportaje periodístico frente a una noticia informativa de sucesos son Verdaderas (Verdadero) o Falsas (Falso):",
+    "headers": ["Afirmación sobre la Noticia y el Reportaje", "Verdadero", "Falso"],
+    "rows": [
       {
-        "id": "a",
-        "text": "Elegir la única alternativa correcta entre varias opciones dadas.",
-        "isCorrect": true
+        "id": 1,
+        "text": "El reportaje es un género periodístico amplio que posee mayor libertad estilística, análisis interpretativo y diversidad de fuentes que una noticia informativa simple.",
+        "correct": "Verdadero"
       },
       {
-        "id": "b",
-        "text": "Redactar un ensayo libre de tres páginas expresando sentimientos.",
-        "isCorrect": false
+        "id": 2,
+        "text": "Tanto la noticia simple como el reportaje exhaustivo tienen como único propósito transmitir primicias sin el requisito ético de contrastar las fuentes de información.",
+        "correct": "Falso"
       },
       {
-        "id": "c",
-        "text": "Dibujar una ilustración detallada sobre el concepto preguntado.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Grabar un audio de voz explicando la respuesta.",
-        "isCorrect": false
+        "id": 3,
+        "text": "La nota informativa exige inmediatez, síntesis y objetividad pura en su redacción, mientras que el reportaje de fondo puede permitirse dilucidar las causas e implicaciones sociológicas.",
+        "correct": "Verdadero"
       }
     ],
-    "hint": "Es el formato clásico del examen EXCOBA o este simulador.",
-    "explanation": "Las preguntas de opción múltiple limitan la respuesta del estudiante a seleccionar una única clave o alternativa predefinida del banco.",
+    "hint": "El reportaje analiza de forma multicausal, mientras que la noticia reporta de manera rápida, sintetizada y objetiva el hecho de última hora.",
+    "explanation": "1) Verdadero: El reportaje cuenta con flexibilidad literaria. 2) Falso: Toda redacción periodística profesional requiere verificar y confrontar fuentes de forma ética. 3) Verdadero: La nota informativa responde rápido al suceso, el reportaje profundiza ampliamente en sus raíces.",
     "level": 1
   },
   {
     "id": 10,
     "section": "Primaria",
-    "topic": "Español",
-    "question": "Si queremos diseñar una pregunta en un cuestionario para evaluar la **comprensión profunda** de un alumno sobre el ciclo del agua, ¿cuál pregunta es la más adecuada?",
-    "options": [
-      {
-        "id": "a",
-        "text": "¿De qué color se ve el agua de los lagos cuando el día está soleado?",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "¿Te gusta mojarte cuando llueve por la tarde?",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "¿Qué procesos físicos explican el paso del agua de estado líquido a gaseoso y su posterior retorno al suelo?",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "¿Cuántas letras tiene la palabra 'lluvia'?",
-        "isCorrect": false
-      }
-    ],
-    "hint": "Busca una pregunta abierta o analítica centrada en las causas y explicaciones físicas.",
-    "explanation": "Para evaluar comprensión profunda se deben formular preguntas de causa-efecto o de desglose de procesos, no meras descripciones visuales o gustos personales.",
+    "topic": "Matemáticas",
+    "type": "open",
+    "question": "Calcula el valor numérico exacto de la siguiente expresión algebraica polinomial $3x^2 - 5x + 2$ cuando la variable independiente adquiere el valor real de $x = 4$:",
+    "correctAnswer": "30",
+    "acceptableAnswers": ["30"],
+    "hint": "Evalúa sustituyendo el valor: $3(4)^2 - 5(4) + 2$. Resuelve primero la potencia del cuatro.",
+    "explanation": "Sustituimos $x = 4$ en la ecuación: $3(16) - 5(4) + 2 \\rightarrow 48 - 20 + 2 = 30$. El resultado de evaluar la expresión es 30.",
     "level": 1
   },
   {
