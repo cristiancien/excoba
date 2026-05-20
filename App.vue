@@ -791,6 +791,15 @@ export default {
       localStorage.setItem('excoba_current_screen', newVal);
     });
 
+    // Dynamic Background Theme based on Section
+    watch([currentScreen, () => bank.currentQuestion.value?.section], ([screen, section]) => {
+      document.body.classList.remove('section-primaria', 'section-secundaria', 'section-bachillerato');
+      if (screen === 'exam' && section) {
+        const sectionClass = 'section-' + section.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
+        document.body.classList.add(sectionClass);
+      }
+    }, { immediate: true });
+
     // Auto-resume timer on load if we are on active exam screen and have loaded questions
     if (currentScreen.value === 'exam' && bank.questions.value.length > 0) {
       timer.startTimer();
