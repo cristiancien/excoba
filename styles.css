@@ -947,12 +947,27 @@ body.dark-theme.section-bachillerato .blob-3 { background: #9d174d; }
     color: #ffffff;
 }
 
-.icon-0 { top: 10%; left: 8%; font-size: 5rem; animation-delay: 0s; animation-duration: 18s; }
-.icon-1 { top: 75%; left: 12%; font-size: 4rem; animation-delay: -3s; animation-duration: 22s; }
-.icon-2 { top: 15%; right: 10%; font-size: 6rem; animation-delay: -7s; animation-duration: 15s; }
-.icon-3 { top: 65%; right: 15%; font-size: 3.5rem; animation-delay: -11s; animation-duration: 19s; }
-.icon-4 { top: 85%; left: 45%; font-size: 4.5rem; animation-delay: -2s; animation-duration: 21s; }
-.icon-5 { top: 30%; left: 55%; font-size: 3rem; animation-delay: -9s; animation-duration: 17s; }
+.icon-0 { top: 5%; left: 5%; font-size: 1.8rem; animation-delay: 0s; animation-duration: 18s; }
+.icon-1 { top: 15%; left: 25%; font-size: 1.5rem; animation-delay: -2s; animation-duration: 22s; }
+.icon-2 { top: 8%; left: 50%; font-size: 2.2rem; animation-delay: -5s; animation-duration: 15s; }
+.icon-3 { top: 12%; right: 20%; font-size: 1.6rem; animation-delay: -7s; animation-duration: 20s; }
+.icon-4 { top: 5%; right: 5%; font-size: 2.1rem; animation-delay: -1s; animation-duration: 25s; }
+
+.icon-5 { top: 30%; left: 8%; font-size: 1.4rem; animation-delay: -9s; animation-duration: 17s; }
+.icon-6 { top: 35%; left: 35%; font-size: 2rem; animation-delay: -4s; animation-duration: 21s; }
+.icon-7 { top: 25%; right: 35%; font-size: 1.5rem; animation-delay: -11s; animation-duration: 19s; }
+.icon-8 { top: 40%; right: 10%; font-size: 1.8rem; animation-delay: -3s; animation-duration: 23s; }
+
+.icon-9 { top: 55%; left: 15%; font-size: 2.3rem; animation-delay: -8s; animation-duration: 24s; }
+.icon-10 { top: 65%; left: 45%; font-size: 1.7rem; animation-delay: -12s; animation-duration: 16s; }
+.icon-11 { top: 50%; right: 25%; font-size: 2rem; animation-delay: -6s; animation-duration: 22s; }
+.icon-12 { top: 60%; right: 5%; font-size: 1.5rem; animation-delay: -10s; animation-duration: 18s; }
+
+.icon-13 { top: 80%; left: 10%; font-size: 1.9rem; animation-delay: -14s; animation-duration: 20s; }
+.icon-14 { top: 90%; left: 30%; font-size: 2.1rem; animation-delay: -2s; animation-duration: 26s; }
+.icon-15 { top: 85%; right: 40%; font-size: 1.6rem; animation-delay: -7s; animation-duration: 19s; }
+.icon-16 { top: 75%; right: 15%; font-size: 2.2rem; animation-delay: -5s; animation-duration: 21s; }
+.icon-17 { top: 92%; right: 5%; font-size: 1.8rem; animation-delay: -13s; animation-duration: 17s; }
 
 @keyframes float-icon {
     0% { transform: translateY(0) rotate(0deg) scale(1); }
