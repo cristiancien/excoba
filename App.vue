@@ -3,8 +3,8 @@
     
     <teleport to=".animated-bg">
       <transition name="fade">
-        <div v-if="currentScreen === 'exam' && currentQuestion" class="topic-icons-container">
-          <span v-for="(icon, index) in currentTopicIcons" :key="currentQuestion.topic + index" class="floating-icon" :class="'icon-' + index">
+        <div v-if="(currentScreen === 'exam' && currentQuestion) || currentScreen === 'menu'" class="topic-icons-container">
+          <span v-for="(icon, index) in currentTopicIcons" :key="(currentQuestion ? currentQuestion.topic : 'menu') + index" class="floating-icon" :class="'icon-' + index">
             {{ icon }}
           </span>
         </div>
@@ -830,8 +830,12 @@ export default {
     };
 
     const currentTopicIcons = computed(() => {
+      if (currentScreen.value === 'menu') {
+        // Mezcla representativa de todos los temas para el menú principal (18 íconos)
+        return ['+', '∑', 'A', '§', '⌬', '✿', '⚖', '🏛', '☇', '⚙', '❝', '✓', '∫', '∆', 'π', '✉', '☁', '⚑'];
+      }
       if (!bank.currentQuestion.value) return [];
-      return TOPIC_ICONS[bank.currentQuestion.value.topic] || ['📚', '✍️', '📖', '📝', '✒️', '🧠'];
+      return TOPIC_ICONS[bank.currentQuestion.value.topic] || TOPIC_ICONS['Español'];
     });
 
     // --- Exam Flow Orchestration ---
