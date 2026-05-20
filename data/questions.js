@@ -1,97 +1,99 @@
-// Banco de Preguntas Oficial EXCOBA - 180 Preguntas Premium
 window.EXCOBA_QUESTIONS = [
   {
     "id": 1,
     "section": "Primaria",
     "topic": "Español",
-    "question": "Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
-    "options": [
-      {
-        "id": "a",
-        "text": "1. Descubrimiento de América (1492), 2. Independencia de México (1810), 3. Conquista de Tenochtitlan (1521)",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "1. Conquista de Tenochtitlan (1521), 2. Descubrimiento de América (1492), 3. Independencia de México (1810)",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "1. Descubrimiento de América (1492), 2. Conquista de Tenochtitlan (1521), 3. Independencia de México (1810)",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "1. Independencia de México (1810), 2. Conquista de Tenochtitlan (1521), 3. Descubrimiento de América (1492)",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: Identifica la opción que presenta un orden cronológico adecuado para los siguientes eventos de un recuento histórico:",
     "hint": "El descubrimiento de América ocurrió antes de que los españoles llegaran a Tenochtitlan.",
     "explanation": "El orden de los hechos históricos sigue una línea temporal lógica y progresiva: primero el Descubrimiento en 1492, luego la Conquista en 1521 y finalmente el movimiento de Independencia en 1810.",
-    "level": 1
+    "level": 1,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "1. Descubrimiento de América (1492), 2. Independencia de México (1810), 3. Conquista de Tenochtitlan (1521)",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "1. Descubrimiento de América (1492), 2. Conquista de Tenochtitlan (1521), 3. Independencia de México (1810)",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "1. Conquista de Tenochtitlan (1521), 2. Descubrimiento de América (1492), 3. Independencia de México (1810)",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 2,
     "section": "Primaria",
     "topic": "Español",
-    "question": "En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
-    "options": [
-      {
-        "id": "a",
-        "text": "1483",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "1423",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "1503",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "1492",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: En un texto histórico leemos: 'Tres décadas después de la caída de Constantinopla, Colón zarpó del Puerto de Palos'. Si Constantinopla cayó en 1453, ¿en qué año zarpó Colón?",
     "hint": "Suma tres décadas (30 años) al año de la caída de Constantinopla (1453) y aproxima al año histórico real del primer viaje.",
     "explanation": "Una década equivale a 10 años. Tres décadas representan $3 \\times 10 = 30$ años. Al sumar $1453 + 30$ obtenemos 1483, y al referirnos a fines de esa década (aproximadamente en 1492) encontramos el año de su zarpe.",
-    "level": 1
+    "level": 1,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "1483",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "1492",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "1423",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 3,
     "section": "Primaria",
     "topic": "Español",
-    "question": "¿Qué tipo de información posee mayor relevancia y rigor historiográfico para estructurar la base factual de un recuento histórico sobre la Revolución Mexicana?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Los testimonios directos grabados en cintas magnetofónicas a finales del siglo XIX por veteranos de guerra de origen campesino.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "La interpretación literaria y las prosopografías contenidas en novelas contemporáneas como 'Los de abajo' de Mariano Azuela.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Los editoriales periodísticos de opinión redactados en la prensa extranjera que especulaban sobre las riquezas minerales de la nación.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "El registro contrastado de decretos políticos nacionales, tratados bélicos oficiales y partes de guerra emitidos por los mandos revolucionarios.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué tipo de información posee mayor relevancia y rigor historiográfico para estructurar la base factual de un recuento histórico sobre la Revolución Mexicana?",
     "hint": "Enfócate en los documentos de archivo estatales y oficiales que reconfiguraron las instituciones políticas.",
     "explanation": "El sustento de un recuento histórico de carácter científico exige documentos primarios verificables como planes políticos (por ejemplo, el Plan de San Luis o Ayala) y tratados firmados por las facciones beligerantes.",
-    "level": 1
+    "level": 1,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "El registro contrastado de decretos políticos nacionales, tratados bélicos oficiales y partes de guerra emitidos por los mandos revolucionarios.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "La interpretación literaria y las prosopografías contenidas en novelas contemporáneas como 'Los de abajo' de Mariano Azuela.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Los testimonios directos grabados en cintas magnetofónicas a finales del siglo XIX por veteranos de guerra de origen campesino.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 4,
@@ -254,7 +256,11 @@ window.EXCOBA_QUESTIONS = [
     "topic": "Español",
     "type": "table",
     "question": "Determina si las siguientes afirmaciones sobre la estructura de un reportaje periodístico frente a una noticia informativa de sucesos son Verdaderas (Verdadero) o Falsas (Falso):",
-    "headers": ["Afirmación sobre la Noticia y el Reportaje", "Verdadero", "Falso"],
+    "headers": [
+      "Afirmación sobre la Noticia y el Reportaje",
+      "Verdadero",
+      "Falso"
+    ],
     "rows": [
       {
         "id": 1,
@@ -279,13 +285,18 @@ window.EXCOBA_QUESTIONS = [
   {
     "id": 10,
     "section": "Primaria",
-    "topic": "Matemáticas",
+    "topic": "Español",
     "type": "open",
-    "question": "Calcula el valor numérico exacto de la siguiente expresión algebraica polinomial $3x^2 - 5x + 2$ cuando la variable independiente adquiere el valor real de $x = 4$:",
-    "correctAnswer": "30",
-    "acceptableAnswers": ["30"],
-    "hint": "Evalúa sustituyendo el valor: $3(4)^2 - 5(4) + 2$. Resuelve primero la potencia del cuatro.",
-    "explanation": "Sustituimos $x = 4$ en la ecuación: $3(16) - 5(4) + 2 \\rightarrow 48 - 20 + 2 = 30$. El resultado de evaluar la expresión es 30.",
+    "question": "Identifica y escribe la palabra que funciona como núcleo del sujeto explícito en la siguiente oración: 'El ágil leopardo cazó a su presa en la sabana africana'.",
+    "correctAnswer": "leopardo",
+    "acceptableAnswers": [
+      "leopardo",
+      "El leopardo",
+      "el leopardo",
+      "Leopardo"
+    ],
+    "hint": "El sujeto es quien realiza la acción principal del verbo. ¿Quién cazó?",
+    "explanation": "En la oración, la acción 'cazó' es realizada por el 'leopardo', por lo que este sustantivo núcleo forma parte del sujeto.",
     "level": 1
   },
   {
@@ -603,155 +614,77 @@ window.EXCOBA_QUESTIONS = [
     "section": "Primaria",
     "topic": "Matemáticas",
     "question": "Un agricultor cosechó $1,250\\text{ kg}$ de manzanas. Vendió $480\\text{ kg}$ en el mercado y regaló $120\\text{ kg}$ a una escuela. ¿Cuántos kilogramos le quedaron?",
-    "options": [
-      {
-        "id": "a",
-        "text": "$850\\text{ kg}$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$650\\text{ kg}$",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "$770\\text{ kg}$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$600\\text{ kg}$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Suma lo que vendió y lo que regaló, y luego réstalo al total cosechado.",
     "explanation": "Paso 1: Sumar egresos: $480 + 120 = 600\\text{ kg}$.\nPaso 2: Restar del total cosechado: $1250 - 600 = 650\\text{ kg}$.",
-    "level": 1
+    "level": 1,
+    "type": "open",
+    "correctAnswer": "650",
+    "acceptableAnswers": [
+      "650",
+      "$650\\text{ kg}$"
+    ]
   },
   {
     "id": 22,
     "section": "Primaria",
     "topic": "Matemáticas",
     "question": "En una bodega se quieren empacar $3,456\\text{ azulejos}$ en cajas de $24\\text{ unidades}$ cada una. ¿Cuántas cajas completas se obtendrán?",
-    "options": [
-      {
-        "id": "a",
-        "text": "144 cajas",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "154 cajas",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "120 cajas",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "160 cajas",
-        "isCorrect": false
-      }
-    ],
     "hint": "Divide el número total de azulejos entre la capacidad de cada caja.",
     "explanation": "Realizamos una división simple de enteros:\n$$3456 \\div 24 = 144$$\nPor lo tanto, se llenarán exactamente 144 cajas completas.",
-    "level": 1
+    "level": 1,
+    "type": "open",
+    "correctAnswer": "144",
+    "acceptableAnswers": [
+      "144",
+      "144 cajas"
+    ]
   },
   {
     "id": 23,
     "section": "Primaria",
     "topic": "Matemáticas",
     "question": "Calcula el resultado de la siguiente suma de fracciones mixtas:\n$$\\frac{3}{4} + \\frac{1}{2} + \\frac{5}{8}$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$1 \\frac{7}{8}$",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "$2 \\frac{1}{8}$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$1 \\frac{3}{4}$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$1 \\frac{1}{2}$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Convierte todas las fracciones a un común denominador (octavos).",
     "explanation": "Buscamos denominador común: 8.\n$$\\frac{3}{4} = \\frac{6}{8}, \\quad \\frac{1}{2} = \\frac{4}{8}$$\nSumamos los numeradores:\n$$\\frac{6}{8} + \\frac{4}{8} + \\frac{5}{8} = \\frac{15}{8}$$\nComo es una fracción impropia, convertimos a mixto:\n$$\\frac{15}{8} = 1 \\text{ entero y } \\frac{7}{8}$$",
-    "level": 1
+    "level": 1,
+    "type": "open",
+    "correctAnswer": "1",
+    "acceptableAnswers": [
+      "1",
+      "1 frac{7}{8}",
+      "$1 \\frac{7}{8}$"
+    ]
   },
   {
     "id": 24,
     "section": "Primaria",
     "topic": "Matemáticas",
     "question": "Un carpintero necesita cortar una tabla en piezas de $\\frac{2}{5}\\text{ de metro}$ de longitud. Si la tabla mide $\\frac{12}{5}\\text{ metros}$ de largo, ¿cuántas piezas obtendrá?",
-    "options": [
-      {
-        "id": "a",
-        "text": "12 piezas",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "10 piezas",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "4 piezas",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "6 piezas",
-        "isCorrect": true
-      }
-    ],
     "hint": "Divide la longitud total de la tabla entre el tamaño de cada pieza.",
     "explanation": "Dividimos las fracciones con igual denominador:\n$$\\frac{12}{5} \\div \\frac{2}{5} = \\frac{12}{2} = 6$$",
-    "level": 1
+    "level": 1,
+    "type": "open",
+    "correctAnswer": "6",
+    "acceptableAnswers": [
+      "6",
+      "6 piezas"
+    ]
   },
   {
     "id": 25,
     "section": "Primaria",
     "topic": "Matemáticas",
     "question": "Si multiplicas $\\frac{3}{5}$ de una barra de chocolate por $\\frac{2}{3}$, ¿qué fracción del chocolate original representa?",
-    "options": [
-      {
-        "id": "a",
-        "text": "$\\frac{6}{15}$ (pero sin simplificar)",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$\\frac{4}{5}$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$\\frac{1}{2}$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$\\frac{2}{5}$",
-        "isCorrect": true
-      }
-    ],
     "hint": "Multiplica numerador por numerador y denominador por denominador, luego simplifica la fracción.",
     "explanation": "Multiplicación de fracciones:\n$$\\frac{3}{5} \\times \\frac{2}{3} = \\frac{6}{15}$$\nSimplificando sacando tercera parte a numerador y denominador:\n$$\\frac{6 \\div 3}{15 \\div 3} = \\frac{2}{5}$$",
-    "level": 1
+    "level": 1,
+    "type": "open",
+    "correctAnswer": "2",
+    "acceptableAnswers": [
+      "2",
+      "frac{2}{5}",
+      "$\\frac{2}{5}$"
+    ]
   },
   {
     "id": 26,
@@ -1222,156 +1155,161 @@ window.EXCOBA_QUESTIONS = [
     "id": 41,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Utilizar un vocabulario arcaico y complejo del siglo XVI.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Demostrar hipótesis científicas a través de rigurosas pruebas de laboratorio.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Narrar leyendas populares con personajes mitológicos antiguos.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Apelar a las emociones, necesidades o estatus social del consumidor potencial.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué recurso argumentativo es característico de los mensajes publicitarios para persuadir al público masivo?",
     "hint": "La publicidad busca mover el deseo o impulso de compra del espectador.",
     "explanation": "Los mensajes publicitarios suelen basarse en la persuasión emocional (patetismo) y la promesa de satisfacción o mejora de estatus para convencer al cliente de adquirir un bien.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "Utilizar un vocabulario arcaico y complejo del siglo XVI.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Apelar a las emociones, necesidades o estatus social del consumidor potencial.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Demostrar hipótesis científicas a través de rigurosas pruebas de laboratorio.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 42,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
-    "options": [
-      {
-        "id": "a",
-        "text": "Titular, entrada o lead, cuerpo de la noticia y remate.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Estrofa, verso, rima consonante y firma poética.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Planteamiento, nudo, clímax y moraleja de la historia.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Introducción, hipótesis personal, experimentos y anexos.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: Identifica la opción que presenta las partes esenciales que estructuran formalmente una noticia periodística:",
     "hint": "La noticia responde al esquema de pirámide invertida de la información.",
     "explanation": "Una noticia consta de un titular llamativo, una entrada o *lead* (que resume las 5 preguntas básicas: qué, quién, cuándo, dónde y por qué), el cuerpo con detalles y un remate final.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Titular, entrada o lead, cuerpo de la noticia y remate.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Planteamiento, nudo, clímax y moraleja de la historia.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Estrofa, verso, rima consonante y firma poética.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 43,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
-    "options": [
-      {
-        "id": "a",
-        "text": "'carretera de 200 km'",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Todo el texto representa un hecho objetivo e incuestionable.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "'El presidente inauguró la carretera'",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "'Este ha sido el logro más bello y perfecto de su administración'",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: En un periódico leemos: 'El presidente inauguró la carretera de 200 km. Este ha sido el logro más bello y perfecto de su administración'. ¿Qué parte es una **opinión**?",
     "hint": "Los hechos son objetivos y comprobables; las opiniones son juicios de valor subjetivos.",
     "explanation": "Calificar la obra como 'el logro más bello y perfecto' es un juicio de valor subjetivo (opinión) del autor del texto, a diferencia de los 200 km y el acto de inaugurar que son hechos comprobables.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 3,
+        "text": "Todo el texto representa un hecho objetivo e incuestionable.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "'Este ha sido el logro más bello y perfecto de su administración'",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "'carretera de 200 km'",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 44,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Asumir que el primer artículo que lea siempre es la verdad absoluta.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Contar cuántas palabras tiene cada uno de los artículos.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Revisar cuál texto tiene una tipografía más grande y bonita.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Comparar las fuentes de información, los argumentos aportados y el sesgo de los adjetivos utilizados.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué estrategia utiliza un lector crítico para contrastar la postura de dos autores sobre un mismo tema periodístico?",
     "hint": "El análisis crítico implica buscar el sustento lógico y lingüístico detrás del texto.",
     "explanation": "Comparar las evidencias empíricas de las fuentes, la validez lógica de los argumentos y el léxico (sesgo de adjetivos) permite descubrir la subjetividad u objetividad de la postura del autor.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 3,
+        "text": "Contar cuántas palabras tiene cada uno de los artículos.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Comparar las fuentes de información, los argumentos aportados y el sesgo de los adjetivos utilizados.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Asumir que el primer artículo que lea siempre es la verdad absoluta.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 45,
     "section": "Secundaria",
     "topic": "Español",
-    "question": "¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Expresar el mundo sentimental e íntimo del autor mediante poemas líricos.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Convencer a una persona de votar por un candidato político o comprar un producto.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Transmitir datos, hechos y conceptos de la realidad de manera objetiva sin emitir opiniones personales.",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "Entretener al lector narrando cuentos mágicos e historias fantásticas.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cuál es el principal propósito comunicativo de un **texto informativo**?",
     "hint": "El adjetivo 'informativo' se relaciona directamente con el conocimiento objetivo de la realidad.",
     "explanation": "El **texto informativo** busca instruir o dar a conocer acontecimientos o conceptos veraces del mundo exterior, priorizando la función referencial del lenguaje y la neutralidad.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Transmitir datos, hechos y conceptos de la realidad de manera objetiva sin emitir opiniones personales.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Expresar el mundo sentimental e íntimo del autor mediante poemas líricos.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Convencer a una persona de votar por un candidato político o comprar un producto.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 46,
@@ -1843,155 +1781,78 @@ window.EXCOBA_QUESTIONS = [
     "section": "Secundaria",
     "topic": "Matemáticas",
     "question": "Resuelve la siguiente operación aritmética combinada con números reales:\n$$-5 \\cdot (4 - 7) + \\sqrt{36} \\div 3 - 2^3$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$-1$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$12$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$5$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$9$",
-        "isCorrect": true
-      }
-    ],
     "hint": "Sigue la jerarquía: paréntesis, potencias y raíces, multiplicaciones/divisiones de izquierda a derecha, sumas y restas.",
     "explanation": "1. Paréntesis: $(4 - 7) = -3$.\n2. Multiplicación: $-5 \\cdot (-3) = 15$.\n3. Raíz y división: $\\sqrt{36} = 6 \\implies 6 \\div 3 = 2$.\n4. Potencia: $2^3 = 8$.\n5. Sustituir: $15 + 2 - 8 = 17 - 8 = 9$.",
-    "level": 2
+    "level": 2,
+    "type": "open",
+    "correctAnswer": "9",
+    "acceptableAnswers": [
+      "9",
+      "$9$"
+    ]
   },
   {
     "id": 62,
     "section": "Secundaria",
     "topic": "Matemáticas",
     "question": "Calcula el valor exacto de la siguiente expresión con potencias y raíces:\n$$3^2 \\cdot \\sqrt{25} - \\frac{2^4}{2}$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$37$",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "$41$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$29$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$33$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Evalúa primero las potencias y la raíz cuadrada antes de hacer productos y cocientes.",
     "explanation": "1. Potencia: $3^2 = 9$.\n2. Raíz: $\\sqrt{25} = 5$.\n3. Multiplicar: $9 \\times 5 = 45$.\n4. Fracción: $2^4 = 16 \\implies 16 \\div 2 = 8$.\n5. Restar: $45 - 8 = 37$.",
-    "level": 2
+    "level": 2,
+    "type": "open",
+    "correctAnswer": "37",
+    "acceptableAnswers": [
+      "37",
+      "$37$"
+    ]
   },
   {
     "id": 63,
     "section": "Secundaria",
     "topic": "Matemáticas",
     "question": "Simplifica la siguiente expresión algebraica reuniendo términos semejantes:\n$$3x^2 - 5x + 8 - (x^2 - 2x - 3)$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$4x^2 - 7x + 5$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$2x^2 - 3x + 11$",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "$2x^2 - 7x + 11$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$2x^2 - 3x + 5$",
-        "isCorrect": false
-      }
-    ],
     "hint": "El signo menos fuera del paréntesis cambia el signo de todos los términos en su interior.",
     "explanation": "Quitamos el paréntesis con el signo menos:\n$$3x^2 - 5x + 8 - x^2 + 2x + 3$$\nAgrupamos términos semejantes:\n$$(3x^2 - x^2) + (-5x + 2x) + (8 + 3) = 2x^2 - 3x + 11$$",
-    "level": 2
+    "level": 2,
+    "type": "open",
+    "correctAnswer": "2",
+    "acceptableAnswers": [
+      "2",
+      "2x^2 - 3x + 11",
+      "$2x^2 - 3x + 11$"
+    ]
   },
   {
     "id": 64,
     "section": "Secundaria",
     "topic": "Matemáticas",
     "question": "Dada la siguiente sucesión aritmética: $5, 9, 13, 17, \\dots$, ¿cuál es la fórmula general para obtener el término $a_n$?",
-    "options": [
-      {
-        "id": "a",
-        "text": "$a_n = 5n - 1$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$a_n = 3n + 2$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$a_n = 4n + 1$",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "$a_n = 4n + 5$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Identifica el primer término (a_1 = 5) y la diferencia común (d = 4). Usa la fórmula a_n = a_1 + (n - 1)d.",
     "explanation": "Aplicando la fórmula de sucesiones aritméticas:\n$$a_n = 5 + (n - 1) \\cdot 4$$\n$$a_n = 5 + 4n - 4 \\implies a_n = 4n + 1$$\nComprobamos para $n=1$: $4(1)+1 = 5$ (correcto).",
-    "level": 2
+    "level": 2,
+    "type": "open",
+    "correctAnswer": "4",
+    "acceptableAnswers": [
+      "4",
+      "a_n = 4n + 1",
+      "$a_n = 4n + 1$"
+    ]
   },
   {
     "id": 65,
     "section": "Secundaria",
     "topic": "Matemáticas",
     "question": "Realiza la suma de los siguientes polinomios:\n$$(5x^3 - 2x^2 + 4x) + (2x^3 + 4x^2 - 7)$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$7x^3 - 6x^2 + 4x - 7$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$3x^3 + 2x^2 + 4x - 7$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$7x^3 + 2x^2 - 3x$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$7x^3 + 2x^2 + 4x - 7$",
-        "isCorrect": true
-      }
-    ],
     "hint": "Suma los coeficientes de las variables que tengan exactamente el mismo exponente.",
     "explanation": "Agrupamos potencias iguales:\n$$(5x^3 + 2x^3) + (-2x^2 + 4x^2) + 4x - 7 = 7x^3 + 2x^2 + 4x - 7$$",
-    "level": 2
+    "level": 2,
+    "type": "open",
+    "correctAnswer": "7",
+    "acceptableAnswers": [
+      "7",
+      "7x^3 + 2x^2 + 4x - 7",
+      "$7x^3 + 2x^2 + 4x - 7$"
+    ]
   },
   {
     "id": 66,
@@ -2462,156 +2323,161 @@ window.EXCOBA_QUESTIONS = [
     "id": 81,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Los organismos con variaciones ventajosas para el entorno tienen mayor probabilidad de sobrevivir y reproducirse.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Todas las especies se mantienen fijas e inmutables desde el inicio de los tiempos geológicos.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "La vida se origina de materia orgánica inerte de forma espontánea cada generación.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Los seres vivos cambian voluntariamente sus genes para adaptarse al clima del invierno.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué postulado define al mecanismo evolutivo de la **selección natural** propuesto por Charles Darwin?",
     "hint": "La naturaleza filtra los caracteres menos adaptativos permitiendo que perduren los mejores adaptados.",
     "explanation": "La selección natural establece que las condiciones ambientales determinan el éxito reproductivo de los organismos que poseen rasgos adaptativos heredables en su población.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Los organismos con variaciones ventajosas para el entorno tienen mayor probabilidad de sobrevivir y reproducirse.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "La vida se origina de materia orgánica inerte de forma espontánea cada generación.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Todas las especies se mantienen fijas e inmutables desde el inicio de los tiempos geológicos.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 82,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Tener sangre caliente y un sistema nervioso central complejo.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Poseer pulmones para respirar oxígeno atmosférico gaseoso.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Capacidad de realizar homeostasis, metabolismo, reproducción y poseer estructura celular.",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "Tener la facultad de desplazarse caminando o volando grandes distancias.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cuál de las siguientes es una característica indispensable que define a **todos** los seres vivos sin excepción?",
     "hint": "La célula es la unidad de vida básica y los seres vivos deben auto-regularse.",
     "explanation": "La estructura celular, la reproducción, la irritabilidad, el metabolismo y la homeostasis (capacidad de auto-regulación interna) son propiedades intrínsecas y universales de la vida.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "Tener sangre caliente y un sistema nervioso central complejo.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Capacidad de realizar homeostasis, metabolismo, reproducción y poseer estructura celular.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Poseer pulmones para respirar oxígeno atmosférico gaseoso.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 83,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Los autótrofos sintetizan su propio alimento a partir de sustancias inorgánicas; los heterótrofos consumen materia ya orgánica.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Los autótrofos cazan otros organismos por la noche para alimentarse.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Los heterótrofos absorben energía del sol directamente a través de cloroplastos.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "No existe ninguna diferencia bioquímica en sus procesos metabólicos.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cuál es la diferencia fundamental en la nutrición de los organismos **autótrofos** frente a los **heterótrofos**?",
     "hint": "Piensa en las plantas (autótrofas) y en los animales (heterótrofos).",
     "explanation": "Los **autótrofos** (ej. plantas) fijan carbono inorgánico mediante fotosíntesis empleando luz solar. Los **heterótrofos** (ej. animales) deben alimentarse de otros seres vivos para obtener su energía química.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "Los autótrofos cazan otros organismos por la noche para alimentarse.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Los autótrofos sintetizan su propio alimento a partir de sustancias inorgánicas; los heterótrofos consumen materia ya orgánica.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Los heterótrofos absorben energía del sol directamente a través de cloroplastos.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 84,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
-    "options": [
-      {
-        "id": "a",
-        "text": "La anaerobia requiere altas concentraciones de oxígeno y es mucho más eficiente.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "La aerobia utiliza oxígeno y produce alrededor de 36-38 ATP; la anaerobia no requiere oxígeno y produce solo 2 ATP.",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "Ambas producen la misma cantidad exacta de moléculas de glucosa y ATP.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "La respiración aerobia ocurre únicamente fuera de la célula en la atmósfera terrestre.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cuál es el rendimiento energético neto y la diferencia química entre la respiración **aerobia** y la **anaerobia**?",
     "hint": "La presencia de oxígeno gaseoso permite la oxidación completa del piruvato en la mitocondria.",
     "explanation": "La respiración celular **aerobia** aprovecha el oxígeno como aceptor final de electrones rindiendo hasta 38 ATP. La **anaerobia** (o fermentación) ocurre sin oxígeno y solo obtiene 2 ATP netos por glucólisis.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "La anaerobia requiere altas concentraciones de oxígeno y es mucho más eficiente.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "La aerobia utiliza oxígeno y produce alrededor de 36-38 ATP; la anaerobia no requiere oxígeno y produce solo 2 ATP.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Ambas producen la misma cantidad exacta de moléculas de glucosa y ATP.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 85,
     "section": "Secundaria",
     "topic": "Ciencias Naturales",
-    "question": "¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
-    "options": [
-      {
-        "id": "a",
-        "text": "La respiración celular solo ocurre en plantas y la fotosíntesis solo en animales carnívoros.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Ambos procesos realizan la síntesis destructiva de dióxido de carbono al mismo tiempo.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Son procesos idénticos que utilizan las mismas enzimas mitocondriales.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "La fotosíntesis produce glucosa y oxígeno que la respiración celular utiliza; la respiración celular libera dióxido de carbono y agua que la fotosíntesis aprovecha.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cómo se relacionan biológicamente los procesos químicos de la **respiración celular** y la **fotosíntesis** en un ecosistema?",
     "hint": "Son procesos complementarios u opuestos a nivel de reactivos y productos.",
     "explanation": "La fotosíntesis capta $CO_2$ y agua para sintetizar carbohidratos liberando $O_2$. Las mitocondrias oxidan esos carbohidratos usando $O_2$ para generar ATP, devolviendo $CO_2$ y agua al medio.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "La fotosíntesis produce glucosa y oxígeno que la respiración celular utiliza; la respiración celular libera dióxido de carbono y agua que la fotosíntesis aprovecha.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "La respiración celular solo ocurre en plantas y la fotosíntesis solo en animales carnívoros.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Ambos procesos realizan la síntesis destructiva de dióxido de carbono al mismo tiempo.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 86,
@@ -3082,156 +2948,161 @@ window.EXCOBA_QUESTIONS = [
     "id": 101,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
-    "options": [
-      {
-        "id": "a",
-        "text": "La latitud se mide de 0° a 180° y la longitud se mide de 0° a 90°.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Latitud (Norte o Sur) determinada por los paralelos; Longitud (Este o Oeste) determinada por los meridianos.",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "Latitud (Este o Oeste) determinada por los paralelos; Longitud (Norte o Sur) por los meridianos.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Ambas coordenadas miden únicamente la elevación sobre el nivel del mar.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: Identifica la opción que presenta las coordenadas geográficas correctas de acuerdo con los paralelos y meridianos de la Tierra:",
     "hint": "El Ecuador divide a la Tierra en hemisferios Norte y Sur; Greenwich la divide en Este y Oeste.",
     "explanation": "La **latitud** mide la distancia angular respecto al Ecuador (de 0° a 90° N o S). La **longitud** mide la distancia angular respecto al Meridiano de Greenwich (de 0° a 180° E o W).",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "La latitud se mide de 0° a 180° y la longitud se mide de 0° a 90°.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Latitud (Este o Oeste) determinada por los paralelos; Longitud (Norte o Sur) por los meridianos.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Latitud (Norte o Sur) determinada por los paralelos; Longitud (Este o Oeste) determinada por los meridianos.",
+        "correct": "Verdadero"
+      }
+    ]
   },
   {
     "id": 102,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Desarrollo Sustentable o Sostenible.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Industrialización Deforestadora Masiva.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Capitalismo Global de Monopolio.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Preservación Estricta sin Contacto Humano.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué concepto describe el aprovechamiento de los recursos naturales actuales sin comprometer las necesidades de las generaciones futuras?",
     "hint": "Busca un equilibrio entre crecimiento económico, cuidado ambiental y bienestar social.",
     "explanation": "El **desarrollo sustentable** promueve prácticas ecológicas y económicas equilibradas para garantizar que los recursos sigan disponibles para el futuro del planeta.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 3,
+        "text": "Capitalismo Global de Monopolio.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Industrialización Deforestadora Masiva.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Desarrollo Sustentable o Sostenible.",
+        "correct": "Verdadero"
+      }
+    ]
   },
   {
     "id": 103,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Tasa de Mortalidad",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Tasa de Natalidad",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "Índice de Fecundidad General",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Esperanza de Vida al Nacer",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué indicador demográfico refleja el número promedio de nacimientos que ocurren por cada mil habitantes en un año determinado?",
     "hint": "Viene del latín 'natus' que significa nacer.",
     "explanation": "La **Tasa de Natalidad** expresa la frecuencia de nacimientos en una población por cada mil habitantes durante un año calendario.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Tasa de Natalidad",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Tasa de Mortalidad",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Índice de Fecundidad General",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 104,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Estudiantes universitarios que asisten a clases virtuales desde sus hogares rurales.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "El viaje turístico de fin de semana de una persona a las playas de Cancún.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Familias mudándose de una colonia urbana a otra en la misma ciudad de Querétaro.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Trabajadores agrícolas mexicanos viajando temporalmente a Canadá bajo un convenio oficial.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Cuál de los siguientes flujos migratorios representa una **migración externa de carácter laboral**?",
     "hint": "Debe cruzar fronteras nacionales y tener como fin la obtención de empleo formal o informal.",
     "explanation": "El traslado internacional de trabajadores que cruzan fronteras nacionales (como México-Canadá) con motivos de empleo es el ejemplo clásico de migración externa o internacional.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 2,
+        "text": "Estudiantes universitarios que asisten a clases virtuales desde sus hogares rurales.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "El viaje turístico de fin de semana de una persona a las playas de Cancún.",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Trabajadores agrícolas mexicanos viajando temporalmente a Canadá bajo un convenio oficial.",
+        "correct": "Verdadero"
+      }
+    ]
   },
   {
     "id": 105,
     "section": "Secundaria",
     "topic": "Ciencias Sociales",
-    "question": "¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Densidad de población, número de carreteras y cantidad de automóviles.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Número de industrias pesadas, fuerza militar y extensión del territorio.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Salud (esperanza de vida), Educación (años de escolaridad) y Riqueza (PIB per cápita).",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "Gusto por el arte, clima promedio anual y producción agrícola.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué variables considera la ONU para calcular el **Índice de Desarrollo Humano (IDH)** de un país?",
     "hint": "El IDH busca medir el bienestar real de los ciudadanos más allá del simple crecimiento industrial.",
     "explanation": "El **IDH** sintetiza tres dimensiones básicas del desarrollo: una vida larga y saludable, acceso a educación de calidad y un nivel de vida digno mediante el ingreso nacional bruto.",
-    "level": 2
+    "level": 2,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Salud (esperanza de vida), Educación (años de escolaridad) y Riqueza (PIB per cápita).",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Número de industrias pesadas, fuerza militar y extensión del territorio.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Densidad de población, número de carreteras y cantidad de automóviles.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 106,
@@ -3703,155 +3574,79 @@ window.EXCOBA_QUESTIONS = [
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
     "question": "Resuelve la siguiente expresión aplicando con estricto rigor la **jerarquía de operaciones**:\n$$-2 \\cdot \\left[ 5 - 2^3 \\cdot \\left( 1 - 3 \\right) \\right] + 4$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$-18$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$-46$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$26$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$-38$",
-        "isCorrect": true
-      }
-    ],
     "hint": "Resuelve de adentro hacia afuera: primero el paréntesis (1 - 3), luego la potencia y producto internos del corchete.",
     "explanation": "1. Paréntesis: $(1 - 3) = -2$.\n2. Potencia: $2^3 = 8$.\n3. Dentro del corchete: $8 \\cdot (-2) = -16$. Queda: $[5 - (-16)] = [5 + 16] = 21$.\n4. Producto externo: $-2 \\cdot 21 = -42$.\n5. Suma: $-42 + 4 = -38$.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "-38",
+    "acceptableAnswers": [
+      "-38",
+      "$-38$"
+    ]
   },
   {
     "id": 122,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
     "question": "Divide el polinomio $6x^3 - 11x^2 - x + 6$ entre el binomio $(2x - 3)$ y obtén el cociente resultante:",
-    "options": [
-      {
-        "id": "a",
-        "text": "$3x^2 - 2x - 1$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$3x^2 + x - 2$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$3x^2 - x - 2$",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "$3x^2 - x + 2$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Usa la división larga de polinomios o el método de división sintética evaluando en x = 1.5.",
     "explanation": "Realizando la división larga paso a paso:\n1. $(6x^3) \\div (2x) = 3x^2$.\n2. Multiplicar y restar: $(6x^3 - 11x^2) - (6x^3 - 9x^2) = -2x^2$.\n3. $(-2x^2 - x) \\div (2x) = -x$.\n4. Restar: $(-2x^2 - x) - (-2x^2 + 3x) = -4x$.\n5. $(-4x + 6) \\div (2x - 3) = -2$. Residuo 0.\nEl cociente es $3x^2 - x - 2$.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "3",
+    "acceptableAnswers": [
+      "3",
+      "3x^2 - x - 2",
+      "$3x^2 - x - 2$"
+    ]
   },
   {
     "id": 123,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
     "question": "Factoriza por completo el siguiente trinomio cuadrado perfecto para encontrar su expresión equivalente:\n$$9x^2 - 12xy + 4y^2$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$(3x - 2y)(3x + 2y)$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$(3x + 2y)^2$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$(9x - 4y)^2$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$(3x - 2y)^2$",
-        "isCorrect": true
-      }
-    ],
     "hint": "Obtén las raíces cuadradas de los términos de los extremos y verifica el doble producto.",
     "explanation": "Raíz de $9x^2 = 3x$.\nRaíz de $4y^2 = 2y$.\nDoble producto del primero por el segundo:\n$$2 \\cdot (3x) \\cdot (-2y) = -12xy$$\nComo coincide con el término central, equivale al binomio al cuadrado: $(3x - 2y)^2$.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "3",
+    "acceptableAnswers": [
+      "3",
+      "(3x - 2y)^2",
+      "$(3x - 2y)^2$"
+    ]
   },
   {
     "id": 124,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
     "question": "Factoriza por diferencia de cuadrados la siguiente expresión y simplifícala si forma parte de una fracción racional con denominador $(x + 4)$:\n$$\\frac{x^2 - 16}{x + 4}$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$x + 4$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$(x - 4)^2$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$x - 4$",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "$x - 16$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Recuerda que a^2 - b^2 se desglosa en binomios conjugados: (a - b)(a + b).",
     "explanation": "Factorizamos el numerador:\n$$x^2 - 16 = (x - 4)(x + 4)$$\nSustituimos en la fracción y cancelamos factores comunes:\n$$\\frac{(x - 4)(x + 4)}{x + 4} = x - 4$$",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "4",
+    "acceptableAnswers": [
+      "4",
+      "x - 4",
+      "$x - 4$"
+    ]
   },
   {
     "id": 125,
     "section": "Bachillerato",
     "topic": "Matemáticas para cálculo",
     "question": "Resuelve el siguiente sistema de ecuaciones lineales de $3 \\times 3$ para encontrar el valor de $z$:\n$$x + y + z = 6$$\n$$2x - y + z = 3$$\n$$x + 2y - z = 2$$",
-    "options": [
-      {
-        "id": "a",
-        "text": "$z = 2$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$z = 4$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$z = 3$",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "$z = 1$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Usa el método de determinantes (Cramer) o eliminación por renglones (Gauss).",
     "explanation": "Resolviendo por sustitución o determinantes, se encuentra la terna de valores únicos:\n$$x = 1, \\quad y = 2, \\quad z = 3$$\nComprobación en Eq 1: $1 + 2 + 3 = 6$ (correcto).",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "3",
+    "acceptableAnswers": [
+      "3",
+      "z = 3",
+      "$z = 3$"
+    ]
   },
   {
     "id": 126,
@@ -4323,155 +4118,78 @@ window.EXCOBA_QUESTIONS = [
     "section": "Bachillerato",
     "topic": "Física",
     "question": "Expresa en **notación científica** la constante física de la masa de un electrón que equivale a $0.000000000000000000000000000000911\\text{ kg}$:",
-    "options": [
-      {
-        "id": "a",
-        "text": "$9.11 \\times 10^{31}\\text{ kg}$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$91.1 \\times 10^{-30}\\text{ kg}$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$9.11 \\times 10^{-31}\\text{ kg}$",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "$9.11 \\times 10^{-29}\\text{ kg}$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Cuenta el número de lugares que debes recorrer el punto decimal hacia la derecha para colocarlo justo después del 9.",
     "explanation": "Para colocar el punto decimal entre el 9 y el 1, recorremos el punto exactamente 31 lugares a la derecha, por tanto el exponente de la base 10 es negativo: $-31$.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "9.11",
+    "acceptableAnswers": [
+      "9.11",
+      "9.11 times 10^{-31}",
+      "$9.11 \\times 10^{-31}\\text{ kg}$",
+      "9,11"
+    ]
   },
   {
     "id": 142,
     "section": "Bachillerato",
     "topic": "Física",
     "question": "Calcula la magnitud del vector resultante de sumar dos vectores perpendiculares $\\vec{A}$ y $\\vec{B}$ cuyas magnitudes son $5\\text{ N}$ y $12\\text{ N}$, respectivamente:",
-    "options": [
-      {
-        "id": "a",
-        "text": "$13\\text{ N}$",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "$119\\text{ N}$",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "$17\\text{ N}$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$7\\text{ N}$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Como los vectores son perpendiculares (forman 90°), su suma vectorial se calcula con la hipotenusa de Pitágoras.",
     "explanation": "Aplicamos teorema de Pitágoras para vectores ortogonales:\n$$R = \\sqrt{A^2 + B^2} = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\\text{ N}$$",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "13",
+    "acceptableAnswers": [
+      "13",
+      "$13\\text{ N}$"
+    ]
   },
   {
     "id": 143,
     "section": "Bachillerato",
     "topic": "Física",
     "question": "En un lanzamiento de tiro parabólico, un proyectil se dispara con una velocidad inicial de $20\\text{ m/s}$ a un ángulo de $30^\\circ$. ¿Cuál es la componente horizontal de su velocidad inicial ($v_{0x}$)? (considera $\\cos(30^\\circ) \\approx 0.866$):",
-    "options": [
-      {
-        "id": "a",
-        "text": "$20.0\\text{ m/s}$",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "$17.32\\text{ m/s}$",
-        "isCorrect": true
-      },
-      {
-        "id": "c",
-        "text": "$10.0\\text{ m/s}$",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "$15.0\\text{ m/s}$",
-        "isCorrect": false
-      }
-    ],
     "hint": "Usa la fórmula de componentes vectoriales: v0x = v0 * cos(theta).",
     "explanation": "Calculamos el componente en el eje horizontal X:\n$$v_{0x} = v_0 \\cdot \\cos(\\theta) = 20\\text{ m/s} \\times \\cos(30^\\circ)$$\n$$v_{0x} = 20 \\times 0.866 = 17.32\\text{ m/s}$$",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "17.32",
+    "acceptableAnswers": [
+      "17.32",
+      "$17.32\\text{ m/s}$",
+      "17,32"
+    ]
   },
   {
     "id": 144,
     "section": "Bachillerato",
     "topic": "Física",
     "question": "¿Qué enuncia la **Tercera Ley de Kepler** sobre el movimiento planetario?",
-    "options": [
-      {
-        "id": "a",
-        "text": "La línea imaginaria que une a un planeta con el Sol barre áreas desiguales en tiempos iguales.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Todos los planetas se desplazan en órbitas perfectamente circulares alrededor del Sol.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "La velocidad de traslación de un planeta es constante en cualquier punto de su trayectoria.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del semieje mayor de su órbita.",
-        "isCorrect": true
-      }
-    ],
     "hint": "Es una relación matemática fundamental que relaciona el tiempo del año planetario con la distancia al Sol ($T^2 \\propto a^3$).",
     "explanation": "La tercera ley armónica formulada por Kepler establece una relación directa y matemática entre los periodos de revolución de los planetas y su distancia promedio al Sol.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del semieje mayor de su órbita.",
+    "acceptableAnswers": [
+      "El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del semieje mayor de su órbita.",
+      "El cuadrado del periodo orbital de un planeta es directamente proporcional al cubo del semieje mayor de su órbita,"
+    ]
   },
   {
     "id": 145,
     "section": "Bachillerato",
     "topic": "Física",
     "question": "Si la distancia entre dos masas se reduce a la mitad, ¿cómo cambia la **fuerza de atracción gravitacional** entre ellas según la Ley de Gravitación Universal?",
-    "options": [
-      {
-        "id": "a",
-        "text": "La fuerza se duplica.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "La fuerza se reduce a la mitad.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "La fuerza se cuadruplica (aumenta 4 veces).",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "La fuerza se reduce a una cuarta parte.",
-        "isCorrect": false
-      }
-    ],
     "hint": "La fuerza es inversamente proporcional al cuadrado de la distancia (F proportional to 1 / d^2).",
     "explanation": "Al reducir la distancia a la mitad ($d' = 0.5d$), el denominador de la ley disminuye al cuadrado: $(0.5)^2 = 0.25 = \\frac{1}{4}$. Al estar en el denominador, el valor total de la fuerza se multiplica por 4.",
-    "level": 3
+    "level": 3,
+    "type": "open",
+    "correctAnswer": "4",
+    "acceptableAnswers": [
+      "4",
+      "La fuerza se cuadruplica (aumenta 4 veces)."
+    ]
   },
   {
     "id": 146,
@@ -4942,156 +4660,161 @@ window.EXCOBA_QUESTIONS = [
     "id": 161,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Función apelativa o conativa.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Función metalingüística.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Función emotiva o sintomática.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Función fática o de contacto.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: En una pancarta leemos: '¡Alto a la deforestación! Firma la petición aquí'. ¿Qué función primordial del lenguaje predomina?",
     "hint": "El emisor busca mover al receptor a que haga una acción concreta o cambie su actitud.",
     "explanation": "La **función apelativa** tiene como centro de atención al receptor. Se expresa con imperativos e imperaciones destinadas a influir en su comportamiento.",
-    "level": 3
+    "level": 3,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Función apelativa o conativa.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Función metalingüística.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Función emotiva o sintomática.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 162,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Función poética o estética.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Función referencial o representativa.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Función metalingüística.",
-        "isCorrect": true
-      },
-      {
-        "id": "d",
-        "text": "Función conativa.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: En el diccionario leemos: 'El adjetivo es una clase de palabra que califica al sustantivo'. ¿Qué función del lenguaje se está utilizando?",
     "hint": "Se utiliza el código lingüístico para hablar del propio código (explicar la lengua misma).",
     "explanation": "La **función metalingüística** se enfoca directamente en el código de comunicación, explicando las reglas, significados y propiedades de las palabras que lo componen.",
-    "level": 3
+    "level": 3,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Función metalingüística.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 3,
+        "text": "Función referencial o representativa.",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Función poética o estética.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 163,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
-    "options": [
-      {
-        "id": "a",
-        "text": "Memorización, recitado y examen.",
-        "isCorrect": false
-      },
-      {
-        "id": "b",
-        "text": "Escritura, borrador y publicación.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Introducción, nudo y desenlace literario.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Prelectura, lectura y poslectura.",
-        "isCorrect": true
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: Identifica las tres etapas esenciales que comprenden el proceso cognitivo de la **lectura comprensiva**:",
     "hint": "Es el camino que va desde explorar el texto rápido hasta analizar qué entendiste.",
     "explanation": "El proceso consta de: la **prelectura** (aproximación y predicciones), la **lectura** propiamente dicha (decodificación y análisis) y la **poslectura** (evaluación y síntesis).",
-    "level": 3
+    "level": 3,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Prelectura, lectura y poslectura.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Memorización, recitado y examen.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "Escritura, borrador y publicación.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 164,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
-    "options": [
-      {
-        "id": "a",
-        "text": "Argumentación",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Descripción",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "Exposición",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Narración",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: ¿Qué prototipo textual de la redacción tiene como finalidad principal **sustentar una tesis** y persuadir al receptor mediante argumentos lógicos?",
     "hint": "Suele usarse en debates, artículos de opinión y defensas científicas.",
     "explanation": "La **argumentación** busca justificar una opinión o postura (tesis) a través de una serie ordenada de razones y demostraciones sólidas y lógicas.",
-    "level": 3
+    "level": 3,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 3,
+        "text": "Exposición",
+        "correct": "Falso"
+      },
+      {
+        "id": 2,
+        "text": "Descripción",
+        "correct": "Falso"
+      },
+      {
+        "id": 1,
+        "text": "Argumentación",
+        "correct": "Verdadero"
+      }
+    ]
   },
   {
     "id": 165,
     "section": "Bachillerato",
     "topic": "Lenguaje",
-    "question": "Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
-    "options": [
-      {
-        "id": "a",
-        "text": "Él siempre da el té a su tía cuando ella se siente mal.",
-        "isCorrect": true
-      },
-      {
-        "id": "b",
-        "text": "Él siempre da él té a su tía cuando ella se siente mal.",
-        "isCorrect": false
-      },
-      {
-        "id": "c",
-        "text": "El siempre da el te a su tía cuando ella se siente mal.",
-        "isCorrect": false
-      },
-      {
-        "id": "d",
-        "text": "Él siempre da el te a su tía cuando ella se siente mal.",
-        "isCorrect": false
-      }
-    ],
+    "question": "Clasifica como Verdadero o Falso según la siguiente premisa: Selecciona la oración con la tilde diacrítica colocada de manera **correcta**:",
     "hint": "Él (pronombre) y té (sustantivo de bebida) llevan tilde; el (artículo) no lleva.",
     "explanation": "*Él* lleva tilde porque se refiere a la tercera persona. *Té* lleva tilde para diferenciarlo del pronombre reflexivo *te* (ej. *te quiero*).",
-    "level": 3
+    "level": 3,
+    "type": "table",
+    "headers": [
+      "Afirmación / Opción",
+      "Verdadero",
+      "Falso"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "text": "Él siempre da el té a su tía cuando ella se siente mal.",
+        "correct": "Verdadero"
+      },
+      {
+        "id": 2,
+        "text": "Él siempre da él té a su tía cuando ella se siente mal.",
+        "correct": "Falso"
+      },
+      {
+        "id": 3,
+        "text": "El siempre da el te a su tía cuando ella se siente mal.",
+        "correct": "Falso"
+      }
+    ]
   },
   {
     "id": 166,
