@@ -124,8 +124,17 @@
         </div>
         
         <button 
+          v-if="showResult"
+          @click="$emit('show-feedback')"
+          class="btn btn-secondary" 
+          style="min-width: 120px;"
+        >
+          🔍 Ver Explicación
+        </button>
+        <button 
+          v-else
           class="btn btn-primary" 
-          :disabled="!isAnswerFilled || showResult"
+          :disabled="!isAnswerFilled"
           @click="submitAnswer"
           style="min-width: 120px;"
         >
@@ -159,7 +168,7 @@ export default {
       default: false
     }
   },
-  emits: ['answer-selected', 'hint-used', 'prev', 'next-nav'],
+  emits: ['answer-selected', 'hint-used', 'prev', 'next-nav', 'show-feedback'],
   setup(props, { emit }) {
     const selectedOption = ref(null);
     const openAnswer = ref('');

@@ -1505,7 +1505,7 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "Inventar respuestas graciosas que el entrevistado nunca pronunció.",
+        "text": "Transcribir textualmente todas las expresiones, pausas y muletillas del entrevistado sin aplicar ninguna edición.",
         "isCorrect": false
       },
       {
@@ -1515,12 +1515,12 @@ window.EXCOBA_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "Registrar las ideas, opiniones e información relevante obtenidas del entrevistado, estructurándolas para el lector.",
+        "text": "Emitir un juicio de valor crítico sobre la personalidad y las decisiones del entrevistado.",
         "isCorrect": true
       },
       {
         "id": "d",
-        "text": "Hacer una transcripción con faltas de ortografía para burlarse del entrevistado.",
+        "text": "Elaborar una biografía exhaustiva detallando la vida privada y los antecedentes literarios del entrevistado.",
         "isCorrect": false
       }
     ],
@@ -1758,17 +1758,17 @@ window.EXCOBA_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "La firma de diez testigos que no conozcan el problema.",
+        "text": "Un anexo notariado con las escrituras del domicilio afectado o aval comercial.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "Un poema descriptivo sobre lo infeliz que se siente el cliente en su hogar.",
+        "text": "Un formato de acuse de recibo y copia de la credencial de los técnicos involucrados.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "Una lista de amenazas personales e insultos para asustar al gerente.",
+        "text": "La solicitud de intervención inmediata de las autoridades penales para levantar cargos.",
         "isCorrect": false
       }
     ],

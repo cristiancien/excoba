@@ -340,6 +340,7 @@
                 :has-next="currentQuestionIndex < totalQuestions - 1"
                 @answer-selected="handleAnswer"
                 @hint-used="handleHint"
+                @show-feedback="handleShowFeedback"
                 @prev="prevQuestion"
                 @next-nav="nextQuestionNav"
               />
@@ -895,6 +896,14 @@ export default {
       showFeedback.value = true;
     };
 
+    const handleShowFeedback = () => {
+      const status = bank.answeredStatus.value[bank.currentQuestion.value.id];
+      if (status) {
+        lastAnswerCorrect.value = status.isCorrect;
+        showFeedback.value = true;
+      }
+    };
+
     const nextQuestion = () => {
       showFeedback.value = false;
       const prevSection = bank.currentQuestion.value?.section ?? '';
@@ -958,6 +967,7 @@ export default {
       hintsUsedStatus: scoring.hintsUsedStatus,
       handleAnswer,
       handleHint,
+      handleShowFeedback,
 
       // Timer
       formattedTime: timer.formattedTime,
