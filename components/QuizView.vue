@@ -311,22 +311,129 @@ export default {
     const synth = window.speechSynthesis;
     let currentUtterance = null;
 
+    // Setup SpeechSynthesis voice loading with robust fallback
+    const loadVoices = () => {
+      if (synth && synth.getVoices) {
+        synth.getVoices();
+      }
+    };
+    loadVoices();
+    if (synth && typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
     const toggleTTS = () => {
       if (isPlayingTTS.value) {
-        synth.cancel();
+        if (synth) synth.cancel();
         isPlayingTTS.value = false;
         return;
       }
       
-      const cleanText = props.question.question
-        .replace(/\$(.*?)\$/g, '$1') // remove $ but keep content
-        .replace(/\\(.*?)\b/g, '') // remove latex commands like \frac
-        .replace(/<[^>]*>?/gm, '') // remove html tags
-        .replace(/\*\*/g, '')      // remove markdown bold
-        .trim();
+      if (!synth) return;
+
+      // Cancelar cualquier lectura activa antes de iniciar una nueva
+      synth.cancel();
+      
+      let cleanText = props.question.question;
+
+      // 1. Reemplazar fracciones LaTeX \frac{A}{B} por "A entre B"
+      while (cleanText.includes('\\frac')) {
+        cleanText = cleanText.replace(/\\frac\s*\{([^}]*)\}\s*\{([^}]*)\}/g, '$1 entre $2');
+      }
+
+      // 2. Reemplazar raíces LaTeX \sqrt{A} por "raíz cuadrada de A"
+      while (cleanText.includes('\\sqrt')) {
+        cleanText = cleanText.replace(/\\sqrt\s*\{([^}]*)\}/g, 'raíz cuadrada de $1');
+      }
+
+      // 3. Traducir subíndices de variables (ej. P_1, v_{0x}, k_e) a formato hablado "sub ..." para evitar lectura literal de guion bajo
+      cleanText = cleanText.replace(/_\{([^}]+)\}/g, ' sub $1');
+      cleanText = cleanText.replace(/_([a-zA-Z0-9])/g, ' sub $1');
+
+      // 4. Traducir superíndices (potencias ej. x^3, d^2) a formato hablado "elevado a la ..."
+      cleanText = cleanText.replace(/\^\{([^}]+)\}/g, ' elevado a la $1');
+      cleanText = cleanText.replace(/\^([a-zA-Z0-9])/g, ' elevado a la $1');
+
+      // 5. Traducir símbolos LaTeX matemáticos y griegos comunes a español
+      const latexTranslations = {
+        '\\\\cdot': ' por ',
+        '\\\\Delta': ' delta ',
+        '\\\\theta': ' theta ',
+        '\\\\pi': ' pi ',
+        '\\\\alpha': ' alfa ',
+        '\\\\beta': ' beta ',
+        '\\\\gamma': ' gama ',
+        '\\\\lambda': ' lambda ',
+        '\\\\mu': ' miu ',
+        '\\\\sum': ' suma de ',
+        '\\\\infty': ' infinito ',
+        '\\\\approx': ' aproximado a ',
+        '\\\\neq': ' no es igual a ',
+        '\\\\leq': ' menor o igual que ',
+        '\\\\geq': ' mayor o igual que ',
+        '\\\\dots': ' y así sucesivamente ',
+        '\\\\circ': ' grados '
+      };
+
+      for (const [latex, translation] of Object.entries(latexTranslations)) {
+        cleanText = cleanText.replace(new RegExp(latex, 'g'), translation);
+      }
+
+      // 6. Traducir unidades y términos de física/matemáticas a palabras fluidas
+      cleanText = cleanText.replace(/\\text\{\s*m\/s\s*\}/g, ' metros por segundo ');
+      cleanText = cleanText.replace(/m\/s/g, ' metros por segundo ');
+      cleanText = cleanText.replace(/\\mu\text\{\s*C\s*\}/g, ' micro coulombs ');
+      cleanText = cleanText.replace(/\\mu C/g, ' micro coulombs ');
+      cleanText = cleanText.replace(/\\text\{\s*metros\s*\}/g, ' metros ');
+
+      // 7. Traducir signos de menos en contextos matemáticos y números negativos
+      cleanText = cleanText.replace(/(\d+)\s*-\s*(\d+)/g, '$1 menos $2');
+      cleanText = cleanText.replace(/(^|[\s(])-\s*(\d+)/g, '$1menos $2');
+
+      // 8. Reemplazar líneas de guiones bajos consecutivos (como ______ en Español) por "espacio en blanco"
+      cleanText = cleanText.replace(/_{2,}/g, ' espacio en blanco ');
+
+      // 9. Remover cualquier guion bajo individual restante (ej. en ortografía: actri_, de_idió) para que se lea la palabra de corrido
+      cleanText = cleanText.replace(/_/g, '');
+
+      // Eliminar cualquier comando LaTeX remanente de la lectura
+      cleanText = cleanText.replace(/\\([a-zA-Z]+)/g, '');
+
+      // 10. Limpiar signos de dólar de LaTeX
+      cleanText = cleanText.replace(/\$/g, '');
+
+      // 11. Eliminar llaves de LaTeX remanentes
+      cleanText = cleanText.replace(/[{}]/g, ' ');
+
+      // 12. Eliminar etiquetas HTML
+      cleanText = cleanText.replace(/<[^>]*>?/gm, ' ');
+
+      // 13. Eliminar marcas de negrita u otros formatos de markdown
+      cleanText = cleanText.replace(/\*\*/g, '');
+      
+      // 14. Reemplazar múltiples espacios por uno solo para mejorar la cadencia del habla
+      cleanText = cleanText.replace(/\s+/g, ' ').trim();
         
       currentUtterance = new SpeechSynthesisUtterance(cleanText);
       currentUtterance.lang = 'es-MX';
+      
+      // Forzar voz en español usando coincidencia flexible (tags de idioma con guion o guion bajo)
+      if (synth && synth.getVoices) {
+        const voices = synth.getVoices();
+        const cleanLang = (l) => l.toLowerCase().replace(/_/g, '-');
+        
+        let spanishVoice = voices.find(v => cleanLang(v.lang) === 'es-mx') ||
+                           voices.find(v => cleanLang(v.lang) === 'es-es') ||
+                           voices.find(v => cleanLang(v.lang) === 'es-us') ||
+                           voices.find(v => cleanLang(v.lang).startsWith('es')) ||
+                           voices.find(v => v.name.toLowerCase().includes('spanish')) ||
+                           voices.find(v => v.name.toLowerCase().includes('español'));
+                           
+        if (spanishVoice) {
+          currentUtterance.voice = spanishVoice;
+          currentUtterance.lang = spanishVoice.lang;
+        }
+      }
       
       currentUtterance.onend = () => {
         isPlayingTTS.value = false;
