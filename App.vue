@@ -13,8 +13,15 @@
 
     <!-- 1. PANTALLA: MENÚ PRINCIPAL -->
     <transition name="fade" mode="out-in">
-      <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem;">
+      <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem; position: relative;">
         
+        <!-- Versión del Simulador -->
+        <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
+          <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
+            v1.1
+          </span>
+        </div>
+
         <!-- Theme Switcher (Claro/Oscuro) -->
         <div style="position: absolute; top: 25px; right: 25px; z-index: 10;">
           <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 10px 16px; border-radius: 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
