@@ -201,17 +201,17 @@ window.EXCOBA_QUESTIONS = [
       },
       {
         "id": "b",
-        "text": "Los textos de divulgación científica prescinden de cualquier tipo de estructura formal que involucre introducción y conclusiones.",
+        "text": "El artículo de investigación se enfoca exclusivamente en la recopilación histórica de datos primarios, mientras que la divulgación carece de rigor argumentativo.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "El artículo de investigación original carece de referencias o citas al final de su cuerpo de estudio.",
+        "text": "El artículo de investigación original incluye secciones exhaustivas de revisión por pares internos, mientras que el artículo de divulgación científica presenta los datos utilizando diagramas matemáticos y demostraciones de laboratorio.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "El texto divulgativo popular busca deliberadamente inducir sesgos ideológicos mediante la omisión sistemática del método experimental.",
+        "text": "El artículo de investigación persigue resolver una hipótesis mediante metodología científica y rigor académico, mientras que la divulgación resume los hallazgos explicándolos con un enfoque didáctico y contextualizado para el público no especializado.",
         "isCorrect": false
       }
     ],
@@ -400,22 +400,22 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "atar (ligar) / hatar (no aplica)",
+        "text": "ato (atadura) / hato (porción de ganado o hato de ropa)",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "herrar (colocar herraduras) / errar (fallar)",
+        "text": "errar (fallar) / herrar (poner herraduras a las bestias)",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "vaciar (quitar contenido) / baciar (no existe)",
+        "text": "grabar (registrar audio o video) / gravar (imponer un impuesto o carga)",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "arriar (bajar velas/banderas) / arrear (estimular bestias)",
+        "text": "arriar (bajar velas o banderas, o caer con fuerza el viento/agua) / arrear (estimular a las bestias para que caminen)",
         "isCorrect": true
       }
     ],
@@ -1505,22 +1505,22 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "Transcribir textualmente todas las expresiones, pausas y muletillas del entrevistado sin aplicar ninguna edición.",
+        "text": "Transcribir literalmente cada fonema, pausa y silencio del encuentro sin ningún criterio de edición o síntesis.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "Crear un poema épico sobre la apariencia física de la persona entrevistada.",
+        "text": "Generar una narración ficcionalizada en tercera persona que altere por completo los hechos expresados por el entrevistado.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "Emitir un juicio de valor crítico sobre la personalidad y las decisiones del entrevistado.",
+        "text": "Sintetizar y estructurar las ideas clave y el contenido esencial del diálogo utilizando discursos directo o indirecto.",
         "isCorrect": true
       },
       {
         "id": "d",
-        "text": "Elaborar una biografía exhaustiva detallando la vida privada y los antecedentes literarios del entrevistado.",
+        "text": "Elaborar un ensayo de opinión centrado de manera exclusiva en refutar los argumentos provistos por el entrevistador.",
         "isCorrect": false
       }
     ],
@@ -1536,22 +1536,22 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "El médico afirmó: 'La vacuna es completamente segura para toda la población infantil'.",
+        "text": "El médico aseveró con determinación: \"La inmunización es segura y no presentará complicaciones en infantes\".",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "El médico afirmó que la vacuna era completamente segura para toda la población infantil.",
+        "text": "El médico aseveró que la inmunización era segura y que no presentaría complicaciones en los infantes.",
         "isCorrect": true
       },
       {
         "id": "c",
-        "text": "¡La vacuna es segura para la población infantil! (Médico)",
+        "text": "El médico, dirigiéndose a los padres presentes, comenzó a debatir sobre los componentes bioquímicos de la inmunización.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "—La vacuna es segura para la población— dijo el médico con una sonrisa.",
+        "text": "—La inmunización es segura y no presentará complicaciones— declaró enfáticamente el médico pediatra.",
         "isCorrect": false
       }
     ],
@@ -2518,22 +2518,22 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "Mitad rojas y mitad blancas (50% de probabilidad cada una).",
+        "text": "1 planta de flores rojas por cada 1 planta de flores blancas (proporción fenotípica 1:1).",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "Una proporción de 9 rojas por cada 7 blancas.",
+        "text": "9 plantas de flores rojas por cada 7 plantas de flores blancas (proporción por epistasis genómica).",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "Todas las plantas serán blancas (100% homocigotas recesivas).",
+        "text": "100% de plantas con flores rojas, ya que el alelo dominante enmascara por completo al recesivo en todos los genotipos.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "3 plantas rojas por cada 1 planta blanca (75% rojas, 25% blancas).",
+        "text": "3 plantas de flores rojas por cada 1 planta de flores blancas (proporción fenotípica clásica 3:1).",
         "isCorrect": true
       }
     ],
@@ -5072,7 +5072,7 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "La epopeya está escrita en prosa corta y no tiene personajes de origen humano.",
+        "text": "La fábula expone relatos de héroes mitológicos en verso libre; la epopeya describe diálogos cotidianos en prosa poética.",
         "isCorrect": false
       },
       {
@@ -5082,12 +5082,12 @@ window.EXCOBA_QUESTIONS = [
       },
       {
         "id": "c",
-        "text": "La fábula narra grandes imperios en conflicto y la epopeya solo enseña modales a niños.",
+        "text": "La fábula utiliza exclusivamente discursos argumentativos y científicos; la epopeya es una narración lírica breve de carácter confesional.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "Ambas estructuras son idénticas en métrica y extensión de palabras.",
+        "text": "La fábula posee una métrica octosílaba rígida que exalta valores políticos; la epopeya recurre a la alegoría pastoril breve.",
         "isCorrect": false
       }
     ],
@@ -5103,22 +5103,22 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "La leyenda ocurre en un tiempo sagrado fuera del tiempo histórico real.",
+        "text": "El mito se transmite de manera escrita por las élites intelectuales; la leyenda es de origen puramente teatral de comedia.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "El mito solo narra cuentos infantiles y la leyenda es 100% científica.",
+        "text": "El mito carece de personajes sobrenaturales centrándose en el realismo social; la leyenda describe el nacimiento de deidades cósmicas primordiales.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "No existe diferencia alguna; son sinónimos absolutos.",
+        "text": "El mito narra hechos cotidianos del campesinado feudal; la leyenda carece de bases espaciales reales y posee una estructura rimada obligatoria.",
         "isCorrect": false
       },
       {
         "id": "d",
-        "text": "El mito explica el origen cósmico mediante dioses y entes sagrados; la leyenda se basa en hechos históricos locales transformados por la fantasía.",
+        "text": "El mito explica el origen cósmico mediante dioses y entes sagrados; la leyenda se basa en hechos históricos locales transformados por la fantasía popular.",
         "isCorrect": true
       }
     ],
@@ -5258,17 +5258,17 @@ window.EXCOBA_QUESTIONS = [
     "options": [
       {
         "id": "a",
-        "text": "La canción de festejo con la que inicia la obra teatral.",
+        "text": "El canto lírico del coro griego (párodos) que introduce el conflicto moral al inicio de la representación.",
         "isCorrect": false
       },
       {
         "id": "b",
-        "text": "La división del escenario en tres niveles físicos diferenciados.",
+        "text": "El cambio repentino de fortuna o peripecia que altera drásticamente el destino social y familiar del protagonista.",
         "isCorrect": false
       },
       {
         "id": "c",
-        "text": "El momento exacto donde el protagonista muere asesinado por los villanos.",
+        "text": "El proceso de anagnórisis o reconocimiento de la identidad de un personaje que desencadena el desenlace trágico.",
         "isCorrect": false
       },
       {

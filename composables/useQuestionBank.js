@@ -57,7 +57,12 @@ window.useQuestionBank = () => {
   const correctOptionText = computed(() => {
     if (!currentQuestion.value) return '';
     if (currentQuestion.value.type === 'open') return currentQuestion.value.correctAnswer || '';
-    if (currentQuestion.value.type === 'table') return ''; // No single correct option
+    if (currentQuestion.value.type === 'table') {
+      if (!currentQuestion.value.rows) return '';
+      return currentQuestion.value.rows.map(row => {
+        return `• ${row.text}: <strong>${row.correct}</strong>`;
+      }).join('<br>');
+    }
     return currentQuestion.value.options?.find(o => o.isCorrect)?.text ?? '';
   });
 
@@ -145,7 +150,9 @@ window.useQuestionBank = () => {
     answeredStatus.value[questionId] = {
       isCorrect: result.isCorrect,
       selectedOptionId: result.selectedOptionId,
-      shuffledOptions: result.shuffledOptions
+      shuffledOptions: result.shuffledOptions,
+      openAnswer: result.openAnswer,
+      tableAnswers: result.tableAnswers
     };
   };
 

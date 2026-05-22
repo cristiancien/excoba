@@ -1,6 +1,18 @@
 <template>
   <div class="overlay" :class="isCorrect ? 'bg-success' : 'bg-error'">
-    <div class="feedback-panel glass-panel" :class="{ 'shake': !isCorrect }">
+    <div class="feedback-panel glass-panel" :class="{ 'shake': !isCorrect }" style="position: relative;">
+      
+      <!-- Botón de Cerrar (Dismiss Review) -->
+      <button 
+        @click="$emit('close')" 
+        class="close-btn" 
+        style="position: absolute; top: 1.2rem; right: 1.2rem; background: transparent; border: none; font-size: 1.6rem; cursor: pointer; color: var(--text-muted); transition: all 0.2s; font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;"
+        title="Cerrar"
+        onmouseover="this.style.background='rgba(0,0,0,0.06)'; this.style.color='var(--text-main)'"
+        onmouseout="this.style.background='transparent'; this.style.color='var(--text-muted)'"
+      >
+        &times;
+      </button>
       
       <!-- Icon/Character Header (Brilliant style) -->
       <div class="feedback-header">
@@ -72,7 +84,7 @@ export default {
     explanation: String,
     correctOptionText: String
   },
-  emits: ['continue']
+  emits: ['continue', 'close']
 }
 </script>
 

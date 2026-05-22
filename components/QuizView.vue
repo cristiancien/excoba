@@ -2,9 +2,21 @@
   <div class="glass-panel" style="padding: 2rem;">
     <!-- Topic and Question -->
     <div style="margin-bottom: 2rem;">
-      <span style="display: inline-block; padding: 4px 12px; background: rgba(79, 70, 229, 0.1); color: var(--primary); border-radius: 20px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem;">
-        {{ question.topic }}
-      </span>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <span style="display: inline-block; padding: 4px 12px; background: rgba(79, 70, 229, 0.1); color: var(--primary); border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+          {{ question.topic }}
+        </span>
+        <button 
+          @click="toggleTTS" 
+          class="btn" 
+          style="background: transparent; border: 1px solid var(--glass-border); color: var(--primary); padding: 6px 12px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;"
+          :title="isPlayingTTS ? 'Pausar Lectura' : 'Escuchar Pregunta'"
+        >
+          <svg v-if="!isPlayingTTS" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          {{ isPlayingTTS ? 'Pausar' : 'Dictar' }}
+        </button>
+      </div>
       <h2 v-latex="question.question" style="font-size: 1.6rem; margin-bottom: 1rem; line-height: 1.4;"></h2>
     </div>
 
@@ -146,7 +158,7 @@
 </template>
 
 <script>
-const { ref, watch, computed } = Vue;
+const { ref, watch, computed, onUnmounted } = Vue;
 
 export default {
   props: {
@@ -219,7 +231,13 @@ export default {
     };
 
     // Reset state when question changes
-    watch(() => props.question, initQuestionState);
+    watch(() => props.question, () => {
+      // Stop any active TTS when navigating
+      if (window.speechSynthesis && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
+      initQuestionState();
+    });
     
     // Initialize on load
     initQuestionState();
@@ -288,6 +306,44 @@ export default {
       }, 1000);
     };
 
+    // --- Text-To-Speech (Asistente de Voz) ---
+    const isPlayingTTS = ref(false);
+    const synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    const toggleTTS = () => {
+      if (isPlayingTTS.value) {
+        synth.cancel();
+        isPlayingTTS.value = false;
+        return;
+      }
+      
+      const cleanText = props.question.question
+        .replace(/\$(.*?)\$/g, '$1') // remove $ but keep content
+        .replace(/\\(.*?)\b/g, '') // remove latex commands like \frac
+        .replace(/<[^>]*>?/gm, '') // remove html tags
+        .replace(/\*\*/g, '')      // remove markdown bold
+        .trim();
+        
+      currentUtterance = new SpeechSynthesisUtterance(cleanText);
+      currentUtterance.lang = 'es-MX';
+      
+      currentUtterance.onend = () => {
+        isPlayingTTS.value = false;
+      };
+      
+      currentUtterance.onerror = () => {
+        isPlayingTTS.value = false;
+      };
+      
+      isPlayingTTS.value = true;
+      synth.speak(currentUtterance);
+    };
+
+    onUnmounted(() => {
+      if (synth && synth.speaking) synth.cancel();
+    });
+
     return {
       selectedOption,
       openAnswer,
@@ -301,7 +357,9 @@ export default {
       isAnswerFilled,
       isOpenAnswerCorrect,
       useHint,
-      submitAnswer
+      submitAnswer,
+      isPlayingTTS,
+      toggleTTS
     };
   }
 }

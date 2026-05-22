@@ -677,6 +677,7 @@
         :explanation="currentQuestion.explanation"
         :correct-option-text="correctOptionText"
         @continue="nextQuestion"
+        @close="showFeedback = false"
       />
     </transition>
 
@@ -790,12 +791,13 @@ export default {
     const showExitWarning = ref(false);
     const showFeedback = ref(false);
     const lastAnswerCorrect = ref(false);
-    const sidebarCollapsed = ref(false);
+    const isMobile = window.innerWidth < 768;
+    const sidebarCollapsed = ref(isMobile);
 
     const expandedSections = ref({
-      Primaria: true,
-      Secundaria: true,
-      Bachillerato: true
+      Primaria: !isMobile,
+      Secundaria: !isMobile,
+      Bachillerato: !isMobile
     });
 
     watch(currentScreen, (newVal) => {
