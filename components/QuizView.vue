@@ -264,13 +264,203 @@ export default {
       return selectedOption.value !== null;
     });
 
+    const cleanMathStr = (s) => {
+      if (s === null || s === undefined) return '';
+      let str = String(s).toLowerCase();
+
+      // Remove outer $ and $$
+      str = str.replace(/^\$\$?/, '').replace(/\$\$?$/, '');
+
+      // Strip LaTeX \text{...} wrappers but keep contents
+      str = str.replace(/\\text\s*\{([^}]*)\}/g, '$1');
+
+      // Strip LaTeX formatting
+      str = str.replace(/\\left/g, '').replace(/\\right/g, '');
+      str = str.replace(/\\quad/g, ' ').replace(/\\,/g, ' ');
+
+      // Convert LaTeX fractions \frac{a}{b} (or frac{a}{b}) to standard (a)/(b)
+      let prev;
+      do {
+        prev = str;
+        str = str.replace(/\\?frac\s*\{([^}]*)\}\s*\{([^}]*)\}/g, '($1)/($2)');
+      } while (str !== prev);
+
+      // Convert LaTeX square roots \sqrt{a} to sqrt(a)
+      do {
+        prev = str;
+        str = str.replace(/\\?sqrt\s*\{([^}]*)\}/g, 'sqrt($1)');
+      } while (str !== prev);
+
+      // Replace multiplication and division symbols
+      str = str.replace(/\\cdot/g, '*').replace(/\\times/g, '*').replace(/\\div/g, '/');
+
+      // Normalize variables
+      str = str.replace(/\\theta/g, 'theta').replace(/\\pi/g, 'pi');
+
+      // Strip degrees
+      str = str.replace(/\^?\\?circ/g, '');
+      str = str.replace(/°/g, '');
+
+      // Normalize mixed fractions with spaces to whole(num)/(den) before removing other spaces
+      // e.g. "1 7/8" -> "1(7)/(8)"
+      str = str.replace(/\b(\d+)\s+(\d+)\/(\d+)\b/g, '$1($2)/($3)');
+      // e.g. "1 (7)/(8)" -> "1(7)/(8)"
+      str = str.replace(/\b(\d+)\s+\(([^)]+)\)\/\(([^)]+)\)/g, '$1($2)/($3)');
+
+      // Strip leading single-letter coordinate label, e.g. v(2,1) -> (2,1) or c(3,-5) -> (3,-5)
+      str = str.replace(/^[a-z_][a-z0-9_]*\(/, '(');
+
+      // Remove common units/words
+      const units = [
+        'kilogramos', 'kilogramo', 'kg', 'cajas', 'caja', 'piezas', 'pieza',
+        'metros', 'metro', 'cm\\^2', 'cm\\^3', 'cm', 'grados', 'pesos', 'peso',
+        'km', 'horas', 'hora', 'hz', 'segundos', 'segundo', 'de la recta', 'recta',
+        'asíntota vertical', 'asíntota horizontal', 'asíntota', 'focos', 'foco',
+        'eje mayor', 'centro', 'radio', 'amplitud', 'periodo', 'frecuencia'
+      ];
+      units.forEach(unit => {
+        str = str.replace(new RegExp(`\\b${unit}\\b`, 'g'), '');
+      });
+
+      // Strip whitespace
+      str = str.replace(/\s+/g, '');
+
+      return str;
+    };
+
+    const isNumericString = (s) => {
+      const clean = s.trim();
+      // Match standard numbers/decimals
+      if (/^[+-]?\d+(\.\d+)?$/.test(clean)) return true;
+      // Match simple fractions like "2/5"
+      if (/^[+-]?\d+\/\d+$/.test(clean)) return true;
+      // Match mixed fractions like "1(7)/(8)" or "1(7)/8"
+      if (/^[+-]?\d+\(\d+\)\/\(\d+\)$/.test(clean)) return true;
+      return false;
+    };
+
+    const evaluateFraction = (str) => {
+      if (!str) return null;
+      let s = String(str).trim().replace(/\s+/g, ' ');
+
+      // Match mixed fraction: e.g. "1 7/8"
+      const parts = s.split(/\s+/);
+      if (parts.length === 2) {
+        const whole = parseFloat(parts[0]);
+        const fracFlat = parts[1].replace(/[()]/g, '');
+        const fracMatch = fracFlat.match(/^([+-]?\d+)\/(\d+)$/);
+        if (fracMatch) {
+          const num = parseFloat(fracMatch[1]);
+          const den = parseFloat(fracMatch[2]);
+          if (den !== 0) {
+            const sign = whole >= 0 ? 1 : -1;
+            return whole + sign * (num / den);
+          }
+        }
+      }
+
+      // Also support cases where there is no space but parentheses are there: "1(7)/(8)"
+      let mixedMatch = s.match(/^([+-]?\d+)\((\d+)\)\/\((\d+)\)$/);
+      if (mixedMatch) {
+        const whole = parseFloat(mixedMatch[1]);
+        const num = parseFloat(mixedMatch[2]);
+        const den = parseFloat(mixedMatch[3]);
+        if (den !== 0) {
+          const sign = whole >= 0 ? 1 : -1;
+          return whole + sign * (num / den);
+        }
+      }
+
+      // Simple fraction: e.g. "3/4" or "(3)/(4)" or "-1/3"
+      let flat = s.replace(/[()\s]/g, '');
+      const simpleMatch = flat.match(/^([+-]?\d+)\/(\d+)$/);
+      if (simpleMatch) {
+        const num = parseFloat(simpleMatch[1]);
+        const den = parseFloat(simpleMatch[2]);
+        if (den !== 0) return num / den;
+      }
+
+      return null;
+    };
+
     const isOpenAnswerCorrect = computed(() => {
       if (props.question.type !== 'open') return false;
-      const cleanStr = (s) => String(s).toLowerCase().replace(/[\s\\*]/g, '').trim();
-      const userAns = cleanStr(openAnswer.value);
-      const isMatch = userAns === cleanStr(props.question.correctAnswer) || 
-                      (props.question.acceptableAnswers || []).some(ans => userAns === cleanStr(ans));
-      return isMatch;
+
+      const userAnsRaw = openAnswer.value;
+      const correctAnsRaw = props.question.correctAnswer;
+      const acceptableAnswers = props.question.acceptableAnswers || [];
+
+      const userClean = cleanMathStr(userAnsRaw);
+      const correctClean = cleanMathStr(correctAnsRaw);
+
+      const cleanList = [correctClean, ...acceptableAnswers.map(ans => cleanMathStr(ans))];
+
+      // Try exact cleaned string match first
+      for (const target of cleanList) {
+        if (userClean === target && userClean !== '') {
+          return true;
+        }
+      }
+
+      // Try parsing variable equation prefixes. E.g. "x = 10" -> "10"
+      const stripVarPrefix = (s) => {
+        return s.replace(/(^|[,;])\s*[a-z_][a-z0-9_]*\s*=/gi, '$1');
+      };
+
+      const userNoVar = stripVarPrefix(userClean);
+      const cleanListNoVar = cleanList.map(stripVarPrefix);
+
+      // Try match after stripping variable prefixes
+      for (const target of cleanListNoVar) {
+        if (userNoVar === target && userNoVar !== '') {
+          return true;
+        }
+      }
+
+      // Try numeric comparison (decimal evaluation) - only if BOTH are numeric strings
+      if (isNumericString(userNoVar)) {
+        const userVal = evaluateFraction(userNoVar) ?? evaluateFraction(userAnsRaw) ?? parseFloat(userNoVar);
+        if (userVal !== null && !isNaN(userVal)) {
+          for (const target of cleanListNoVar) {
+            if (isNumericString(target)) {
+              const targetVal = evaluateFraction(target) ?? parseFloat(target);
+              if (targetVal !== null && !isNaN(targetVal) && Math.abs(userVal - targetVal) < 0.001) {
+                return true;
+              }
+            }
+          }
+        }
+      }
+
+      // Handle lists/coordinates component-wise (e.g. "(2, 1)" vs "2, 1" vs "V(2,1)")
+      const cleanListOrParen = (s) => s.replace(/[()]/g, '').split(/[,;]/).map(x => x.trim()).filter(Boolean);
+      const uComponents = cleanListOrParen(userNoVar);
+
+      for (const target of cleanListNoVar) {
+        const tComponents = cleanListOrParen(target);
+        if (uComponents.length === tComponents.length && uComponents.length > 0) {
+          let allComponentsMatch = true;
+          for (let i = 0; i < uComponents.length; i++) {
+            const uc = uComponents[i];
+            const tc = tComponents[i];
+            if (uc === tc) continue;
+            if (isNumericString(uc) && isNumericString(tc)) {
+              const ucVal = evaluateFraction(uc) ?? parseFloat(uc);
+              const tcVal = evaluateFraction(tc) ?? parseFloat(tc);
+              if (ucVal !== null && !isNaN(ucVal) && tcVal !== null && !isNaN(tcVal)) {
+                if (Math.abs(ucVal - tcVal) < 0.001) {
+                  continue;
+                }
+              }
+            }
+            allComponentsMatch = false;
+            break;
+          }
+          if (allComponentsMatch) return true;
+        }
+      }
+
+      return false;
     });
 
     const useHint = () => {

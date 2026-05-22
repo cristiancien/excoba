@@ -45,7 +45,37 @@ window.useQuestionBank = () => {
     for (const [section, topics] of Object.entries(SUBTEMA_MAP)) {
       for (const topic of topics) {
         const pool = allQuestions.filter(q => q.section === section && q.topic === topic);
-        bank.push(...shuffle(pool).slice(0, QUESTIONS_PER_TOPIC));
+        const shuffledPool = shuffle(pool);
+        
+        let processedPool;
+        if (topic === 'Matemáticas' || topic === 'Matemáticas para cálculo') {
+          // Exactly 5 multiple choice (option) questions and 15 written (open) questions.
+          // Since the pool has 5 originally open questions and 15 originally option questions,
+          // we keep the 5 originally open questions as open.
+          // For the 15 option questions, we keep 5 as option and convert the other 10 to open.
+          let optionCount = 0;
+          processedPool = shuffledPool.map(q => {
+            if (q.type === 'open') {
+              return q;
+            }
+            if (optionCount < 5) {
+              optionCount++;
+              return q;
+            } else {
+              const correctOption = q.options?.find(o => o.isCorrect);
+              return {
+                ...q,
+                type: 'open',
+                correctAnswer: correctOption ? correctOption.text : '',
+                acceptableAnswers: correctOption ? [correctOption.text] : []
+              };
+            }
+          });
+        } else {
+          processedPool = shuffledPool;
+        }
+
+        bank.push(...processedPool.slice(0, QUESTIONS_PER_TOPIC));
       }
     }
     questions.value = bank;

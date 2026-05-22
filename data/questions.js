@@ -648,11 +648,11 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Buscamos denominador común: 8.\n$$\\frac{3}{4} = \\frac{6}{8}, \\quad \\frac{1}{2} = \\frac{4}{8}$$\nSumamos los numeradores:\n$$\\frac{6}{8} + \\frac{4}{8} + \\frac{5}{8} = \\frac{15}{8}$$\nComo es una fracción impropia, convertimos a mixto:\n$$\\frac{15}{8} = 1 \\text{ entero y } \\frac{7}{8}$$",
     "level": 1,
     "type": "open",
-    "correctAnswer": "1",
+    "correctAnswer": "1 \\frac{7}{8}",
     "acceptableAnswers": [
-      "1",
-      "1 frac{7}{8}",
-      "$1 \\frac{7}{8}$"
+      "1 \\frac{7}{8}",
+      "15/8",
+      "1 7/8"
     ]
   },
   {
@@ -679,11 +679,11 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Multiplicación de fracciones:\n$$\\frac{3}{5} \\times \\frac{2}{3} = \\frac{6}{15}$$\nSimplificando sacando tercera parte a numerador y denominador:\n$$\\frac{6 \\div 3}{15 \\div 3} = \\frac{2}{5}$$",
     "level": 1,
     "type": "open",
-    "correctAnswer": "2",
+    "correctAnswer": "\\frac{2}{5}",
     "acceptableAnswers": [
-      "2",
-      "frac{2}{5}",
-      "$\\frac{2}{5}$"
+      "\\frac{2}{5}",
+      "2/5",
+      "0.4"
     ]
   },
   {
@@ -1815,11 +1815,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Quitamos el paréntesis con el signo menos:\n$$3x^2 - 5x + 8 - x^2 + 2x + 3$$\nAgrupamos términos semejantes:\n$$(3x^2 - x^2) + (-5x + 2x) + (8 + 3) = 2x^2 - 3x + 11$$",
     "level": 2,
     "type": "open",
-    "correctAnswer": "2",
+    "correctAnswer": "2x^2 - 3x + 11",
     "acceptableAnswers": [
-      "2",
-      "2x^2 - 3x + 11",
-      "$2x^2 - 3x + 11$"
+      "2x^2 - 3x + 11"
     ]
   },
   {
@@ -1831,11 +1829,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Aplicando la fórmula de sucesiones aritméticas:\n$$a_n = 5 + (n - 1) \\cdot 4$$\n$$a_n = 5 + 4n - 4 \\implies a_n = 4n + 1$$\nComprobamos para $n=1$: $4(1)+1 = 5$ (correcto).",
     "level": 2,
     "type": "open",
-    "correctAnswer": "4",
+    "correctAnswer": "a_n = 4n + 1",
     "acceptableAnswers": [
-      "4",
-      "a_n = 4n + 1",
-      "$a_n = 4n + 1$"
+      "a_n = 4n + 1"
     ]
   },
   {
@@ -1847,11 +1843,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Agrupamos potencias iguales:\n$$(5x^3 + 2x^3) + (-2x^2 + 4x^2) + 4x - 7 = 7x^3 + 2x^2 + 4x - 7$$",
     "level": 2,
     "type": "open",
-    "correctAnswer": "7",
+    "correctAnswer": "7x^3 + 2x^2 + 4x - 7",
     "acceptableAnswers": [
-      "7",
-      "7x^3 + 2x^2 + 4x - 7",
-      "$7x^3 + 2x^2 + 4x - 7$"
+      "7x^3 + 2x^2 + 4x - 7"
     ]
   },
   {
@@ -3593,11 +3587,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Realizando la división larga paso a paso:\n1. $(6x^3) \\div (2x) = 3x^2$.\n2. Multiplicar y restar: $(6x^3 - 11x^2) - (6x^3 - 9x^2) = -2x^2$.\n3. $(-2x^2 - x) \\div (2x) = -x$.\n4. Restar: $(-2x^2 - x) - (-2x^2 + 3x) = -4x$.\n5. $(-4x + 6) \\div (2x - 3) = -2$. Residuo 0.\nEl cociente es $3x^2 - x - 2$.",
     "level": 3,
     "type": "open",
-    "correctAnswer": "3",
+    "correctAnswer": "3x^2 - x - 2",
     "acceptableAnswers": [
-      "3",
-      "3x^2 - x - 2",
-      "$3x^2 - x - 2$"
+      "3x^2 - x - 2"
     ]
   },
   {
@@ -3609,11 +3601,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Raíz de $9x^2 = 3x$.\nRaíz de $4y^2 = 2y$.\nDoble producto del primero por el segundo:\n$$2 \\cdot (3x) \\cdot (-2y) = -12xy$$\nComo coincide con el término central, equivale al binomio al cuadrado: $(3x - 2y)^2$.",
     "level": 3,
     "type": "open",
-    "correctAnswer": "3",
+    "correctAnswer": "(3x - 2y)^2",
     "acceptableAnswers": [
-      "3",
-      "(3x - 2y)^2",
-      "$(3x - 2y)^2$"
+      "(3x - 2y)^2"
     ]
   },
   {
@@ -3625,11 +3615,9 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Factorizamos el numerador:\n$$x^2 - 16 = (x - 4)(x + 4)$$\nSustituimos en la fracción y cancelamos factores comunes:\n$$\\frac{(x - 4)(x + 4)}{x + 4} = x - 4$$",
     "level": 3,
     "type": "open",
-    "correctAnswer": "4",
+    "correctAnswer": "x - 4",
     "acceptableAnswers": [
-      "4",
-      "x - 4",
-      "$x - 4$"
+      "x - 4"
     ]
   },
   {
@@ -3641,11 +3629,10 @@ window.EXCOBA_QUESTIONS = [
     "explanation": "Resolviendo por sustitución o determinantes, se encuentra la terna de valores únicos:\n$$x = 1, \\quad y = 2, \\quad z = 3$$\nComprobación en Eq 1: $1 + 2 + 3 = 6$ (correcto).",
     "level": 3,
     "type": "open",
-    "correctAnswer": "3",
+    "correctAnswer": "z = 3",
     "acceptableAnswers": [
-      "3",
       "z = 3",
-      "$z = 3$"
+      "3"
     ]
   },
   {

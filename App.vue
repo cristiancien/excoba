@@ -18,7 +18,7 @@
         <!-- Versión del Simulador -->
         <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
           <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
-            v1.1.3
+            v1.1.4
           </span>
         </div>
 
