@@ -18,7 +18,7 @@
         <!-- Versión del Simulador -->
         <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
           <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
-            v1.1.2
+            v1.1.3
           </span>
         </div>
 
@@ -158,6 +158,18 @@
             <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
               Pausar ⏸️
+            </button>
+
+            <!-- Botón Finalizar Prueba -->
+            <button 
+              @click="triggerFinishConfirm" 
+              class="btn" 
+              style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); color: #ef4444; cursor: pointer; transition: all 0.2s; font-weight: 700;"
+              onmouseover="this.style.background='rgba(239,68,68,0.18)'; this.style.color='#dc2626'"
+              onmouseout="this.style.background='rgba(239,68,68,0.08)'; this.style.color='#ef4444'"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+              Finalizar 🏁
             </button>
 
             <!-- Botón del Formulario Científico -->
@@ -770,6 +782,35 @@
       </div>
     </transition>
 
+    <!-- DIÁLOGO DE CONFIRMACIÓN PARA FINALIZAR EXAMEN -->
+    <transition name="fade">
+      <div v-if="showFinishConfirm" class="pause-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000; display: flex; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <div class="glass-panel warning-card" style="max-width: 460px; width: 90%; padding: 2.5rem 2.2rem; text-align: center; display: flex; flex-direction: column; gap: 1.8rem; box-shadow: 0 35px 70px rgba(0,0,0,0.35); border: 2px solid var(--primary); border-radius: 24px;">
+          
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2s infinite;">🏁</div>
+            <h2 style="font-size: 1.7rem; color: var(--text-main); margin: 0; font-weight: 800;">¿Finalizar Prueba?</h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              ¿Estás seguro de que deseas finalizar la prueba y ver tus resultados? No podrás modificar tus respuestas actuales y los reactivos no contestados se contarán como incorrectos.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 12px; width: 100%;">
+            <!-- Cancelar y seguir resolviendo -->
+            <button @click="cancelFinishConfirm" class="btn btn-secondary" style="flex: 1; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+              No, continuar
+            </button>
+            
+            <!-- Confirmar y finalizar -->
+            <button @click="finishExam" class="btn btn-primary" style="flex: 1; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 0.95rem; background: var(--primary); color: white; border: none; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);">
+              Sí, finalizar
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </transition>
+
   </div>
 </template>
 
@@ -796,6 +837,7 @@ export default {
     const currentScreen = ref(localStorage.getItem('excoba_current_screen') || 'menu');
     const isPaused = ref(false);
     const showExitWarning = ref(false);
+    const showFinishConfirm = ref(false);
     const showFeedback = ref(false);
     const lastAnswerCorrect = ref(false);
     const isMobile = window.innerWidth < 768;
@@ -889,6 +931,24 @@ export default {
       showFeedback.value = false;
       expandedSections.value = { Primaria: true, Secundaria: true, Bachillerato: true };
       localStorage.removeItem('excoba_current_screen');
+    };
+
+    // --- Finish Exam Flow ---
+    const triggerFinishConfirm = () => {
+      timer.stopTimer();
+      showFinishConfirm.value = true;
+    };
+
+    const cancelFinishConfirm = () => {
+      showFinishConfirm.value = false;
+      timer.startTimer();
+    };
+
+    const finishExam = () => {
+      timer.stopTimer();
+      showFeedback.value = false;
+      showFinishConfirm.value = false;
+      bank.currentQuestionIndex.value = bank.totalQuestions.value;
     };
 
     // --- Answer & Hint Handlers (Mediator pattern) ---
@@ -1019,6 +1079,9 @@ export default {
       pauseExam,
       resumeExam,
       confirmExit,
+      triggerFinishConfirm,
+      cancelFinishConfirm,
+      finishExam,
       nextQuestion,
       prevQuestion,
       nextQuestionNav,

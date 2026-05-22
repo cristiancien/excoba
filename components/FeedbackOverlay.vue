@@ -147,6 +147,15 @@ export default {
       for (const [regex, translation] of latexSymbols) {
         t = t.replace(regex, translation);
       }
+      // Reemplazar operadores matemáticos comunes dentro de LaTeX por palabras para evitar deletreo de símbolos
+      t = t.replace(/=/g, ' es igual a ');
+      t = t.replace(/\+/g, ' más ');
+      t = t.replace(/-/g, ' menos ');
+      t = t.replace(/\*/g, ' por ');
+      t = t.replace(/\//g, ' entre ');
+      t = t.replace(/</g, ' menor que ');
+      t = t.replace(/>/g, ' mayor que ');
+
       // Eliminar comandos LaTeX restantes
       t = t.replace(/\\([a-zA-Z]+)/g, '');
       // Subíndices: a_{n} → "a sub n", a_n → "a sub n"
@@ -155,8 +164,7 @@ export default {
       // Superíndices: x^{3} → "x elevado a la 3", x^3 → "x elevado a la 3"
       t = t.replace(/([a-zA-Z0-9)])\s*\^\{([^}]+)\}/g, '$1 elevado a la $2');
       t = t.replace(/([a-zA-Z0-9)])\^([a-zA-Z0-9])/g, '$1 elevado a la $2');
-      // Limpiar llaves y signos ^ restantes
-      t = t.replace(/[{}^]/g, ' ');
+      
       return t;
     };
 
@@ -165,13 +173,25 @@ export default {
       let cleanText = rawText;
       cleanText = cleanText.replace(/\$\$([\s\S]*?)\$\$/g, (_, latex) => cleanLatexSegment(latex));
       cleanText = cleanText.replace(/\$(.*?)\$/g, (_, latex) => cleanLatexSegment(latex));
+      
+      // Limpiar guiones y otros detalles de autocompletado
       cleanText = cleanText.replace(/_{2,}/g, ' espacio en blanco ');
-      cleanText = cleanText.replace(/_/g, '');
+      cleanText = cleanText.replace(/_/g, ' ');
+      
+      // Reemplazar operadores matemáticos en texto plano
+      cleanText = cleanText.replace(/=/g, ' es igual a ');
+      cleanText = cleanText.replace(/\+/g, ' más ');
       cleanText = cleanText.replace(/(\d+)\s*-\s*(\d+)/g, '$1 menos $2');
       cleanText = cleanText.replace(/(^|[\s(])-\s*(\d+)/g, '$1menos $2');
+      cleanText = cleanText.replace(/%/g, ' por ciento ');
+      
+      // Limpiar HTML
       cleanText = cleanText.replace(/<[^>]*>?/gm, ' ');
-      cleanText = cleanText.replace(/\*\*/g, '');
-      cleanText = cleanText.replace(/\$/g, '');
+      
+      // Remover símbolos molestos que el sintetizador de voz pronuncia literalmente (paréntesis, corchetes, comillas, barras, asteriscos, etc.)
+      cleanText = cleanText.replace(/[()\[\]{}'`"\\|*]/g, ' ');
+      
+      // Limpiar múltiples espacios
       cleanText = cleanText.replace(/\s+/g, ' ').trim();
       return cleanText;
     };
@@ -187,12 +207,8 @@ export default {
 
       synth.cancel();
       
-      let fullText = '';
-      if (!props.isCorrect && props.correctOptionText) {
-        fullText += 'Respuesta correcta: ' + cleanTextForSpeech(props.correctOptionText) + '. ';
-      }
-      
-      fullText += (props.isCorrect ? 'Concepto clave: ' : 'Desglose lógico del concepto: ') + cleanTextForSpeech(props.explanation);
+      // Dictar ÚNICAMENTE la explicación/retroalimentación
+      let fullText = cleanTextForSpeech(props.explanation);
       
       currentUtterance = new SpeechSynthesisUtterance(fullText);
       currentUtterance.lang = 'es-MX';
