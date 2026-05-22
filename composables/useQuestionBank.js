@@ -56,7 +56,9 @@ window.useQuestionBank = () => {
 
   const correctOptionText = computed(() => {
     if (!currentQuestion.value) return '';
-    return currentQuestion.value.options.find(o => o.isCorrect)?.text ?? '';
+    if (currentQuestion.value.type === 'open') return currentQuestion.value.correctAnswer || '';
+    if (currentQuestion.value.type === 'table') return ''; // No single correct option
+    return currentQuestion.value.options?.find(o => o.isCorrect)?.text ?? '';
   });
 
   const progressPercentage = computed(() => {
