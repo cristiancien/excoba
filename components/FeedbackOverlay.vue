@@ -17,28 +17,18 @@
       <!-- Icon/Character Header (Brilliant style) -->
       <div class="feedback-header">
         <div v-if="isCorrect" class="icon-container success-icon">
-          <svg class="svg-character" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="var(--secondary)" opacity="0.15"/>
-            <path d="M30 50L45 65L70 35" stroke="var(--secondary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="35" cy="40" r="4" fill="var(--secondary)"/>
-            <circle cx="65" cy="40" r="4" fill="var(--secondary)"/>
-            <path d="M40 75 Q50 85 60 75" stroke="var(--secondary)" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-          <h2 style="color: var(--secondary); font-weight: 900; font-size: 1.8rem; margin: 0;">¡Excelente deducción! 🎯</h2>
+          <div style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.1); border: 2px solid var(--secondary); font-size: 2.8rem; color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem; user-select: none;">
+            ✓
+          </div>
+          <h2 style="color: var(--secondary); font-weight: 900; font-size: 1.8rem; margin: 0;">¡Excelente deducción! ✦</h2>
           <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Tu razonamiento ha sido impecable.</span>
         </div>
         
         <div v-else class="icon-container error-icon">
-          <svg class="svg-character" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="var(--warning)" opacity="0.15"/>
-            <path d="M50 25C40 25 35 32 35 40C35 48 42 50 45 55V62H55V55C58 50 65 48 65 40C65 32 60 25 50 25Z" fill="var(--warning)" opacity="0.4"/>
-            <rect x="46" y="64" width="8" height="4" rx="2" fill="var(--warning)"/>
-            <rect x="48" y="70" width="4" height="4" rx="2" fill="var(--warning)"/>
-            <circle cx="38" cy="40" r="3" fill="var(--warning)"/>
-            <circle cx="62" cy="40" r="3" fill="var(--warning)"/>
-            <path d="M45 48 Q50 52 55 48" stroke="var(--warning)" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <h2 style="color: var(--warning); font-weight: 900; font-size: 1.8rem; margin: 0;">💡 ¡Momento de Aprendizaje!</h2>
+          <div style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--warning); font-size: 2.8rem; color: var(--warning); font-weight: bold; margin-bottom: 0.5rem; user-select: none;">
+            ✗
+          </div>
+          <h2 style="color: var(--warning); font-weight: 900; font-size: 1.8rem; margin: 0;">✦ ¡Momento de Aprendizaje!</h2>
           <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Resolver errores es el camino más rápido para dominar el concepto.</span>
         </div>
       </div>
@@ -62,8 +52,7 @@
             style="background: transparent; border: 1px solid var(--glass-border); color: var(--primary); padding: 6px 12px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; cursor: pointer; height: auto;"
             :title="isPlayingTTS ? 'Pausar Lectura' : 'Escuchar Explicación'"
           >
-            <svg v-if="!isPlayingTTS" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-            <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            <span style="font-size: 0.95rem; font-weight: 900; user-select: none;">{{ isPlayingTTS ? '‖' : '▶' }}</span>
             {{ isPlayingTTS ? 'Pausar' : 'Dictar' }}
           </button>
         </div>

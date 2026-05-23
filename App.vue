@@ -18,15 +18,15 @@
         <!-- Versión del Simulador -->
         <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
           <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
-            v1.1.4
+            v1.1.5
           </span>
         </div>
 
         <!-- Theme Switcher (Claro/Oscuro) -->
         <div style="position: absolute; top: 25px; right: 25px; z-index: 10;">
           <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 10px 16px; border-radius: 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
-            <span v-if="isDarkMode">☀️ Modo Claro</span>
-            <span v-else>🌙 Modo Oscuro</span>
+            <span v-if="isDarkMode">☼ Modo Claro</span>
+            <span v-else>☾ Modo Oscuro</span>
           </button>
         </div>
 
@@ -72,7 +72,7 @@
           <!-- Secciones de Estudio y Pruebas Disponibles -->
           <div style="text-align: left; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 1rem;">
             <h3 style="font-size: 1.1rem; color: var(--text-main); font-weight: 800; display: flex; align-items: center; gap: 6px; border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem; margin: 0;">
-              📚 Secciones y Pruebas de Estudio
+              ☷ Secciones y Pruebas de Estudio
             </h3>
             
             <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -81,9 +81,9 @@
                 <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 250px;">
                   <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba de Arquitectura & Diseño</span>
                   <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>📋 180 Preguntas</span>
+                    <span>abc 180 Preguntas</span>
                     <span>•</span>
-                    <span>⚡ Simulación EXCOBA Completa</span>
+                    <span>☇ Simulación EXCOBA Completa</span>
                   </div>
                   <!-- Progreso Badge -->
                   <div v-if="questions.length > 0 && overallSolvedCount > 0" style="margin-top: 6px; display: inline-flex;">
@@ -107,13 +107,13 @@
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                   <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba</span>
                   <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>📋 - Preguntas</span>
+                    <span>abc - Preguntas</span>
                     <span>•</span>
                     <span>Tema</span>
                   </div>
                 </div>
                 <div>
-                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente 🔒</span>
+                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente ⎊</span>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
               title="Mostrar menú"
               style="padding: 8px 12px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;"
             >
-              📂 Ver Temas
+              ☷ Ver Temas
             </button>
 
             <!-- Cronómetro Monospace -->
@@ -156,8 +156,7 @@
 
             <!-- Botón Pausa -->
             <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
-              Pausar ⏸️
+              ‖ Pausar
             </button>
 
             <!-- Botón Finalizar Prueba -->
@@ -168,20 +167,17 @@
               onmouseover="this.style.background='rgba(239,68,68,0.18)'; this.style.color='#dc2626'"
               onmouseout="this.style.background='rgba(239,68,68,0.08)'; this.style.color='#ef4444'"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
-              Finalizar 🏁
+              ⚑ Finalizar
             </button>
 
             <!-- Botón del Formulario Científico -->
             <button @click="toggleFormulario" class="btn btn-secondary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #065f46; cursor: pointer; transition: all 0.2s; font-weight: 700;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
+              § {{ showFormulario ? 'Ocultar Formulario' : 'Ver Formulario' }}
             </button>
 
             <!-- Botón de la Calculadora -->
             <button @click="toggleCalculator" class="btn btn-primary-outline" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.3); color: var(--primary); cursor: pointer; transition: all 0.2s; font-weight: 700;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line><line x1="9" y1="15" x2="9.01" y2="15"></line><line x1="15" y1="15" x2="15.01" y2="15"></line></svg>
-              {{ showCalculator ? 'Ocultar Herramientas' : 'Calculadora & Conversor 🧮' }}
+              ⚙ {{ showCalculator ? 'Ocultar Herramientas' : 'Calculadora & Conversor' }}
             </button>
 
             <!-- Marcador de Puntos -->
@@ -268,7 +264,7 @@
                         :title="`Pregunta ${q.displayId}: ${cleanQuestionTextFull(q.question)}`"
                       >
                         {{ q.displayId }}
-                        <span v-if="hintsUsedStatus[q.id]" class="hint-pin">💡</span>
+                        <span v-if="hintsUsedStatus[q.id]" class="hint-pin">✦</span>
                       </button>
                     </div>
                   </div>
@@ -365,7 +361,7 @@
               />
               
               <div v-else-if="!currentQuestion" class="glass-panel" style="padding: 4rem 2rem; text-align: center;">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+                <div style="font-size: 4rem; margin-bottom: 1rem; color: var(--secondary);">✦</div>
                 <h2 style="color: var(--secondary); font-size: 2rem; margin-bottom: 1rem; font-weight: 800;">¡Felicidades, Futuro Universitario!</h2>
                 <p style="font-size: 1.15rem; max-width: 500px; margin: 0 auto 2rem; color: var(--text-muted);">
                   Has recorrido con éxito todo el banco de preguntas oficial del temario EXCOBA. ¡Tu dedicación dará grandes frutos!
@@ -389,7 +385,7 @@
             <div v-if="showCalculator" class="glass-panel calculator-panel" style="position: absolute; right: 20px; top: 10px; width: 340px; z-index: 100; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(79,70,229,0.3); background: rgba(255,255,255,0.95); border-radius: 20px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem;">
                 <h3 style="font-size: 1rem; color: var(--primary); margin: 0; font-weight: 800; display: flex; align-items: center; gap: 6px;">
-                  🧮 Panel de Herramientas
+                  ⚙ Panel de Herramientas
                 </h3>
                 <button @click="showCalculator = false" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--text-muted);">×</button>
               </div>
@@ -412,7 +408,7 @@
                     transition: 'all 0.15s ease'
                   }"
                 >
-                  🧮 Operaciones
+                  ∑ Operaciones
                 </button>
                 <button 
                   @click="activeTab = 'converter'" 
@@ -430,7 +426,7 @@
                     transition: 'all 0.15s ease'
                   }"
                 >
-                  🔄 Conversor
+                  ⇄ Conversor
                 </button>
               </div>
               
@@ -497,9 +493,9 @@
                     v-model="convertCategory" 
                     style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--glass-border); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--text-main); background: white; cursor: pointer; outline: none; box-shadow: var(--glass-shadow);"
                   >
-                    <option value="longitud">📏 Longitud (Metros, Pulgadas, Millas...)</option>
-                    <option value="angulos">📐 Ángulos (Radianes, Grados)</option>
-                    <option value="velocidad">⚡ Velocidad (m/s, km/h, mph)</option>
+                    <option value="longitud">◬ Longitud (Metros, Pulgadas, Millas...)</option>
+                    <option value="angulos">θ Ángulos (Radianes, Grados)</option>
+                    <option value="velocidad">☇ Velocidad (m/s, km/h, mph)</option>
                   </select>
                 </div>
 
@@ -535,7 +531,7 @@
                 <!-- Lista de Comparación Comparativa -->
                 <div style="margin-top: 0.2rem;">
                   <label style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 6px; letter-spacing: 0.5px;">
-                    📋 Valores Comparados Simultáneamente
+                    ⚖ Valores Comparados Simultáneamente
                   </label>
                   <div style="background: rgba(0,0,0,0.03); border-radius: 12px; padding: 6px 10px; display: flex; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto;" class="sidebar-scroll">
                     <div 
@@ -564,7 +560,7 @@
             <div v-if="showFormulario" class="glass-panel formula-panel" style="position: absolute; right: 20px; top: 10px; width: 380px; z-index: 99; padding: 1.2rem; box-shadow: 0 12px 40px rgba(0,0,0,0.25); border: 2px solid rgba(16, 185, 129, 0.3); background: rgba(255,255,255,0.94); max-height: 80vh; display: flex; flex-direction: column;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.4rem; flex-shrink: 0;">
                 <h3 style="font-size: 1rem; color: #065f46; margin: 0; font-weight: 800; display: flex; align-items: center; gap: 6px;">
-                  📖 Formulario de Estudio EXCOBA
+                  § Formulario de Estudio EXCOBA
                 </h3>
                 <button @click="showFormulario = false" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--text-muted);">×</button>
               </div>
@@ -708,7 +704,7 @@
         <div v-if="!showExitWarning" class="glass-panel pause-menu-card" style="max-width: 420px; width: 90%; padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; gap: 1.8rem; box-shadow: 0 30px 60px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.3); border-radius: 24px;">
           
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2.5s infinite;">⏸️</div>
+            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2.5s infinite; color: var(--primary);">‖</div>
             <h2 style="font-size: 1.8rem; color: var(--text-main); margin: 0; font-weight: 800;">Prueba Pausada</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
               Tu tiempo de examen se ha detenido en <strong>{{ formattedTime }}</strong>.
@@ -732,8 +728,8 @@
             <!-- Selector de Tema en Pausa -->
             <div style="margin: 0.2rem auto 0 auto; display: flex; justify-content: center;">
               <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
-                <span v-if="isDarkMode">☀️ Modo Claro</span>
-                <span v-else>🌙 Modo Oscuro</span>
+                <span v-if="isDarkMode">☼ Modo Claro</span>
+                <span v-else>☾ Modo Oscuro</span>
               </button>
             </div>
 
@@ -748,7 +744,7 @@
             
             <!-- Regresar al menú principal -->
             <button @click="showExitWarning = true" class="btn btn-pause-exit" style="padding: 12px 20px; border-radius: 14px; font-weight: 700; width: 100%; border: 1px solid rgba(0,0,0,0.1); background: rgba(0,0,0,0.03); color: var(--text-muted); cursor: pointer; font-size: 0.95rem; transition: all 0.2s;">
-              🏠 Salir al Menú Principal
+              ⌂ Salir al Menú Principal
             </button>
           </div>
 
@@ -758,7 +754,7 @@
         <div v-else class="glass-panel warning-card" style="max-width: 440px; width: 90%; padding: 2.5rem 2.2rem; text-align: center; display: flex; flex-direction: column; gap: 1.8rem; box-shadow: 0 35px 70px rgba(0,0,0,0.35); border: 2px solid #ef4444; border-radius: 24px;">
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: shake 1s infinite alternate;">⚠️</div>
+            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: shake 1s infinite alternate; color: #ef4444;">⚠</div>
             <h2 style="font-size: 1.7rem; color: #ef4444; margin: 0; font-weight: 800;">¿Seguro que deseas salir?</h2>
             <p style="font-size: 1rem; color: var(--text-main); font-weight: 700; line-height: 1.5; margin: 0;">
               Si regresas al menú principal, perderás todo tu avance actual, puntos acumulados y tiempo transcurrido en esta sesión.
@@ -788,7 +784,7 @@
         <div class="glass-panel warning-card" style="max-width: 460px; width: 90%; padding: 2.5rem 2.2rem; text-align: center; display: flex; flex-direction: column; gap: 1.8rem; box-shadow: 0 35px 70px rgba(0,0,0,0.35); border: 2px solid var(--primary); border-radius: 24px;">
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2s infinite;">🏁</div>
+            <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2s infinite; color: var(--primary);">⚑</div>
             <h2 style="font-size: 1.7rem; color: var(--text-main); margin: 0; font-weight: 800;">¿Finalizar Prueba?</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
               ¿Estás seguro de que deseas finalizar la prueba y ver tus resultados? No podrás modificar tus respuestas actuales y los reactivos no contestados se contarán como incorrectos.
@@ -1066,6 +1062,7 @@ export default {
       currentScreen,
       isPaused,
       showExitWarning,
+      showFinishConfirm,
       showFeedback,
       lastAnswerCorrect,
       sidebarCollapsed,
