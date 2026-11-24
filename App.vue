@@ -18,7 +18,7 @@
         <!-- Versión del Simulador -->
         <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
           <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
-            v1.1.5
+            v2.0
           </span>
         </div>
 
@@ -49,7 +49,7 @@
               Simulador Especialidad: Arquitectura & Diseño
             </h2>
             <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0 auto; max-width: 480px;">
-              Prepárate al nivel de los mejores. Pon a prueba tus conocimientos con nuestro simulador interactivo premium estilo Brilliant.org.
+              Practica por tema y dificultad, o prepara una sesión de 180 reactivos con las nueve materias del simulacro.
             </p>
           </div>
 
@@ -88,7 +88,7 @@
                   <!-- Progreso Badge -->
                   <div v-if="questions.length > 0 && overallSolvedCount > 0" style="margin-top: 6px; display: inline-flex;">
                     <span style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); background: rgba(16, 185, 129, 0.1); padding: 3px 8px; border-radius: 8px;">
-                      Progreso: Resueltas {{ overallSolvedCount }} de 180 ({{ progressPercentage }}%)
+                      Sesión actual: {{ overallSolvedCount }} de {{ totalQuestions }} resueltas ({{ progressPercentage }}%)
                     </span>
                   </div>
                 </div>
@@ -97,25 +97,27 @@
                     Continuar
                   </button>
                   <button @click="startExam" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 12px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
-                    {{ questions.length > 0 ? 'Reiniciar' : 'Comenzar' }}
+                    {{ questions.length > 0 ? 'Nuevo simulacro' : 'Comenzar' }}
                   </button>
                 </div>
               </div>
 
-              <!-- Tarjeta Genérica Próximamente -->
-              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 1px solid var(--glass-border); opacity: 0.6; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba</span>
-                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>abc - Preguntas</span>
-                    <span>•</span>
-                    <span>Tema</span>
-                  </div>
+              <section class="practice-card glass-panel" aria-labelledby="practice-title">
+                <div class="practice-heading"><div><h3 id="practice-title">Práctica por tema</h3><p>{{ bankQuestionCount.toLocaleString('es-MX') }} ejercicios · {{ catalogue.length }} temas · cuatro niveles</p></div><span class="practice-symbol">✎</span></div>
+                <div class="practice-fields">
+                  <label>Etapa<select v-model="practiceSection"><option value="">Todas</option><option v-for="sec in practiceSections" :key="sec" :value="sec">{{ sec }}</option></select></label>
+                  <label>Materia<select v-model="practiceTopic"><option value="">Todas</option><option v-for="topic in practiceTopics" :key="topic" :value="topic">{{ topic }}</option></select></label>
+                  <label class="wide">Tema<select v-model="practiceThemeId"><option value="">Todos los temas de la selección</option><option v-for="item in practiceThemes" :key="item.id" :value="item.id">{{ item.id }} · {{ item.title }} ({{ item.count }})</option></select></label>
+                  <label>Nivel<select v-model="practiceLevel"><option value="">Todos</option><option v-for="(label,number) in levelLabels" :key="number" :value="number">{{ label }}</option></select></label>
+                  <label>Ejercicios<select v-model.number="practiceCount"><option :value="10">10</option><option :value="25">25</option><option :value="50">50</option><option :value="100">100</option></select></label>
+                  <label class="wide">Habilidad<select v-model="practiceSkill" :disabled="!practiceThemeId"><option value="">Todas las habilidades del tema</option><option v-for="skill in practiceSkills" :key="skill" :value="skill">{{ skill }}</option></select></label>
                 </div>
-                <div>
-                  <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); background: rgba(0,0,0,0.06); padding: 6px 12px; border-radius: 10px;">Próximamente ⎊</span>
-                </div>
-              </div>
+                <div class="practice-bottom"><label class="ordered-choice"><input type="checkbox" v-model="practiceOrdered"> Orden progresivo</label><span>{{ practiceAvailable }} disponibles</span><button class="btn btn-primary" :disabled="!practiceAvailable" @click="startPractice">Comenzar práctica</button></div>
+                <p class="practice-note">La nueva sesión sustituye la sesión activa. El banco completo permanece disponible.</p>
+                <p v-if="sessionError" class="practice-error" role="alert">{{ sessionError }}</p>
+              </section>
+              <button @click="showSettings=true" class="settings-entry"><span>✦</span><span><strong>Configuración y Gemini opcional</strong><small>Tu clave, tus modelos y revisión de respuestas abiertas.</small></span><b>›</b></button>
+              <div class="reset-progress"><button class="text-button" @click="showResetConfirm=true">Restablecer progreso</button><div v-if="showResetConfirm" class="reset-confirm" role="alert"><p>Se borrarán la sesión activa, sus puntos y sus tiempos. La configuración de Gemini se conserva.</p><button class="btn btn-secondary" @click="showResetConfirm=false">Conservar progreso</button><button class="btn btn-primary" @click="resetProgress">Restablecer</button></div></div>
             </div>
           </div>
 
@@ -154,6 +156,7 @@
               </span>
             </div>
 
+            <button @click="showSettings=true" class="btn btn-secondary" style="padding:8px 12px;font-size:.85rem;border-radius:12px;">⚙ Configuración</button>
             <!-- Botón Pausa -->
             <button @click="pauseExam" class="btn btn-pause" style="padding: 8px 16px; font-size: 0.9rem; border-radius: 12px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(0,0,0,0.15); background: white; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-weight: 700;">
               ‖ Pausar
@@ -312,7 +315,7 @@
                 </nav>
                 
                 <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
-                  Progreso General: {{ overallSolvedCount }} / 180 resueltas
+                  Progreso General: {{ overallSolvedCount }} / {{ totalQuestions }} resueltas
                 </div>
               </div>
               
@@ -354,6 +357,7 @@
                 :has-prev="currentQuestionIndex > 0"
                 :has-next="currentQuestionIndex < totalQuestions - 1"
                 @answer-selected="handleAnswer"
+                @settings-requested="showSettings=true"
                 @hint-used="handleHint"
                 @show-feedback="handleShowFeedback"
                 @prev="prevQuestion"
@@ -364,7 +368,7 @@
                 <div style="font-size: 4rem; margin-bottom: 1rem; color: var(--secondary);">✦</div>
                 <h2 style="color: var(--secondary); font-size: 2rem; margin-bottom: 1rem; font-weight: 800;">¡Felicidades, Futuro Universitario!</h2>
                 <p style="font-size: 1.15rem; max-width: 500px; margin: 0 auto 2rem; color: var(--text-muted);">
-                  Has recorrido con éxito todo el banco de preguntas oficial del temario EXCOBA. ¡Tu dedicación dará grandes frutos!
+                  Terminaste esta sesión de práctica. Revisa por separado los resultados comprobados, la revisión asistida y tu autorrevisión.
                 </p>
                 <div class="glass-panel" style="display: inline-block; padding: 1rem 2rem; margin-bottom: 2rem; background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2);">
                   <span style="font-size: 1.1rem; color: var(--text-muted);">Puntuación Final:</span>
@@ -373,8 +377,14 @@
                     Tiempo Total: <strong>{{ formattedTime }}</strong>
                   </span>
                 </div>
+                <div class="grading-summary">
+                  <p><strong>Comprobación automática</strong><span>{{ sessionStats.exactCorrect }} correctas de {{ sessionStats.exact }}</span></p>
+                  <p><strong>Revisión con Gemini</strong><span>{{ sessionStats.geminiCorrect }} correctas de {{ sessionStats.gemini }}</span></p>
+                  <p><strong>Autorrevisión</strong><span>{{ sessionStats.selfCorrect }} coincidencias declaradas de {{ sessionStats.self }}</span></p>
+                  <small>{{ totalQuestions-overallSolvedCount }} sin responder. La autorrevisión no suma puntos de comprobación automática.</small>
+                </div>
                 <br>
-                <button class="btn btn-primary" @click="confirmExit" style="padding: 14px 32px; font-size: 1.15rem;">Volver al Inicio</button>
+                <button class="btn btn-primary" @click="returnToMenu" style="padding: 14px 32px; font-size: 1.15rem;">Volver al Inicio</button>
               </div>
             </transition>
 
@@ -684,11 +694,15 @@
       </div>
     </transition>
 
+    <SettingsPanel v-if="showSettings" @close="showSettings=false" />
+    <p v-if="persistenceWarning" class="persistence-warning" role="status">{{ persistenceWarning }}</p>
     <!-- Feedback Overlay -->
     <transition name="slide-up">
       <FeedbackOverlay 
-        v-if="showFeedback && currentScreen === 'exam'"
+        v-if="showFeedback && currentScreen === 'exam' && currentQuestion"
         :is-correct="lastAnswerCorrect"
+        :grading-method="lastGradingMethod"
+        :model-feedback="lastModelFeedback"
         :explanation="currentQuestion.explanation"
         :correct-option-text="correctOptionText"
         @continue="nextQuestion"
@@ -787,7 +801,7 @@
             <div style="font-size: 3.5rem; margin-bottom: 0.5rem; animation: pulse 2s infinite; color: var(--primary);">⚑</div>
             <h2 style="font-size: 1.7rem; color: var(--text-main); margin: 0; font-weight: 800;">¿Finalizar Prueba?</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
-              ¿Estás seguro de que deseas finalizar la prueba y ver tus resultados? No podrás modificar tus respuestas actuales y los reactivos no contestados se contarán como incorrectos.
+              ¿Estás seguro de que deseas finalizar la prueba y ver tus resultados? Las respuestas pendientes aparecerán como no contestadas. Las revisiones manuales se mostrarán por separado.
             </p>
           </div>
 
@@ -819,7 +833,8 @@ const options = window.__SFC_OPTIONS__;
 export default {
   components: {
     QuizView: Vue.defineAsyncComponent(() => loadModule('./components/QuizView.vue', options)),
-    FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options))
+    FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options)),
+    SettingsPanel: Vue.defineAsyncComponent(() => loadModule('./components/SettingsPanel.vue', options))
   },
   setup() {
     // --- Composable Injection (DI pattern via window) ---
@@ -830,12 +845,26 @@ export default {
     const calc = window.useCalculator();
 
     // --- Local UI State ---
-    const currentScreen = ref(localStorage.getItem('excoba_current_screen') || 'menu');
+    let savedScreen='menu';
+    try { if(localStorage.getItem('excoba_current_screen')==='exam'&&bank.questions.value.length) savedScreen='exam'; } catch (_) {}
+    const currentScreen = ref(savedScreen);
     const isPaused = ref(false);
     const showExitWarning = ref(false);
     const showFinishConfirm = ref(false);
     const showFeedback = ref(false);
     const lastAnswerCorrect = ref(false);
+    const lastGradingMethod=ref('exact'),lastModelFeedback=ref(''),showSettings=ref(false),showResetConfirm=ref(false);
+    const practiceSection=ref(''),practiceTopic=ref(''),practiceThemeId=ref(''),practiceLevel=ref(''),practiceSkill=ref(''),practiceCount=ref(25),practiceOrdered=ref(true);
+    const presentSections=[...new Set(bank.catalogue.map(t=>t.section))];
+    const practiceSections=[...new Set(['Primaria','Secundaria','Bachillerato',...presentSections])].filter(s=>presentSections.includes(s));
+    const practiceTopics=computed(()=>[...new Set(bank.catalogue.filter(t=>!practiceSection.value||t.section===practiceSection.value).map(t=>t.topic))]);
+    const practiceThemes=computed(()=>bank.catalogue.filter(t=>(!practiceSection.value||t.section===practiceSection.value)&&(!practiceTopic.value||t.topic===practiceTopic.value)));
+    const practiceSkills=computed(()=>bank.catalogue.find(t=>t.id===practiceThemeId.value)?.skills||[]);
+    const practiceFilters=computed(()=>({section:practiceSection.value,topic:practiceTopic.value,themeId:practiceThemeId.value,level:practiceLevel.value,skill:practiceSkill.value,count:practiceCount.value,ordered:practiceOrdered.value}));
+    const practiceAvailable=computed(()=>bank.getPracticePool(practiceFilters.value).length);
+    watch(practiceSection,()=>{practiceTopic.value='';practiceThemeId.value='';practiceSkill.value='';});
+    watch(practiceTopic,()=>{practiceThemeId.value='';practiceSkill.value='';});
+    watch(practiceThemeId,()=>{practiceSkill.value='';});
     const isMobile = window.innerWidth < 768;
     const sidebarCollapsed = ref(isMobile);
 
@@ -846,7 +875,7 @@ export default {
     });
 
     watch(currentScreen, (newVal) => {
-      localStorage.setItem('excoba_current_screen', newVal);
+      try { localStorage.setItem('excoba_current_screen', newVal); } catch (_) {}
     });
 
     // Dynamic Background Theme based on Section
@@ -859,7 +888,7 @@ export default {
     }, { immediate: true });
 
     // Auto-resume timer on load if we are on active exam screen and have loaded questions
-    if (currentScreen.value === 'exam' && bank.questions.value.length > 0) {
+    if (currentScreen.value === 'exam' && bank.currentQuestion.value) {
       timer.startTimer();
     }
 
@@ -888,8 +917,7 @@ export default {
 
     // --- Exam Flow Orchestration ---
     const startExam = () => {
-      bank.buildExamBank();
-      bank.resetBank();
+      if(!bank.buildExamBank())return;
       scoring.resetScoring();
       timer.resetTimers();
       showFeedback.value = false;
@@ -899,9 +927,16 @@ export default {
       timer.startTimer();
     };
 
+    const startPractice=()=>{
+      if(!bank.buildPracticeBank(practiceFilters.value))return;
+      scoring.resetScoring();timer.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
+      bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.startTimer();
+    };
+    const returnToMenu=()=>{timer.stopTimer();timer.stopPausedTimer();isPaused.value=false;showFeedback.value=false;currentScreen.value='menu';};
+    const resetProgress=()=>{bank.resetBank();scoring.resetScoring();timer.resetTimers();showResetConfirm.value=false;showFeedback.value=false;isPaused.value=false;currentScreen.value='menu';};
     const resumeExamFromMenu = () => {
       currentScreen.value = 'exam';
-      timer.startTimer();
+      if(bank.currentQuestion.value)timer.startTimer();
     };
 
     const pauseExam = () => {
@@ -926,7 +961,7 @@ export default {
       scoring.resetScoring();
       showFeedback.value = false;
       expandedSections.value = { Primaria: true, Secundaria: true, Bachillerato: true };
-      localStorage.removeItem('excoba_current_screen');
+      try { localStorage.removeItem('excoba_current_screen'); } catch (_) {}
     };
 
     // --- Finish Exam Flow ---
@@ -955,16 +990,18 @@ export default {
     };
 
     const handleAnswer = (result) => {
-      lastAnswerCorrect.value = result.isCorrect;
-      scoring.applyAnswer(result.isCorrect);
-      bank.recordAnswer(bank.currentQuestion.value.id, result);
-      showFeedback.value = true;
+      if(!bank.currentQuestion.value||String(result.questionId)!==String(bank.currentQuestion.value.id))return;
+      if(!bank.recordAnswer(result.questionId,result))return;
+      lastAnswerCorrect.value=result.isCorrect;lastGradingMethod.value=result.gradingMethod||'exact';lastModelFeedback.value=result.modelFeedback||'';
+      if(result.gradingMethod!=='self')scoring.applyAnswer(result.isCorrect);
+      showFeedback.value=true;
     };
 
     const handleShowFeedback = () => {
       const status = bank.answeredStatus.value[bank.currentQuestion.value.id];
       if (status) {
         lastAnswerCorrect.value = status.isCorrect;
+        lastGradingMethod.value=status.gradingMethod||'exact';lastModelFeedback.value=status.modelFeedback||'';
         showFeedback.value = true;
       }
     };
@@ -1007,6 +1044,9 @@ export default {
 
     // --- Public API (flat spread for template simplicity) ---
     return {
+      showSettings,showResetConfirm,resetProgress,lastGradingMethod,lastModelFeedback,practiceSection,practiceTopic,practiceThemeId,practiceLevel,practiceSkill,practiceCount,practiceOrdered,
+      practiceSections,practiceTopics,practiceThemes,practiceSkills,practiceAvailable,startPractice,returnToMenu,
+      catalogue:bank.catalogue,bankQuestionCount:bank.bankQuestionCount,levelLabels:bank.levelLabels,sessionError:bank.sessionError,sessionStats:bank.sessionStats,persistenceWarning:bank.persistenceWarning,
       // Question bank
       questions: bank.questions,
       currentQuestionIndex: bank.currentQuestionIndex,
@@ -1087,3 +1127,8 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+.reset-progress{text-align:center;font-size:.78rem}.reset-progress>.text-button{border:0;background:transparent;color:var(--text-muted);text-decoration:underline;cursor:pointer;font:inherit}.reset-confirm{text-align:left;margin-top:.8rem;padding:1rem;border:1px solid var(--glass-border);border-radius:12px;line-height:1.5}.reset-confirm .btn{font-size:.75rem;padding:.55rem .8rem;margin-right:.4rem}.practice-card{padding:1.2rem;border-radius:16px;border:1px solid var(--glass-border);background:rgba(16,185,129,.03)}.practice-heading,.practice-bottom{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap}.practice-heading h3{font-size:1.05rem;margin:0;font-weight:800}.practice-heading p{font-size:.75rem;color:var(--text-muted);margin:.3rem 0}.practice-symbol{color:var(--secondary);font-size:1.6rem}.practice-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0}.practice-fields label{font-size:.75rem;color:var(--text-muted);font-weight:700;display:flex;flex-direction:column;gap:.3rem;min-width:0}.practice-fields label.wide{grid-column:1/-1}.practice-fields select{width:100%;box-sizing:border-box;font:inherit;font-size:.8rem;color:var(--text-main);background:var(--calc-tab-bg-active,#fff);border:1px solid var(--glass-border);border-radius:10px;padding:.65rem;min-width:0}.practice-bottom{font-size:.75rem;color:var(--text-muted)}.practice-bottom .btn{font-size:.8rem;padding:.7rem 1rem}.ordered-choice{display:flex;gap:.4rem;align-items:center}.practice-note,.practice-error{font-size:.72rem;line-height:1.5;color:var(--text-muted);margin:.7rem 0 0}.practice-error{color:var(--danger)}.settings-entry{display:flex;align-items:center;gap:.8rem;text-align:left;width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--glass-border);background:rgba(79,70,229,.04);color:var(--text-main);cursor:pointer}.settings-entry>span:first-child{font-size:1.6rem;color:var(--primary)}.settings-entry>span:nth-child(2){flex:1}.settings-entry strong{font-size:.85rem;display:block}.settings-entry small{display:block;font-size:.72rem;color:var(--text-muted);margin-top:.25rem}.grading-summary{max-width:560px;margin:0 auto 1rem;text-align:left}.grading-summary p{display:flex;justify-content:space-between;gap:.8rem;padding:.65rem 0;margin:0;border-bottom:1px solid var(--glass-border);font-size:.85rem}.grading-summary small{display:block;margin-top:.7rem;font-size:.75rem;color:var(--text-muted)}.persistence-warning{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:200;background:var(--glass-bg);border:1px solid var(--warning);border-radius:10px;padding:.7rem;font-size:.8rem}@media(max-width:520px){.practice-fields{grid-template-columns:1fr}.practice-fields label.wide{grid-column:auto}.practice-bottom>.btn{width:100%}.grading-summary p{flex-direction:column;gap:.3rem}}
+</style>

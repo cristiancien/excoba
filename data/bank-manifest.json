@@ -1,0 +1,4182 @@
+{
+  "version": "progressivo-933d5e4fdc07",
+  "questionCount": 11300,
+  "themeCount": 113,
+  "levels": {
+    "1": "Fácil",
+    "2": "Medio",
+    "3": "Semidifícil",
+    "4": "Difícil"
+  },
+  "questionsPerTheme": 100,
+  "questionsPerLevelPerTheme": 25,
+  "sourceLeafCount": 126,
+  "coveredLeafCount": 126,
+  "themes": [
+    {
+      "code": "M01",
+      "title": "Números naturales y operaciones",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.1",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Sumas",
+        "Restas",
+        "Productos",
+        "Divisiones exactas",
+        "Jerarquía"
+      ]
+    },
+    {
+      "code": "M02",
+      "title": "Enteros signos y valor absoluto",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.1",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Suma y resta con signos",
+        "Productos con signos",
+        "Cocientes con signos",
+        "Valor absoluto y orden",
+        "Agrupación de enteros"
+      ]
+    },
+    {
+      "code": "M03",
+      "title": "Divisibilidad primos MCD y mcm",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.1",
+        "1.2.2",
+        "2.2.1"
+      ],
+      "skills": [
+        "Factores primos",
+        "Criterios de divisibilidad",
+        "Máximo común divisor",
+        "Mínimo común múltiplo",
+        "Aplicaciones de divisibilidad"
+      ]
+    },
+    {
+      "code": "M04",
+      "title": "Concepto equivalencia y orden de fracciones",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.2",
+        "2.2.1"
+      ],
+      "skills": [
+        "Parte y total",
+        "Fracciones equivalentes",
+        "Simplificación",
+        "Orden de racionales",
+        "Impropias y mixtas"
+      ]
+    },
+    {
+      "code": "M05",
+      "title": "Suma y resta de fracciones",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.2",
+        "2.2.1"
+      ],
+      "skills": [
+        "Denominador común",
+        "Denominadores distintos",
+        "Sustracción",
+        "Tres fracciones",
+        "Término faltante"
+      ]
+    },
+    {
+      "code": "M06",
+      "title": "Multiplicación y división de fracciones",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.2",
+        "2.2.1"
+      ],
+      "skills": [
+        "Producto de dos fracciones",
+        "Cociente de fracciones",
+        "Cancelación de factores",
+        "Productos y cocientes encadenados",
+        "Factor o divisor faltante"
+      ]
+    },
+    {
+      "code": "M07",
+      "title": "Fracciones compuestas y jerarquía",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.2",
+        "2.2.1",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Producto antes de suma",
+        "Paréntesis fraccionarios",
+        "Fracción compleja",
+        "Mixtas y recíprocos",
+        "Problemas fraccionarios"
+      ]
+    },
+    {
+      "code": "M08",
+      "title": "Decimales exactos y conversiones",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.3",
+        "2.2.1"
+      ],
+      "skills": [
+        "Valor decimal y fracción",
+        "Suma y resta decimal",
+        "Producto decimal",
+        "División decimal",
+        "Orden y redondeo"
+      ]
+    },
+    {
+      "code": "M09",
+      "title": "Razones proporciones y escalas",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.7",
+        "2.2.14"
+      ],
+      "skills": [
+        "Razón y proporción",
+        "Proporcionalidad directa",
+        "Proporcionalidad inversa",
+        "Escalas",
+        "Reparto proporcional"
+      ]
+    },
+    {
+      "code": "M10",
+      "title": "Porcentajes descuentos e interés simple",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.7",
+        "2.2.14",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Porcentaje de una cantidad",
+        "Base o porcentaje desconocido",
+        "Aumentos y descuentos",
+        "Variaciones sucesivas",
+        "Interés simple"
+      ]
+    },
+    {
+      "code": "M11",
+      "title": "Unidades magnitudes y notación científica",
+      "area": "Matemáticas",
+      "section": "Primaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.6",
+        "3.3.1.1"
+      ],
+      "skills": [
+        "Longitud masa y tiempo",
+        "Áreas",
+        "Volúmenes y capacidad",
+        "Velocidad y tasas",
+        "Notación científica"
+      ]
+    },
+    {
+      "code": "M12",
+      "title": "Potencias y leyes de exponentes numéricos",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.1",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Potencia y signo",
+        "Producto de potencias",
+        "Cociente de potencias",
+        "Potencia de potencia",
+        "Exponentes cero y negativos"
+      ]
+    },
+    {
+      "code": "M13",
+      "title": "Raíces y radicales numéricos",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.1"
+      ],
+      "skills": [
+        "Raíces exactas",
+        "Simplificación de radicales",
+        "Operaciones con radicales",
+        "Índices y potencias racionales",
+        "Racionalización numérica"
+      ]
+    },
+    {
+      "code": "M14",
+      "title": "Integración aritmética y razonamiento",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.1",
+        "1.2.2",
+        "1.2.3",
+        "1.2.7",
+        "2.2.1",
+        "3.2.1.1"
+      ],
+      "skills": [
+        "Jerarquía combinada",
+        "Dato inverso",
+        "Comparación y estimación",
+        "Detección de errores",
+        "Modelación aritmética"
+      ]
+    },
+    {
+      "code": "M15",
+      "title": "Lenguaje algebraico y valor numérico",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.2",
+        "3.2.1.2",
+        "3.2.1.3"
+      ],
+      "skills": [
+        "Traducción algebraica",
+        "Coeficiente y grado",
+        "Evaluación de una variable",
+        "Evaluación de varias variables",
+        "Despeje de fórmulas"
+      ]
+    },
+    {
+      "code": "M16",
+      "title": "Términos semejantes y signos de agrupación",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.2",
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Una literal",
+        "Dos literales",
+        "Grados diferentes",
+        "Paréntesis y signos",
+        "Coeficientes racionales"
+      ]
+    },
+    {
+      "code": "M17",
+      "title": "Suma resta y estructura de polinomios",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Suma de polinomios",
+        "Resta de polinomios",
+        "Operaciones combinadas",
+        "Dos variables",
+        "Coeficiente desconocido"
+      ]
+    },
+    {
+      "code": "M18",
+      "title": "Productos cocientes y potencias de monomios",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.2",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Producto de monomios",
+        "Cociente de monomios",
+        "Potencia de monomio",
+        "Varias variables",
+        "Operación encadenada"
+      ]
+    },
+    {
+      "code": "M19",
+      "title": "Multiplicación y división de polinomios",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Monomio por polinomio",
+        "Binomios",
+        "Productos con trinomios",
+        "División exacta",
+        "Cociente y residuo"
+      ]
+    },
+    {
+      "code": "M20",
+      "title": "Productos notables e identidades",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Cuadrado de binomio",
+        "Cubo de binomio",
+        "Binomios conjugados",
+        "Término común",
+        "Reconstrucción de identidad"
+      ]
+    },
+    {
+      "code": "M21",
+      "title": "Factor común y agrupación",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Factor numérico",
+        "Factor literal",
+        "Factor polinómico",
+        "Agrupación de términos",
+        "Factor común negativo"
+      ]
+    },
+    {
+      "code": "M22",
+      "title": "Factorización de trinomios y diferencia de cuadrados",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Trinomio mónico positivo",
+        "Trinomio con signos mixtos",
+        "Trinomio no mónico",
+        "Trinomio cuadrado perfecto",
+        "Diferencia de cuadrados"
+      ]
+    },
+    {
+      "code": "M23",
+      "title": "Cubos y factorizaciones combinadas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Suma de cubos",
+        "Diferencia de cubos",
+        "Cambio de variable",
+        "Factorización en etapas",
+        "Racionales y reales"
+      ]
+    },
+    {
+      "code": "M24",
+      "title": "Fracciones algebraicas y restricciones",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.2",
+        "2.2.4",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Simplificación y dominio",
+        "Suma y resta racional",
+        "Producto racional",
+        "División racional",
+        "Fracción compleja"
+      ]
+    },
+    {
+      "code": "M25",
+      "title": "Exponentes y radicales algebraicos",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.2",
+        "3.2.1.2"
+      ],
+      "skills": [
+        "Leyes de exponentes",
+        "Exponentes negativos",
+        "Raíces algebraicas",
+        "Radicales semejantes",
+        "Racionalización algebraica"
+      ]
+    },
+    {
+      "code": "M26",
+      "title": "Ecuaciones lineales de una incógnita",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.5",
+        "3.2.1.3"
+      ],
+      "skills": [
+        "Una operación inversa",
+        "Dos operaciones",
+        "Paréntesis",
+        "Incógnita en ambos miembros",
+        "Número de soluciones"
+      ]
+    },
+    {
+      "code": "M27",
+      "title": "Ecuaciones fraccionarias y desigualdades",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.5",
+        "3.2.1.3",
+        "3.2.4.1"
+      ],
+      "skills": [
+        "Coeficientes fraccionarios",
+        "Denominadores distintos",
+        "Ecuación racional",
+        "Desigualdad lineal",
+        "Intervalos y valor absoluto"
+      ]
+    },
+    {
+      "code": "M28",
+      "title": "Sistemas lineales de dos y tres incógnitas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.6",
+        "3.2.1.3"
+      ],
+      "skills": [
+        "Sustitución en dos incógnitas",
+        "Eliminación en dos incógnitas",
+        "Coeficientes racionales",
+        "Tres incógnitas",
+        "Compatibilidad de sistemas"
+      ]
+    },
+    {
+      "code": "M29",
+      "title": "Ecuaciones cuadráticas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.5",
+        "3.2.1.4"
+      ],
+      "skills": [
+        "Cuadráticas incompletas",
+        "Raíces enteras",
+        "Raíces racionales",
+        "Completar cuadrado",
+        "Discriminante y raíces"
+      ]
+    },
+    {
+      "code": "M30",
+      "title": "Problemas algebraicos y sucesiones",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.3",
+        "2.2.5",
+        "2.2.6",
+        "3.2.1.3",
+        "3.2.1.4"
+      ],
+      "skills": [
+        "Cantidades y edades",
+        "Compras y mezclas",
+        "Modelos cuadráticos",
+        "Sucesión aritmética",
+        "Término y suma de sucesión"
+      ]
+    },
+    {
+      "code": "M31",
+      "title": "Ángulos y triángulos",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.10",
+        "3.2.2.1"
+      ],
+      "skills": [
+        "Complementarios y suplementarios",
+        "Paralelas y secantes",
+        "Ángulos interiores",
+        "Ángulos exteriores",
+        "Ecuaciones angulares"
+      ]
+    },
+    {
+      "code": "M32",
+      "title": "Polígonos y figuras planas",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.4",
+        "3.2.2.3"
+      ],
+      "skills": [
+        "Perímetros",
+        "Áreas básicas",
+        "Áreas compuestas",
+        "Medidas desconocidas",
+        "Polígonos regulares"
+      ]
+    },
+    {
+      "code": "M33",
+      "title": "Circunferencia círculo y sectores",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.4",
+        "3.2.2.4"
+      ],
+      "skills": [
+        "Radio longitud y área",
+        "Arcos y sectores",
+        "Ángulos en circunferencia",
+        "Áreas y escalas",
+        "Cuerdas y tangentes"
+      ]
+    },
+    {
+      "code": "M34",
+      "title": "Congruencia semejanza y Tales",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.12",
+        "3.2.2.2",
+        "1.2.7"
+      ],
+      "skills": [
+        "Criterios",
+        "Lados correspondientes",
+        "Escala de medidas",
+        "Modelos semejantes",
+        "Teorema de Tales"
+      ]
+    },
+    {
+      "code": "M35",
+      "title": "Teorema de Pitágoras",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.10",
+        "3.2.2.1"
+      ],
+      "skills": [
+        "Lados desconocidos",
+        "Figuras planas",
+        "Distancias espaciales",
+        "Clasificación métrica",
+        "Problemas aplicados"
+      ]
+    },
+    {
+      "code": "M36",
+      "title": "Transformaciones en el plano",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.9"
+      ],
+      "skills": [
+        "Simetría axial",
+        "Simetría central",
+        "Traslación",
+        "Rotación",
+        "Composición de movimientos"
+      ]
+    },
+    {
+      "code": "M37",
+      "title": "Cuerpos áreas y volúmenes",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.5",
+        "2.2.11"
+      ],
+      "skills": [
+        "Elementos y desarrollos",
+        "Prismas",
+        "Cilindros",
+        "Conos y pirámides",
+        "Esferas y composición"
+      ]
+    },
+    {
+      "code": "M38",
+      "title": "Razones trigonométricas y ángulos",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.13",
+        "3.2.2.5"
+      ],
+      "skills": [
+        "Grados y radianes",
+        "Razones de lados",
+        "Valores exactos",
+        "Triángulos rectángulos",
+        "Ángulos y aplicaciones"
+      ]
+    },
+    {
+      "code": "M39",
+      "title": "Leyes de senos y cosenos",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.2.7"
+      ],
+      "skills": [
+        "Ley de senos",
+        "Coseno para lados",
+        "Área oblicua",
+        "Selección y modelos",
+        "Coseno para ángulos"
+      ]
+    },
+    {
+      "code": "M40",
+      "title": "Tablas y representación de datos",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.9",
+        "2.2.15"
+      ],
+      "skills": [
+        "Frecuencias",
+        "Gráficas de barras",
+        "Gráficas circulares",
+        "Gráficas de líneas",
+        "Tablas y lectura crítica"
+      ]
+    },
+    {
+      "code": "M41",
+      "title": "Estadística descriptiva",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.16",
+        "3.2.2.8"
+      ],
+      "skills": [
+        "Media y ponderación",
+        "Mediana y moda",
+        "Dispersión",
+        "Datos agrupados",
+        "Transformación de datos"
+      ]
+    },
+    {
+      "code": "M42",
+      "title": "Conteo y combinatoria",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.15",
+        "3.2.2.9"
+      ],
+      "skills": [
+        "Principio multiplicativo",
+        "Ordenaciones",
+        "Combinaciones",
+        "Repetición",
+        "Restricciones"
+      ]
+    },
+    {
+      "code": "M43",
+      "title": "Probabilidad y conjuntos",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.2.8",
+        "3.2.2.9"
+      ],
+      "skills": [
+        "Probabilidad simple",
+        "Unión e intersección",
+        "Independencia",
+        "Sin reposición",
+        "Probabilidad condicionada"
+      ]
+    },
+    {
+      "code": "M44",
+      "title": "Coordenadas segmentos y polígonos",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.3.1"
+      ],
+      "skills": [
+        "Ubicación",
+        "Distancias",
+        "Punto medio",
+        "División de segmentos",
+        "Polígonos coordenados"
+      ]
+    },
+    {
+      "code": "M45",
+      "title": "Rectas pendientes y gráficas",
+      "area": "Matemáticas",
+      "section": "Secundaria",
+      "topic": "Matemáticas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.7",
+        "3.2.3.2",
+        "3.2.3.3"
+      ],
+      "skills": [
+        "Pendiente",
+        "Ecuaciones de recta",
+        "Intersecciones y trazado",
+        "Paralelismo y perpendicularidad",
+        "Interpretación y modelos"
+      ]
+    },
+    {
+      "code": "M46",
+      "title": "Circunferencia analítica",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.3.4"
+      ],
+      "skills": [
+        "Centro radio y trazado",
+        "Forma general",
+        "Construcción de ecuaciones",
+        "Puntos y tangentes",
+        "Intersecciones y transformaciones"
+      ]
+    },
+    {
+      "code": "M47",
+      "title": "Parábolas y funciones cuadráticas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.2.8",
+        "3.2.3.5",
+        "3.2.4.3"
+      ],
+      "skills": [
+        "Vértice y gráfica",
+        "Forma general",
+        "Foco y directriz vertical",
+        "Parábolas horizontales",
+        "Reconstrucción y tablas"
+      ]
+    },
+    {
+      "code": "M48",
+      "title": "Elipse analítica",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.3.6"
+      ],
+      "skills": [
+        "Centro y ejes",
+        "Vértices y focos",
+        "Construcción de ecuaciones",
+        "Trazado y lugar geométrico",
+        "Forma general"
+      ]
+    },
+    {
+      "code": "M49",
+      "title": "Funciones dominio rango y operaciones",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.4.1"
+      ],
+      "skills": [
+        "Relaciones y dominio",
+        "Evaluación",
+        "Operaciones de funciones",
+        "Rango",
+        "Composición"
+      ]
+    },
+    {
+      "code": "M50",
+      "title": "Funciones especiales inversas y transformaciones",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.4.2"
+      ],
+      "skills": [
+        "Identidad y constante",
+        "Valor absoluto",
+        "Función escalonada",
+        "Transformaciones de gráficas",
+        "Función inversa"
+      ]
+    },
+    {
+      "code": "M51",
+      "title": "Funciones polinomiales de grados cero a cuatro",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.4.3"
+      ],
+      "skills": [
+        "Grado y coeficiente",
+        "Ceros y multiplicidad",
+        "Comportamiento extremo",
+        "Tablas y gráficas",
+        "Simetría y rango"
+      ]
+    },
+    {
+      "code": "M52",
+      "title": "Funciones racionales y asíntotas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.4.4"
+      ],
+      "skills": [
+        "Dominio y huecos",
+        "Asíntotas verticales",
+        "Asíntotas horizontales y oblicuas",
+        "Inversión y equivalencia",
+        "Gráfica y rango"
+      ]
+    },
+    {
+      "code": "M53",
+      "title": "Funciones exponenciales y logarítmicas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.4.5"
+      ],
+      "skills": [
+        "Potencias exponenciales",
+        "Logaritmos exactos",
+        "Ecuaciones",
+        "Modelos de cambio",
+        "Dominio y representación"
+      ]
+    },
+    {
+      "code": "M54",
+      "title": "Funciones trigonométricas y periódicas",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.2.6",
+        "3.2.4.6"
+      ],
+      "skills": [
+        "Seno",
+        "Coseno",
+        "Tangente",
+        "Fase y desplazamiento",
+        "Modelos periódicos"
+      ]
+    },
+    {
+      "code": "M55",
+      "title": "Conjuntos y diagramas de Venn",
+      "area": "Matemáticas",
+      "section": "Bachillerato",
+      "topic": "Matemáticas para cálculo",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.2.2.9"
+      ],
+      "skills": [
+        "Pertenencia y subconjuntos",
+        "Operaciones",
+        "Complementos",
+        "Lectura de Venn",
+        "Cardinalidad"
+      ]
+    },
+    {
+      "code": "B01",
+      "title": "Biodiversidad y evolución",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.1.1",
+        "DEMO p67"
+      ],
+      "skills": [
+        "Características de los seres vivos",
+        "Niveles de organización",
+        "Niveles de biodiversidad",
+        "Tipos de adaptación",
+        "Grupos vegetales",
+        "Evidencia de selección natural",
+        "Adaptación y aclimatación",
+        "Riqueza y abundancia",
+        "Variación heredable",
+        "Comparación de plantas",
+        "Interpretación de frecuencias",
+        "Control experimental",
+        "Cadenas causales",
+        "Conservación y diversidad",
+        "Inferencia limitada",
+        "Evaluación de explicaciones",
+        "Éxito reproductivo cuantitativo",
+        "Diseño de comprobación",
+        "Integración de procesos",
+        "Interacciones y factores del ambiente"
+      ]
+    },
+    {
+      "code": "B02",
+      "title": "Nutrición de los seres vivos",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.1.2"
+      ],
+      "skills": [
+        "Tipos de nutrición",
+        "Funciones de nutrientes",
+        "Fuentes alimentarias",
+        "Procesos de nutrición",
+        "Órganos y función",
+        "Fotosíntesis y materia",
+        "Comparación de nutrientes",
+        "Dietas de organismos",
+        "Energía de una etiqueta",
+        "Absorción y transporte",
+        "Análisis de experimentos",
+        "Interpretación de resultados",
+        "Comparación por porción",
+        "Selección de evidencia",
+        "Relaciones funcionales",
+        "Corrección de errores",
+        "Normalización de información",
+        "Diseño experimental",
+        "Evaluación de conclusiones",
+        "Integración nutricional"
+      ]
+    },
+    {
+      "code": "B03",
+      "title": "Respiración e intercambio gaseoso",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.1.3",
+        "DEMO p68"
+      ],
+      "skills": [
+        "Estructuras respiratorias",
+        "Ventilación y respiración celular",
+        "Trayecto del aire",
+        "Difusión gaseosa",
+        "Tipos de proceso energético",
+        "Etapas de respiración celular",
+        "Mecánica ventilatoria",
+        "Ventilación por minuto",
+        "Nutrición y respiración",
+        "Prevención respiratoria",
+        "Interpretación de datos",
+        "Tasa de consumo",
+        "Secuencia y productos metabólicos",
+        "Balance de procesos",
+        "Análisis de prevención",
+        "Evaluación de afirmaciones",
+        "Integración del metabolismo energético",
+        "Hipótesis alternativas",
+        "Integración de sistemas",
+        "Diseño e interpretación conjunta"
+      ]
+    },
+    {
+      "code": "B04",
+      "title": "Reproducción y genética",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.1.4",
+        "DEMO p66"
+      ],
+      "skills": [
+        "Tipos de reproducción",
+        "Mitosis y meiosis",
+        "Conceptos genéticos",
+        "Genotipos básicos",
+        "Agentes de infecciones sexuales",
+        "Número cromosómico",
+        "Consecuencias de la división",
+        "Cruces monohíbridos",
+        "Herencia ligada al cromosoma X",
+        "Prevención y comunicación",
+        "ADN y cromosomas",
+        "Probabilidad hereditaria",
+        "Inferencia de genotipos",
+        "Síntomas y límites",
+        "Genes mutaciones y expresión",
+        "Probabilidades combinadas",
+        "Interpretación probabilística",
+        "Análisis de prevención integral",
+        "Evaluación de divisiones celulares",
+        "Cruces ligados al X"
+      ]
+    },
+    {
+      "code": "B05",
+      "title": "Biología celular y desarrollo",
+      "area": "Ciencias naturales",
+      "section": "Bachillerato",
+      "topic": "Biología",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p64",
+        "DEMO p113"
+      ],
+      "skills": [
+        "Organelos y estructuras",
+        "Tipos celulares",
+        "Funciones celulares",
+        "División y ciclo",
+        "Etapas del desarrollo",
+        "Sistema de endomembranas",
+        "Transporte de membrana",
+        "Comparación estructural",
+        "Capas germinales",
+        "Conteo de segmentación",
+        "Rutas de secreción",
+        "Ósmosis aplicada",
+        "Secuencias embrionarias",
+        "Escala microscópica",
+        "Funciones y regulación",
+        "Evaluación celular",
+        "Superficie y volumen celular",
+        "Inferencia embrionaria",
+        "Diseño de experimentos celulares",
+        "Integración estructura función"
+      ]
+    },
+    {
+      "code": "Q01",
+      "title": "Materia y método científico",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.3.1"
+      ],
+      "skills": [
+        "Propiedades de la materia",
+        "Estados de agregación",
+        "Cambios físicos y químicos",
+        "Conceptos del método científico",
+        "Lectura de fórmulas",
+        "Cantidad y propiedad",
+        "Cambios de fase",
+        "Hipótesis comprobables",
+        "Identificación de variables",
+        "Conservación de masa",
+        "Cálculo de densidad",
+        "Uso inverso de densidad",
+        "Diseño de comparación",
+        "Modelos y fórmulas",
+        "Masa de gas liberado",
+        "Corrección de conclusiones",
+        "Modelación con desplazamiento",
+        "Evaluación de evidencia",
+        "Secuencias experimentales",
+        "Composición porcentual"
+      ]
+    },
+    {
+      "code": "Q02",
+      "title": "Sustancias átomos y enlaces",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.3.2"
+      ],
+      "skills": [
+        "Número atómico",
+        "Átomos neutros",
+        "Partículas subatómicas",
+        "Elementos compuestos y mezclas",
+        "Métodos de separación",
+        "Neutrones e isótopos",
+        "Electrones en cationes",
+        "Electrones en aniones",
+        "Relaciones isotópicas",
+        "Estructura periódica",
+        "Tipos de enlace",
+        "Fórmulas por neutralidad",
+        "Distribución electrónica sencilla",
+        "Selección de separación",
+        "Representación microscópica",
+        "Carga a partir de partículas",
+        "Comparación de especies",
+        "Propiedades y enlaces",
+        "Diseño de separación",
+        "Evaluación de modelos"
+      ]
+    },
+    {
+      "code": "Q03",
+      "title": "Reacciones y conservación de la materia",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.3.3",
+        "2.3.3.1"
+      ],
+      "skills": [
+        "Reactivos y productos",
+        "Coeficientes y conteo",
+        "Significado de la reacción",
+        "Masa total",
+        "Identificación de transformaciones",
+        "Balance de síntesis",
+        "Masa a moles",
+        "Moles a masa",
+        "Proporciones molares",
+        "Balance de productos",
+        "Balance de combustión",
+        "Estequiometría masa a masa",
+        "Reactivo necesario",
+        "Interpretación del balance",
+        "Rendimiento porcentual",
+        "Reactivo limitante",
+        "Sobrantes de reacción",
+        "Balance completo de masas",
+        "Evaluación experimental",
+        "Sistema cerrado con sobrante"
+      ]
+    },
+    {
+      "code": "Q04",
+      "title": "Ácidos bases y oxidación",
+      "area": "Ciencias naturales",
+      "section": "Secundaria",
+      "topic": "Ciencias Naturales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.3.4"
+      ],
+      "skills": [
+        "Carácter ácido básico y neutro",
+        "Identificación de funciones inorgánicas",
+        "Oxidación y reducción",
+        "Aplicaciones cotidianas",
+        "Estado elemental",
+        "Cálculo directo de pH",
+        "Concentración a partir de pH",
+        "Números de oxidación",
+        "Agentes oxidante y reductor",
+        "Neutralización básica",
+        "Escala logarítmica",
+        "Dilución de ácido fuerte",
+        "Cambios de oxidación",
+        "Conservación de electrones",
+        "Interpretación de indicadores",
+        "Neutralización estequiométrica",
+        "Redox frente a otras reacciones",
+        "Errores de escala y concentración",
+        "Excepciones y razonamiento",
+        "Aplicaciones y evidencia"
+      ]
+    },
+    {
+      "code": "Q05",
+      "title": "Mol disoluciones y nomenclatura inorgánica",
+      "area": "Ciencias naturales",
+      "section": "Bachillerato",
+      "topic": "Química",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p58",
+        "DEMO p61"
+      ],
+      "skills": [
+        "Masas molares",
+        "Número de partículas",
+        "Nombres de compuestos binarios",
+        "Funciones inorgánicas",
+        "Fórmulas a partir de nombres",
+        "Moles fraccionarios",
+        "Moles desde partículas",
+        "Molaridad",
+        "Nomenclatura de Stock",
+        "Iones poliatómicos",
+        "Molaridad desde masa",
+        "Dilución",
+        "Fórmula empírica",
+        "Conteo con paréntesis",
+        "Nomenclatura con carga variable",
+        "Mezcla de disoluciones",
+        "Fórmula molecular",
+        "Neutralización en disolución",
+        "Corrección de nomenclatura",
+        "Composición en masa"
+      ]
+    },
+    {
+      "code": "Q06",
+      "title": "Química del carbono y nomenclatura orgánica",
+      "area": "Ciencias naturales",
+      "section": "Bachillerato",
+      "topic": "Química",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p59",
+        "DEMO p111",
+        "DEMO p112"
+      ],
+      "skills": [
+        "Valencia del carbono",
+        "Familias de hidrocarburos",
+        "Alcanos lineales",
+        "Fórmula de alcanos",
+        "Enlaces sigma y pi",
+        "Nomenclatura de alquenos",
+        "Nomenclatura de alquinos",
+        "Hibridación y geometría",
+        "Alcanos ramificados",
+        "Grupos funcionales",
+        "Alquenos ramificados",
+        "Alquinos ramificados",
+        "Fórmulas de cicloalcanos",
+        "Isomería estructural",
+        "Anillos y heteroátomos",
+        "Representación desde el nombre",
+        "Detección de valencias imposibles",
+        "Conteo total sigma y pi",
+        "Elección de cadena y numeración",
+        "Aromaticidad y modelos"
+      ]
+    },
+    {
+      "code": "F01",
+      "title": "Medición notación científica y vectores",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.3.1.1",
+        "2.3.2.1"
+      ],
+      "skills": [
+        "Unidades del SI",
+        "Conversiones directas",
+        "Notación científica",
+        "Escalares y vectores",
+        "Componentes cartesianas",
+        "Operaciones en notación científica",
+        "Conversión de rapidez",
+        "Módulo de un vector",
+        "Suma vectorial",
+        "Resta vectorial",
+        "Resultante de tres vectores",
+        "Vector desconocido",
+        "Desplazamiento entre puntos",
+        "Variables físicas",
+        "Promedio de mediciones",
+        "Componentes a un ángulo",
+        "Vector equilibrante",
+        "Comparación de magnitudes",
+        "Normalización vectorial",
+        "Análisis dimensional"
+      ]
+    },
+    {
+      "code": "F02",
+      "title": "Movimiento rectilíneo y gráficas",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.1",
+        "3.3.1.2"
+      ],
+      "skills": [
+        "Rapidez media",
+        "Distancia en MRU",
+        "Tiempo en MRU",
+        "Aceleración media",
+        "Velocidad final",
+        "Posición y referencia",
+        "Velocidad con signo",
+        "Rapidez en viaje de ida y vuelta",
+        "Desplazamiento en MRUA",
+        "Aceleración de frenado",
+        "Pendiente de gráfica posición tiempo",
+        "Área de gráfica velocidad tiempo",
+        "Distancia de frenado",
+        "Velocidad inicial desconocida",
+        "Encuentro de móviles",
+        "Movimiento por tramos",
+        "Alcance entre móviles",
+        "Reacción y frenado",
+        "Modelo inverso de aceleración",
+        "Encuentro con aceleración"
+      ]
+    },
+    {
+      "code": "F03",
+      "title": "Movimiento vertical y en dos dimensiones",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.3.1.2"
+      ],
+      "skills": [
+        "Movimiento horizontal independiente",
+        "Caída desde reposo",
+        "Velocidad de caída",
+        "Tiempo al punto más alto",
+        "Altura máxima vertical",
+        "Tiempo total de vuelo",
+        "Alcance horizontal",
+        "Posición vertical",
+        "Rapidez desde componentes",
+        "Dirección en la cima",
+        "Caída horizontal desde altura",
+        "Rapidez de impacto",
+        "Componentes iniciales a partir de vuelo",
+        "Tiempo de llegada a un punto horizontal",
+        "Caída con velocidad inicial hacia abajo",
+        "Paso sobre obstáculo",
+        "Dos tiempos para una altura",
+        "Alcance desde plataforma",
+        "Diseño de tiro horizontal",
+        "Evaluación del modelo de proyectil"
+      ]
+    },
+    {
+      "code": "F04",
+      "title": "Fuerzas gravitación y leyes de Kepler",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.2",
+        "3.3.1.3"
+      ],
+      "skills": [
+        "Segunda ley de Newton",
+        "Peso",
+        "Masa por dinámica",
+        "Fuerzas opuestas",
+        "Inercia y equilibrio",
+        "Fricción",
+        "Aceleración con fricción",
+        "Tensión en equilibrio",
+        "Dependencia de la gravitación",
+        "Acción y reacción",
+        "Plano inclinado",
+        "Ascensor acelerado",
+        "Gravitación universal",
+        "Tercera ley de Kepler",
+        "Dinámica y movimiento",
+        "Dos masas conectadas",
+        "Ascensor descendente",
+        "Kepler inverso",
+        "Frenado por fuerza",
+        "Razonamiento sobre gravedad"
+      ]
+    },
+    {
+      "code": "F05",
+      "title": "Trabajo energía y potencia",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.2",
+        "3.3.1.4"
+      ],
+      "skills": [
+        "Trabajo paralelo",
+        "Energía cinética",
+        "Energía potencial",
+        "Potencia media",
+        "Signo y unidades",
+        "Trabajo oblicuo",
+        "Trabajo de fricción",
+        "Rapidez desde energía",
+        "Rendimiento energético",
+        "Altura desde potencial",
+        "Caída y conservación",
+        "Pérdida mecánica",
+        "Trabajo en rampa",
+        "Potencia al elevar",
+        "Teorema trabajo energía",
+        "Energía con cambio de altura",
+        "Potencia de entrada",
+        "Fuerza por frenado energético",
+        "Velocidad y potencia",
+        "Evaluación energética"
+      ]
+    },
+    {
+      "code": "F06",
+      "title": "Fluidos presión y movimiento",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.3",
+        "3.3.2.1"
+      ],
+      "skills": [
+        "Presión",
+        "Presión hidrostática",
+        "Masa y volumen de fluido",
+        "Volumen en SI",
+        "Empuje de Arquímedes",
+        "Presión absoluta",
+        "Prensa hidráulica",
+        "Fracción sumergida",
+        "Caudal volumétrico",
+        "Continuidad",
+        "Desplazamiento hidráulico",
+        "Diferencia hidrostática",
+        "Peso aparente",
+        "Bernoulli horizontal",
+        "Propiedades de fluidos",
+        "Bernoulli con altura",
+        "Velocidad de salida",
+        "Potencia hidráulica",
+        "Carga máxima flotante",
+        "Continuidad y caudal en SI"
+      ]
+    },
+    {
+      "code": "F07",
+      "title": "Temperatura calor y dilatación",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.3",
+        "3.3.2.2"
+      ],
+      "skills": [
+        "Celsius a Kelvin",
+        "Celsius a Fahrenheit",
+        "Calor sensible",
+        "Calor latente",
+        "Calor y temperatura",
+        "Cambio de temperatura",
+        "Masa en calorimetría",
+        "Calor específico desconocido",
+        "Dilatación lineal",
+        "Masa fundida",
+        "Mezcla de masas iguales",
+        "Mezcla de masas distintas",
+        "Calentamiento y cambio de fase",
+        "Dilatación volumétrica",
+        "Transferencia térmica",
+        "Tiempo de calentamiento",
+        "Calentador con pérdidas",
+        "Equilibrio con capacidad térmica",
+        "Dilatación inversa",
+        "Evaluación térmica"
+      ]
+    },
+    {
+      "code": "F08",
+      "title": "Procesos termodinámicos",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.3.2.2"
+      ],
+      "skills": [
+        "Primera ley directa",
+        "Calor cedido",
+        "Trabajo sobre sistema",
+        "Identificación de procesos",
+        "Sistemas y fronteras",
+        "Calor desconocido",
+        "Trabajo desconocido",
+        "Trabajo isobárico",
+        "Compresión isobárica",
+        "Proceso isocórico",
+        "Isotermia ideal",
+        "Expansión adiabática",
+        "Eficiencia de máquina térmica",
+        "Balance de ciclo",
+        "Dos etapas térmicas",
+        "Ciclo rectangular presión volumen",
+        "Límite de Carnot",
+        "Refrigerador idealizado",
+        "Potencia cíclica",
+        "Evaluación termodinámica"
+      ]
+    },
+    {
+      "code": "F09",
+      "title": "Electricidad y circuitos",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.4",
+        "3.3.2.3"
+      ],
+      "skills": [
+        "Ley de Ohm",
+        "Voltaje eléctrico",
+        "Resistencia desconocida",
+        "Corriente y carga",
+        "Carga y estructura atómica",
+        "Ley de Coulomb",
+        "Resistencias en serie",
+        "Resistencias en paralelo",
+        "Potencia eléctrica",
+        "Energía eléctrica",
+        "Circuito mixto",
+        "Divisor de voltaje",
+        "Campo eléctrico",
+        "Potencial eléctrico",
+        "Energía potencial eléctrica",
+        "Fuerza eléctrica resultante",
+        "Consumo en kWh",
+        "Calentamiento por resistencia",
+        "Ramas de circuito",
+        "Evaluación de circuitos"
+      ]
+    },
+    {
+      "code": "F10",
+      "title": "Magnetismo e inducción",
+      "area": "Física",
+      "section": "Bachillerato",
+      "topic": "Física",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.3.2.4",
+        "3.3.2.4"
+      ],
+      "skills": [
+        "Polos y campos",
+        "Electricidad y magnetismo",
+        "Dispositivos electromagnéticos",
+        "Inducción básica",
+        "Unidades electromagnéticas",
+        "Fuerza sobre carga",
+        "Fuerza sobre conductor",
+        "Flujo perpendicular",
+        "Relación de transformador",
+        "Ley de Faraday",
+        "Campo a partir de fuerza",
+        "Corriente a partir de fuerza",
+        "Movimiento circular magnético",
+        "Corriente del transformador",
+        "Espiras desconocidas",
+        "Ángulo entre velocidad y campo",
+        "Flujo con orientación",
+        "Inducción y resistencia",
+        "Eficiencia de transformador",
+        "Lenz y conservación"
+      ]
+    },
+    {
+      "code": "E01",
+      "title": "Recuentos y comprensión",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.1",
+        "1.1.2",
+        "1.1.3",
+        "1.1.10",
+        "2.1.2"
+      ],
+      "skills": [
+        "Idea principal",
+        "Localizar información",
+        "Características del reportaje",
+        "Ordenar hechos",
+        "Apoyos gráficos",
+        "Inferir fechas",
+        "Contrastar causas",
+        "Corregir cronología",
+        "Límites de inferencia",
+        "Preguntas e información",
+        "Síntesis cronológica"
+      ]
+    },
+    {
+      "code": "E02",
+      "title": "Noticias y lectura crítica",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.2",
+        "2.1.1",
+        "2.1.2",
+        "3.5.1.7"
+      ],
+      "skills": [
+        "Identificar fuentes",
+        "Distinguir datos",
+        "Comparar posturas",
+        "Evaluar promesas"
+      ]
+    },
+    {
+      "code": "E03",
+      "title": "Cuestionarios y entrevistas",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.4",
+        "2.1.3"
+      ],
+      "skills": [
+        "Tipo de respuesta",
+        "Pregunta abierta",
+        "Discurso indirecto",
+        "Pregunta neutral"
+      ]
+    },
+    {
+      "code": "E04",
+      "title": "Ortografía de las grafías",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.5",
+        "3.5.1.4"
+      ],
+      "skills": [
+        "Grafía y significado",
+        "Reglas de grafías",
+        "Corrección contextual",
+        "Contrastar significados",
+        "Redacción contextual"
+      ]
+    },
+    {
+      "code": "E05",
+      "title": "Acentuación y puntuación",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.5",
+        "2.1.2",
+        "2.1.3",
+        "3.5.1.4",
+        "3.5.2.2"
+      ],
+      "skills": [
+        "Acentuar",
+        "Tilde diacrítica",
+        "Sílaba tónica",
+        "Puntuar",
+        "Justificar signos"
+      ]
+    },
+    {
+      "code": "E06",
+      "title": "Sintaxis y concordancia",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.6",
+        "2.1.4"
+      ],
+      "skills": [
+        "Concordancia",
+        "Oraciones compuestas",
+        "Sujeto",
+        "Voz y complementos",
+        "Complementos",
+        "Pronombres",
+        "Subordinación causal"
+      ]
+    },
+    {
+      "code": "E07",
+      "title": "Léxico y precisión",
+      "area": "Español y lenguaje",
+      "section": "Primaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.7",
+        "2.1.5",
+        "3.5.1.4",
+        "3.5.2.2"
+      ],
+      "skills": [
+        "Prefijos y sufijos",
+        "Relaciones semánticas",
+        "Significado contextual",
+        "Uso del diccionario",
+        "Vicios de dicción",
+        "Antonimia",
+        "Sustitución léxica",
+        "Contraste léxico"
+      ]
+    },
+    {
+      "code": "E08",
+      "title": "Cohesión y organización",
+      "area": "Español y lenguaje",
+      "section": "Secundaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.10",
+        "2.1.2",
+        "2.1.4",
+        "2.1.5",
+        "3.5.1.3"
+      ],
+      "skills": [
+        "Informe técnico",
+        "Localizar consecuencia",
+        "Tablas y jerarquía",
+        "Unir enunciados",
+        "Corregir conectores",
+        "Evaluar causalidad"
+      ]
+    },
+    {
+      "code": "E09",
+      "title": "Comunicación lectura y escritura",
+      "area": "Español y lenguaje",
+      "section": "Secundaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.5.1.1",
+        "3.5.1.2",
+        "3.5.1.3",
+        "3.5.1.5",
+        "3.5.1.6"
+      ],
+      "skills": [
+        "Etapas del proceso",
+        "Identificar función",
+        "Elemento comunicativo",
+        "Transformar intención",
+        "Distinguir funciones"
+      ]
+    },
+    {
+      "code": "E10",
+      "title": "Documentos e instrucciones",
+      "area": "Español y lenguaje",
+      "section": "Secundaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.9",
+        "1.1.10",
+        "2.1.6",
+        "3.5.2.1"
+      ],
+      "skills": [
+        "Currículum",
+        "Instructivos",
+        "Reclamaciones",
+        "Reglamentos",
+        "Secuencias e instrucciones",
+        "Solicitudes"
+      ]
+    },
+    {
+      "code": "E11",
+      "title": "Textos personales expositivos y persuasivos",
+      "area": "Español y lenguaje",
+      "section": "Secundaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.3",
+        "3.5.1.3",
+        "3.5.1.5",
+        "3.5.1.6",
+        "3.5.1.7",
+        "3.5.2.3",
+        "3.5.2.4",
+        "3.5.2.5"
+      ],
+      "skills": [
+        "Científico y popular",
+        "Expositivo",
+        "Personal",
+        "Persuasivo",
+        "Recreativo"
+      ]
+    },
+    {
+      "code": "E12",
+      "title": "Cuento e interpretación narrativa",
+      "area": "Español y lenguaje",
+      "section": "Secundaria",
+      "topic": "Español",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.8",
+        "2.1.5",
+        "3.5.3.4"
+      ],
+      "skills": [
+        "Estructura y narrador",
+        "Personaje",
+        "Reseña e intertextualidad",
+        "Secuencia",
+        "Inferir rasgos",
+        "Alcance de inferencias"
+      ]
+    },
+    {
+      "code": "E13",
+      "title": "Fábula mito leyenda epopeya y novela",
+      "area": "Español y lenguaje",
+      "section": "Bachillerato",
+      "topic": "Lenguaje",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.5.2.4",
+        "3.5.2.5",
+        "3.5.3.2",
+        "3.5.3.3",
+        "3.5.3.5"
+      ],
+      "skills": [
+        "Epopeya",
+        "Fábula",
+        "Leyenda",
+        "Mito",
+        "Novela"
+      ]
+    },
+    {
+      "code": "E14",
+      "title": "Obras autores y corrientes",
+      "area": "Español y lenguaje",
+      "section": "Bachillerato",
+      "topic": "Lenguaje",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.5.3.1"
+      ],
+      "skills": [
+        "Autor y obra",
+        "Clasificar corriente",
+        "Relacionar rasgos",
+        "Interpretar con evidencia"
+      ]
+    },
+    {
+      "code": "E15",
+      "title": "Poesía y recursos expresivos",
+      "area": "Español y lenguaje",
+      "section": "Bachillerato",
+      "topic": "Lenguaje",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "1.1.8",
+        "2.1.5",
+        "3.5.4.1",
+        "3.5.4.2"
+      ],
+      "skills": [
+        "Figuras retóricas",
+        "Métrica",
+        "Rima",
+        "Sintaxis poética",
+        "Voz lírica",
+        "Licencias métricas"
+      ]
+    },
+    {
+      "code": "E16",
+      "title": "Teatro y textos recreativos",
+      "area": "Español y lenguaje",
+      "section": "Bachillerato",
+      "topic": "Lenguaje",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "3.5.2.4",
+        "3.5.2.5",
+        "3.5.4.3",
+        "3.5.4.4"
+      ],
+      "skills": [
+        "Acotaciones",
+        "Comedia",
+        "Diálogo",
+        "Drama",
+        "Tragedia"
+      ]
+    },
+    {
+      "code": "G01",
+      "title": "Mapas coordenadas y escalas",
+      "area": "Geografía",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.1.1"
+      ],
+      "skills": [
+        "Coordenadas",
+        "Simbología",
+        "Mapa temático",
+        "Orientación",
+        "Correspondencia de leyenda",
+        "Escalas",
+        "Alcance del mapa",
+        "Lectura accesible"
+      ]
+    },
+    {
+      "code": "G02",
+      "title": "Recursos ambiente y clima",
+      "area": "Geografía",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.1.2"
+      ],
+      "skills": [
+        "Astronomía",
+        "Biodiversidad",
+        "Clima",
+        "Suelo",
+        "Sustentabilidad"
+      ]
+    },
+    {
+      "code": "G03",
+      "title": "Población migración y riesgos",
+      "area": "Geografía",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.1.3"
+      ],
+      "skills": [
+        "Crecimiento demográfico",
+        "Distribución de población",
+        "Estructura por edad",
+        "Migración",
+        "Riesgo y vulnerabilidad"
+      ]
+    },
+    {
+      "code": "G04",
+      "title": "Economía desigualdad y desarrollo",
+      "area": "Geografía",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.1.4"
+      ],
+      "skills": [
+        "Comparación del bienestar",
+        "Desarrollo humano",
+        "Globalización",
+        "Indicadores y promedios",
+        "Sectores económicos"
+      ]
+    },
+    {
+      "code": "G05",
+      "title": "Diversidad cultural y patrimonio",
+      "area": "Geografía",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.1.5"
+      ],
+      "skills": [
+        "Distribución del patrimonio",
+        "Diversidad",
+        "Manifestaciones culturales",
+        "Participación",
+        "Patrimonio"
+      ]
+    },
+    {
+      "code": "H01",
+      "title": "Mundo moderno y revoluciones atlánticas",
+      "area": "Historia",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.2.1",
+        "2.4.2.2"
+      ],
+      "skills": [
+        "Ubicar fechas",
+        "Relacionar acontecimientos",
+        "Procesos y consecuencias",
+        "Ordenar cronologías"
+      ]
+    },
+    {
+      "code": "H02",
+      "title": "Imperialismo y guerras mundiales",
+      "area": "Historia",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.2.3",
+        "2.4.2.4"
+      ],
+      "skills": [
+        "Ubicar fechas",
+        "Ubicar regiones",
+        "Consecuencias",
+        "Ordenar cronologías"
+      ]
+    },
+    {
+      "code": "H03",
+      "title": "Mundo contemporáneo y conflictos",
+      "area": "Historia",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.2.5",
+        "DEMO p102"
+      ],
+      "skills": [
+        "Identificar hechos",
+        "Clasificar procesos",
+        "Consecuencias",
+        "Contrastar fuentes"
+      ]
+    },
+    {
+      "code": "H04",
+      "title": "Mesoamérica Nueva España e independencia",
+      "area": "Historia",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.2.6",
+        "2.4.2.7",
+        "DEMO p100",
+        "DEMO p101"
+      ],
+      "skills": [
+        "Conquista e independencia",
+        "Culturas mesoamericanas"
+      ]
+    },
+    {
+      "code": "H05",
+      "title": "México independiente y revolucionario",
+      "area": "Historia",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.2.8",
+        "DEMO p99",
+        "DEMO p103"
+      ],
+      "skills": [
+        "Ubicar fechas",
+        "Relacionar actores",
+        "Propósitos y consecuencias",
+        "Ordenar cronologías"
+      ]
+    },
+    {
+      "code": "C01",
+      "title": "Convivencia y decisiones responsables",
+      "area": "Formación Cívica y Ética",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.3.1",
+        "2.4.3.3"
+      ],
+      "skills": [
+        "Identificar riesgos",
+        "Proponer respuestas",
+        "Justificar decisiones",
+        "Construir acuerdos"
+      ]
+    },
+    {
+      "code": "C02",
+      "title": "Democracia y principios de convivencia",
+      "area": "Formación Cívica y Ética",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.3.2",
+        "2.4.3.5"
+      ],
+      "skills": [
+        "Identificar principios",
+        "Explicar funciones",
+        "Aplicar principios",
+        "Evaluar límites"
+      ]
+    },
+    {
+      "code": "C03",
+      "title": "Identidad normas y diversidad",
+      "area": "Formación Cívica y Ética",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.3.3",
+        "2.4.3.4",
+        "2.4.3.6"
+      ],
+      "skills": [
+        "Convivencia",
+        "Discriminación",
+        "Identidad",
+        "Interculturalidad",
+        "Normas"
+      ]
+    },
+    {
+      "code": "C04",
+      "title": "Ciudadanía Estado y organización social",
+      "area": "Formación Cívica y Ética",
+      "section": "Secundaria",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "2.4.3.5",
+        "2.4.3.2"
+      ],
+      "skills": [
+        "Control",
+        "Estado",
+        "Organización social",
+        "Participación",
+        "Poderes públicos"
+      ]
+    },
+    {
+      "code": "U01",
+      "title": "Filosofía lógica y conocimiento",
+      "area": "Humanidades",
+      "section": "Bachillerato",
+      "topic": "Humanidades",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p92",
+        "DEMO p93",
+        "DEMO p94"
+      ],
+      "skills": [
+        "Creencia y justificación",
+        "Cronología filosófica",
+        "Disciplinas filosóficas",
+        "Inferencias lógicas",
+        "Presocráticos"
+      ]
+    },
+    {
+      "code": "U02",
+      "title": "Ética e investigación",
+      "area": "Humanidades",
+      "section": "Bachillerato",
+      "topic": "Humanidades",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p91",
+        "DEMO p95"
+      ],
+      "skills": [
+        "Corrientes éticas",
+        "Diseño y evidencia",
+        "Fases de investigación",
+        "Integridad y límites"
+      ]
+    },
+    {
+      "code": "S01",
+      "title": "Interpretaciones de la realidad social",
+      "area": "Ciencias Sociales",
+      "section": "Bachillerato",
+      "topic": "Ciencias Sociales",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p97",
+        "DEMO p98"
+      ],
+      "skills": [
+        "Comparación",
+        "Comprensiva",
+        "Funcionalismo",
+        "Materialismo histórico",
+        "Teoría crítica"
+      ]
+    },
+    {
+      "code": "D01",
+      "title": "Contabilidad escolar y estados financieros",
+      "area": "Económico administrativas",
+      "section": "Bachillerato",
+      "topic": "Económico administrativas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p105",
+        "DEMO p107"
+      ],
+      "skills": [
+        "Cuentas y naturaleza",
+        "Partida doble",
+        "Ecuación contable",
+        "Estado de resultados",
+        "Inventarios y costo"
+      ]
+    },
+    {
+      "code": "D02",
+      "title": "Administración y teorías organizacionales",
+      "area": "Económico administrativas",
+      "section": "Bachillerato",
+      "topic": "Económico administrativas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p106"
+      ],
+      "skills": [
+        "Enfoques y representantes",
+        "Proceso administrativo",
+        "Estructura y coordinación",
+        "Decisiones y recursos",
+        "Diagnóstico organizacional"
+      ]
+    },
+    {
+      "code": "D03",
+      "title": "Economía e interpretación de periodos mexicanos",
+      "area": "Económico administrativas",
+      "section": "Bachillerato",
+      "topic": "Económico administrativas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p109"
+      ],
+      "skills": [
+        "Conceptos económicos",
+        "Oferta y demanda",
+        "Precios y poder de compra",
+        "Producción e indicadores",
+        "Periodos y cambio económico"
+      ]
+    },
+    {
+      "code": "D04",
+      "title": "Procesamiento de textos y organización documental",
+      "area": "Económico administrativas",
+      "section": "Bachillerato",
+      "topic": "Económico administrativas",
+      "count": 100,
+      "levels": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25
+      },
+      "curriculumRefs": [
+        "DEMO p108"
+      ],
+      "skills": [
+        "Formato de caracteres y párrafos",
+        "Distribución de página",
+        "Listas y tablas",
+        "Referencias y navegación",
+        "Revisión y accesibilidad"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "reference": "1.1.1",
+      "title": "Recuento histórico. Identiﬁcación de sucesión cronológica de hechos.",
+      "themes": [
+        "E01"
+      ]
+    },
+    {
+      "reference": "1.1.2",
+      "title": "Reportaje. Identiﬁcación de las características generales de un reportaje.",
+      "themes": [
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "reference": "1.1.3",
+      "title": "Textos cientíﬁcos y populares. Identiﬁcación de las características de ambos",
+      "themes": [
+        "E01",
+        "E11"
+      ]
+    },
+    {
+      "reference": "1.1.4",
+      "title": "Cuestionarios. Identiﬁcación de las formas de respuestas requeridas en",
+      "themes": [
+        "E03"
+      ]
+    },
+    {
+      "reference": "1.1.5",
+      "title": "Ortografía y puntuación. Uso de v, b, s, c, z, ll, y, g, j, palabras homófonas.",
+      "themes": [
+        "E04",
+        "E05"
+      ]
+    },
+    {
+      "reference": "1.1.6",
+      "title": "Sintaxis. Identiﬁcación de las partes de una oración simple. Identiﬁcación de",
+      "themes": [
+        "E06"
+      ]
+    },
+    {
+      "reference": "1.1.7",
+      "title": "Léxico. Inferencia de signiﬁcado de palabras según el contexto. Uso de",
+      "themes": [
+        "E07"
+      ]
+    },
+    {
+      "reference": "1.1.8",
+      "title": "Cuento. Identiﬁcación de las partes de un cuento. Inferencia de las",
+      "themes": [
+        "E12",
+        "E15"
+      ]
+    },
+    {
+      "reference": "1.1.9",
+      "title": "Textos instructivos. Confección de diagramas y notas. Uso de modos y",
+      "themes": [
+        "E10"
+      ]
+    },
+    {
+      "reference": "1.1.10",
+      "title": "Categorías de información. Clasiﬁcación de información en secciones",
+      "themes": [
+        "E01",
+        "E08",
+        "E10"
+      ]
+    },
+    {
+      "reference": "1.2.1",
+      "title": "Números naturales. Signiﬁcado y uso en las cuatro operaciones",
+      "themes": [
+        "M01",
+        "M03",
+        "M14"
+      ]
+    },
+    {
+      "reference": "1.2.2",
+      "title": "Números fraccionarios. Comprensión de concepto de fracción. Uso en las",
+      "themes": [
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M14"
+      ]
+    },
+    {
+      "reference": "1.2.3",
+      "title": "Números decimales. Comprensión de concepto de número decimal. Uso en",
+      "themes": [
+        "M08",
+        "M14"
+      ]
+    },
+    {
+      "reference": "1.2.4",
+      "title": "Figuras planas. Identiﬁcación de los elementos. Cálculo de perímetros y",
+      "themes": [
+        "M32",
+        "M33"
+      ]
+    },
+    {
+      "reference": "1.2.5",
+      "title": "Cuerpos geométricos. Identiﬁcación de los elementos. Cálculo de Volumen.",
+      "themes": [
+        "M37"
+      ]
+    },
+    {
+      "reference": "1.2.6",
+      "title": "Magnitudes. Uso de unidades para el cálculo de operaciones. Conversión de",
+      "themes": [
+        "M11"
+      ]
+    },
+    {
+      "reference": "1.2.7",
+      "title": "Relaciones de proporcionalidad. Conversión de escalas. Resolución de",
+      "themes": [
+        "M09",
+        "M10",
+        "M14",
+        "M34"
+      ]
+    },
+    {
+      "reference": "1.2.8",
+      "title": "Nociones de probabilidad. Cálculo de probabilidad simple.",
+      "themes": [
+        "M43"
+      ]
+    },
+    {
+      "reference": "1.2.9",
+      "title": "Nociones de estadística. Confección de diagramas, gráﬁcas y tablas.",
+      "themes": [
+        "M40"
+      ]
+    },
+    {
+      "reference": "2.1.1",
+      "title": "Medios masivos de comunicación. Inferencia de los mensajes publicitario.",
+      "themes": [
+        "E02"
+      ]
+    },
+    {
+      "reference": "2.1.2",
+      "title": "Textos informativos. Identiﬁcación de propósitos y características de los",
+      "themes": [
+        "E01",
+        "E02",
+        "E05",
+        "E08"
+      ]
+    },
+    {
+      "reference": "2.1.3",
+      "title": "Entrevista. Identiﬁcación del propósito y características del reporte de una",
+      "themes": [
+        "E03",
+        "E05"
+      ]
+    },
+    {
+      "reference": "2.1.4",
+      "title": "Textos descriptivos. Elaboración de informes técnicos. Uso de recursos",
+      "themes": [
+        "E06",
+        "E08"
+      ]
+    },
+    {
+      "reference": "2.1.5",
+      "title": "Textos literarios. Identiﬁcación de géneros literarios. Interpretación de ﬁguras",
+      "themes": [
+        "E07",
+        "E08",
+        "E12",
+        "E15"
+      ]
+    },
+    {
+      "reference": "2.1.6",
+      "title": "Documentos administrativos legales y técnicos. Elaboración de cartas para",
+      "themes": [
+        "E10"
+      ]
+    },
+    {
+      "reference": "2.2.1",
+      "title": "Números reales. Solución de operaciones de adición, sustracción,",
+      "themes": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M12",
+        "M13",
+        "M14"
+      ]
+    },
+    {
+      "reference": "2.2.2",
+      "title": "Signiﬁcado y uso de las literales. Solución de ejercicios algebraicos de",
+      "themes": [
+        "M15",
+        "M16",
+        "M18",
+        "M24",
+        "M25"
+      ]
+    },
+    {
+      "reference": "2.2.3",
+      "title": "Sucesiones aritméticas. Obtención de la fórmula para generar una sucesión",
+      "themes": [
+        "M30"
+      ]
+    },
+    {
+      "reference": "2.2.4",
+      "title": "Polinomios. Solución de operaciones combinadas con polinomios.",
+      "themes": [
+        "M16",
+        "M17",
+        "M19",
+        "M20",
+        "M21",
+        "M22",
+        "M23",
+        "M24"
+      ]
+    },
+    {
+      "reference": "2.2.5",
+      "title": "Ecuaciones lineales y cuadráticas. Desarrollo y solución de ecuaciones de",
+      "themes": [
+        "M26",
+        "M27",
+        "M29",
+        "M30"
+      ]
+    },
+    {
+      "reference": "2.2.6",
+      "title": "Sistemas de ecuaciones lineales. Solución de sistema de ecuaciones",
+      "themes": [
+        "M28",
+        "M30"
+      ]
+    },
+    {
+      "reference": "2.2.7",
+      "title": "Funciones lineales. Representación gráﬁca de una recta. Cálculo de la",
+      "themes": [
+        "M45"
+      ]
+    },
+    {
+      "reference": "2.2.8",
+      "title": "Funciones cuadráticas. Representación gráﬁca de una parábola.",
+      "themes": [
+        "M47"
+      ]
+    },
+    {
+      "reference": "2.2.9",
+      "title": "Transformaciones en el plano. Identiﬁcación y representación de simetría",
+      "themes": [
+        "M36"
+      ]
+    },
+    {
+      "reference": "2.2.10",
+      "title": "Rectas y ángulos. Cálculo de ángulos entre paralelas y una secante.",
+      "themes": [
+        "M31",
+        "M35"
+      ]
+    },
+    {
+      "reference": "2.2.11",
+      "title": "Cuerpos geométricos. Desarrollo de cuerpos geométricos. Cálculo de áreas",
+      "themes": [
+        "M37"
+      ]
+    },
+    {
+      "reference": "2.2.12",
+      "title": "Semejanza. Solución de problemas de semejanza. Aplicación del teorema de",
+      "themes": [
+        "M34"
+      ]
+    },
+    {
+      "reference": "2.2.13",
+      "title": "Trigonometría. Identiﬁcación de razones trigonométricas (seno, coseno,",
+      "themes": [
+        "M38"
+      ]
+    },
+    {
+      "reference": "2.2.14",
+      "title": "Relaciones de proporcionalidad. Solución de problemas de",
+      "themes": [
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "reference": "2.2.15",
+      "title": "Diagramas, gráﬁcas y tablas. Solución de problemas de conteo.",
+      "themes": [
+        "M40",
+        "M42"
+      ]
+    },
+    {
+      "reference": "2.2.16",
+      "title": "Nociones básicas de estadística. Cálculo de medidas de tendencia central y",
+      "themes": [
+        "M41"
+      ]
+    },
+    {
+      "reference": "2.3.1.1",
+      "title": "Biodiversidad. Comparación de las características comunes de los seres",
+      "themes": [
+        "B01"
+      ]
+    },
+    {
+      "reference": "2.3.1.2",
+      "title": "Nutrición. Identiﬁcación de las diversas formas de nutrición de los seres",
+      "themes": [
+        "B02"
+      ]
+    },
+    {
+      "reference": "2.3.1.3",
+      "title": "Respiración. Identiﬁcación de las estructuras respiratorias de los seres",
+      "themes": [
+        "B03"
+      ]
+    },
+    {
+      "reference": "2.3.1.4",
+      "title": "Reproducción. Valoración de una sexualidad responsable y segura.",
+      "themes": [
+        "B04"
+      ]
+    },
+    {
+      "reference": "2.3.2.1",
+      "title": "El movimiento. Interpretación y cálculo de posición, velocidad y aceleración.",
+      "themes": [
+        "F01",
+        "F02"
+      ]
+    },
+    {
+      "reference": "2.3.2.2",
+      "title": "Las fuerzas. Interpretación del concepto de fuerza. Interpretación de los",
+      "themes": [
+        "F04",
+        "F05"
+      ]
+    },
+    {
+      "reference": "2.3.2.3",
+      "title": "Las interacciones de la materia. Representación e interpretación de",
+      "themes": [
+        "F06",
+        "F07"
+      ]
+    },
+    {
+      "reference": "2.3.2.4",
+      "title": "Manifestaciones de la estructura interna de la materia. Interpretación del",
+      "themes": [
+        "F09",
+        "F10"
+      ]
+    },
+    {
+      "reference": "2.3.3.1",
+      "title": "Características de los materiales. Identiﬁcación de las propiedades",
+      "themes": [
+        "Q01",
+        "Q03"
+      ]
+    },
+    {
+      "reference": "2.3.3.2",
+      "title": "Diversidad de propiedades de los materiales y su clasiﬁcación química.",
+      "themes": [
+        "Q02"
+      ]
+    },
+    {
+      "reference": "2.3.3.3",
+      "title": "La transformación de los materiales: la reacción química. Representación",
+      "themes": [
+        "Q03"
+      ]
+    },
+    {
+      "reference": "2.3.3.4",
+      "title": "La formación de nuevos materiales. Aplicaciones de ácidos y bases.",
+      "themes": [
+        "Q04"
+      ]
+    },
+    {
+      "reference": "2.4.1.1",
+      "title": "El espacio geográﬁco y los mapas. Interpretación del espacio por medio de",
+      "themes": [
+        "G01"
+      ]
+    },
+    {
+      "reference": "2.4.1.2",
+      "title": "Recursos naturales y preservación del ambiente. Comprensión de los",
+      "themes": [
+        "G02"
+      ]
+    },
+    {
+      "reference": "2.4.1.3",
+      "title": "Dinámica de la población y riesgos. Relación entre los cambios de la",
+      "themes": [
+        "G03"
+      ]
+    },
+    {
+      "reference": "2.4.1.4",
+      "title": "Espacios económicos y desigualdad social. Comprensión del concepto de",
+      "themes": [
+        "G04"
+      ]
+    },
+    {
+      "reference": "2.4.1.5",
+      "title": "Espacios culturales y políticos. Comprensión de la diversidad cultural a",
+      "themes": [
+        "G05"
+      ]
+    },
+    {
+      "reference": "2.4.2.1",
+      "title": "Principios del siglo XVI a principios del siglo XVIII. Comprensión de los",
+      "themes": [
+        "H01"
+      ]
+    },
+    {
+      "reference": "2.4.2.2",
+      "title": "De mediados del siglo XVIII a mediados del siglo XIX. Comprensión de las",
+      "themes": [
+        "H01"
+      ]
+    },
+    {
+      "reference": "2.4.2.3",
+      "title": "De mediados del siglo XIX a 1920. Comprensión de la importancia",
+      "themes": [
+        "H02"
+      ]
+    },
+    {
+      "reference": "2.4.2.4",
+      "title": "El mundo entre 1910 y 1960. Identiﬁcación de las principales causas,",
+      "themes": [
+        "H02"
+      ]
+    },
+    {
+      "reference": "2.4.2.5",
+      "title": "Décadas recientes. Identiﬁcación de los principales conﬂictos sociales,",
+      "themes": [
+        "H03"
+      ]
+    },
+    {
+      "reference": "2.4.2.6",
+      "title": "Las culturas prehispánicas y la conformación de la Nueva España.",
+      "themes": [
+        "H04"
+      ]
+    },
+    {
+      "reference": "2.4.2.7",
+      "title": "Nueva España, desde su consolidación hasta la independencia.",
+      "themes": [
+        "H04"
+      ]
+    },
+    {
+      "reference": "2.4.2.8",
+      "title": "La revolución mexicana. Identiﬁcación cronológica de las causas, de las",
+      "themes": [
+        "H05"
+      ]
+    },
+    {
+      "reference": "2.4.3.1",
+      "title": "Los adolescentes y sus contextos de convivencia. Identiﬁcación de los",
+      "themes": [
+        "C01"
+      ]
+    },
+    {
+      "reference": "2.4.3.2",
+      "title": "Principios y valores de la democracia. Identiﬁcación de los principios y las",
+      "themes": [
+        "C02",
+        "C04"
+      ]
+    },
+    {
+      "reference": "2.4.3.3",
+      "title": "La dimensión cívica y ética de la convivencia. Comprensión del uso de los",
+      "themes": [
+        "C01",
+        "C03"
+      ]
+    },
+    {
+      "reference": "2.4.3.4",
+      "title": "Identidad e interculturalidad para una ciudadanía democrática.",
+      "themes": [
+        "C03"
+      ]
+    },
+    {
+      "reference": "2.4.3.5",
+      "title": "Participación y ciudadanía democrática. Comprensión del concepto de",
+      "themes": [
+        "C02",
+        "C04"
+      ]
+    },
+    {
+      "reference": "2.4.3.6",
+      "title": "Respeto y valoración de la diversidad. Identiﬁcación de las diversas",
+      "themes": [
+        "C03"
+      ]
+    },
+    {
+      "reference": "3.2.1.1",
+      "title": "Resuelves problemas aritméticos y algebraicos. Jerarquía de operaciones",
+      "themes": [
+        "M01",
+        "M02",
+        "M07",
+        "M10",
+        "M12",
+        "M14"
+      ]
+    },
+    {
+      "reference": "3.2.1.2",
+      "title": "Realizas transformaciones algebraicas. Operaciones con polinomios de",
+      "themes": [
+        "M15",
+        "M16",
+        "M17",
+        "M18",
+        "M19",
+        "M20",
+        "M21",
+        "M22",
+        "M23",
+        "M24",
+        "M25"
+      ]
+    },
+    {
+      "reference": "3.2.1.3",
+      "title": "Resuelves ecuaciones lineales. Sistemas de ecuaciones de 1x1, 2x2 y 3x3",
+      "themes": [
+        "M15",
+        "M26",
+        "M27",
+        "M28",
+        "M30"
+      ]
+    },
+    {
+      "reference": "3.2.1.4",
+      "title": "Resuelves ecuaciones cuadráticas. Ecuaciones cuadráticas de una",
+      "themes": [
+        "M29",
+        "M30"
+      ]
+    },
+    {
+      "reference": "3.2.2.1",
+      "title": "Utilizas ángulos, triángulos y relaciones métricas. Ejercicios con la",
+      "themes": [
+        "M31",
+        "M35"
+      ]
+    },
+    {
+      "reference": "3.2.2.2",
+      "title": "Comprendes la congruencia y la semejanza de triángulos. Ejercicios de",
+      "themes": [
+        "M34"
+      ]
+    },
+    {
+      "reference": "3.2.2.3",
+      "title": "Reconoces las propiedades de los polígonos. Resolución de problemas.",
+      "themes": [
+        "M32"
+      ]
+    },
+    {
+      "reference": "3.2.2.4",
+      "title": "Empleas la circunferencia. Ángulos, perímetros y áreas.",
+      "themes": [
+        "M33"
+      ]
+    },
+    {
+      "reference": "3.2.2.5",
+      "title": "Describes las relaciones trigonométricas para resolver triángulos",
+      "themes": [
+        "M38"
+      ]
+    },
+    {
+      "reference": "3.2.2.6",
+      "title": "Aplicas las funciones trigonométricas. Gráﬁcas de funciones seno, coseno",
+      "themes": [
+        "M54"
+      ]
+    },
+    {
+      "reference": "3.2.2.7",
+      "title": "Aplicas las leyes de senos y cosenos. Aplicación de las leyes en triángulos",
+      "themes": [
+        "M39"
+      ]
+    },
+    {
+      "reference": "3.2.2.8",
+      "title": "Aplicas la estadística elemental. Aplicación de las medidas de tendencia",
+      "themes": [
+        "M41"
+      ]
+    },
+    {
+      "reference": "3.2.2.9",
+      "title": "Empleas los conceptos elementales de la probabilidad. Aplicación de las",
+      "themes": [
+        "M42",
+        "M43",
+        "M55"
+      ]
+    },
+    {
+      "reference": "3.2.3.1",
+      "title": "Aplicas las propiedades de segmentos rectilíneos y polígonos. Distancia",
+      "themes": [
+        "M44"
+      ]
+    },
+    {
+      "reference": "3.2.3.2",
+      "title": "Aplicas los elementos de una recta como lugar geométrico. Pendiente y",
+      "themes": [
+        "M45"
+      ]
+    },
+    {
+      "reference": "3.2.3.3",
+      "title": "Utilizas distintas formas de la ecuación de una recta. Aplicación de las",
+      "themes": [
+        "M45"
+      ]
+    },
+    {
+      "reference": "3.2.3.4",
+      "title": "Aplicas los elementos y las ecuaciones de una circunferencia. Aplicación",
+      "themes": [
+        "M46"
+      ]
+    },
+    {
+      "reference": "3.2.3.5",
+      "title": "Aplicas los elementos y ecuaciones de la parábola. Aplicación de las",
+      "themes": [
+        "M47"
+      ]
+    },
+    {
+      "reference": "3.2.3.6",
+      "title": "Aplica los elementos y las ecuaciones de la elipse. Aplicación de las",
+      "themes": [
+        "M48"
+      ]
+    },
+    {
+      "reference": "3.2.4.1",
+      "title": "Reconoces y realizas operaciones con distintos tipos de funciones.",
+      "themes": [
+        "M27",
+        "M49"
+      ]
+    },
+    {
+      "reference": "3.2.4.2",
+      "title": "Aplicas funciones especiales y transformaciones. Función inversa,",
+      "themes": [
+        "M50"
+      ]
+    },
+    {
+      "reference": "3.2.4.3",
+      "title": "Empleas funciones polinomiales de grados 0, 1, 2, 3 y 4. Reconocimiento",
+      "themes": [
+        "M47",
+        "M51"
+      ]
+    },
+    {
+      "reference": "3.2.4.4",
+      "title": "Aplicas funciones racionales. Asíntotas horizontales y verticales.",
+      "themes": [
+        "M52"
+      ]
+    },
+    {
+      "reference": "3.2.4.5",
+      "title": "Aplicas funciones exponenciales y logarítmicas. Gráﬁcas de las funciones",
+      "themes": [
+        "M53"
+      ]
+    },
+    {
+      "reference": "3.2.4.6",
+      "title": "Aplicas funciones periódicas. Representación gráﬁca de las funciones seno",
+      "themes": [
+        "M54"
+      ]
+    },
+    {
+      "reference": "3.3.1.1",
+      "title": "Reconoces el lenguaje técnico básico de la física. Método Cientíﬁco,",
+      "themes": [
+        "M11",
+        "F01"
+      ]
+    },
+    {
+      "reference": "3.3.1.2",
+      "title": "Identiﬁcas diferencias entre distintos tipos de movimiento. Movimiento en",
+      "themes": [
+        "F02",
+        "F03"
+      ]
+    },
+    {
+      "reference": "3.3.1.3",
+      "title": "Comprendes el movimiento de los cuerpos a partir de las leyes de",
+      "themes": [
+        "F04"
+      ]
+    },
+    {
+      "reference": "3.3.1.4",
+      "title": "Relacionas el trabajo con la energía. Trabajo. Energía cinética y energía",
+      "themes": [
+        "F05"
+      ]
+    },
+    {
+      "reference": "3.3.2.1",
+      "title": "Explicas el comportamiento de los ﬂuidos. Hidráulica. Hidrostática.",
+      "themes": [
+        "F06"
+      ]
+    },
+    {
+      "reference": "3.3.2.2",
+      "title": "Identiﬁcas diferencias entre calor y temperatura. El calor y la temperatura.",
+      "themes": [
+        "F07",
+        "F08"
+      ]
+    },
+    {
+      "reference": "3.3.2.3",
+      "title": "Comprendes las leyes de la electricidad. Electricidad. Electrostática.",
+      "themes": [
+        "F09"
+      ]
+    },
+    {
+      "reference": "3.3.2.4",
+      "title": "Relacionas la electricidad con el magnetismo. Magnetismo.",
+      "themes": [
+        "F10"
+      ]
+    },
+    {
+      "reference": "3.5.1.1",
+      "title": "Practicas el proceso comunicativo. Identiﬁcación de las funciones del",
+      "themes": [
+        "E09"
+      ]
+    },
+    {
+      "reference": "3.5.1.2",
+      "title": "Practicas el proceso de lectura y escritura. Identiﬁcación de las etapas del",
+      "themes": [
+        "E09"
+      ]
+    },
+    {
+      "reference": "3.5.1.3",
+      "title": "Redactas prototipos textuales. Aplicación de las propiedades de la",
+      "themes": [
+        "E08",
+        "E09",
+        "E11"
+      ]
+    },
+    {
+      "reference": "3.5.1.4",
+      "title": "Practicas el uso del léxico y semántica. Uso de las reglas de acentuación.",
+      "themes": [
+        "E04",
+        "E05",
+        "E07"
+      ]
+    },
+    {
+      "reference": "3.5.1.5",
+      "title": "Redactas textos personales. Identiﬁcación de las funciones apelativas y",
+      "themes": [
+        "E09",
+        "E11"
+      ]
+    },
+    {
+      "reference": "3.5.1.6",
+      "title": "Redactas textos expositivos. identiﬁcación de las funciones del lenguaje en",
+      "themes": [
+        "E09",
+        "E11"
+      ]
+    },
+    {
+      "reference": "3.5.1.7",
+      "title": "Clasiﬁcas los textos expositivos. Comprensión de las diferencias y",
+      "themes": [
+        "E02",
+        "E11"
+      ]
+    },
+    {
+      "reference": "3.5.2.1",
+      "title": "Clasiﬁcas los textos funcionales. Clasiﬁcación e interpretación del",
+      "themes": [
+        "E10"
+      ]
+    },
+    {
+      "reference": "3.5.2.2",
+      "title": "Practicas el uso del léxico y semántica. Aplicación y uso de los signos de",
+      "themes": [
+        "E05",
+        "E07"
+      ]
+    },
+    {
+      "reference": "3.5.2.3",
+      "title": "Redactas textos persuasivos. Redacción de textos persuasivos empleando",
+      "themes": [
+        "E11"
+      ]
+    },
+    {
+      "reference": "3.5.2.4",
+      "title": "Redactas textos recreativos. Identiﬁcación de las características externas e",
+      "themes": [
+        "E11",
+        "E13",
+        "E16"
+      ]
+    },
+    {
+      "reference": "3.5.2.5",
+      "title": "Clasiﬁcas textos recreativos. Comprensión e interpretación de textos",
+      "themes": [
+        "E11",
+        "E13",
+        "E16"
+      ]
+    },
+    {
+      "reference": "3.5.3.1",
+      "title": "Identiﬁcas a la literatura como arte. Identiﬁcación de los movimientos",
+      "themes": [
+        "E14"
+      ]
+    },
+    {
+      "reference": "3.5.3.2",
+      "title": "Reconoces y demuestras las diferencias entre la fábula y la epopeya.",
+      "themes": [
+        "E13"
+      ]
+    },
+    {
+      "reference": "3.5.3.3",
+      "title": "Reconoces y demuestras las diferencias entre el mito y la leyenda.",
+      "themes": [
+        "E13"
+      ]
+    },
+    {
+      "reference": "3.5.3.4",
+      "title": "Comprendes y analizas las características del cuento. Análisis de los",
+      "themes": [
+        "E12"
+      ]
+    },
+    {
+      "reference": "3.5.3.5",
+      "title": "Comprendes las características de la novela. Identiﬁcación de los tipos de",
+      "themes": [
+        "E13"
+      ]
+    },
+    {
+      "reference": "3.5.4.1",
+      "title": "Reconoces el género lírico. Clasiﬁcación de los elementos comunicativos",
+      "themes": [
+        "E15"
+      ]
+    },
+    {
+      "reference": "3.5.4.2",
+      "title": "Analizas e interpretas el género lírico. Análisis de los elementos",
+      "themes": [
+        "E15"
+      ]
+    },
+    {
+      "reference": "3.5.4.3",
+      "title": "Reconoces y analizas el género dramático. Identiﬁcación de las",
+      "themes": [
+        "E16"
+      ]
+    },
+    {
+      "reference": "3.5.4.4",
+      "title": "Analizas las características de la tragedia. Análisis de las estructuras",
+      "themes": [
+        "E16"
+      ]
+    }
+  ],
+  "sourceFiles": [
+    "Problemario de Algebra.pdf",
+    "Temario de estudio para el examen EXCOBA.pdf",
+    "guiaexcoba.pdf",
+    "excoba-contestado.pdf"
+  ],
+  "editorialNote": "Ejercicios originales para práctica; clasificación didáctica, sin calibración psicométrica ni carácter oficial."
+}

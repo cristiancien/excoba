@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EXCOBA Prep - Simulador de Preparación Universitaria</title>
-    <meta name="description" content="Simulador interactivo de preparación para el examen EXCOBA. Practica con 180 reactivos oficiales estilo Brilliant.org con pistas, explicaciones y seguimiento de progreso.">
+    <meta name="description" content="Practica para EXCOBA con 11,300 ejercicios originales, 113 temas y cuatro niveles. Banco progresivo, soluciones y evaluación con Gemini opcional.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./favicon.png">
@@ -43,6 +43,8 @@
     <script src="./data/questions.js"></script>
 
     <!-- Composables (DI via window, loaded before App) -->
+    <script src="./composables/answerValidation.js"></script>
+    <script src="./composables/useGemini.js"></script>
     <script src="./composables/useTimer.js"></script>
     <script src="./composables/useScoring.js"></script>
     <script src="./composables/useTheme.js"></script>
@@ -79,8 +81,10 @@
 
         // v-latex directive (DRY: single definition, used across all components)
         const renderLatex = (el, binding) => {
-            let val = binding.value || '';
-            val = val.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, character => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[character]);
+            const val = escapeHTML(binding.value).replace(/\n/g, '<br>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
             el.innerHTML = val;
             if (window.renderMathInElement) {
                 renderMathInElement(el, {
@@ -88,8 +92,14 @@
                         { left: '$$', right: '$$', display: true },
                         { left: '$', right: '$', display: false }
                     ],
-                    throwOnError: false
+                    throwOnError: false,
+                    trust: false,
+                    maxExpand: 1000
                 });
+            } else if (document.readyState !== 'complete') {
+                window.addEventListener('load', () => {
+                    if (el.isConnected) renderLatex(el, binding);
+                }, { once: true });
             }
         };
 
@@ -102,3 +112,4 @@
     </script>
 </body>
 </html>
+

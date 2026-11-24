@@ -20,19 +20,21 @@
           <div style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.1); border: 2px solid var(--secondary); font-size: 2.8rem; color: var(--secondary); font-weight: bold; margin-bottom: 0.5rem; user-select: none;">
             ✓
           </div>
-          <h2 style="color: var(--secondary); font-weight: 900; font-size: 1.8rem; margin: 0;">¡Excelente deducción! ✦</h2>
-          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Tu razonamiento ha sido impecable.</span>
+          <h2 style="color: var(--secondary); font-weight: 900; font-size: 1.8rem; margin: 0;">{{ gradingMethod==='self'?'Autorrevisión registrada':gradingMethod==='gemini'?'Respuesta revisada con Gemini':'Respuesta correcta' }}</h2>
+          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">{{ gradingMethod==='self'?'Has indicado que tu respuesta cumple la solución.':gradingMethod==='gemini'?'Revisa también la solución y sus condiciones.':'El resultado coincide con la respuesta verificada.' }}</span>
         </div>
         
         <div v-else class="icon-container error-icon">
           <div style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(245, 158, 11, 0.1); border: 2px solid var(--warning); font-size: 2.8rem; color: var(--warning); font-weight: bold; margin-bottom: 0.5rem; user-select: none;">
             ✗
           </div>
-          <h2 style="color: var(--warning); font-weight: 900; font-size: 1.8rem; margin: 0;">✦ ¡Momento de Aprendizaje!</h2>
-          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">Resolver errores es el camino más rápido para dominar el concepto.</span>
+          <h2 style="color: var(--warning); font-weight: 900; font-size: 1.8rem; margin: 0;">{{ gradingMethod==='self'?'Corrección pendiente':'Revisa este resultado' }}</h2>
+          <span style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600;">{{ gradingMethod==='self'?'Has señalado que necesitas corregir tu respuesta.':'Compara el resultado y los pasos de la solución.' }}</span>
         </div>
       </div>
 
+      <p v-if="gradingMethod==='gemini'&&modelFeedback" class="model-feedback" style="text-align:left;line-height:1.55;padding:1rem;border:1px solid var(--glass-border);border-radius:12px;font-size:.9rem;">{{ modelFeedback }}</p>
+      <p v-if="gradingMethod==='self'" style="font-size:.8rem;color:var(--text-muted);">Autorrevisión separada de la comprobación automática.</p>
       <!-- Explanation Content -->
       <div class="feedback-body" style="margin-top: 1.5rem; text-align: left;">
         
@@ -85,7 +87,9 @@ export default {
   props: {
     isCorrect: Boolean,
     explanation: String,
-    correctOptionText: String
+    correctOptionText: String,
+    gradingMethod: {type:String,default:'exact'},
+    modelFeedback: {type:String,default:''}
   },
   emits: ['continue', 'close'],
   setup(props) {
@@ -106,13 +110,9 @@ export default {
     const cleanLatexSegment = (latex) => {
       let t = latex;
       // Fracciones
-      while (t.includes('\\frac')) {
-        t = t.replace(/\\frac\s*\{([^}]*)\}\s*\{([^}]*)\}/g, '$1 entre $2');
-      }
+      for(let pass=0;pass<12;pass++){const next=t.replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g,'$1 entre $2');if(next===t)break;t=next;}
       // Raíces
-      while (t.includes('\\sqrt')) {
-        t = t.replace(/\\sqrt\s*\{([^}]*)\}/g, 'raíz cuadrada de $1');
-      }
+      for(let pass=0;pass<12;pass++){const next=t.replace(/\\sqrt\s*\{([^{}]*)\}/g,'raíz cuadrada de $1');if(next===t)break;t=next;}
       // \text{...} → contenido
       t = t.replace(/\\text\{\s*([^}]*)\s*\}/g, ' $1 ');
       // Grados: ^{\circ} o ^\circ → "grados"
@@ -296,3 +296,4 @@ export default {
 .explanation-content :deep(p) { margin-bottom: 1rem; }
 .explanation-content :deep(.katex-display) { margin: 1.5rem 0; overflow-x: auto; overflow-y: hidden; padding: 0.5rem 0; }
 </style>
+

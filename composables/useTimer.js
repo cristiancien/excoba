@@ -5,18 +5,21 @@
 window.useTimer = () => {
   const { ref, computed, watch } = Vue;
 
-  const examTime = ref(Number(localStorage.getItem('excoba_exam_time')) || 0);
+  let storage;try{storage=window.localStorage;}catch(_){}
+  const read=key=>{try{const n=Number(storage?.getItem(key));return Number.isFinite(n)&&n>=0?Math.floor(n):0;}catch(_){return 0;}};
+  const write=(key,value)=>{try{storage?.setItem(key,value);}catch(_){}};
+  const examTime = ref(read('excoba_exam_time'));
   const timerInterval = ref(null);
   const currentPauseTime = ref(0);
-  const totalPauseTime = ref(Number(localStorage.getItem('excoba_total_pause_time')) || 0);
+  const totalPauseTime = ref(read('excoba_total_pause_time'));
   const pausedTimerInterval = ref(null);
 
   watch(examTime, (newVal) => {
-    localStorage.setItem('excoba_exam_time', newVal);
+    write('excoba_exam_time', newVal);
   });
 
   watch(totalPauseTime, (newVal) => {
-    localStorage.setItem('excoba_total_pause_time', newVal);
+    write('excoba_total_pause_time', newVal);
   });
 
   const formatSeconds = (t) => {
@@ -65,8 +68,7 @@ window.useTimer = () => {
     examTime.value = 0;
     currentPauseTime.value = 0;
     totalPauseTime.value = 0;
-    localStorage.removeItem('excoba_exam_time');
-    localStorage.removeItem('excoba_total_pause_time');
+    try{storage?.removeItem('excoba_exam_time');storage?.removeItem('excoba_total_pause_time');}catch(_){}
   };
 
   return {
@@ -78,3 +80,4 @@ window.useTimer = () => {
     resetTimers
   };
 };
+
