@@ -867,11 +867,16 @@ export default {
   },
   setup() {
     // --- Composable Injection (DI pattern via window) ---
-    const timer = window.useTimer();
-    const scoring = window.useScoring();
     const theme = window.useTheme();
     const bank = window.useQuestionBank();
     const calc = window.useCalculator();
+    const editorialTimer = window.useTimer();
+    const editorialScoring = window.useScoring();
+    const markdownTimer = window.useTimer({ persist: false });
+    const markdownScoring = window.useScoring({ persist: false });
+    const isMarkdown = computed(() => bank.activeBankSource.value === 'markdown');
+    const timer = computed(() => isMarkdown.value ? markdownTimer : editorialTimer);
+    const scoring = computed(() => isMarkdown.value ? markdownScoring : editorialScoring);
 
     // --- Local UI State ---
     let savedScreen='menu';
@@ -885,13 +890,18 @@ export default {
     const lastGradingMethod=ref('exact'),lastModelFeedback=ref(''),showSettings=ref(false),showResetConfirm=ref(false);
     const practiceSection=ref(''),practiceTopic=ref(''),practiceThemeId=ref(''),practiceLevel=ref(''),practiceSkill=ref(''),practiceCount=ref(25),practiceOrdered=ref(true);
     const showMarkdownEditor=ref(false),markdownInput=ref(''),markdownError=ref('');
+    let markdownLoadVersion = 0;
     const practiceSections=computed(()=>{
-      const present=[...new Set(bank.activeCatalogue.value.map(t=>t.section))];
+      const present=[...new Set(bank.getPracticePool().map(q=>q.section))];
       return [...new Set(['Primaria','Secundaria','Bachillerato',...present])].filter(s=>present.includes(s));
     });
-    const practiceTopics=computed(()=>[...new Set(bank.activeCatalogue.value.filter(t=>!practiceSection.value||t.section===practiceSection.value).map(t=>t.topic))]);
-    const practiceThemes=computed(()=>bank.activeCatalogue.value.filter(t=>(!practiceSection.value||t.section===practiceSection.value)&&(!practiceTopic.value||t.topic===practiceTopic.value)));
-    const practiceSkills=computed(()=>bank.activeCatalogue.value.find(t=>t.id===practiceThemeId.value)?.skills||[]);
+    const practiceTopics = computed(() => [...new Set(bank.getPracticePool({ section: practiceSection.value }).map(q => q.topic))]);
+    const practiceThemes = computed(() => {
+      const section = practiceSection.value;
+      const topic = practiceTopic.value;
+      return section || topic ? bank.getPracticeCatalogue({ section, topic }) : bank.activeCatalogue.value;
+    });
+    const practiceSkills = computed(() => practiceThemes.value.find(t => t.id === practiceThemeId.value)?.skills || []);
     const practiceFilters=computed(()=>({section:practiceSection.value,topic:practiceTopic.value,themeId:practiceThemeId.value,level:practiceLevel.value,skill:practiceSkill.value,count:practiceCount.value,ordered:practiceOrdered.value}));
     const practiceAvailable=computed(()=>bank.getPracticePool(practiceFilters.value).length);
     watch(practiceSection,()=>{practiceTopic.value='';practiceThemeId.value='';practiceSkill.value='';});
@@ -908,7 +918,10 @@ export default {
     });
 
     watch(currentScreen, (newVal) => {
-      try { localStorage.setItem('excoba_current_screen', newVal); } catch (_) {}
+      if (newVal !== 'menu') markdownLoadVersion++;
+      if (!isMarkdown.value) {
+        try { localStorage.setItem('excoba_current_screen', newVal); } catch (_) {}
+      }
     });
 
     // Dynamic Background Theme based on Section
@@ -922,7 +935,7 @@ export default {
 
     // Auto-resume timer on load if we are on active exam screen and have loaded questions
     if (currentScreen.value === 'exam' && bank.currentQuestion.value) {
-      timer.startTimer();
+      timer.value.startTimer();
     }
 
     const toggleSection = (name) => {
@@ -951,24 +964,29 @@ export default {
     // --- Exam Flow Orchestration ---
     const startExam = () => {
       if(!bank.buildExamBank())return;
-      scoring.resetScoring();
-      timer.resetTimers();
+      markdownTimer.resetTimers();
+      scoring.value.resetScoring();
+      timer.value.resetTimers();
       showFeedback.value = false;
       isPaused.value = false;
       showExitWarning.value = false;
       currentScreen.value = 'exam';
-      timer.startTimer();
+      timer.value.startTimer();
     };
 
-    const startPractice=()=>{
-      if(!bank.buildPracticeBank(practiceFilters.value))return;
-      scoring.resetScoring();timer.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
-      bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.startTimer();
+    const beginPractice=(filters)=>{
+      if(!bank.buildPracticeBank(filters))return;
+      scoring.value.resetScoring();timer.value.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
+      bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.value.startTimer();
     };
+    const startPractice=()=>beginPractice(practiceFilters.value);
     const loadMarkdownInput=(text,label='')=>{
+      markdownLoadVersion++;
       markdownError.value='';
       const result=bank.loadMarkdownBank(text,label);
       if(!result.ok){markdownError.value=result.error||'No se pudo cargar el banco Markdown.';return false;}
+      markdownTimer.resetTimers();
+      markdownScoring.resetScoring();
       clearPracticeFilters();
       return true;
     };
@@ -980,68 +998,81 @@ export default {
       loadMarkdownInput(sample,'Plantilla EXCOBA-MD');
     };
     const handleMarkdownFile=async(event)=>{
-      const file=event?.target?.files?.[0];
-      if(!file)return;
-      try{
-        const maxBytes=window.EXCOBA_MARKDOWN_BANK?.MAX_INPUT_BYTES||2*1024*1024;
-        if(file.size>maxBytes){markdownError.value='El archivo Markdown excede el límite de 2 MB.';return;}
-        const text=await file.text();
-        markdownInput.value=text;
-        loadMarkdownInput(text,file.name.replace(/\.[^.]+$/,''));
-      }catch(_){markdownError.value='No se pudo leer el archivo seleccionado.';}
-      finally{if(event?.target)event.target.value='';}
+      const input = event?.target;
+      const file = input?.files?.[0];
+      if (!file) return;
+      input.value = '';
+      const version = ++markdownLoadVersion;
+      const maxBytes = window.EXCOBA_MARKDOWN_BANK?.MAX_INPUT_BYTES || 2 * 1024 * 1024;
+      if (file.size > maxBytes) {
+        markdownError.value = 'El archivo Markdown excede el límite de 2 MB.';
+        return;
+      }
+      const text = await file.text().catch(() => null);
+      if (version !== markdownLoadVersion || currentScreen.value !== 'menu') return;
+      if (text === null) {
+        markdownError.value = 'No se pudo leer el archivo seleccionado.';
+        return;
+      }
+      markdownInput.value = text;
+      loadMarkdownInput(text, file.name.replace(/\.[^.]+$/, ''));
     };
-    const startMarkdownPractice=()=>{
-      if(!bank.buildPracticeBank({count:Math.min(100,Math.max(1,bank.activeBankCount.value)),ordered:practiceOrdered.value}))return;
-      scoring.resetScoring();timer.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
-      bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.startTimer();
+    const startMarkdownPractice=()=>beginPractice({count:bank.activeBankCount.value,ordered:practiceOrdered.value});
+    const restoreDefaultBank=()=>{
+      markdownLoadVersion++;
+      markdownTimer.resetTimers();
+      markdownScoring.resetScoring();
+      bank.clearCustomBank();
+      markdownError.value='';
+      clearPracticeFilters();
     };
-    const restoreDefaultBank=()=>{bank.clearCustomBank();markdownError.value='';clearPracticeFilters();};
-    const returnToMenu=()=>{timer.stopTimer();timer.stopPausedTimer();isPaused.value=false;showFeedback.value=false;currentScreen.value='menu';};
-    const resetProgress=()=>{bank.resetBank();scoring.resetScoring();timer.resetTimers();showResetConfirm.value=false;showFeedback.value=false;isPaused.value=false;currentScreen.value='menu';};
+    const returnToMenu=()=>{timer.value.stopTimer();timer.value.stopPausedTimer();isPaused.value=false;showFeedback.value=false;currentScreen.value='menu';};
+    const resetProgress=()=>{bank.resetBank();scoring.value.resetScoring();timer.value.resetTimers();showResetConfirm.value=false;showFeedback.value=false;isPaused.value=false;currentScreen.value='menu';};
     const resumeExamFromMenu = () => {
       currentScreen.value = 'exam';
-      if(bank.currentQuestion.value)timer.startTimer();
+      if(bank.currentQuestion.value)timer.value.startTimer();
     };
 
     const pauseExam = () => {
       isPaused.value = true;
-      timer.stopTimer();
-      timer.startPausedTimer();
+      timer.value.stopTimer();
+      timer.value.startPausedTimer();
     };
 
     const resumeExam = () => {
       isPaused.value = false;
       showExitWarning.value = false;
-      timer.stopPausedTimer();
-      timer.startTimer();
+      timer.value.stopPausedTimer();
+      timer.value.startTimer();
     };
 
     const confirmExit = () => {
-      timer.resetTimers();
+      timer.value.resetTimers();
       isPaused.value = false;
       showExitWarning.value = false;
       currentScreen.value = 'menu';
       bank.resetBank();
-      scoring.resetScoring();
+      scoring.value.resetScoring();
       showFeedback.value = false;
       expandedSections.value = { Primaria: true, Secundaria: true, Bachillerato: true };
-      try { localStorage.removeItem('excoba_current_screen'); } catch (_) {}
+      if (!isMarkdown.value) {
+        try { localStorage.removeItem('excoba_current_screen'); } catch (_) {}
+      }
     };
 
     // --- Finish Exam Flow ---
     const triggerFinishConfirm = () => {
-      timer.stopTimer();
+      timer.value.stopTimer();
       showFinishConfirm.value = true;
     };
 
     const cancelFinishConfirm = () => {
       showFinishConfirm.value = false;
-      timer.startTimer();
+      timer.value.startTimer();
     };
 
     const finishExam = () => {
-      timer.stopTimer();
+      timer.value.stopTimer();
       showFeedback.value = false;
       showFinishConfirm.value = false;
       bank.currentQuestionIndex.value = bank.totalQuestions.value;
@@ -1050,7 +1081,7 @@ export default {
     // --- Answer & Hint Handlers (Mediator pattern) ---
     const handleHint = () => {
       if (bank.currentQuestion.value) {
-        scoring.applyHint(bank.currentQuestion.value.id);
+        scoring.value.applyHint(bank.currentQuestion.value.id);
       }
     };
 
@@ -1058,7 +1089,7 @@ export default {
       if(!bank.currentQuestion.value||String(result.questionId)!==String(bank.currentQuestion.value.id))return;
       if(!bank.recordAnswer(result.questionId,result))return;
       lastAnswerCorrect.value=result.isCorrect;lastGradingMethod.value=result.gradingMethod||'exact';lastModelFeedback.value=result.modelFeedback||'';
-      if(result.gradingMethod!=='self')scoring.applyAnswer(result.isCorrect);
+      if(result.gradingMethod!=='self')scoring.value.applyAnswer(result.isCorrect);
       showFeedback.value=true;
     };
 
@@ -1077,7 +1108,7 @@ export default {
       bank.currentQuestionIndex.value++;
 
       if (bank.currentQuestionIndex.value >= bank.totalQuestions.value) {
-        timer.stopTimer();
+        timer.value.stopTimer();
       } else if (bank.currentQuestion.value?.section !== prevSection) {
         expandedSections.value[bank.currentQuestion.value.section] = true;
       }
@@ -1134,16 +1165,16 @@ export default {
       cleanQuestionTextFull: bank.cleanQuestionText,
 
       // Scoring
-      score: scoring.score,
-      hintsUsedStatus: scoring.hintsUsedStatus,
+      score: computed(() => scoring.value.score.value),
+      hintsUsedStatus: computed(() => scoring.value.hintsUsedStatus.value),
       handleAnswer,
       handleHint,
       handleShowFeedback,
 
       // Timer
-      formattedTime: timer.formattedTime,
-      formattedCurrentPauseTime: timer.formattedCurrentPauseTime,
-      formattedTotalPauseTime: timer.formattedTotalPauseTime,
+      formattedTime: computed(() => timer.value.formattedTime.value),
+      formattedCurrentPauseTime: computed(() => timer.value.formattedCurrentPauseTime.value),
+      formattedTotalPauseTime: computed(() => timer.value.formattedTotalPauseTime.value),
 
       // Theme
       isDarkMode: theme.isDarkMode,

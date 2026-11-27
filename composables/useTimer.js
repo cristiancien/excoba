@@ -2,10 +2,13 @@
  * useTimer - Composable for managing exam and pause timers with LocalStorage persistence.
  * Follows SRP: Only handles time-tracking concerns.
  */
-window.useTimer = () => {
+window.useTimer = ({ persist = true } = {}) => {
   const { ref, computed, watch } = Vue;
 
-  let storage;try{storage=window.localStorage;}catch(_){}
+  let storage;
+  if (persist) {
+    try { storage = window.localStorage; } catch (_) {}
+  }
   const read=key=>{try{const n=Number(storage?.getItem(key));return Number.isFinite(n)&&n>=0?Math.floor(n):0;}catch(_){return 0;}};
   const write=(key,value)=>{try{storage?.setItem(key,value);}catch(_){}};
   const examTime = ref(read('excoba_exam_time'));

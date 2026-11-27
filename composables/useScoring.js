@@ -2,7 +2,7 @@
  * useScoring - Composable for score and hint management with LocalStorage persistence.
  * Follows SRP: Only handles scoring concerns.
  */
-window.useScoring = () => {
+window.useScoring = ({ persist = true } = {}) => {
   const { ref, watch } = Vue;
 
   const POINTS = Object.freeze({
@@ -11,7 +11,10 @@ window.useScoring = () => {
     HINT: -3
   });
 
-  let storage;try{storage=window.localStorage;}catch(_){}
+  let storage;
+  if (persist) {
+    try { storage = window.localStorage; } catch (_) {}
+  }
   const read=(key,fallback)=>{try{return JSON.parse(storage?.getItem(key)||'null')??fallback;}catch(_){return fallback;}};
   const write=(key,value)=>{try{storage?.setItem(key,value);}catch(_){}};
   const savedScore=Number(read('excoba_score',0));

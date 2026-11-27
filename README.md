@@ -44,6 +44,16 @@ La práctica permite seleccionar tema, nivel y habilidad. El simulacro de 180 pr
 
 Las respuestas numéricas simples se comparan mediante un analizador de fracciones, decimales y unidades compatibles. El generador utiliza el mismo `parseScalar` que la aplicación. Los ejercicios que requieren justificar, demostrar, corregir un procedimiento, producir un texto o interpretar una respuesta abierta requieren revisión; una respuesta modelo no se califica por coincidencia literal. La revisión manual muestra solución y explicación para que la persona registre el resultado.
 
+### Bancos EXCOBA-MD
+
+En el menú **Banco Markdown (.md)**, usa **Cargar archivo .md** o **Pegar Markdown**. Puedes iniciar una práctica de hasta 100 reactivos o usar los filtros en **Práctica por tema**. **Volver al banco base** recupera la sesión editorial guardada. El banco importado y su práctica duran mientras la página permanezca abierta.
+
+Puedes importar el [banco original de repaso de matemáticas](data/banco-repaso-matematicas.md) o usar la [plantilla EXCOBA-MD](data/ejemplo-banco.md) para escribir tus propios reactivos de opción múltiple, respuesta abierta y tabla. Para validar un archivo antes de cargarlo, ejecuta:
+
+```bash
+node composables/markdownBank.js data/banco-repaso-matematicas.md
+```
+
 ### Gemini opcional
 
 La aplicación funciona sin Gemini. Si se activa en Configuración, la clave y el modelo seleccionado se guardan en `localStorage` del navegador. Las solicitudes salen **directamente del navegador a la API de Google**; no pasan por un servidor de este proyecto. Se envían el enunciado, contexto, descripción textual de la figura cuando existe, respuesta de referencia, criterio y respuesta escrita por la persona. La clave se transmite a Google mediante la cabecera de autenticación.

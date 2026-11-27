@@ -63,49 +63,125 @@ test('EXCOBA-MD infers question type automatically and enforces safe figure URLs
   assert.throws(() => parseMarkdownBank('Solo texto sin encabezados'), /No se encontraron reactivos/i);
 });
 
-test('useQuestionBank + App consume Markdown banks without altering built-in bank or localStorage', () => {
+test('Markdown practice preserves and restores the editorial session and its persisted progress', async () => {
   const storage = memoryStorage();
-  const env = context({ storage, globals: { setInterval: () => 1, clearInterval() {} } });
-  env.ctx['vue3-sfc-loader'] = { loadModule() {} };
-  env.ctx.__SFC_OPTIONS__ = {};
-  for (const file of [
-    'data/questions.js',
-    'composables/answerValidation.js',
-    'composables/markdownBank.js',
-    'composables/useQuestionBank.js',
-    'composables/useTimer.js',
-    'composables/useScoring.js',
-    'composables/useTheme.js',
-    'composables/useCalculator.js'
-  ]) env.load(file);
-
-  const state = env.component('App.vue').setup();
+  function openApp() {
+    let intervalId = 0;
+    const callbacks = new Map();
+    const env = context({ storage, globals: {
+      setInterval(callback) { callbacks.set(++intervalId, callback); return intervalId; },
+      clearInterval(id) { callbacks.delete(id); }
+    } });
+    env.ctx['vue3-sfc-loader'] = { loadModule() {} };
+    env.ctx.__SFC_OPTIONS__ = {};
+    for (const file of [
+      'data/questions.js',
+      'composables/answerValidation.js',
+      'composables/markdownBank.js',
+      'composables/useQuestionBank.js',
+      'composables/useTimer.js',
+      'composables/useScoring.js',
+      'composables/useTheme.js',
+      'composables/useCalculator.js'
+    ]) env.load(file);
+    return {
+      state: env.component('App.vue').setup(),
+      flush: env.vue.flush,
+      tick: () => callbacks.forEach(callback => callback())
+    };
+  }
+  const { state, flush, tick } = openApp();
   assert.equal(state.activeBankSource.value, 'default');
   assert.equal(state.activeBankCount.value, 11300);
 
-  // Load sample Markdown bank
-  assert.equal(state.loadMarkdownInput(SAMPLE_MARKDOWN, 'Mi repaso'), true);
+  let finishRead;
+  const lateImport = state.handleMarkdownFile({ target: { files: [{
+    name: 'pendiente.md',
+    size: 100,
+    text: () => new Promise(resolve => { finishRead = resolve; })
+  }] } });
+  state.startPractice();
+  flush();
+  finishRead(SAMPLE_MARKDOWN);
+  await lateImport;
+  assert.equal(state.activeBankSource.value, 'default');
+  const editorialQuestionId = state.currentQuestion.value.id;
+  state.handleAnswer({ questionId: editorialQuestionId, isCorrect: true, gradingMethod: 'exact' });
+  state.nextQuestion();
+  const editorialNextId = state.currentQuestion.value.id;
+  state.handleHint();
+  tick();
+  state.pauseExam();
+  tick();
+  state.returnToMenu();
+  flush();
+  const persisted = new Map(storage.data);
+
+  await state.handleMarkdownFile({ target: { files: [{
+    name: 'Mi repaso.md',
+    size: Buffer.byteLength(SAMPLE_MARKDOWN),
+    text: async () => SAMPLE_MARKDOWN
+  }] } });
   assert.equal(state.activeBankSource.value, 'markdown');
   assert.equal(state.activeBankCount.value, 4);
   assert.equal(state.bankQuestionCount, 11300);
-
-  // Start practice directly from loaded Markdown bank
+  state.practiceSection.value = 'Primaria';
+  flush();
+  assert.ok(state.practiceSections.value.includes('Primaria'));
+  assert.ok(state.practiceTopics.value.includes('Matemáticas'));
+  assert.equal(state.practiceThemes.value[0].count, 1);
+  assert.equal(state.practiceAvailable.value, 1);
   state.startMarkdownPractice();
   assert.equal(state.currentScreen.value, 'exam');
   assert.equal(state.totalQuestions.value, 4);
-  assert.equal(storage.getItem('excoba_session_v2'), null);
+  assert.equal(state.score.value, 0);
+  assert.equal(state.formattedTime.value, '00:00:00');
 
-  // Record an answer on the Markdown multiple-choice question
   const q = state.currentQuestion.value;
+  state.handleHint();
   state.handleAnswer({ questionId: q.id, isCorrect: true, gradingMethod: 'exact', selectedOptionId: 'opt_2' });
+  tick();
+  tick();
+  flush();
   assert.equal(state.overallSolvedCount.value, 1);
-  assert.equal(state.score.value, 10);
+  assert.equal(state.score.value, 7);
+  assert.equal(state.formattedTime.value, '00:00:02');
+  assert.deepEqual(storage.data, persisted);
 
-  // Restore default 11300-item bank cleanly
+  const reloaded = openApp().state;
+  assert.equal(reloaded.currentScreen.value, 'menu');
+  assert.equal(reloaded.activeBankSource.value, 'default');
+  assert.equal(reloaded.currentQuestion.value.id, editorialNextId);
+  assert.equal(reloaded.score.value, 7);
+  assert.equal(reloaded.formattedTime.value, '00:00:01');
+
+  state.confirmExit();
+  flush();
+  assert.deepEqual(storage.data, persisted);
+  state.practiceSection.value = '';
+  flush();
+  state.startPractice();
+  state.resetProgress();
+  flush();
+  assert.deepEqual(storage.data, persisted);
+
   state.restoreDefaultBank();
+  flush();
   assert.equal(state.activeBankSource.value, 'default');
   assert.equal(state.activeBankCount.value, 11300);
+  assert.equal(state.totalQuestions.value, 25);
+  assert.equal(state.currentQuestion.value.id, editorialNextId);
+  assert.equal(state.answeredStatus.value[editorialQuestionId].isCorrect, true);
+  assert.equal(state.hintsUsedStatus.value[editorialNextId], true);
+  assert.equal(state.score.value, 7);
+  assert.equal(state.formattedTime.value, '00:00:01');
+  assert.equal(state.formattedTotalPauseTime.value, '00:00:01');
+  assert.deepEqual(storage.data, persisted);
+
+  state.resetProgress();
   assert.equal(state.totalQuestions.value, 0);
+  assert.equal(state.score.value, 0);
+  assert.equal(storage.getItem('excoba_session_v2'), null);
 });
 
 test('markdownBank CLI validates data/ejemplo-banco.md cleanly to stdout', () => {

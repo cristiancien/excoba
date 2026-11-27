@@ -59,8 +59,10 @@
     const sessionError = ref(''); const persistenceWarning = ref('');
     const catalogue = buildCatalogue(allQuestions);
     const customBank = ref(null);
+    let editorialSession = null;
     const activeSourceQuestions = computed(() => customBank.value ? customBank.value.questions : allQuestions);
     const activeCatalogue = computed(() => customBank.value ? buildCatalogue(customBank.value.questions) : catalogue);
+    const getPracticePool = filters => filterQuestions(activeSourceQuestions.value, filters);
     const activeBankCount = computed(() => activeSourceQuestions.value.length);
     const activeBankSource = computed(() => customBank.value ? 'markdown' : 'default');
     const activeBankMeta = computed(() => customBank.value ? customBank.value.meta : { version: bankVersion, title: 'Banco editorial EXCOBA', questionCount: allQuestions.length, source: 'default' });
@@ -86,6 +88,15 @@
       }
       try {
         const parsed = parser.parseMarkdownBank(markdownText, label ? { title: label } : {});
+        if (!customBank.value) {
+          editorialSession = {
+            questions: questions.value,
+            index: currentQuestionIndex.value,
+            answers: answeredStatus.value,
+            mode: sessionMode.value,
+            filters: sessionFilters.value
+          };
+        }
         customBank.value = parsed;
         questions.value = []; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionFilters.value = {}; sessionError.value = '';
         return { ok: true, count: parsed.questions.length, meta: parsed.meta, warnings: parsed.warnings };
@@ -96,10 +107,16 @@
       }
     }
     function clearCustomBank() {
-      const hadCustom = Boolean(customBank.value);
+      if (editorialSession) {
+        questions.value = editorialSession.questions;
+        currentQuestionIndex.value = editorialSession.index;
+        answeredStatus.value = editorialSession.answers;
+        sessionMode.value = editorialSession.mode;
+        sessionFilters.value = editorialSession.filters;
+        editorialSession = null;
+      }
       customBank.value = null;
       sessionError.value = '';
-      if (hadCustom) { questions.value = []; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionFilters.value = {}; }
     }
     function buildExamBank() {
       const bank = []; const selected = new Set();
@@ -114,13 +131,12 @@
           const chosen = shuffle(subject).slice(0, 20); chosen.forEach(q => selected.add(q.id)); bank.push(...chosen);
         }
       }
-      customBank.value = null;
+      clearCustomBank();
       return begin(bank, 'exam');
     }
     function buildPracticeBank(filters = {}) {
-      const source = activeSourceQuestions.value;
       const cleanFilters = { section: String(filters.section || ''), topic: String(filters.topic || ''), themeId: String(filters.themeId || ''), level: filters.level ? Number(filters.level) : '', skill: String(filters.skill || ''), count: Math.min(100, Math.max(1, Number(filters.count) || 25)), ordered: filters.ordered === true };
-      const pool = filterQuestions(source, cleanFilters);
+      const pool = getPracticePool(cleanFilters);
       const selected = cleanFilters.ordered ? [...pool].sort((a, b) => Number(a.level) - Number(b.level) || String(a.code).localeCompare(String(b.code), 'es', { numeric: true })) : shuffle(pool);
       return begin(selected.slice(0, cleanFilters.count), 'practice', cleanFilters);
     }
@@ -165,11 +181,12 @@
     }
     function resetBank() {
       questions.value = []; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionFilters.value = {}; sessionError.value = '';
+      if (customBank.value) return;
       try { storage?.removeItem(STORAGE_KEY); ['excoba_questions', 'excoba_current_index', 'excoba_answered_status'].forEach(key => storage?.removeItem(key)); } catch (_) { /* Session remains usable without persistence. */ }
     }
     return { questions, currentQuestionIndex, currentQuestion, totalQuestions, answeredStatus, sessionMode, sessionFilters, sessionStats, sessionError, persistenceWarning,
       catalogue, activeCatalogue, bankQuestionCount: allQuestions.length, activeBankCount, activeBankSource, activeBankMeta, activeBankWarnings,
-      levelLabels: LEVEL_LABELS, getPracticePool: filters => filterQuestions(activeSourceQuestions.value, filters),
+      levelLabels: LEVEL_LABELS, getPracticePool, getPracticeCatalogue: filters => buildCatalogue(getPracticePool(filters)),
       loadMarkdownBank, clearCustomBank, buildExamBank, buildPracticeBank, recordAnswer, resetBank, correctOptionText, progressPercentage, sectionsData, overallSolvedCount,
       activeSectionTotal, activeSectionSolved, activeSectionProgress, activeTopicTotal, activeTopicSolved, activeTopicProgress, getSectionProgressText, getTopicProgressText, cleanQuestionText };
   };
