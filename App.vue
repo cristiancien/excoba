@@ -103,7 +103,7 @@
               </div>
 
               <section class="practice-card glass-panel" aria-labelledby="practice-title">
-                <div class="practice-heading"><div><h3 id="practice-title">Práctica por tema</h3><p>{{ bankQuestionCount.toLocaleString('es-MX') }} ejercicios · {{ catalogue.length }} temas · cuatro niveles</p></div><span class="practice-symbol">✎</span></div>
+                <div class="practice-heading"><div><h3 id="practice-title">Práctica por tema</h3><p>{{ activeBankCount.toLocaleString('es-MX') }} ejercicios · {{ activeCatalogue.length }} temas · {{ activeBankSource === 'markdown' ? activeBankMeta.title : 'cuatro niveles' }}</p></div><span class="practice-symbol">✎</span></div>
                 <div class="practice-fields">
                   <label>Etapa<select v-model="practiceSection"><option value="">Todas</option><option v-for="sec in practiceSections" :key="sec" :value="sec">{{ sec }}</option></select></label>
                   <label>Materia<select v-model="practiceTopic"><option value="">Todas</option><option v-for="topic in practiceTopics" :key="topic" :value="topic">{{ topic }}</option></select></label>
@@ -115,6 +115,35 @@
                 <div class="practice-bottom"><label class="ordered-choice"><input type="checkbox" v-model="practiceOrdered"> Orden progresivo</label><span>{{ practiceAvailable }} disponibles</span><button class="btn btn-primary" :disabled="!practiceAvailable" @click="startPractice">Comenzar práctica</button></div>
                 <p class="practice-note">La nueva sesión sustituye la sesión activa. El banco completo permanece disponible.</p>
                 <p v-if="sessionError" class="practice-error" role="alert">{{ sessionError }}</p>
+              </section>
+
+              <section class="markdown-card glass-panel" aria-labelledby="md-bank-title">
+                <div class="practice-heading">
+                  <div>
+                    <h3 id="md-bank-title">Banco Markdown (.md)</h3>
+                    <p>Carga tus propios reactivos en formato EXCOBA-MD (opción múltiple, abiertas, tablas y LaTeX).</p>
+                  </div>
+                  <span class="md-symbol">M↓</span>
+                </div>
+                <div class="md-actions">
+                  <label class="btn btn-secondary md-file-btn">Cargar archivo .md<input type="file" accept=".md,.markdown,.txt" @change="handleMarkdownFile" hidden></label>
+                  <button type="button" class="btn btn-secondary" @click="showMarkdownEditor=!showMarkdownEditor">{{ showMarkdownEditor ? 'Ocultar editor' : 'Pegar Markdown' }}</button>
+                  <button type="button" class="btn text-button" @click="loadSampleMarkdown">Cargar ejemplo</button>
+                </div>
+                <div v-if="showMarkdownEditor" class="md-editor">
+                  <textarea v-model="markdownInput" rows="7" placeholder="## Q1 | multiple | Álgebra&#10;¿Cuánto es $2+2$?&#10;- [ ] 3&#10;- [x] 4&#10;!explicacion: $2+2=4$."></textarea>
+                  <div class="md-actions"><button type="button" class="btn btn-primary" :disabled="!markdownInput.trim()" @click="applyMarkdownText">Cargar Markdown</button></div>
+                </div>
+                <div v-if="activeBankSource==='markdown'" class="md-status">
+                  <strong>Activo: {{ activeBankMeta.title }} ({{ activeBankCount }} reactivos)</strong>
+                  <small>Opción múltiple: {{ activeBankMeta.byType?.multiple || 0 }} · Abiertas: {{ activeBankMeta.byType?.open || 0 }} · Tabla: {{ activeBankMeta.byType?.table || 0 }}</small>
+                  <ul v-if="activeBankWarnings.length" class="md-warnings"><li v-for="(w,i) in activeBankWarnings" :key="i">{{ w }}</li></ul>
+                  <div class="md-actions">
+                    <button type="button" class="btn btn-primary" @click="startMarkdownPractice">Practicar banco .md</button>
+                    <button type="button" class="btn btn-secondary" @click="restoreDefaultBank">Volver al banco base</button>
+                  </div>
+                </div>
+                <p v-if="markdownError" class="practice-error" role="alert">{{ markdownError }}</p>
               </section>
               <button @click="showSettings=true" class="settings-entry"><span>✦</span><span><strong>Configuración y Gemini opcional</strong><small>Tu clave, tus modelos y revisión de respuestas abiertas.</small></span><b>›</b></button>
               <div class="reset-progress"><button class="text-button" @click="showResetConfirm=true">Restablecer progreso</button><div v-if="showResetConfirm" class="reset-confirm" role="alert"><p>Se borrarán la sesión activa, sus puntos y sus tiempos. La configuración de Gemini se conserva.</p><button class="btn btn-secondary" @click="showResetConfirm=false">Conservar progreso</button><button class="btn btn-primary" @click="resetProgress">Restablecer</button></div></div>
@@ -855,16 +884,20 @@ export default {
     const lastAnswerCorrect = ref(false);
     const lastGradingMethod=ref('exact'),lastModelFeedback=ref(''),showSettings=ref(false),showResetConfirm=ref(false);
     const practiceSection=ref(''),practiceTopic=ref(''),practiceThemeId=ref(''),practiceLevel=ref(''),practiceSkill=ref(''),practiceCount=ref(25),practiceOrdered=ref(true);
-    const presentSections=[...new Set(bank.catalogue.map(t=>t.section))];
-    const practiceSections=[...new Set(['Primaria','Secundaria','Bachillerato',...presentSections])].filter(s=>presentSections.includes(s));
-    const practiceTopics=computed(()=>[...new Set(bank.catalogue.filter(t=>!practiceSection.value||t.section===practiceSection.value).map(t=>t.topic))]);
-    const practiceThemes=computed(()=>bank.catalogue.filter(t=>(!practiceSection.value||t.section===practiceSection.value)&&(!practiceTopic.value||t.topic===practiceTopic.value)));
-    const practiceSkills=computed(()=>bank.catalogue.find(t=>t.id===practiceThemeId.value)?.skills||[]);
+    const showMarkdownEditor=ref(false),markdownInput=ref(''),markdownError=ref('');
+    const practiceSections=computed(()=>{
+      const present=[...new Set(bank.activeCatalogue.value.map(t=>t.section))];
+      return [...new Set(['Primaria','Secundaria','Bachillerato',...present])].filter(s=>present.includes(s));
+    });
+    const practiceTopics=computed(()=>[...new Set(bank.activeCatalogue.value.filter(t=>!practiceSection.value||t.section===practiceSection.value).map(t=>t.topic))]);
+    const practiceThemes=computed(()=>bank.activeCatalogue.value.filter(t=>(!practiceSection.value||t.section===practiceSection.value)&&(!practiceTopic.value||t.topic===practiceTopic.value)));
+    const practiceSkills=computed(()=>bank.activeCatalogue.value.find(t=>t.id===practiceThemeId.value)?.skills||[]);
     const practiceFilters=computed(()=>({section:practiceSection.value,topic:practiceTopic.value,themeId:practiceThemeId.value,level:practiceLevel.value,skill:practiceSkill.value,count:practiceCount.value,ordered:practiceOrdered.value}));
     const practiceAvailable=computed(()=>bank.getPracticePool(practiceFilters.value).length);
     watch(practiceSection,()=>{practiceTopic.value='';practiceThemeId.value='';practiceSkill.value='';});
     watch(practiceTopic,()=>{practiceThemeId.value='';practiceSkill.value='';});
     watch(practiceThemeId,()=>{practiceSkill.value='';});
+    const clearPracticeFilters=()=>{practiceSection.value='';practiceTopic.value='';practiceThemeId.value='';practiceLevel.value='';practiceSkill.value='';};
     const isMobile = window.innerWidth < 768;
     const sidebarCollapsed = ref(isMobile);
 
@@ -932,6 +965,38 @@ export default {
       scoring.resetScoring();timer.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
       bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.startTimer();
     };
+    const loadMarkdownInput=(text,label='')=>{
+      markdownError.value='';
+      const result=bank.loadMarkdownBank(text,label);
+      if(!result.ok){markdownError.value=result.error||'No se pudo cargar el banco Markdown.';return false;}
+      clearPracticeFilters();
+      return true;
+    };
+    const applyMarkdownText=()=>{if(loadMarkdownInput(markdownInput.value))showMarkdownEditor.value=false;};
+    const loadSampleMarkdown=()=>{
+      const sample=window.EXCOBA_MARKDOWN_BANK?.SAMPLE_MARKDOWN||'';
+      if(!sample){markdownError.value='No hay plantilla Markdown disponible.';return;}
+      markdownInput.value=sample;
+      loadMarkdownInput(sample,'Plantilla EXCOBA-MD');
+    };
+    const handleMarkdownFile=async(event)=>{
+      const file=event?.target?.files?.[0];
+      if(!file)return;
+      try{
+        const maxBytes=window.EXCOBA_MARKDOWN_BANK?.MAX_INPUT_BYTES||2*1024*1024;
+        if(file.size>maxBytes){markdownError.value='El archivo Markdown excede el límite de 2 MB.';return;}
+        const text=await file.text();
+        markdownInput.value=text;
+        loadMarkdownInput(text,file.name.replace(/\.[^.]+$/,''));
+      }catch(_){markdownError.value='No se pudo leer el archivo seleccionado.';}
+      finally{if(event?.target)event.target.value='';}
+    };
+    const startMarkdownPractice=()=>{
+      if(!bank.buildPracticeBank({count:Math.min(100,Math.max(1,bank.activeBankCount.value)),ordered:practiceOrdered.value}))return;
+      scoring.resetScoring();timer.resetTimers();showFeedback.value=false;isPaused.value=false;showExitWarning.value=false;currentScreen.value='exam';
+      bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.startTimer();
+    };
+    const restoreDefaultBank=()=>{bank.clearCustomBank();markdownError.value='';clearPracticeFilters();};
     const returnToMenu=()=>{timer.stopTimer();timer.stopPausedTimer();isPaused.value=false;showFeedback.value=false;currentScreen.value='menu';};
     const resetProgress=()=>{bank.resetBank();scoring.resetScoring();timer.resetTimers();showResetConfirm.value=false;showFeedback.value=false;isPaused.value=false;currentScreen.value='menu';};
     const resumeExamFromMenu = () => {
@@ -1046,7 +1111,8 @@ export default {
     return {
       showSettings,showResetConfirm,resetProgress,lastGradingMethod,lastModelFeedback,practiceSection,practiceTopic,practiceThemeId,practiceLevel,practiceSkill,practiceCount,practiceOrdered,
       practiceSections,practiceTopics,practiceThemes,practiceSkills,practiceAvailable,startPractice,returnToMenu,
-      catalogue:bank.catalogue,bankQuestionCount:bank.bankQuestionCount,levelLabels:bank.levelLabels,sessionError:bank.sessionError,sessionStats:bank.sessionStats,persistenceWarning:bank.persistenceWarning,
+      showMarkdownEditor,markdownInput,markdownError,loadMarkdownInput,applyMarkdownText,loadSampleMarkdown,handleMarkdownFile,startMarkdownPractice,restoreDefaultBank,
+      catalogue:bank.catalogue,activeCatalogue:bank.activeCatalogue,bankQuestionCount:bank.bankQuestionCount,activeBankCount:bank.activeBankCount,activeBankSource:bank.activeBankSource,activeBankMeta:bank.activeBankMeta,activeBankWarnings:bank.activeBankWarnings,levelLabels:bank.levelLabels,sessionError:bank.sessionError,sessionStats:bank.sessionStats,persistenceWarning:bank.persistenceWarning,
       // Question bank
       questions: bank.questions,
       currentQuestionIndex: bank.currentQuestionIndex,
@@ -1130,5 +1196,5 @@ export default {
 
 
 <style scoped>
-.reset-progress{text-align:center;font-size:.78rem}.reset-progress>.text-button{border:0;background:transparent;color:var(--text-muted);text-decoration:underline;cursor:pointer;font:inherit}.reset-confirm{text-align:left;margin-top:.8rem;padding:1rem;border:1px solid var(--glass-border);border-radius:12px;line-height:1.5}.reset-confirm .btn{font-size:.75rem;padding:.55rem .8rem;margin-right:.4rem}.practice-card{padding:1.2rem;border-radius:16px;border:1px solid var(--glass-border);background:rgba(16,185,129,.03)}.practice-heading,.practice-bottom{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap}.practice-heading h3{font-size:1.05rem;margin:0;font-weight:800}.practice-heading p{font-size:.75rem;color:var(--text-muted);margin:.3rem 0}.practice-symbol{color:var(--secondary);font-size:1.6rem}.practice-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0}.practice-fields label{font-size:.75rem;color:var(--text-muted);font-weight:700;display:flex;flex-direction:column;gap:.3rem;min-width:0}.practice-fields label.wide{grid-column:1/-1}.practice-fields select{width:100%;box-sizing:border-box;font:inherit;font-size:.8rem;color:var(--text-main);background:var(--calc-tab-bg-active,#fff);border:1px solid var(--glass-border);border-radius:10px;padding:.65rem;min-width:0}.practice-bottom{font-size:.75rem;color:var(--text-muted)}.practice-bottom .btn{font-size:.8rem;padding:.7rem 1rem}.ordered-choice{display:flex;gap:.4rem;align-items:center}.practice-note,.practice-error{font-size:.72rem;line-height:1.5;color:var(--text-muted);margin:.7rem 0 0}.practice-error{color:var(--danger)}.settings-entry{display:flex;align-items:center;gap:.8rem;text-align:left;width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--glass-border);background:rgba(79,70,229,.04);color:var(--text-main);cursor:pointer}.settings-entry>span:first-child{font-size:1.6rem;color:var(--primary)}.settings-entry>span:nth-child(2){flex:1}.settings-entry strong{font-size:.85rem;display:block}.settings-entry small{display:block;font-size:.72rem;color:var(--text-muted);margin-top:.25rem}.grading-summary{max-width:560px;margin:0 auto 1rem;text-align:left}.grading-summary p{display:flex;justify-content:space-between;gap:.8rem;padding:.65rem 0;margin:0;border-bottom:1px solid var(--glass-border);font-size:.85rem}.grading-summary small{display:block;margin-top:.7rem;font-size:.75rem;color:var(--text-muted)}.persistence-warning{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:200;background:var(--glass-bg);border:1px solid var(--warning);border-radius:10px;padding:.7rem;font-size:.8rem}@media(max-width:520px){.practice-fields{grid-template-columns:1fr}.practice-fields label.wide{grid-column:auto}.practice-bottom>.btn{width:100%}.grading-summary p{flex-direction:column;gap:.3rem}}
+.reset-progress{text-align:center;font-size:.78rem}.reset-progress>.text-button{border:0;background:transparent;color:var(--text-muted);text-decoration:underline;cursor:pointer;font:inherit}.reset-confirm{text-align:left;margin-top:.8rem;padding:1rem;border:1px solid var(--glass-border);border-radius:12px;line-height:1.5}.reset-confirm .btn{font-size:.75rem;padding:.55rem .8rem;margin-right:.4rem}.practice-card{padding:1.2rem;border-radius:16px;border:1px solid var(--glass-border);background:rgba(16,185,129,.03)}.practice-heading,.practice-bottom{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap}.practice-heading h3{font-size:1.05rem;margin:0;font-weight:800}.practice-heading p{font-size:.75rem;color:var(--text-muted);margin:.3rem 0}.practice-symbol{color:var(--secondary);font-size:1.6rem}.practice-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0}.practice-fields label{font-size:.75rem;color:var(--text-muted);font-weight:700;display:flex;flex-direction:column;gap:.3rem;min-width:0}.practice-fields label.wide{grid-column:1/-1}.practice-fields select{width:100%;box-sizing:border-box;font:inherit;font-size:.8rem;color:var(--text-main);background:var(--calc-tab-bg-active,#fff);border:1px solid var(--glass-border);border-radius:10px;padding:.65rem;min-width:0}.practice-bottom{font-size:.75rem;color:var(--text-muted)}.practice-bottom .btn{font-size:.8rem;padding:.7rem 1rem}.ordered-choice{display:flex;gap:.4rem;align-items:center}.practice-note,.practice-error{font-size:.72rem;line-height:1.5;color:var(--text-muted);margin:.7rem 0 0}.practice-error{color:var(--danger)}.markdown-card{padding:1.2rem;border-radius:16px;border:1px solid var(--glass-border);background:rgba(79,70,229,.03)}.md-symbol{color:var(--primary);font-size:1.2rem;font-weight:800}.md-actions{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}.md-file-btn{cursor:pointer}.md-editor{margin-top:.8rem}.md-editor textarea{width:100%;box-sizing:border-box;padding:.75rem;border-radius:10px;border:1px solid var(--glass-border);background:var(--calc-tab-bg-active,#fff);color:var(--text-main);font-family:monospace;font-size:.82rem;resize:vertical}.md-status{margin-top:.9rem;padding:.85rem;border-radius:12px;border:1px solid var(--glass-border);background:rgba(16,185,129,.05);display:flex;flex-direction:column;gap:.35rem}.md-status strong{font-size:.86rem}.md-status small{font-size:.75rem;color:var(--text-muted)}.md-warnings{margin:.3rem 0 0;padding-left:1.1rem;font-size:.74rem;color:var(--warning)}.settings-entry{display:flex;align-items:center;gap:.8rem;text-align:left;width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--glass-border);background:rgba(79,70,229,.04);color:var(--text-main);cursor:pointer}.settings-entry>span:first-child{font-size:1.6rem;color:var(--primary)}.settings-entry>span:nth-child(2){flex:1}.settings-entry strong{font-size:.85rem;display:block}.settings-entry small{display:block;font-size:.72rem;color:var(--text-muted);margin-top:.25rem}.grading-summary{max-width:560px;margin:0 auto 1rem;text-align:left}.grading-summary p{display:flex;justify-content:space-between;gap:.8rem;padding:.65rem 0;margin:0;border-bottom:1px solid var(--glass-border);font-size:.85rem}.grading-summary small{display:block;margin-top:.7rem;font-size:.75rem;color:var(--text-muted)}.persistence-warning{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:200;background:var(--glass-bg);border:1px solid var(--warning);border-radius:10px;padding:.7rem;font-size:.8rem}@media(max-width:520px){.practice-fields{grid-template-columns:1fr}.practice-fields label.wide{grid-column:auto}.practice-bottom>.btn{width:100%}.grading-summary p{flex-direction:column;gap:.3rem}}
 </style>

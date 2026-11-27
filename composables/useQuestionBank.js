@@ -58,7 +58,15 @@
     const sessionFilters = ref(savedValid && saved.filters && typeof saved.filters === 'object' ? saved.filters : {});
     const sessionError = ref(''); const persistenceWarning = ref('');
     const catalogue = buildCatalogue(allQuestions);
+    const customBank = ref(null);
+    const activeSourceQuestions = computed(() => customBank.value ? customBank.value.questions : allQuestions);
+    const activeCatalogue = computed(() => customBank.value ? buildCatalogue(customBank.value.questions) : catalogue);
+    const activeBankCount = computed(() => activeSourceQuestions.value.length);
+    const activeBankSource = computed(() => customBank.value ? 'markdown' : 'default');
+    const activeBankMeta = computed(() => customBank.value ? customBank.value.meta : { version: bankVersion, title: 'Banco editorial EXCOBA', questionCount: allQuestions.length, source: 'default' });
+    const activeBankWarnings = computed(() => customBank.value ? customBank.value.warnings : []);
     const persist = () => {
+      if (customBank.value) return;
       try {
         storage?.setItem(STORAGE_KEY, JSON.stringify({ version: 2, bankVersion, mode: sessionMode.value, filters: sessionFilters.value, ids: questions.value.map(q => q.id), index: currentQuestionIndex.value, answers: answeredStatus.value }));
         if (!storage) persistenceWarning.value = 'El progreso sólo estará disponible mientras esta pestaña permanezca abierta.';
@@ -68,6 +76,30 @@
     function begin(bank, mode, filters = {}) {
       if (!bank.length) { sessionError.value = 'No hay ejercicios para esta selección.'; return false; }
       questions.value = bank; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionMode.value = mode; sessionFilters.value = filters; sessionError.value = ''; persist(); return true;
+    }
+    function loadMarkdownBank(markdownText, label = '') {
+      const parser = root.EXCOBA_MARKDOWN_BANK || (typeof require === 'function' ? require('./markdownBank.js') : null);
+      if (!parser || typeof parser.parseMarkdownBank !== 'function') {
+        const error = 'El lector de bancos Markdown no está disponible.';
+        sessionError.value = error;
+        return { ok: false, error };
+      }
+      try {
+        const parsed = parser.parseMarkdownBank(markdownText, label ? { title: label } : {});
+        customBank.value = parsed;
+        questions.value = []; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionFilters.value = {}; sessionError.value = '';
+        return { ok: true, count: parsed.questions.length, meta: parsed.meta, warnings: parsed.warnings };
+      } catch (error) {
+        const message = error && error.message ? error.message : 'No se pudo leer el archivo Markdown.';
+        sessionError.value = message;
+        return { ok: false, error: message };
+      }
+    }
+    function clearCustomBank() {
+      const hadCustom = Boolean(customBank.value);
+      customBank.value = null;
+      sessionError.value = '';
+      if (hadCustom) { questions.value = []; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionFilters.value = {}; }
     }
     function buildExamBank() {
       const bank = []; const selected = new Set();
@@ -82,11 +114,13 @@
           const chosen = shuffle(subject).slice(0, 20); chosen.forEach(q => selected.add(q.id)); bank.push(...chosen);
         }
       }
+      customBank.value = null;
       return begin(bank, 'exam');
     }
     function buildPracticeBank(filters = {}) {
+      const source = activeSourceQuestions.value;
       const cleanFilters = { section: String(filters.section || ''), topic: String(filters.topic || ''), themeId: String(filters.themeId || ''), level: filters.level ? Number(filters.level) : '', skill: String(filters.skill || ''), count: Math.min(100, Math.max(1, Number(filters.count) || 25)), ordered: filters.ordered === true };
-      const pool = filterQuestions(allQuestions, cleanFilters);
+      const pool = filterQuestions(source, cleanFilters);
       const selected = cleanFilters.ordered ? [...pool].sort((a, b) => Number(a.level) - Number(b.level) || String(a.code).localeCompare(String(b.code), 'es', { numeric: true })) : shuffle(pool);
       return begin(selected.slice(0, cleanFilters.count), 'practice', cleanFilters);
     }
@@ -134,8 +168,9 @@
       try { storage?.removeItem(STORAGE_KEY); ['excoba_questions', 'excoba_current_index', 'excoba_answered_status'].forEach(key => storage?.removeItem(key)); } catch (_) { /* Session remains usable without persistence. */ }
     }
     return { questions, currentQuestionIndex, currentQuestion, totalQuestions, answeredStatus, sessionMode, sessionFilters, sessionStats, sessionError, persistenceWarning,
-      catalogue, bankQuestionCount: allQuestions.length, levelLabels: LEVEL_LABELS, getPracticePool: filters => filterQuestions(allQuestions, filters),
-      buildExamBank, buildPracticeBank, recordAnswer, resetBank, correctOptionText, progressPercentage, sectionsData, overallSolvedCount,
+      catalogue, activeCatalogue, bankQuestionCount: allQuestions.length, activeBankCount, activeBankSource, activeBankMeta, activeBankWarnings,
+      levelLabels: LEVEL_LABELS, getPracticePool: filters => filterQuestions(activeSourceQuestions.value, filters),
+      loadMarkdownBank, clearCustomBank, buildExamBank, buildPracticeBank, recordAnswer, resetBank, correctOptionText, progressPercentage, sectionsData, overallSolvedCount,
       activeSectionTotal, activeSectionSolved, activeSectionProgress, activeTopicTotal, activeTopicSolved, activeTopicProgress, getSectionProgressText, getTopicProgressText, cleanQuestionText };
   };
   root.EXCOBA_BANK_UTILS = { filterQuestions, buildCatalogue, cleanAnswer, safeRead, SUBTEMA_MAP, STORAGE_KEY };
