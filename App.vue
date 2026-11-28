@@ -82,13 +82,13 @@
               <!-- Selector de Interfaz: Actual vs Réplica DemoExcoba.exe -->
               <div class="glass-panel" style="padding: 1rem 1.2rem; border-radius: 16px; border: 2px solid var(--secondary); background: rgba(16, 185, 129, 0.06); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
                 <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 240px;">
-                  <span style="font-size: 1rem; font-weight: 800; color: var(--text-main);">Interfaz Réplica DemoExcoba.exe</span>
+                  <span style="font-size: 1rem; font-weight: 800; color: var(--text-main);">Simulador estilo EXCOBA</span>
                   <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
-                    Experiencia interactiva SVG/Canvas/LaTeX · 70 reactivos muestra + 20 por cada uno de los 126 temas de Temario.pdf (2 520 reactivos)
+                    Entorno de examen tipo EXCOBA · Examen demostrativo (70 reactivos) y práctica completa por tema (2 520 reactivos)
                   </span>
                 </div>
                 <button type="button" @click="setUiMode('demoexcoba')" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.88rem; border-radius: 12px; font-weight: 800;">
-                  Abrir Réplica DemoExcoba
+                  Abrir entorno EXCOBA
                 </button>
               </div>
 

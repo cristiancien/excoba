@@ -11,11 +11,11 @@ function makeBase(idx, subject, tipo, extra) {
   return {
     id: `M_${String(idx).padStart(2, '0')}`,
     packageId: 1670,
-    sourcePkg: 'Muestra Interactiva',
-    stage: 'DEMOEXCOBA · MUESTRA INTERACTIVA',
+    sourcePkg: 'Examen demostrativo',
+    stage: 'EXAMEN DEMOSTRATIVO',
     subject,
     topicRef: subject,
-    topicTitle: `${subject} · Reactivo interactivo #${idx}`,
+    topicTitle: subject,
     level: ((idx - 1) % 4) + 1,
     skill: `Tipo ${tipo}`,
     tipo,
@@ -532,8 +532,8 @@ function buildShowcaseBank() {
   const bySubject = new Map();
   for (const it of items) bySubject.set(it.subject, (bySubject.get(it.subject) || 0) + 1);
   const topics = [...bySubject.entries()].map(([subj, count]) => ({
-    ref: subj, title: `${subj} (Muestra interactiva)`, packageId: 1670,
-    stage: 'DEMOEXCOBA · MUESTRA INTERACTIVA', subject: subj, count,
+    ref: subj, title: subj, packageId: 1670,
+    stage: 'EXAMEN DEMOSTRATIVO', subject: subj, count,
   }));
 
   return {
@@ -541,10 +541,10 @@ function buildShowcaseBank() {
       id: 1670,
       datFile: 'web-showcase',
       prefix: '0.0',
-      stage: 'DEMOEXCOBA',
-      subject: 'Muestra Interactiva (70)',
+      stage: 'EXAMEN DEMOSTRATIVO',
+      subject: 'Todas las áreas',
       careerCode: 'SHOW070',
-      careerName: 'DEMOEXCOBA - MUESTRA INTERACTIVA SVG/CANVAS/LATEX (70)',
+      careerName: 'EXCOBA - EXAMEN DEMOSTRATIVO (70)',
       count: items.length,
       isOriginal: true,
       topics,
