@@ -14,7 +14,7 @@
         <button type="button" class="demo-mbtn demo-finish" @click="demo.finish()">Finalizar</button>
         <button type="button" class="demo-mbtn demo-switch" @click="$emit('switch-classic')">← Menú principal</button>
       </div>
-      <div class="demo-clock">{{ demo.elapsedFormatted }}</div>
+      <div class="demo-clock" :class="demo.clockStatus" :title="clockTooltip">{{ demo.elapsedFormatted }}</div>
     </header>
 
     <!-- Barra rápida por materia (acceso directo a los 70 demostrativos + 2,520 del temario) -->
@@ -158,13 +158,18 @@
             @check-item="showItemReview = !showItemReview"
           />
 
-          <div class="demo-stage-footer">
-            <button type="button" class="demo-mbtn" @click="showItemReview = !showItemReview">
-              {{ (showItemReview || demo.hasFinished) ? (showItemReview ? 'Ocultar clave' : 'Ver clave') : 'Comprobar' }}
-            </button>
-            <div class="demo-inline-nav">
-              <button type="button" class="demo-mbtn" :disabled="!canStep(-1)" @click="step(-1)">◄ Anterior</button>
-              <button type="button" class="demo-mbtn demo-cyan-btn" :disabled="!canStep(1)" @click="step(1)">Siguiente ►</button>
+          <div class="demo-stage-bottom">
+            <div v-if="hasNumericFormatHint" class="demo-format-hint">
+              <strong>Formato de captura:</strong> decimales con punto (redondeo automático a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>3/4</code>), potencias con <code>^</code> (ej. <code>x^2</code>, <code>2^3</code>, <code>10^-3</code>) y raíces con <code>sqrt(x)</code>.
+            </div>
+            <div class="demo-stage-footer">
+              <button type="button" class="demo-mbtn" @click="showItemReview = !showItemReview">
+                {{ (showItemReview || demo.hasFinished) ? (showItemReview ? 'Ocultar clave' : 'Ver clave') : 'Comprobar' }}
+              </button>
+              <div class="demo-inline-nav">
+                <button type="button" class="demo-mbtn" :disabled="!canStep(-1)" @click="step(-1)">◄ Anterior</button>
+                <button type="button" class="demo-mbtn demo-cyan-btn" :disabled="!canStep(1)" @click="step(1)">Siguiente ►</button>
+              </div>
             </div>
           </div>
 
@@ -237,6 +242,17 @@ export default {
     const jumpInput = ref('');
     const gridRef = ref(null);
     const item = computed(() => demo.currentItem);
+    const hasNumericFormatHint = computed(() => {
+      const it = item.value;
+      if (!it) return false;
+      return it.tipo === 7 || (Boolean(it.isOriginal) && [7, 8, 11, 15, 22].includes(it.tipo));
+    });
+    const clockTooltip = computed(() => {
+      const lim = window.EXCOBA_DEMO_UTILS?.formatSeconds?.(demo.timeLimitSeconds) || '03:00:00';
+      if (demo.clockStatus === 'over') return `Tiempo excedido (referencia ${lim}) — el reloj continúa`;
+      if (demo.clockStatus === 'warn') return `Quedan menos de 15 min (referencia ${lim})`;
+      return `Tiempo de referencia: ${lim}`;
+    });
 
     const visibleGridItems = computed(() => {
       const wrongSet = onlyWrongMode.value && demo.hasFinished ? new Set(demo.resultsSummary.wrongIndices) : null;
@@ -332,7 +348,7 @@ export default {
     onUnmounted(() => { demo.stopClock(); window.removeEventListener('keydown', onGlobalKey); });
 
     return {
-      demo, item, activeModal, calcOpen, formOpen, showItemReview, onlyWrongMode, jumpInput, gridRef, visibleGridItems,
+      demo, item, hasNumericFormatHint, clockTooltip, activeModal, calcOpen, formOpen, showItemReview, onlyWrongMode, jumpInput, gridRef, visibleGridItems,
       canStep, toggleModal, onSubjectChange, onReshuffleDemo, onTopicChange, restartBlock, openGradedItem,
       reviewWrongOnly, reviewFullGraded, toggleWrongFilter, step, jump, jumpByNumber,
     };
@@ -353,7 +369,9 @@ export default {
 .demo-finish{background:#7f1d1d;border-color:#b91c1c}.demo-finish:hover{background:#991b1b;color:#fff}
 .demo-switch{background:#1e3a5f;border-color:#2bc1ff;color:#e0f2fe}
 .demo-cyan-btn{background:#0b4f6c;border-color:#2bc1ff;color:#fff}
-.demo-clock{font-family:monospace;font-size:15px;font-weight:700;color:#00d8b3;background:#000;padding:5px 10px;border:1px solid #374151;border-radius:4px}
+.demo-clock{font-family:monospace;font-size:15px;font-weight:700;color:#00d8b3;background:#000;padding:5px 10px;border:1px solid #374151;border-radius:4px;transition:color .25s,border-color .25s,background .25s}
+.demo-clock.warn{color:#ffc12b;border-color:#ffc12b;background:#261d08}
+.demo-clock.over{color:#f87171;border-color:#ef4444;background:#2d0e12}
 .demo-subjects{display:flex;gap:6px;padding:9px 14px;background:#11151d;border-bottom:1px solid #262d3b;overflow-x:auto;flex-wrap:wrap}
 .demo-subj-pill{background:#1c222e;color:#d1d5db;border:1px solid #364054;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .demo-subj-pill small{background:rgba(255,255,255,.08);color:#9ca3af;padding:1px 6px;border-radius:999px;font-size:10.5px}
@@ -373,7 +391,11 @@ export default {
 .demo-stage-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a303c;padding-bottom:8px;gap:8px;flex-wrap:wrap}
 .demo-subject{margin:0;color:#ffc12b;font-size:17px;font-weight:700}
 .demo-meta{font-size:12px;color:#9ca3af;font-weight:700}
-.demo-stage-footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #2a303c;padding-top:12px;flex-wrap:wrap}
+.demo-stage-bottom{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.demo-format-hint{background:#101520;border:1px solid #263142;border-left:3px solid #ffc12b;border-radius:4px;padding:7px 10px;font-size:11.5px;line-height:1.5;color:#cbd5e1}
+.demo-format-hint strong{color:#ffc12b}
+.demo-format-hint code{background:#1e2636;color:#7dd3fc;padding:1px 4px;border-radius:3px;font-family:monospace}
+.demo-stage-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #2a303c;padding-top:12px;flex-wrap:wrap}
 .demo-inline-nav,.demo-actions{display:flex;gap:8px}
 .demo-review-box{padding:10px 12px;border-radius:5px;font-size:13px;line-height:1.5;display:flex;flex-direction:column;gap:4px}
 .demo-review-box.ok{background:#0d2d26;border:1px solid #00d8b3;color:#d1fae5}

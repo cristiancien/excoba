@@ -99,23 +99,15 @@
           <input :ref="el => { if (idx === 0) primaryInput = el; }" class="demo-num-input" placeholder="Ej. 12.5, 3/4 o 2^3" :value="answer?.fields?.[f.key] || ''" @input="setField(f.key, $event.target.value)" @blur="normalizeField(f.key)" @keydown.enter.prevent="normalizeField(f.key); $emit('check-item')">
           <span v-if="f.unit" class="demo-unit">{{ f.unit }}</span>
         </div>
-        <div class="demo-format-hint">
-          <strong>Formato de captura:</strong> decimales con punto (se redondean automáticamente a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>3/4</code>), potencias con <code>^</code> (ej. <code>x^2</code>, <code>2^3</code>, <code>10^-3</code>) y raíces con <code>sqrt(x)</code>.
-        </div>
       </div>
     </template>
 
     <!-- B. REACTIVOS DEL TEMARIO (2,520 reactivos) -->
     <template v-else>
-      <div v-if="item.tipo === 7" class="rows-wrap">
-        <div class="demo-num-box">
-          <label :for="'demo-num-' + item.id">Respuesta:</label>
-          <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.14, 3/4 o 2^3" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @blur="normalizeTemarioNum" @keydown.enter.prevent="normalizeTemarioNum(); $emit('check-item')">
-          <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
-        </div>
-        <div class="demo-format-hint">
-          <strong>Formato de captura:</strong> decimales con punto (se redondean automáticamente a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>7/8</code>) y potencias con <code>^</code> (ej. <code>2^3</code>, <code>10^-2</code>).
-        </div>
+      <div v-if="item.tipo === 7" class="demo-num-box">
+        <label :for="'demo-num-' + item.id">Respuesta:</label>
+        <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.14, 3/4 o 2^3" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @blur="normalizeTemarioNum" @keydown.enter.prevent="normalizeTemarioNum(); $emit('check-item')">
+        <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
       </div>
 
       <div v-else-if="item.tipo === 4" class="demo-cloze-wrap">

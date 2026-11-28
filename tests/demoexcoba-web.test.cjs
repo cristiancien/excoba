@@ -91,6 +91,17 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
     assert.ok(cards.every(c => c.vars && c.tip && c.example));
   }
 
+  // Verify clock status transitions: ok -> warn (<= 15 min left) -> over (past limit, keeps running)
+  demo.selectSubjectGroup('DEMO180');
+  assert.equal(demo.timeLimitSeconds.value, 180 * 60);
+  demo.elapsedSeconds.value = 100;
+  assert.equal(demo.clockStatus.value, 'ok');
+  demo.elapsedSeconds.value = 165 * 60; // 15 min remaining
+  assert.equal(demo.clockStatus.value, 'warn');
+  demo.elapsedSeconds.value = 185 * 60; // 5 min overtime, continues running
+  assert.equal(demo.clockStatus.value, 'over');
+  assert.equal(demo.elapsedFormatted.value, '03:05:00');
+
   // Verify finish() grades by general group (Etapa › Materia) and lists wrong items
   demo.selectSubjectGroup('DEMO180');
   const firstItem = demo.sessionItems.value[0];

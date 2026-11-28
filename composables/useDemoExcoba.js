@@ -359,6 +359,14 @@
     const totalCount = computed(() => sessionItems.value.length);
     const answeredCount = computed(() => sessionItems.value.filter(it => isDemoItemAnswered(it, answers.value[it.id])).length);
     const elapsedFormatted = computed(() => formatSeconds(elapsedSeconds.value));
+    // Tiempo oficial de referencia: 1 min por reactivo (mín. 20 min, tope 3 h = 180 min para 180+)
+    const timeLimitSeconds = computed(() => Math.min(180, Math.max(20, totalCount.value || 180)) * 60);
+    const remainingSeconds = computed(() => timeLimitSeconds.value - elapsedSeconds.value);
+    const clockStatus = computed(() => {
+      if (remainingSeconds.value <= 0) return 'over';
+      if (remainingSeconds.value <= 15 * 60) return 'warn';
+      return 'ok';
+    });
     const activeTitle = computed(() => {
       if (selectionMode.value === 'package') return activePackage.value?.subject || 'EXCOBA';
       return activeSubjectGroup.value?.label || 'EXCOBA';
@@ -470,7 +478,8 @@
       availableTopics, topicsByStage,
       selectionMode, selectedSubjectKey, selectedPackageId, selectedTopicRef,
       sessionItems, currentIndex, currentItem, totalCount, answeredCount,
-      answers, showResults, hasFinished, elapsedSeconds, elapsedFormatted, resultsSummary,
+      answers, showResults, hasFinished, elapsedSeconds, elapsedFormatted,
+      timeLimitSeconds, remainingSeconds, clockStatus, resultsSummary,
       startClock, stopClock, selectSubjectGroup, regenerateDemo180, selectPackage, selectTopic, setAnswer, goTo,
       prev: () => goTo(currentIndex.value - 1),
       next: () => goTo(currentIndex.value + 1),
