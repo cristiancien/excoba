@@ -29,16 +29,30 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
   assert.equal(demo.reactivosPerTopic, 20);
   assert.equal(demo.totalReactivos, 2520);
   assert.equal(demo.packages.length, 10); // 1 showcase (70) + 9 Temario (2,520)
-  // Default view is the random 180-question Demostrativo covering ALL 126 topics
-  assert.equal(demo.totalCount.value, 180);
-  const demoTopics = new Set(demo.sessionItems.value.filter(i => !i.isOriginal).map(i => i.topicRef));
-  assert.equal(demoTopics.size, 126, 'Demostrativo 180 must include all 126 curriculum topics');
-  assert.equal(new Set(demo.sessionItems.value.map(i => i.id)).size, 180, 'Demostrativo 180 items must be distinct');
+  // Default view is the random 180-question Demostrativo in strict Temario.pdf order (9 blocks x 20 = 180)
+  const expectedPkgOrder = [170, 171, 172, 173, 174, 175, 176, 177, 178];
+  const verifyStrictTemario180 = (items) => {
+    assert.equal(items.length, 180);
+    assert.equal(new Set(items.map(i => i.id)).size, 180, 'Demostrativo 180 items must be distinct');
+    expectedPkgOrder.forEach((pkgId, blockIdx) => {
+      const slice = items.slice(blockIdx * 20, (blockIdx + 1) * 20);
+      assert.equal(slice.length, 20);
+      const pkg = demo.packages.find(p => p.id === pkgId);
+      const topicIdx = new Map(pkg.topics.map((t, idx) => [t.ref, idx]));
+      let prevTopic = -1;
+      for (const it of slice) {
+        assert.equal(it.packageId, pkgId, `Block ${blockIdx} must stay strictly in package ${pkgId}`);
+        const curTopic = topicIdx.get(it.topicRef);
+        assert.ok(curTopic >= prevTopic, `Topics inside package ${pkgId} must stay in strict Temario.pdf order`);
+        prevTopic = curTopic;
+      }
+    });
+  };
+  verifyStrictTemario180(demo.sessionItems.value);
 
-  // Verify regenerateDemo180 keeps 180 distinct items covering all 126 topics
+  // Verify regenerateDemo180 keeps exact 9 x 20 strict Temario.pdf order
   demo.regenerateDemo180();
-  assert.equal(demo.totalCount.value, 180);
-  assert.equal(new Set(demo.sessionItems.value.filter(i => !i.isOriginal).map(i => i.topicRef)).size, 126);
+  verifyStrictTemario180(demo.sessionItems.value);
 
   // Verify subject-group aggregation exposes Demostrativo (180), all 2,520 temario items grouped by subject + 70 interactive
   const grpByKey = Object.fromEntries(demo.subjectGroups.map(g => [g.key, g.count]));
@@ -47,6 +61,21 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
   assert.equal(grpByKey['Matemáticas'], 1000);
   assert.equal(grpByKey['Español'], 320);
   assert.equal(grpByKey.ALL, 2520);
+  // Verify every subject group stays strictly ordered by Temario.pdf curriculum sequence
+  const curriculumRank = new Map();
+  let r = 0;
+  for (const p of demo.packages.filter(p => !p.isOriginal)) {
+    for (const t of p.topics) curriculumRank.set(`${p.id}:${t.ref}`, r++);
+  }
+  for (const key of ['Español', 'Matemáticas', 'Ciencias Naturales', 'Ciencias Sociales', 'Física', 'Lenguaje', 'ALL']) {
+    demo.selectSubjectGroup(key);
+    let prev = -1;
+    for (const it of demo.sessionItems.value) {
+      const rank = curriculumRank.get(`${it.packageId}:${it.topicRef}`);
+      assert.ok(rank !== undefined && rank >= prev, `${key} must stay in strict Temario.pdf order`);
+      prev = rank;
+    }
+  }
   demo.selectSubjectGroup('Matemáticas');
   assert.equal(demo.totalCount.value, 1000);
   assert.equal(demo.topicsByStage.value.length, 3);

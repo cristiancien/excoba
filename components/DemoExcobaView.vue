@@ -35,11 +35,11 @@
     <!-- Selector de tema agrupado por etapa -->
     <section class="demo-selector">
       <label class="wide">
-        <span>{{ (demo.activeSubjectGroup?.isOriginal || demo.activeSubjectGroup?.isDemo180) ? 'Filtrar por asignatura' : 'Tema (agrupado por etapa educativa)' }}</span>
+        <span>{{ demo.activeSubjectGroup?.isDemo180 ? 'Bloque en orden del temario (20 por materia)' : demo.activeSubjectGroup?.isOriginal ? 'Filtrar por asignatura' : 'Tema (agrupado por etapa educativa)' }}</span>
         <select :value="demo.selectedTopicRef" @change="onTopicChange($event.target.value)">
           <option value="">
             {{ demo.activeSubjectGroup?.isDemo180
-              ? `Examen aleatorio completo · todos los temas (${demo.activeSubjectGroup.count})`
+              ? `Examen completo en orden del temario · 9 materias × 20 (${demo.activeSubjectGroup.count})`
               : demo.activeSubjectGroup?.isOriginal
                 ? `Todas las asignaturas (${demo.activeSubjectGroup.count})`
                 : `Todos los reactivos de ${demo.activeTitle} (${demo.activeSubjectGroup?.count?.toLocaleString('es-MX') || 0})` }}

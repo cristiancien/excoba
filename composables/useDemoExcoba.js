@@ -23,35 +23,63 @@
     return arr;
   }
 
-  // Construye un examen demostrativo aleatorio de 180 reactivos cubriendo los 126 temas + formatos interactivos
-  function buildRandomDemo180(allItems, targetCount = 180) {
-    const byTopic = new Map();
-    const showcase = [];
-    for (const it of allItems) {
-      if (it.isOriginal) { showcase.push(it); continue; }
-      if (!byTopic.has(it.topicRef)) byTopic.set(it.topicRef, []);
-      byTopic.get(it.topicRef).push(it);
-    }
+  // Construye un examen demostrativo aleatorio de 180 reactivos siguiendo
+  // estrictamente el orden de Temario.pdf: 20 reactivos aleatorios de cada
+  // una de las 9 materias/bloques del temario (9 x 20 = 180).
+  function buildRandomDemo180(packages, allItems, perPackage = 20) {
+    const temarioPkgs = (packages || []).filter(p => !p.isOriginal);
     const chosen = [];
-    const seen = new Set();
-    // 1 reactivo aleatorio de cada uno de los 126 temas del temario (100% cobertura)
-    for (const list of byTopic.values()) {
-      const pick = list[Math.floor(Math.random() * list.length)];
-      if (pick && !seen.has(pick.id)) {
-        chosen.push(pick);
-        seen.add(pick.id);
+
+    for (const pkg of temarioPkgs) {
+      const pkgItems = allItems.filter(it => !it.isOriginal && it.packageId === pkg.id);
+      const topicOrder = new Map((pkg.topics || []).map((t, idx) => [t.ref, idx]));
+      const byTopic = new Map();
+      for (const it of pkgItems) {
+        if (!byTopic.has(it.topicRef)) byTopic.set(it.topicRef, []);
+        byTopic.get(it.topicRef).push(it);
       }
-    }
-    // Completar hasta 180 priorizando la muestra interactiva (todos los formatos EXCOBA) y luego resto del temario
-    const extras = [...shuffleArray(showcase), ...shuffleArray(allItems.filter(it => !it.isOriginal && !seen.has(it.id)))];
-    for (const cand of extras) {
-      if (chosen.length >= targetCount) break;
-      if (!seen.has(cand.id)) {
-        chosen.push(cand);
-        seen.add(cand.id);
+
+      const orderedRefs = (pkg.topics || []).map(t => t.ref).filter(r => byTopic.has(r));
+      const picked = [];
+      const seen = new Set();
+
+      if (orderedRefs.length <= perPackage) {
+        // 1 reactivo aleatorio de cada subtema + completar aleatoriamente hasta 20 dentro del mismo bloque
+        for (const ref of orderedRefs) {
+          const pool = byTopic.get(ref);
+          const pick = pool[Math.floor(Math.random() * pool.length)];
+          if (pick && !seen.has(pick.id)) { picked.push(pick); seen.add(pick.id); }
+        }
+        const remRefs = shuffleArray(orderedRefs);
+        let cursor = 0;
+        while (picked.length < perPackage && cursor < remRefs.length * 20) {
+          const ref = remRefs[cursor % remRefs.length];
+          cursor++;
+          const avail = byTopic.get(ref).filter(it => !seen.has(it.id));
+          if (!avail.length) continue;
+          const pick = avail[Math.floor(Math.random() * avail.length)];
+          picked.push(pick);
+          seen.add(pick.id);
+        }
+      } else {
+        // Más de 20 subtemas en el bloque: elegir 20 subtemas al azar (1 reactivo aleatorio c/u)
+        for (const ref of shuffleArray(orderedRefs).slice(0, perPackage)) {
+          const pool = byTopic.get(ref);
+          const pick = pool[Math.floor(Math.random() * pool.length)];
+          if (pick && !seen.has(pick.id)) { picked.push(pick); seen.add(pick.id); }
+        }
       }
+
+      // Mantener estrictamente el orden del temario dentro de los 20 del bloque (subtema -> nivel)
+      picked.sort((a, b) => {
+        const ta = topicOrder.get(a.topicRef) ?? 9999;
+        const tb = topicOrder.get(b.topicRef) ?? 9999;
+        return ta !== tb ? ta - tb : (a.level - b.level);
+      });
+      chosen.push(...picked.slice(0, perPackage));
     }
-    return shuffleArray(chosen);
+
+    return chosen;
   }
 
   function parseNumericAnswer(raw) {
@@ -160,17 +188,20 @@
     const packages = raw.packages || [];
     const allItems = raw.items || [];
 
-    const demo180Items = ref(buildRandomDemo180(allItems, 180));
+    const demo180Items = ref(buildRandomDemo180(packages, allItems, 20));
+    const demo180Topics = () => packages.filter(p => !p.isOriginal).map(p => ({
+      ref: String(p.id),
+      prefix: p.prefix,
+      title: `${p.prefix} · ${p.stage} · ${p.subject}`,
+      subject: `${p.prefix} · ${p.stage} · ${p.subject}`,
+      count: demo180Items.value.filter(it => it.packageId === p.id).length,
+      packageStage: p.stage,
+    }));
 
-    // Agrupaciones por materia que exponen el demostrativo aleatorio (180) + los 2,520 reactivos agrupados
+    // Agrupaciones por materia que exponen el demostrativo aleatorio (180 en orden del temario) + 2,520 por materia
     const subjectGroups = SUBJECT_GROUP_ORDER.map(def => {
       if (def.isDemo180) {
-        const bySubj = new Map();
-        for (const it of demo180Items.value) bySubj.set(it.subject, (bySubj.get(it.subject) || 0) + 1);
-        const topics = [...bySubj.entries()].map(([subj, count]) => ({
-          ref: subj, title: subj, subject: subj, count, packageStage: 'EXAMEN DEMOSTRATIVO',
-        }));
-        return { ...def, count: demo180Items.value.length, topics, packages: [] };
+        return { ...def, count: demo180Items.value.length, topics: demo180Topics(), packages: [] };
       }
       const idSet = new Set(def.packageIds);
       const pkgs = packages.filter(p => idSet.has(p.id));
@@ -195,11 +226,7 @@
 
     const availableTopics = computed(() => {
       if (selectionMode.value === 'package') return activePackage.value?.topics || [];
-      if (activeSubjectGroup.value?.isDemo180) {
-        const bySubj = new Map();
-        for (const it of demo180Items.value) bySubj.set(it.subject, (bySubj.get(it.subject) || 0) + 1);
-        return [...bySubj.entries()].map(([subj, count]) => ({ ref: subj, title: subj, subject: subj, count, packageStage: 'EXAMEN DEMOSTRATIVO' }));
-      }
+      if (activeSubjectGroup.value?.isDemo180) return demo180Topics();
       return activeSubjectGroup.value?.topics || [];
     });
 
@@ -213,6 +240,23 @@
       return [...map.entries()].map(([stage, topics]) => ({ stage, topics }));
     });
 
+    // Mapa canónico del orden estricto de Temario.pdf (bloque -> subtema -> posición)
+    const temarioOrderRank = new Map();
+    let globalTopicRank = 0;
+    for (const p of packages) {
+      if (p.isOriginal) continue;
+      for (const t of (p.topics || [])) {
+        temarioOrderRank.set(`${p.id}:${t.ref}`, globalTopicRank++);
+      }
+    }
+    const sortByTemarioOrder = list => [...list].sort((a, b) => {
+      const ra = temarioOrderRank.get(`${a.packageId}:${a.topicRef}`) ?? 999999;
+      const rb = temarioOrderRank.get(`${b.packageId}:${b.topicRef}`) ?? 999999;
+      if (ra !== rb) return ra - rb;
+      if (a.level !== b.level) return (a.level || 0) - (b.level || 0);
+      return String(a.id).localeCompare(String(b.id));
+    });
+
     const sessionItems = computed(() => {
       let pool;
       if (selectionMode.value === 'package') {
@@ -221,12 +265,16 @@
         pool = demo180Items.value;
       } else {
         const ids = new Set(activeSubjectGroup.value?.packageIds || []);
-        pool = ids.size ? allItems.filter(it => ids.has(it.packageId)) : allItems;
+        const rawPool = ids.size ? allItems.filter(it => ids.has(it.packageId)) : allItems;
+        pool = activeSubjectGroup.value?.isOriginal ? rawPool : sortByTemarioOrder(rawPool);
       }
       if (!selectedTopicRef.value) return pool;
+      if (selectionMode.value === 'subject' && activeSubjectGroup.value?.isDemo180) {
+        return pool.filter(it => String(it.packageId) === selectedTopicRef.value);
+      }
       const filterBySubject = selectionMode.value === 'package'
         ? Boolean(activePackage.value?.isOriginal)
-        : Boolean(activeSubjectGroup.value?.isOriginal || activeSubjectGroup.value?.isDemo180);
+        : Boolean(activeSubjectGroup.value?.isOriginal);
       if (filterBySubject) return pool.filter(it => it.subject === selectedTopicRef.value);
       return pool.filter(it => it.topicRef === selectedTopicRef.value);
     });
@@ -254,7 +302,7 @@
       elapsedSeconds.value = 0;
     }
     function regenerateDemo180() {
-      demo180Items.value = buildRandomDemo180(allItems, 180);
+      demo180Items.value = buildRandomDemo180(packages, allItems, 20);
       selectionMode.value = 'subject';
       selectedSubjectKey.value = 'DEMO180';
       selectedTopicRef.value = '';

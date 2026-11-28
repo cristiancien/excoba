@@ -77,7 +77,7 @@
         <template v-else-if="modal === 'guide'">
           <div class="ex-guide-block">
             <h4>Estructura del examen y materias</h4>
-            <p>Usa la barra superior para presentar el <strong>Examen Demostrativo aleatorio de 180 preguntas</strong> (que cubre los 126 temas del temario y todos los formatos interactivos) o recorrer los <strong>2,520 reactivos</strong> agrupados por materia (<strong>Español</strong>, <strong>Matemáticas</strong>, <strong>Ciencias Naturales</strong>, <strong>Ciencias Sociales</strong>, <strong>Física</strong> y <strong>Lenguaje</strong>).</p>
+            <p>Usa la barra superior para presentar el <strong>Examen Demostrativo aleatorio de 180 preguntas</strong> (20 reactivos aleatorios de cada una de las 9 materias siguiendo estrictamente el orden del temario) o recorrer los <strong>2,520 reactivos</strong> agrupados por materia (<strong>Español</strong>, <strong>Matemáticas</strong>, <strong>Ciencias Naturales</strong>, <strong>Ciencias Sociales</strong>, <strong>Física</strong> y <strong>Lenguaje</strong>).</p>
           </div>
           <div class="ex-guide-block">
             <h4>Navegación y guardado</h4>
