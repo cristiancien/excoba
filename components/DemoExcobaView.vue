@@ -68,7 +68,7 @@
 
     <!-- Escenario principal + panel escrolleable de reactivos -->
     <main class="demo-workspace">
-      <section class="demo-stage">
+      <section class="demo-stage" @touchstart.passive="onTouchStart" @touchend.passive="onTouchEnd">
         <template v-if="demo.showResults">
           <div class="demo-stage-head">
             <h2 class="demo-subject">Calificación · {{ demo.activeTitle }}</h2>
@@ -281,9 +281,28 @@ export default {
     watch(() => demo.currentIndex, () => {
       nextTick(() => {
         const curBtn = gridRef.value?.querySelector?.('.demo-gbtn.cur');
-        curBtn?.scrollIntoView?.({ block: 'nearest' });
+        curBtn?.scrollIntoView?.({ block: 'nearest', inline: 'center' });
       });
     });
+
+    // Deslizamiento horizontal táctil en teléfono para cambiar de reactivo
+    let touchStart = null;
+    const onTouchStart = ev => {
+      const t = ev.changedTouches?.[0];
+      if (!t || ev.touches.length > 1) { touchStart = null; return; }
+      touchStart = { x: t.clientX, y: t.clientY };
+    };
+    const onTouchEnd = ev => {
+      if (!touchStart || demo.showResults || activeModal.value || calcOpen.value) { touchStart = null; return; }
+      const t = ev.changedTouches?.[0];
+      if (!t) return;
+      const dx = t.clientX - touchStart.x;
+      const dy = t.clientY - touchStart.y;
+      touchStart = null;
+      if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        step(dx < 0 ? 1 : -1);
+      }
+    };
 
     const toggleModal = name => { activeModal.value = activeModal.value === name ? '' : name; };
     const onSubjectChange = key => { showItemReview.value = false; onlyWrongMode.value = false; demo.selectSubjectGroup(key); };
@@ -351,7 +370,7 @@ export default {
       demo, item, shortStageLabel, hasNumericFormatHint, clockTooltip,
       activeModal, calcOpen, formOpen, showFilters, showMetaDetail, showItemReview, onlyWrongMode, gridRef, visibleGridItems,
       canStep, toggleModal, onSubjectChange, onReshuffleDemo, onTopicChange, restartBlock, openGradedItem,
-      reviewWrongOnly, reviewFullGraded, toggleWrongFilter, step, jump,
+      reviewWrongOnly, reviewFullGraded, toggleWrongFilter, step, jump, onTouchStart, onTouchEnd,
     };
   },
 };
@@ -436,7 +455,7 @@ export default {
 .demo-wrong-chip{background:#3b151a;border:1px solid #f87171;color:#fecaca;border-radius:3px;padding:3px 7px;font-size:11px;font-weight:700;cursor:pointer}
 .demo-wrong-chip:hover{background:#7f1d1d;color:#fff}
 
-/* Responsivo denso para tablet y móvil */
+/* Responsivo denso para tablet y móvil (desplazamiento horizontal de preguntas) */
 @media(max-width:860px){
   .demo-shell{height:calc(100vh - .5rem);min-height:0}
   .demo-topbar{padding:5px 8px;gap:5px}
@@ -444,11 +463,12 @@ export default {
   .demo-workspace{grid-template-columns:1fr;grid-template-rows:1fr auto;gap:6px;padding:6px}
   .demo-stage{padding:10px 11px;gap:8px}
   .demo-sidebar{height:auto;padding:6px;gap:5px}
-  .demo-grid{grid-template-columns:repeat(10,1fr);max-height:92px}
+  .demo-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:4px;max-height:none;padding:2px 2px 4px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  .demo-gbtn{flex:0 0 auto;min-width:34px;padding:5px 6px;scroll-snap-align:center}
 }
 @media(max-width:520px){
   .demo-mbtn{padding:4px 6px;font-size:11px}
   .demo-clock{font-size:12px;padding:3px 6px}
-  .demo-grid{grid-template-columns:repeat(8,1fr);max-height:82px}
+  .demo-gbtn{min-width:32px;padding:5px 5px}
 }
 </style>

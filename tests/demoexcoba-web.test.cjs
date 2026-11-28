@@ -155,12 +155,23 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
   // Grade one item of each type across Temario items (non-original)
   const temarioItems = env.ctx.EXCOBA_DEMO_TEMARIO.items.filter(i => !i.isOriginal);
   assert.equal(temarioItems.length, 2520);
-  const t7 = temarioItems.find(i => i.tipo === 7);
+  // All 1,000 Math Temario items (packages 171, 173, 176) must be open input box (tipo 7)
+  const mathItems = temarioItems.filter(i => [171, 173, 176].includes(i.packageId));
+  assert.equal(mathItems.length, 1000);
+  assert.ok(mathItems.every(i => i.tipo === 7), 'Every Mathematics Temario item must be open input box (tipo 7)');
+
+  const t7 = temarioItems.find(i => i.tipo === 7 && Number.isFinite(i.numericValue));
+  const t7Alg = mathItems.find(i => i.numericValue === null);
   const t4 = temarioItems.find(i => i.tipo === 4);
   const t5 = temarioItems.find(i => i.tipo === 5);
 
   assert.equal(utils.gradeDemoItem(t7, { text: String(t7.numericValue) }), true);
   assert.equal(utils.gradeDemoItem(t7, { text: String(t7.numericValue + 9999) }), false);
+  if (t7Alg) {
+    assert.equal(utils.gradeDemoItem(t7Alg, { text: t7Alg.expectedText }), true);
+  }
+  assert.equal(utils.matchOpenMathExpression('-6, 6', 'x = -6; x = 6.'), true);
+  assert.equal(utils.matchOpenMathExpression('6, -6', 'x = -6; x = 6.'), true);
   // Automatic rounding to 2 decimals + power (^) syntax support
   assert.equal(utils.parseNumericAnswer('2^3'), 8);
   assert.equal(utils.parseNumericAnswer('10^-2'), 0.01);

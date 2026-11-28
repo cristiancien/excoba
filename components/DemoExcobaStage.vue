@@ -105,7 +105,7 @@
     <template v-else>
       <div v-if="item.tipo === 7" class="demo-num-box">
         <label :for="'demo-num-' + item.id">Respuesta:</label>
-        <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.14, 3/4 o 2^3" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @blur="normalizeTemarioNum" @keydown.enter.prevent="normalizeTemarioNum(); $emit('check-item')">
+        <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" :placeholder="item.numericValue !== null && item.numericValue !== undefined ? 'Ej. 42, 3.14, 3/4 o 2^3' : 'Ej. x^2 - 4, 2x+1 o -6, 6'" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @blur="normalizeTemarioNum" @keydown.enter.prevent="normalizeTemarioNum(); $emit('check-item')">
         <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
       </div>
 

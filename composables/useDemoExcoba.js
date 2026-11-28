@@ -111,6 +111,46 @@
     return Number.isFinite(num) ? num : null;
   }
 
+  function normalizeOpenMath(raw) {
+    return String(raw ?? '')
+      .replace(/\$/g, '')
+      .replace(/\\text\{([^{}]+)\}/g, '$1')
+      .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '($1)/($2)')
+      .replace(/\\sqrt\{([^{}]+)\}/g, 'sqrt($1)')
+      .replace(/\\times|\\cdot/g, '*').replace(/\\div/g, '/')
+      .replace(/\\pi/g, 'pi').replace(/\\pm/g, '+-')
+      .replace(/\\le/g, '<=').replace(/\\ge/g, '>=').replace(/\\neq/g, '!=')
+      .replace(/[{}]/g, '')
+      .replace(/−/g, '-').replace(/×/g, '*').replace(/÷/g, '/')
+      .replace(/\.+$/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, '')
+      .trim();
+  }
+
+  function matchOpenMathExpression(userRaw, expectedRaw) {
+    const u = normalizeOpenMath(userRaw);
+    const e = normalizeOpenMath(expectedRaw);
+    if (!u || !e) return false;
+    if (u === e) return true;
+    // Compara listas de soluciones separadas por ';' o ',' (ej. "x=-6;x=6" vs "-6, 6")
+    const splitParts = s => s.split(/[;,]/).map(p => p.replace(/^[a-z]=/i, '').trim()).filter(Boolean).sort();
+    const uParts = splitParts(u);
+    const eParts = splitParts(e);
+    if (uParts.length > 1 && uParts.length === eParts.length) {
+      return uParts.every((p, i) => {
+        if (p === eParts[i]) return true;
+        const un = parseNumericAnswer(p), en = parseNumericAnswer(eParts[i]);
+        return un !== null && en !== null && numbersMatchRounded(un, en, 0.01);
+      });
+    }
+    // Permite omitir "x=" si la clave trae "x=15"
+    const stripVar = s => s.replace(/^[a-z]=/i, '');
+    if (stripVar(u) === stripVar(e)) return true;
+    const un = parseNumericAnswer(stripVar(u)), en = parseNumericAnswer(stripVar(e));
+    return un !== null && en !== null && numbersMatchRounded(un, en, 0.01);
+  }
+
   function numbersMatchRounded(userNum, expectedNum, tol = 0.01) {
     if (userNum === null || !Number.isFinite(expectedNum)) return false;
     const u2 = roundToTwo(userNum);
@@ -217,8 +257,13 @@
     }
 
     if (item.tipo === 7) {
-      const userNum = parseNumericAnswer(answer.text ?? answer);
-      return numbersMatchRounded(userNum, Number(item.numericValue), Number(item.tolerance) || 0.01);
+      const rawText = String(answer.text ?? answer ?? '').trim();
+      if (!rawText) return false;
+      if (item.numericValue !== null && item.numericValue !== undefined && Number.isFinite(Number(item.numericValue))) {
+        const userNum = parseNumericAnswer(rawText);
+        if (numbersMatchRounded(userNum, Number(item.numericValue), Number(item.tolerance) || 0.01)) return true;
+      }
+      return matchOpenMathExpression(rawText, item.expectedText || item.correctAnswer);
     }
     if (item.tipo === 4) {
       const chosen = String(answer.optionId || '');
@@ -490,6 +535,6 @@
     };
   };
 
-  root.EXCOBA_DEMO_UTILS = { roundToTwo, parseNumericAnswer, numbersMatchRounded, formatAnswerPreview, gradeDemoItem, isDemoItemAnswered, formatSeconds, buildRandomDemo180 };
+  root.EXCOBA_DEMO_UTILS = { roundToTwo, parseNumericAnswer, numbersMatchRounded, matchOpenMathExpression, formatAnswerPreview, gradeDemoItem, isDemoItemAnswered, formatSeconds, buildRandomDemo180 };
   if (typeof module === 'object' && module.exports) module.exports = root.EXCOBA_DEMO_UTILS;
 })(typeof window !== 'undefined' ? window : globalThis);

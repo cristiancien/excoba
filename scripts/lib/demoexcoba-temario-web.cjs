@@ -133,6 +133,7 @@ function selectTwentyForTopic(ref, candidateBlocks, usedIds, fallbackPool) {
 
 function buildReactivo(raw, { ref, topicTitle, pkg, itemIdx, topicAnswerPool, areaAnswerPool }) {
   const seed = deterministicHash(`${ref}:${itemIdx}:${raw.uid}`);
+  const isMathPkg = ['1.2', '2.2', '3.2'].includes(pkg.prefix);
   const scalar = !REVIEW_REQUIRED.test(`${raw.q} ${raw.intro}`) ? parseScalar(raw.a) : null;
   const scalarVal = scalar ? Number(scalar.n) / Number(scalar.d) : NaN;
   const code = `T${ref.replace(/\./g, '_')}_${String(itemIdx + 1).padStart(2, '0')}`;
@@ -153,6 +154,19 @@ function buildReactivo(raw, { ref, topicTitle, pkg, itemIdx, topicAnswerPool, ar
     correctAnswer: cleanText(raw.a),
     explanation: cleanText(raw.work),
   };
+
+  // Todas las preguntas de Matemáticas son de respuesta abierta (input box, tipo 7)
+  if (isMathPkg) {
+    const numOk = scalar && Number.isFinite(scalarVal) && Math.abs(scalarVal) < 1e9;
+    return {
+      ...base,
+      tipo: 7,
+      numericValue: numOk ? Math.round(scalarVal * 10000) / 10000 : null,
+      tolerance: numOk ? (Number.isInteger(scalarVal) ? 0.01 : 0.05) : 0.01,
+      unit: numOk ? (scalar.unit || '') : '',
+      expectedText: stripLatex(raw.a),
+    };
+  }
 
   if (scalar && Number.isFinite(scalarVal) && Math.abs(scalarVal) < 1e9 && itemIdx % 4 !== 3) {
     return {
