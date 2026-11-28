@@ -46,7 +46,9 @@ Las respuestas numéricas simples se comparan mediante un analizador de fraccion
 
 ### Bancos EXCOBA-MD
 
-En el menú **Banco Markdown (.md)**, usa **Cargar archivo .md** o **Pegar Markdown**. Puedes iniciar una práctica de hasta 100 reactivos o usar los filtros en **Práctica por tema**. **Volver al banco base** recupera la sesión editorial guardada. El banco importado y su práctica duran mientras la página permanezca abierta.
+En **Banco Markdown (.md)** puedes cargar uno o varios archivos en una sola selección o usar **Pegar Markdown**. La selección admite hasta 2 MB y 1 000 reactivos en total. Puedes iniciar una práctica de hasta 100 reactivos, aplicar los filtros de **Práctica por tema** o recuperar la sesión editorial guardada con **Volver al banco base**. El banco importado y su práctica duran mientras la página permanezca abierta.
+
+**Descargar plantilla** guarda un ejemplo editable. Al terminar una sesión, **Descargar resumen** guarda un JSON con el banco, el puntaje, el tiempo y los conteos por tipo de evaluación.
 
 Puedes importar el [banco original de repaso de matemáticas](data/banco-repaso-matematicas.md) o usar la [plantilla EXCOBA-MD](data/ejemplo-banco.md) para escribir tus propios reactivos de opción múltiple, respuesta abierta y tabla. Para validar un archivo antes de cargarlo, ejecuta:
 

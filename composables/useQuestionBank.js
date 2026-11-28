@@ -79,7 +79,10 @@
       if (!bank.length) { sessionError.value = 'No hay ejercicios para esta selección.'; return false; }
       questions.value = bank; currentQuestionIndex.value = 0; answeredStatus.value = {}; sessionMode.value = mode; sessionFilters.value = filters; sessionError.value = ''; persist(); return true;
     }
-    function loadMarkdownBank(markdownText, label = '') {
+    function loadMarkdownBank(text, label = '') {
+      return loadMarkdownBanks([{ text, label }]);
+    }
+    function loadMarkdownBanks(documents) {
       const parser = root.EXCOBA_MARKDOWN_BANK || (typeof require === 'function' ? require('./markdownBank.js') : null);
       if (!parser || typeof parser.parseMarkdownBank !== 'function') {
         const error = 'El lector de bancos Markdown no está disponible.';
@@ -87,7 +90,40 @@
         return { ok: false, error };
       }
       try {
-        const parsed = parser.parseMarkdownBank(markdownText, label ? { title: label } : {});
+        if (!documents.length) throw new Error('Selecciona al menos un archivo Markdown.');
+        let questionCount = 0;
+        const banks = documents.map(({ text, label }) => {
+          let bank;
+          try {
+            bank = parser.parseMarkdownBank(text, label ? { title: label } : {});
+          } catch (error) {
+            throw new Error(label ? `${label}: ${error.message}` : error.message);
+          }
+          questionCount += bank.questions.length;
+          if (questionCount > parser.MAX_QUESTIONS) {
+            throw new Error(`La selección supera el máximo de ${parser.MAX_QUESTIONS} reactivos.`);
+          }
+          return bank;
+        });
+        const parsed = banks.length === 1 ? banks[0] : {
+          questions: banks.flatMap(({ questions }, index) => questions.map(question => ({
+            ...question,
+            id: `${index + 1}:${question.id}`,
+            themeId: `${index + 1}:${question.themeId}`
+          }))),
+          warnings: banks.flatMap(({ meta, warnings }) => warnings.map(warning => `${meta.title}: ${warning}`)),
+          meta: {
+            version: `md-batch:${banks.map(({ meta }) => meta.version).join(',')}`,
+            title: `${banks.length} bancos Markdown`,
+            titles: banks.map(({ meta }) => meta.title),
+            questionCount,
+            source: 'markdown',
+            byType: { multiple: 0, open: 0, table: 0 }
+          }
+        };
+        if (banks.length > 1) {
+          for (const question of parsed.questions) parsed.meta.byType[question.type]++;
+        }
         if (!customBank.value) {
           editorialSession = {
             questions: questions.value,
@@ -187,7 +223,7 @@
     return { questions, currentQuestionIndex, currentQuestion, totalQuestions, answeredStatus, sessionMode, sessionFilters, sessionStats, sessionError, persistenceWarning,
       catalogue, activeCatalogue, bankQuestionCount: allQuestions.length, activeBankCount, activeBankSource, activeBankMeta, activeBankWarnings,
       levelLabels: LEVEL_LABELS, getPracticePool, getPracticeCatalogue: filters => buildCatalogue(getPracticePool(filters)),
-      loadMarkdownBank, clearCustomBank, buildExamBank, buildPracticeBank, recordAnswer, resetBank, correctOptionText, progressPercentage, sectionsData, overallSolvedCount,
+      loadMarkdownBank, loadMarkdownBanks, clearCustomBank, buildExamBank, buildPracticeBank, recordAnswer, resetBank, correctOptionText, progressPercentage, sectionsData, overallSolvedCount,
       activeSectionTotal, activeSectionSolved, activeSectionProgress, activeTopicTotal, activeTopicSolved, activeTopicProgress, getSectionProgressText, getTopicProgressText, cleanQuestionText };
   };
   root.EXCOBA_BANK_UTILS = { filterQuestions, buildCatalogue, cleanAnswer, safeRead, SUBTEMA_MAP, STORAGE_KEY };

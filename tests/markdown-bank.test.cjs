@@ -147,6 +147,16 @@ test('Markdown practice preserves and restores the editorial session and its per
   assert.equal(state.score.value, 7);
   assert.equal(state.formattedTime.value, '00:00:02');
   assert.deepEqual(storage.data, persisted);
+  const summaryUri = state.sessionSummaryDownload.value;
+  assert.ok(summaryUri.startsWith('data:application/json;charset=utf-8,'));
+  const summary = JSON.parse(decodeURIComponent(summaryUri.slice(summaryUri.indexOf(',') + 1)));
+  assert.equal(summary.bank.source, 'markdown');
+  assert.equal(summary.mode, 'practice');
+  assert.equal(summary.total, 4);
+  assert.equal(summary.answered, 1);
+  assert.equal(summary.score, 7);
+  assert.equal(summary.elapsed, '00:00:02');
+  assert.equal(summary.grading.exactCorrect, 1);
 
   const reloaded = openApp().state;
   assert.equal(reloaded.currentScreen.value, 'menu');
@@ -182,6 +192,23 @@ test('Markdown practice preserves and restores the editorial session and its per
   assert.equal(state.totalQuestions.value, 0);
   assert.equal(state.score.value, 0);
   assert.equal(storage.getItem('excoba_session_v2'), null);
+
+  const file = (name, text) => ({ name, size: Buffer.byteLength(text), text: async () => text });
+  const first = file('Primero.md', SAMPLE_MARKDOWN);
+  const second = file('Segundo.md', SAMPLE_MARKDOWN);
+  await state.handleMarkdownFile({ target: { files: [first, second] } });
+  const merged = state.activeBankMeta.value;
+  assert.equal(merged.questionCount, 8);
+  assert.deepEqual({ ...merged.byType }, { multiple: 2, open: 4, table: 2 });
+  assert.equal(state.practiceThemes.value.length, 2);
+  assert.notEqual(state.practiceThemes.value[0].id, state.practiceThemes.value[1].id);
+
+  await state.handleMarkdownFile({ target: { files: [first, file('Inválido.md', 'sin reactivos')] } });
+  assert.match(state.markdownError.value, /Inválido/);
+  assert.equal(state.activeBankMeta.value.version, merged.version);
+  state.startMarkdownPractice();
+  const ids = state.questions.value.map(q => q.id);
+  assert.equal(new Set(ids).size, 8);
 });
 
 test('markdownBank CLI validates data/ejemplo-banco.md cleanly to stdout', () => {

@@ -8,3 +8,11 @@ node_modules/
 dist/
 .DS_Store
 .env
+
+# Local reverse-engineering / proprietary assets (kept local only)
+Licenciatura 2026-2/
+recovered/
+patch/
+research/
+HANDOFF.md
+tests/demoexcoba-packer.test.cjs

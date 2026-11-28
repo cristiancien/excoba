@@ -11,8 +11,11 @@
       </transition>
     </teleport>
 
-    <!-- 1. PANTALLA: MENÚ PRINCIPAL -->
-    <transition name="fade" mode="out-in">
+    <!-- 0. MODO RÉPLICA DEMOEXCOBA.EXE (20 reactivos x 126 temas de Temario.pdf) -->
+    <DemoExcobaView v-if="uiMode === 'demoexcoba'" @switch-classic="setUiMode('classic')" />
+
+    <!-- 1. PANTALLA: MENÚ PRINCIPAL (Interfaz actual intacta) -->
+    <transition v-else name="fade" mode="out-in">
       <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem; position: relative;">
         
         <!-- Versión del Simulador -->
@@ -76,6 +79,19 @@
             </h3>
             
             <div style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Selector de Interfaz: Actual vs Réplica DemoExcoba.exe -->
+              <div class="glass-panel" style="padding: 1rem 1.2rem; border-radius: 16px; border: 2px solid var(--secondary); background: rgba(16, 185, 129, 0.06); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 240px;">
+                  <span style="font-size: 1rem; font-weight: 800; color: var(--text-main);">Interfaz Réplica DemoExcoba.exe</span>
+                  <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
+                    Experiencia interactiva SVG/Canvas/LaTeX · 70 reactivos muestra + 20 por cada uno de los 126 temas de Temario.pdf (2 520 reactivos)
+                  </span>
+                </div>
+                <button type="button" @click="setUiMode('demoexcoba')" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.88rem; border-radius: 12px; font-weight: 800;">
+                  Abrir Réplica DemoExcoba
+                </button>
+              </div>
+
               <!-- Tarjeta 1: Especialidad de Arquitectura & Diseño (Activa) -->
               <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 2px solid var(--primary); background: rgba(79, 70, 229, 0.04); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
                 <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 250px;">
@@ -126,9 +142,10 @@
                   <span class="md-symbol">M↓</span>
                 </div>
                 <div class="md-actions">
-                  <label class="btn btn-secondary md-file-btn">Cargar archivo .md<input type="file" accept=".md,.markdown,.txt" @change="handleMarkdownFile" hidden></label>
+                  <label class="btn btn-secondary md-file-btn">Cargar archivos .md<input type="file" accept=".md,.markdown,.txt" @change="handleMarkdownFile" multiple hidden></label>
                   <button type="button" class="btn btn-secondary" @click="showMarkdownEditor=!showMarkdownEditor">{{ showMarkdownEditor ? 'Ocultar editor' : 'Pegar Markdown' }}</button>
                   <button type="button" class="btn text-button" @click="loadSampleMarkdown">Cargar ejemplo</button>
+                  <a class="btn text-button" href="./data/ejemplo-banco.md" download="plantilla-excoba.md">Descargar plantilla</a>
                 </div>
                 <div v-if="showMarkdownEditor" class="md-editor">
                   <textarea v-model="markdownInput" rows="7" placeholder="## Q1 | multiple | Álgebra&#10;¿Cuánto es $2+2$?&#10;- [ ] 3&#10;- [x] 4&#10;!explicacion: $2+2=4$."></textarea>
@@ -412,6 +429,7 @@
                   <p><strong>Autorrevisión</strong><span>{{ sessionStats.selfCorrect }} coincidencias declaradas de {{ sessionStats.self }}</span></p>
                   <small>{{ totalQuestions-overallSolvedCount }} sin responder. La autorrevisión no suma puntos de comprobación automática.</small>
                 </div>
+                <a class="btn btn-secondary" :href="sessionSummaryDownload" download="excoba-resumen.json">Descargar resumen</a>
                 <br>
                 <button class="btn btn-primary" @click="returnToMenu" style="padding: 14px 32px; font-size: 1.15rem;">Volver al Inicio</button>
               </div>
@@ -863,7 +881,8 @@ export default {
   components: {
     QuizView: Vue.defineAsyncComponent(() => loadModule('./components/QuizView.vue', options)),
     FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options)),
-    SettingsPanel: Vue.defineAsyncComponent(() => loadModule('./components/SettingsPanel.vue', options))
+    SettingsPanel: Vue.defineAsyncComponent(() => loadModule('./components/SettingsPanel.vue', options)),
+    DemoExcobaView: Vue.defineAsyncComponent(() => loadModule('./components/DemoExcobaView.vue', options))
   },
   setup() {
     // --- Composable Injection (DI pattern via window) ---
@@ -879,6 +898,13 @@ export default {
     const scoring = computed(() => isMarkdown.value ? markdownScoring : editorialScoring);
 
     // --- Local UI State ---
+    let savedUiMode = 'classic';
+    try { if (localStorage.getItem('excoba_ui_mode_v1') === 'demoexcoba') savedUiMode = 'demoexcoba'; } catch (_) {}
+    const uiMode = ref(savedUiMode);
+    const setUiMode = (mode) => {
+      uiMode.value = mode === 'demoexcoba' ? 'demoexcoba' : 'classic';
+      try { localStorage.setItem('excoba_ui_mode_v1', uiMode.value); } catch (_) {}
+    };
     let savedScreen='menu';
     try { if(localStorage.getItem('excoba_current_screen')==='exam'&&bank.questions.value.length) savedScreen='exam'; } catch (_) {}
     const currentScreen = ref(savedScreen);
@@ -980,16 +1006,17 @@ export default {
       bank.sectionsData.value.forEach(section=>{expandedSections.value[section.name]=true;});timer.value.startTimer();
     };
     const startPractice=()=>beginPractice(practiceFilters.value);
-    const loadMarkdownInput=(text,label='')=>{
+    const activateMarkdownDocuments = documents => {
       markdownLoadVersion++;
       markdownError.value='';
-      const result=bank.loadMarkdownBank(text,label);
+      const result=bank.loadMarkdownBanks(documents);
       if(!result.ok){markdownError.value=result.error||'No se pudo cargar el banco Markdown.';return false;}
       markdownTimer.resetTimers();
       markdownScoring.resetScoring();
       clearPracticeFilters();
       return true;
     };
+    const loadMarkdownInput = (text, label = '') => activateMarkdownDocuments([{ text, label }]);
     const applyMarkdownText=()=>{if(loadMarkdownInput(markdownInput.value))showMarkdownEditor.value=false;};
     const loadSampleMarkdown=()=>{
       const sample=window.EXCOBA_MARKDOWN_BANK?.SAMPLE_MARKDOWN||'';
@@ -999,23 +1026,28 @@ export default {
     };
     const handleMarkdownFile=async(event)=>{
       const input = event?.target;
-      const file = input?.files?.[0];
-      if (!file) return;
+      const files = Array.from(input?.files || []);
+      if (!files.length) return;
       input.value = '';
       const version = ++markdownLoadVersion;
       const maxBytes = window.EXCOBA_MARKDOWN_BANK?.MAX_INPUT_BYTES || 2 * 1024 * 1024;
-      if (file.size > maxBytes) {
-        markdownError.value = 'El archivo Markdown excede el límite de 2 MB.';
+      if (files.reduce((bytes, file) => bytes + file.size, 0) > maxBytes) {
+        markdownError.value = 'Los archivos Markdown exceden el límite conjunto de 2 MB.';
         return;
       }
-      const text = await file.text().catch(() => null);
+      const documents = await Promise.all(files.map(async file => ({
+        text: await file.text(),
+        label: file.name.replace(/\.[^.]+$/, '')
+      }))).catch(() => null);
       if (version !== markdownLoadVersion || currentScreen.value !== 'menu') return;
-      if (text === null) {
-        markdownError.value = 'No se pudo leer el archivo seleccionado.';
+      if (documents === null) {
+        markdownError.value = 'No se pudieron leer los archivos seleccionados.';
         return;
       }
-      markdownInput.value = text;
-      loadMarkdownInput(text, file.name.replace(/\.[^.]+$/, ''));
+      if (activateMarkdownDocuments(documents)) {
+        markdownInput.value = documents.length === 1 ? documents[0].text : '';
+        showMarkdownEditor.value = false;
+      }
     };
     const startMarkdownPractice=()=>beginPractice({count:bank.activeBankCount.value,ordered:practiceOrdered.value});
     const restoreDefaultBank=()=>{
@@ -1138,10 +1170,25 @@ export default {
       }
     };
 
+    const sessionSummaryDownload = computed(() => {
+      const meta = bank.activeBankMeta.value;
+      const summary = {
+        version: 1,
+        bank: { title: meta.title, source: meta.source, version: meta.version, ...(meta.titles && { titles: meta.titles }) },
+        mode: bank.sessionMode.value,
+        total: bank.totalQuestions.value,
+        answered: bank.overallSolvedCount.value,
+        score: scoring.value.score.value,
+        elapsed: timer.value.formattedTime.value,
+        grading: bank.sessionStats.value
+      };
+      return `data:application/json;charset=utf-8,${encodeURIComponent(JSON.stringify(summary, null, 2))}`;
+    });
+
     // --- Public API (flat spread for template simplicity) ---
     return {
       showSettings,showResetConfirm,resetProgress,lastGradingMethod,lastModelFeedback,practiceSection,practiceTopic,practiceThemeId,practiceLevel,practiceSkill,practiceCount,practiceOrdered,
-      practiceSections,practiceTopics,practiceThemes,practiceSkills,practiceAvailable,startPractice,returnToMenu,
+      practiceSections,practiceTopics,practiceThemes,practiceSkills,practiceAvailable,startPractice,returnToMenu,sessionSummaryDownload,
       showMarkdownEditor,markdownInput,markdownError,loadMarkdownInput,applyMarkdownText,loadSampleMarkdown,handleMarkdownFile,startMarkdownPractice,restoreDefaultBank,
       catalogue:bank.catalogue,activeCatalogue:bank.activeCatalogue,bankQuestionCount:bank.bankQuestionCount,activeBankCount:bank.activeBankCount,activeBankSource:bank.activeBankSource,activeBankMeta:bank.activeBankMeta,activeBankWarnings:bank.activeBankWarnings,levelLabels:bank.levelLabels,sessionError:bank.sessionError,sessionStats:bank.sessionStats,persistenceWarning:bank.persistenceWarning,
       // Question bank
@@ -1196,6 +1243,8 @@ export default {
       comparisonResults: calc.comparisonResults,
 
       // UI state
+      uiMode,
+      setUiMode,
       currentScreen,
       isPaused,
       showExitWarning,
