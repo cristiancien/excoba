@@ -1,5 +1,5 @@
 <template>
-  <div class="app-layout" style="max-width: 1300px; margin: 0 auto; padding: 1.5rem; position: relative; z-index: 1;">
+  <div class="app-layout" :class="{ 'excoba-full': uiMode === 'demoexcoba' }" style="max-width: 1300px; margin: 0 auto; padding: 1.5rem; position: relative; z-index: 1;">
     
     <teleport to=".animated-bg">
       <transition name="fade">

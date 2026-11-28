@@ -7,7 +7,6 @@
         <span v-if="item.tipo === 7">Resuelve el problema y escribe el valor numérico exacto en el recuadro.</span>
         <span v-else-if="item.tipo === 4">Lee el planteamiento, haz clic en el espacio subrayado y selecciona la opción correcta.</span>
         <span v-else-if="item.tipo === 5">Selecciona cada tarjeta y haz clic en la categoría correspondiente.</span>
-        <small class="demo-topic-caption">{{ item.topicTitle }}</small>
       </template>
     </div>
 
@@ -356,11 +355,10 @@ export default {
 </script>
 
 <style scoped>
-.stage-body{display:flex;flex-direction:column;gap:12px}
-.demo-instructions{background:#12161d;border-left:3px solid #2bc1ff;padding:10px 12px;font-size:13px;color:#e5e7eb;display:flex;flex-direction:column;gap:4px}
-.demo-topic-caption{color:#9ca3af;font-size:11px}
-.demo-stimulus{background:#141923;border:1px solid #2d3748;padding:10px 12px;border-radius:4px;font-size:13px;line-height:1.5;color:#dbeafe}
-.demo-prompt{font-size:15px;line-height:1.6;color:#fff}
+.stage-body{display:flex;flex-direction:column;gap:9px}
+.demo-instructions{background:#12161d;border-left:3px solid #2bc1ff;padding:7px 10px;font-size:12.5px;color:#e5e7eb;display:flex;flex-direction:column;gap:3px}
+.demo-stimulus{background:#141923;border:1px solid #2d3748;padding:8px 10px;border-radius:4px;font-size:12.5px;line-height:1.45;color:#dbeafe}
+.demo-prompt{font-size:14.5px;line-height:1.52;color:#fff}
 .demo-prompt :deep(a){color:#2bc1ff;text-decoration:underline;cursor:pointer;padding:1px 5px;border-radius:3px}
 .demo-prompt :deep(a.inline-tok){background:#1a2538;border:1px solid #2bc1ff;text-decoration:none;font-weight:700;display:inline-block;margin:0 2px}
 .demo-prompt :deep(a.inline-tok.filled){background:#0d2d26;border-color:#00d8b3;color:#00d8b3}

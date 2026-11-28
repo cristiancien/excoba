@@ -1,42 +1,48 @@
 <template>
   <div class="demo-shell">
-    <!-- Barra superior estilo EXCOBA -->
+    <!-- Barra superior densa estilo EXCOBA -->
     <header class="demo-topbar">
       <div class="demo-brand">
         <span class="demo-badge">EXCOBA</span>
-        <span class="demo-sub">Examen de Competencias Básicas</span>
+        <button type="button" class="demo-filter-toggle" :class="{ open: showFilters }" @click="showFilters = !showFilters">
+          <span>{{ demo.activeTitle }} ({{ demo.totalCount }})</span>
+          <span class="demo-caret">{{ showFilters ? '▴' : '▾' }}</span>
+        </button>
+        <button v-if="demo.activeSubjectGroup?.isDemo180" type="button" class="demo-mbtn demo-cyan-btn demo-compact-btn" @click="onReshuffleDemo" title="Generar nuevo examen aleatorio">
+          ↻ Nuevo
+        </button>
       </div>
+
       <div class="demo-toolbar">
         <button type="button" class="demo-mbtn" :class="{ active: activeModal === 'help' }" @click="toggleModal('help')">Cómo responder</button>
         <button type="button" class="demo-mbtn" :class="{ active: activeModal === 'guide' }" @click="toggleModal('guide')">Guía</button>
         <button type="button" class="demo-mbtn" :class="{ active: formOpen }" @click="formOpen = !formOpen">Formulario</button>
         <button type="button" class="demo-mbtn" :class="{ active: calcOpen }" @click="calcOpen = !calcOpen">Calculadora</button>
         <button type="button" class="demo-mbtn demo-finish" @click="demo.finish()">Finalizar</button>
-        <button type="button" class="demo-mbtn demo-switch" @click="$emit('switch-classic')">← Menú principal</button>
+        <button type="button" class="demo-mbtn demo-switch" @click="$emit('switch-classic')">← Menú</button>
       </div>
+
       <div class="demo-clock" :class="demo.clockStatus" :title="clockTooltip">{{ demo.elapsedFormatted }}</div>
     </header>
 
-    <!-- Barra rápida por materia (acceso directo a los 70 demostrativos + 2,520 del temario) -->
-    <nav class="demo-subjects" aria-label="Materias del examen">
-      <button
-        v-for="grp in demo.subjectGroups"
-        :key="grp.key"
-        type="button"
-        class="demo-subj-pill"
-        :class="{ active: demo.selectedSubjectKey === grp.key }"
-        @click="onSubjectChange(grp.key)"
-      >
-        <span>{{ grp.label }}</span>
-        <small>{{ grp.count.toLocaleString('es-MX') }}</small>
-      </button>
-    </nav>
+    <!-- Área de selección de materia y tema (colapsada por defecto) -->
+    <section v-if="showFilters" class="demo-filter-drawer">
+      <nav class="demo-subjects" aria-label="Materias del examen">
+        <button
+          v-for="grp in demo.subjectGroups"
+          :key="grp.key"
+          type="button"
+          class="demo-subj-pill"
+          :class="{ active: demo.selectedSubjectKey === grp.key }"
+          @click="onSubjectChange(grp.key)"
+        >
+          <span>{{ grp.label }}</span>
+          <small>{{ grp.count.toLocaleString('es-MX') }}</small>
+        </button>
+      </nav>
 
-    <!-- Selector de tema agrupado por etapa -->
-    <section class="demo-selector">
-      <label class="wide">
-        <span>{{ demo.activeSubjectGroup?.isDemo180 ? 'Bloque en orden del temario (20 por materia)' : demo.activeSubjectGroup?.isOriginal ? 'Filtrar por asignatura' : 'Tema (agrupado por etapa educativa)' }}</span>
-        <select :value="demo.selectedTopicRef" @change="onTopicChange($event.target.value)">
+      <div class="demo-topic-bar">
+        <select :value="demo.selectedTopicRef" aria-label="Seleccionar tema" @change="onTopicChange($event.target.value)">
           <option value="">
             {{ demo.activeSubjectGroup?.isDemo180
               ? `Examen completo en orden del temario · 9 materias × 20 (${demo.activeSubjectGroup.count})`
@@ -57,31 +63,16 @@
             </optgroup>
           </template>
         </select>
-      </label>
-
-      <div class="demo-selector-right">
-        <button v-if="demo.activeSubjectGroup?.isDemo180" type="button" class="demo-mbtn demo-cyan-btn demo-reshuffle" @click="onReshuffleDemo" title="Generar un nuevo examen aleatorio de 180 reactivos">
-          ↻ Nuevo aleatorio
-        </button>
-        <form class="demo-jump-form" @submit.prevent="jumpByNumber">
-          <label>
-            <span>Ir al reactivo #</span>
-            <div class="demo-jump-row">
-              <input v-model="jumpInput" type="number" min="1" :max="demo.totalCount" :placeholder="`1–${demo.totalCount}`" class="demo-jump-inp" />
-              <button type="submit" class="demo-mbtn">Ir</button>
-            </div>
-          </label>
-        </form>
       </div>
     </section>
 
-    <!-- Escenario principal + panel de reactivos -->
+    <!-- Escenario principal + panel escrolleable de reactivos -->
     <main class="demo-workspace">
       <section class="demo-stage">
         <template v-if="demo.showResults">
           <div class="demo-stage-head">
             <h2 class="demo-subject">Calificación · {{ demo.activeTitle }}</h2>
-            <span class="demo-meta">Tiempo: {{ demo.elapsedFormatted }}</span>
+            <span class="demo-meta">{{ demo.elapsedFormatted }}</span>
           </div>
           <div class="demo-score-bar">
             <p class="demo-score-banner">
@@ -89,7 +80,7 @@
               ({{ demo.resultsSummary.percentage }}%)
             </p>
             <span class="demo-wrong-pill" :class="{ clean: demo.resultsSummary.totalWrong === 0 }">
-              {{ demo.resultsSummary.totalWrong === 0 ? 'Sin errores' : `${demo.resultsSummary.totalWrong} equivocadas o sin responder` }}
+              {{ demo.resultsSummary.totalWrong === 0 ? 'Sin errores' : `${demo.resultsSummary.totalWrong} equivocadas` }}
             </span>
           </div>
 
@@ -100,7 +91,7 @@
             <button type="button" class="demo-mbtn demo-cyan-btn" @click="reviewFullGraded">
               Ver examen calificado
             </button>
-            <button type="button" class="demo-mbtn" @click="restartBlock">Reintentar bloque</button>
+            <button type="button" class="demo-mbtn" @click="restartBlock">Reintentar</button>
           </div>
 
           <div v-if="demo.resultsSummary.totalWrong === 0" class="demo-perfect-box">
@@ -131,22 +122,25 @@
 
         <template v-else-if="item">
           <div class="demo-stage-head">
-            <h2 class="demo-subject">
-              {{ item.subject }}
-              <span v-if="demo.hasFinished" class="demo-grade-tag" :class="demo.isCorrect(item) ? 'ok' : 'bad'">
-                {{ demo.isCorrect(item) ? '✓ Correcta' : '✕ Equivocada' }}
-              </span>
-            </h2>
-            <div class="demo-head-right">
-              <span class="demo-meta">
-                Reactivo {{ demo.currentIndex + 1 }} de {{ demo.totalCount }}<template v-if="!item.isOriginal"> · {{ item.stage }} · Tema {{ item.topicRef }}</template>
-              </span>
-              <template v-if="demo.hasFinished">
-                <button v-if="demo.resultsSummary.totalWrong > 0" type="button" class="demo-mini-btn" :class="{ active: onlyWrongMode }" @click="toggleWrongFilter">
-                  {{ onlyWrongMode ? 'Ver todas' : `Solo equivocadas (${demo.resultsSummary.totalWrong})` }}
-                </button>
-                <button type="button" class="demo-mini-btn" @click="demo.showResults = true">Resumen</button>
-              </template>
+            <div class="demo-title-wrap">
+              <h2 class="demo-subject">
+                {{ item.subject }}
+                <span v-if="demo.hasFinished" class="demo-grade-tag" :class="demo.isCorrect(item) ? 'ok' : 'bad'">
+                  {{ demo.isCorrect(item) ? '✓ Correcta' : '✕ Equivocada' }}
+                </span>
+              </h2>
+              <button type="button" class="demo-level-pill" :class="{ open: showMetaDetail }" @click="showMetaDetail = !showMetaDetail" :title="showMetaDetail ? 'Ocultar detalle' : 'Ver reactivo y tema'">
+                {{ shortStageLabel }}
+                <span v-if="showMetaDetail"> · #{{ demo.currentIndex + 1 }}/{{ demo.totalCount }}<template v-if="!item.isOriginal"> · Tema {{ item.topicRef }}: {{ item.topicTitle }}</template></span>
+                <span class="demo-caret">{{ showMetaDetail ? '▴' : '▾' }}</span>
+              </button>
+            </div>
+
+            <div v-if="demo.hasFinished" class="demo-head-right">
+              <button v-if="demo.resultsSummary.totalWrong > 0" type="button" class="demo-mini-btn" :class="{ active: onlyWrongMode }" @click="toggleWrongFilter">
+                {{ onlyWrongMode ? 'Todas' : `Equivocadas (${demo.resultsSummary.totalWrong})` }}
+              </button>
+              <button type="button" class="demo-mini-btn" @click="demo.showResults = true">Resumen</button>
             </div>
           </div>
 
@@ -160,7 +154,7 @@
 
           <div class="demo-stage-bottom">
             <div v-if="hasNumericFormatHint" class="demo-format-hint">
-              <strong>Formato de captura:</strong> decimales con punto (redondeo automático a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>3/4</code>), potencias con <code>^</code> (ej. <code>x^2</code>, <code>2^3</code>, <code>10^-3</code>) y raíces con <code>sqrt(x)</code>.
+              <strong>Formato:</strong> decimales con punto (redondeo automático a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (<code>3/4</code>), potencias con <code>^</code> (<code>x^2</code>, <code>2^3</code>, <code>10^-3</code>) y raíces <code>sqrt(x)</code>.
             </div>
             <div class="demo-stage-footer">
               <button type="button" class="demo-mbtn" @click="showItemReview = !showItemReview">
@@ -208,7 +202,7 @@
         </div>
         <div class="demo-status-line">
           <template v-if="demo.hasFinished">
-            {{ demo.resultsSummary.totalCorrect }} buenas · {{ demo.resultsSummary.totalWrong }} equivocadas
+            {{ demo.resultsSummary.totalCorrect }} buenas · {{ demo.resultsSummary.totalWrong }} malas
           </template>
           <template v-else>
             {{ demo.answeredCount }} / {{ demo.totalCount }} contestadas
@@ -226,6 +220,13 @@ const { ref, computed, reactive, watch, nextTick, onMounted, onUnmounted } = Vue
 const { loadModule } = window['vue3-sfc-loader'];
 const sfcOpts = window.__SFC_OPTIONS__;
 
+const STAGE_SHORT = {
+  'EDUCACIÓN PRIMARIA': 'Primaria',
+  'EDUCACIÓN SECUNDARIA': 'Secundaria',
+  'BACHILLERATO': 'Bachillerato',
+  'EXAMEN DEMOSTRATIVO': 'General',
+};
+
 export default {
   components: {
     DemoExcobaStage: Vue.defineAsyncComponent(() => loadModule('./components/DemoExcobaStage.vue', sfcOpts)),
@@ -237,11 +238,17 @@ export default {
     const activeModal = ref('');
     const calcOpen = ref(false);
     const formOpen = ref(false);
+    const showFilters = ref(false);
+    const showMetaDetail = ref(false);
     const showItemReview = ref(false);
     const onlyWrongMode = ref(false);
-    const jumpInput = ref('');
     const gridRef = ref(null);
     const item = computed(() => demo.currentItem);
+
+    const shortStageLabel = computed(() => {
+      const st = String(item.value?.stage || '').trim().toUpperCase();
+      return STAGE_SHORT[st] || item.value?.stage || 'General';
+    });
     const hasNumericFormatHint = computed(() => {
       const it = item.value;
       if (!it) return false;
@@ -281,7 +288,7 @@ export default {
     const toggleModal = name => { activeModal.value = activeModal.value === name ? '' : name; };
     const onSubjectChange = key => { showItemReview.value = false; onlyWrongMode.value = false; demo.selectSubjectGroup(key); };
     const onReshuffleDemo = () => { showItemReview.value = false; onlyWrongMode.value = false; demo.regenerateDemo180(); };
-    const onTopicChange = refCode => { showItemReview.value = false; onlyWrongMode.value = false; demo.selectTopic(refCode); };
+    const onTopicChange = refCode => { showItemReview.value = false; onlyWrongMode.value = false; demo.selectTopic(refCode); showFilters.value = false; };
     const restartBlock = () => { showItemReview.value = false; onlyWrongMode.value = false; demo.resetSessionState(); demo.startClock(); };
     const openGradedItem = (idx, wrongOnly = false) => {
       onlyWrongMode.value = wrongOnly;
@@ -308,13 +315,6 @@ export default {
       if (nextIdx !== undefined) { showItemReview.value = demo.hasFinished; demo.goTo(nextIdx); }
     };
     const jump = i => { showItemReview.value = demo.hasFinished; demo.showResults = false; demo.goTo(i); };
-    const jumpByNumber = () => {
-      const n = Number(jumpInput.value);
-      if (Number.isInteger(n) && n >= 1 && n <= demo.totalCount) {
-        jump(n - 1);
-        jumpInput.value = '';
-      }
-    };
 
     const onGlobalKey = ev => {
       if (ev.ctrlKey || ev.metaKey) return;
@@ -348,91 +348,107 @@ export default {
     onUnmounted(() => { demo.stopClock(); window.removeEventListener('keydown', onGlobalKey); });
 
     return {
-      demo, item, hasNumericFormatHint, clockTooltip, activeModal, calcOpen, formOpen, showItemReview, onlyWrongMode, jumpInput, gridRef, visibleGridItems,
+      demo, item, shortStageLabel, hasNumericFormatHint, clockTooltip,
+      activeModal, calcOpen, formOpen, showFilters, showMetaDetail, showItemReview, onlyWrongMode, gridRef, visibleGridItems,
       canStep, toggleModal, onSubjectChange, onReshuffleDemo, onTopicChange, restartBlock, openGradedItem,
-      reviewWrongOnly, reviewFullGraded, toggleWrongFilter, step, jump, jumpByNumber,
+      reviewWrongOnly, reviewFullGraded, toggleWrongFilter, step, jump,
     };
   },
 };
 </script>
 
 <style scoped>
-.demo-shell{background:#0b0e13;color:#f3f4f6;border:2px solid #374151;border-radius:10px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;box-shadow:0 20px 50px rgba(0,0,0,.45);display:flex;flex-direction:column;height:calc(100vh - 3rem);min-height:560px}
-.demo-topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:linear-gradient(180deg,#2c323e,#171b22);border-bottom:2px solid #ffc12b;flex-wrap:wrap}
-.demo-brand{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.demo-badge{background:#ffc12b;color:#111;font-weight:800;font-size:12px;padding:3px 8px;border-radius:4px;letter-spacing:.4px}
-.demo-sub{font-size:12px;color:#d1d5db;font-weight:700}
-.demo-toolbar{display:flex;gap:6px;flex-wrap:wrap}
-.demo-mbtn{background:#2d3442;color:#fff;border:1px solid #4b5563;border-radius:4px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer}
-.demo-mbtn:hover:not(:disabled),.demo-mbtn.active{border-color:#2bc1ff;color:#2bc1ff;background:#243245}
+.demo-shell{background:#0b0e13;color:#f3f4f6;border:1.5px solid #374151;border-radius:8px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;box-shadow:0 16px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;height:calc(100vh - 1rem);min-height:520px}
+.demo-topbar{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 10px;background:linear-gradient(180deg,#2a303c,#161a21);border-bottom:2px solid #ffc12b;flex-wrap:wrap}
+.demo-brand{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.demo-badge{background:#ffc12b;color:#111;font-weight:800;font-size:11px;padding:3px 7px;border-radius:4px;letter-spacing:.4px}
+.demo-filter-toggle{display:inline-flex;align-items:center;gap:5px;background:#1d2431;color:#e5e7eb;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:11.5px;font-weight:700;cursor:pointer}
+.demo-filter-toggle.open,.demo-filter-toggle:hover{border-color:#2bc1ff;color:#fff}
+.demo-caret{font-size:10px;opacity:.8}
+.demo-toolbar{display:flex;gap:4px;flex-wrap:wrap}
+.demo-mbtn{background:#2a3140;color:#fff;border:1px solid #4b5563;border-radius:4px;padding:4px 8px;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.demo-compact-btn{padding:4px 7px}
+.demo-mbtn:hover:not(:disabled),.demo-mbtn.active{border-color:#2bc1ff;color:#2bc1ff;background:#223042}
 .demo-mbtn:disabled{opacity:.38;cursor:default}
 .demo-finish{background:#7f1d1d;border-color:#b91c1c}.demo-finish:hover{background:#991b1b;color:#fff}
 .demo-switch{background:#1e3a5f;border-color:#2bc1ff;color:#e0f2fe}
 .demo-cyan-btn{background:#0b4f6c;border-color:#2bc1ff;color:#fff}
-.demo-clock{font-family:monospace;font-size:15px;font-weight:700;color:#00d8b3;background:#000;padding:5px 10px;border:1px solid #374151;border-radius:4px;transition:color .25s,border-color .25s,background .25s}
+.demo-clock{font-family:monospace;font-size:13.5px;font-weight:700;color:#00d8b3;background:#000;padding:4px 8px;border:1px solid #374151;border-radius:4px;transition:color .25s,border-color .25s,background .25s}
 .demo-clock.warn{color:#ffc12b;border-color:#ffc12b;background:#261d08}
 .demo-clock.over{color:#f87171;border-color:#ef4444;background:#2d0e12}
-.demo-subjects{display:flex;gap:6px;padding:9px 14px;background:#11151d;border-bottom:1px solid #262d3b;overflow-x:auto;flex-wrap:wrap}
-.demo-subj-pill{background:#1c222e;color:#d1d5db;border:1px solid #364054;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.demo-subj-pill small{background:rgba(255,255,255,.08);color:#9ca3af;padding:1px 6px;border-radius:999px;font-size:10.5px}
+.demo-filter-drawer{background:#12161f;border-bottom:1px solid #2a3140;padding:7px 10px;display:flex;flex-direction:column;gap:6px}
+.demo-subjects{display:flex;gap:5px;flex-wrap:wrap}
+.demo-subj-pill{background:#1c222e;color:#d1d5db;border:1px solid #364054;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.demo-subj-pill small{background:rgba(255,255,255,.08);color:#9ca3af;padding:0 5px;border-radius:999px;font-size:10px}
 .demo-subj-pill:hover{border-color:#2bc1ff;color:#fff}
 .demo-subj-pill.active{background:#0b4f6c;border-color:#2bc1ff;color:#fff}
 .demo-subj-pill.active small{background:#ffc12b;color:#111}
-.demo-selector{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 14px;background:#151921;border-bottom:1px solid #2b313e;align-items:end}
-.demo-selector-right{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
-.demo-reshuffle{height:31px;white-space:nowrap}
-.demo-jump-form{width:170px}
-.demo-selector label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:#9ca3af;font-weight:700}
-.demo-selector select,.demo-jump-inp{background:#222834;color:#fff;border:1px solid #4b5563;border-radius:4px;padding:6px 8px;font-size:12px}
-.demo-jump-row{display:flex;gap:6px}
-.demo-jump-inp{width:100%;min-width:0}
-.demo-workspace{display:grid;grid-template-columns:1fr 236px;gap:12px;padding:12px 14px;flex:1;min-height:0}
-.demo-stage{background:#000;border:2px solid #374151;border-radius:6px;padding:18px 20px;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
-.demo-stage-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a303c;padding-bottom:8px;gap:8px;flex-wrap:wrap}
-.demo-subject{margin:0;color:#ffc12b;font-size:17px;font-weight:700}
-.demo-meta{font-size:12px;color:#9ca3af;font-weight:700}
-.demo-stage-bottom{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-.demo-format-hint{background:#101520;border:1px solid #263142;border-left:3px solid #ffc12b;border-radius:4px;padding:7px 10px;font-size:11.5px;line-height:1.5;color:#cbd5e1}
+.demo-topic-bar select{width:100%;background:#1f2532;color:#fff;border:1px solid #4b5563;border-radius:4px;padding:5px 8px;font-size:11.5px}
+.demo-workspace{display:grid;grid-template-columns:1fr 206px;gap:8px;padding:8px;flex:1;min-height:0}
+.demo-stage{background:#000;border:1.5px solid #374151;border-radius:6px;padding:12px 14px;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.demo-stage-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #262c38;padding-bottom:6px;gap:8px;flex-wrap:wrap}
+.demo-title-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.demo-subject{margin:0;color:#ffc12b;font-size:15.5px;font-weight:700}
+.demo-level-pill{background:#151b26;color:#9ca3af;border:1px solid #334155;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;text-align:left}
+.demo-level-pill.open,.demo-level-pill:hover{border-color:#2bc1ff;color:#e5e7eb}
+.demo-meta{font-size:11.5px;color:#9ca3af;font-weight:700}
+.demo-stage-bottom{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+.demo-format-hint{background:#0f141e;border:1px solid #263142;border-left:3px solid #ffc12b;border-radius:4px;padding:6px 9px;font-size:11px;line-height:1.45;color:#cbd5e1}
 .demo-format-hint strong{color:#ffc12b}
 .demo-format-hint code{background:#1e2636;color:#7dd3fc;padding:1px 4px;border-radius:3px;font-family:monospace}
-.demo-stage-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #2a303c;padding-top:12px;flex-wrap:wrap}
-.demo-inline-nav,.demo-actions{display:flex;gap:8px}
-.demo-review-box{padding:10px 12px;border-radius:5px;font-size:13px;line-height:1.5;display:flex;flex-direction:column;gap:4px}
+.demo-stage-footer{display:flex;justify-content:space-between;align-items:center;gap:6px;border-top:1px solid #262c38;padding-top:8px;flex-wrap:wrap}
+.demo-inline-nav,.demo-actions{display:flex;gap:6px;flex-wrap:wrap}
+.demo-review-box{padding:8px 10px;border-radius:5px;font-size:12.5px;line-height:1.45;display:flex;flex-direction:column;gap:3px}
 .demo-review-box.ok{background:#0d2d26;border:1px solid #00d8b3;color:#d1fae5}
 .demo-review-box.warn{background:#2c220c;border:1px solid #ffc12b;color:#fef3c7}
 .demo-review-ans{font-weight:700}.demo-review-exp{color:#e5e7eb}
-.demo-sidebar{background:#181c23;border:1px solid #374151;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
-.demo-nav-box{display:flex;align-items:center;justify-content:space-between;background:#0e1116;border:1px solid #3b4252;border-radius:5px;padding:6px;flex-shrink:0}
-.demo-nav-btn{background:#2d3442;color:#ffc12b;border:1px solid #4b5563;border-radius:4px;width:34px;height:32px;font-size:16px;font-weight:700;cursor:pointer}
+.demo-sidebar{background:#151921;border:1px solid #374151;border-radius:6px;padding:7px;display:flex;flex-direction:column;gap:6px;min-height:0;height:100%}
+.demo-nav-box{display:flex;align-items:center;justify-content:space-between;background:#0d1016;border:1px solid #334155;border-radius:4px;padding:4px;flex-shrink:0}
+.demo-nav-btn{background:#2a3140;color:#ffc12b;border:1px solid #4b5563;border-radius:3px;width:30px;height:26px;font-size:14px;font-weight:700;cursor:pointer}
 .demo-nav-btn:disabled{opacity:.35;cursor:default}
-.demo-nav-num{font-weight:700;font-size:13px;color:#fff}
-.demo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;flex:1;min-height:0;overflow-y:auto;align-content:start;padding-right:2px}
-.demo-gbtn{background:#2a303c;color:#d1d5db;border:1px solid #4b5563;border-radius:3px;padding:6px 0;font-size:11px;font-weight:700;cursor:pointer}
+.demo-nav-num{font-weight:700;font-size:12px;color:#fff}
+.demo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;flex:1;min-height:0;overflow-y:auto;align-content:start;padding-right:2px}
+.demo-gbtn{background:#262d3a;color:#d1d5db;border:1px solid #414b5e;border-radius:3px;padding:4px 0;font-size:10.5px;font-weight:700;cursor:pointer}
 .demo-gbtn.cur{border-color:#ffc12b;color:#ffc12b;box-shadow:inset 0 0 0 1px #ffc12b}
 .demo-gbtn.ans,.demo-gbtn.ok{background:#0e4f43;border-color:#00d8b3;color:#fff}
 .demo-gbtn.bad{background:#5c161b;border-color:#f87171;color:#fecaca}
-.demo-status-line{font-size:11px;color:#9ca3af;text-align:center;flex-shrink:0}
-.demo-head-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.demo-mini-btn{background:#1f2735;color:#cbd5e1;border:1px solid #475569;border-radius:4px;padding:3px 8px;font-size:11px;font-weight:700;cursor:pointer}
+.demo-status-line{font-size:10.5px;color:#9ca3af;text-align:center;flex-shrink:0}
+.demo-head-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.demo-mini-btn{background:#1f2735;color:#cbd5e1;border:1px solid #475569;border-radius:4px;padding:3px 7px;font-size:11px;font-weight:700;cursor:pointer}
 .demo-mini-btn.active,.demo-mini-btn:hover{border-color:#ffc12b;color:#ffc12b}
-.demo-grade-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:11px;vertical-align:middle}
+.demo-grade-tag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:10.5px;vertical-align:middle}
 .demo-grade-tag.ok{background:#0d2d26;border:1px solid #00d8b3;color:#6ee7b7}
 .demo-grade-tag.bad{background:#4c1419;border:1px solid #f87171;color:#fecaca}
-.demo-score-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.demo-score-banner{font-size:16px;color:#00d8b3;margin:0}
-.demo-wrong-pill{background:#4c1419;border:1px solid #f87171;color:#fecaca;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:700}
+.demo-score-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.demo-score-banner{font-size:15px;color:#00d8b3;margin:0}
+.demo-wrong-pill{background:#4c1419;border:1px solid #f87171;color:#fecaca;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700}
 .demo-wrong-pill.clean{background:#0d2d26;border-color:#00d8b3;color:#6ee7b7}
 .demo-warn-btn{background:#7c2d12;border-color:#fb923c;color:#ffedd5}
 .demo-warn-btn:hover{background:#9a3412;color:#fff}
-.demo-perfect-box{background:#0d2d26;border:1px solid #00d8b3;color:#a7f3d0;padding:14px;border-radius:6px;font-weight:700}
-.demo-wrong-groups{display:flex;flex-direction:column;gap:10px}
-.demo-wrong-heading{margin:4px 0 0;font-size:13px;color:#cbd5e1;text-transform:uppercase;letter-spacing:.4px}
-.demo-wrong-card{background:#11161f;border:1px solid #334155;border-left:3px solid #f87171;border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
-.demo-wrong-card-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:#f3f4f6}
-.demo-wrong-card-head span{font-size:12px;color:#9ca3af}
+.demo-perfect-box{background:#0d2d26;border:1px solid #00d8b3;color:#a7f3d0;padding:10px;border-radius:5px;font-weight:700;font-size:13px}
+.demo-wrong-groups{display:flex;flex-direction:column;gap:8px}
+.demo-wrong-heading{margin:2px 0 0;font-size:12px;color:#cbd5e1;text-transform:uppercase;letter-spacing:.4px}
+.demo-wrong-card{background:#11161f;border:1px solid #334155;border-left:3px solid #f87171;border-radius:5px;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+.demo-wrong-card-head{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;font-size:12.5px;color:#f3f4f6}
+.demo-wrong-card-head span{font-size:11px;color:#9ca3af}
 .demo-wrong-card-head b{color:#fca5a5}
-.demo-wrong-chips{display:flex;flex-wrap:wrap;gap:6px}
-.demo-wrong-chip{background:#3b151a;border:1px solid #f87171;color:#fecaca;border-radius:4px;padding:4px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.demo-wrong-chips{display:flex;flex-wrap:wrap;gap:4px}
+.demo-wrong-chip{background:#3b151a;border:1px solid #f87171;color:#fecaca;border-radius:3px;padding:3px 7px;font-size:11px;font-weight:700;cursor:pointer}
 .demo-wrong-chip:hover{background:#7f1d1d;color:#fff}
-@media(max-width:860px){.demo-shell{height:auto;min-height:calc(100vh - 2rem)}.demo-workspace,.demo-selector{grid-template-columns:1fr}.demo-grid{max-height:240px}}
+
+/* Responsivo denso para tablet y móvil */
+@media(max-width:860px){
+  .demo-shell{height:calc(100vh - .5rem);min-height:0}
+  .demo-topbar{padding:5px 8px;gap:5px}
+  .demo-toolbar{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:2px}
+  .demo-workspace{grid-template-columns:1fr;grid-template-rows:1fr auto;gap:6px;padding:6px}
+  .demo-stage{padding:10px 11px;gap:8px}
+  .demo-sidebar{height:auto;padding:6px;gap:5px}
+  .demo-grid{grid-template-columns:repeat(10,1fr);max-height:92px}
+}
+@media(max-width:520px){
+  .demo-mbtn{padding:4px 6px;font-size:11px}
+  .demo-clock{font-size:12px;padding:3px 6px}
+  .demo-grid{grid-template-columns:repeat(8,1fr);max-height:82px}
+}
 </style>

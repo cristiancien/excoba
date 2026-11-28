@@ -1153,3 +1153,14 @@ body.dark-theme.section-bachillerato .blob-3 { background: #9d174d; }
     }
 }
 
+
+/* Dense full-viewport wrapper for EXCOBA mode */
+.app-layout.excoba-full {
+    max-width: 1440px !important;
+    padding: 0.5rem !important;
+}
+@media (max-width: 640px) {
+    .app-layout.excoba-full {
+        padding: 0.25rem !important;
+    }
+}
