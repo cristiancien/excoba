@@ -10,6 +10,7 @@ function loadDemoEnv(storage = memoryStorage()) {
   for (const file of [
     'data/questions.js',
     'data/demoexcoba-temario.js',
+    'data/excoba-formulas.js',
     'composables/useQuestionBank.js',
     'composables/useTimer.js',
     'composables/useScoring.js',
@@ -27,8 +28,39 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
   assert.equal(demo.totalTopics, 126);
   assert.equal(demo.reactivosPerTopic, 20);
   assert.equal(demo.totalReactivos, 2520);
-  assert.equal(demo.packages.length, 10); // 1 original (70) + 9 Temario (2,520)
-  assert.equal(demo.totalCount.value, 70);
+  assert.equal(demo.packages.length, 10); // 1 showcase (70) + 9 Temario (2,520)
+  // Default view is the random 180-question Demostrativo covering ALL 126 topics
+  assert.equal(demo.totalCount.value, 180);
+  const demoTopics = new Set(demo.sessionItems.value.filter(i => !i.isOriginal).map(i => i.topicRef));
+  assert.equal(demoTopics.size, 126, 'Demostrativo 180 must include all 126 curriculum topics');
+  assert.equal(new Set(demo.sessionItems.value.map(i => i.id)).size, 180, 'Demostrativo 180 items must be distinct');
+
+  // Verify regenerateDemo180 keeps 180 distinct items covering all 126 topics
+  demo.regenerateDemo180();
+  assert.equal(demo.totalCount.value, 180);
+  assert.equal(new Set(demo.sessionItems.value.filter(i => !i.isOriginal).map(i => i.topicRef)).size, 126);
+
+  // Verify subject-group aggregation exposes Demostrativo (180), all 2,520 temario items grouped by subject + 70 interactive
+  const grpByKey = Object.fromEntries(demo.subjectGroups.map(g => [g.key, g.count]));
+  assert.equal(grpByKey.DEMO180, 180);
+  assert.equal(grpByKey.ORIG, 70);
+  assert.equal(grpByKey['Matemáticas'], 1000);
+  assert.equal(grpByKey['Español'], 320);
+  assert.equal(grpByKey.ALL, 2520);
+  demo.selectSubjectGroup('Matemáticas');
+  assert.equal(demo.totalCount.value, 1000);
+  assert.equal(demo.topicsByStage.value.length, 3);
+  demo.selectSubjectGroup('ALL');
+  assert.equal(demo.totalCount.value, 2520);
+
+  // Verify enriched formula catalog has 4 tabs with vars/tip/example help
+  const formulas = env.ctx.EXCOBA_FORMULAS;
+  assert.equal(formulas.tabs.length, 4);
+  for (const t of formulas.tabs) {
+    const cards = formulas.sections[t.id];
+    assert.ok(cards.length >= 3);
+    assert.ok(cards.every(c => c.vars && c.tip && c.example));
+  }
 
   // Switch to Bachillerato Matematicas para Calculo (176) and verify 20 reactivos per topic
   demo.selectPackage(176);

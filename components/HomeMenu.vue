@@ -102,7 +102,7 @@
 
         <button type="button" class="hm-panel-cta" @click="$emit('open-excoba')">
           <span>Entrar al entorno estilo EXCOBA</span>
-          <small>Examen demostrativo (70) + 126 temas × 20</small>
+          <small>Demostrativo aleatorio (180) + 126 temas × 20 por materia</small>
         </button>
       </aside>
     </section>

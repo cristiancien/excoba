@@ -1,6 +1,58 @@
-/** Composable unificado para la interfaz replica DemoExcoba.exe (70 originales + 20 x 126 temas = 2,520). */
+/** Composable unificado para el entorno EXCOBA (70 muestra + 2,520 temario agrupados por materia). */
 (function (root) {
   'use strict';
+
+  const SUBJECT_GROUP_ORDER = [
+    { key: 'DEMO180', label: 'Demostrativo', packageIds: [], isDemo180: true, isOriginal: false },
+    { key: 'Español', label: 'Español', packageIds: [170, 172], isOriginal: false },
+    { key: 'Matemáticas', label: 'Matemáticas', packageIds: [171, 173, 176], isOriginal: false },
+    { key: 'Ciencias Naturales', label: 'C. Naturales', packageIds: [174], isOriginal: false },
+    { key: 'Ciencias Sociales', label: 'C. Sociales', packageIds: [175], isOriginal: false },
+    { key: 'Física', label: 'Física', packageIds: [177], isOriginal: false },
+    { key: 'Lenguaje', label: 'Lenguaje', packageIds: [178], isOriginal: false },
+    { key: 'ORIG', label: 'Interactivos', packageIds: [1670], isOriginal: true },
+    { key: 'ALL', label: 'Todo el temario', packageIds: [170, 171, 172, 173, 174, 175, 176, 177, 178], isOriginal: false },
+  ];
+
+  function shuffleArray(list) {
+    const arr = [...list];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  // Construye un examen demostrativo aleatorio de 180 reactivos cubriendo los 126 temas + formatos interactivos
+  function buildRandomDemo180(allItems, targetCount = 180) {
+    const byTopic = new Map();
+    const showcase = [];
+    for (const it of allItems) {
+      if (it.isOriginal) { showcase.push(it); continue; }
+      if (!byTopic.has(it.topicRef)) byTopic.set(it.topicRef, []);
+      byTopic.get(it.topicRef).push(it);
+    }
+    const chosen = [];
+    const seen = new Set();
+    // 1 reactivo aleatorio de cada uno de los 126 temas del temario (100% cobertura)
+    for (const list of byTopic.values()) {
+      const pick = list[Math.floor(Math.random() * list.length)];
+      if (pick && !seen.has(pick.id)) {
+        chosen.push(pick);
+        seen.add(pick.id);
+      }
+    }
+    // Completar hasta 180 priorizando la muestra interactiva (todos los formatos EXCOBA) y luego resto del temario
+    const extras = [...shuffleArray(showcase), ...shuffleArray(allItems.filter(it => !it.isOriginal && !seen.has(it.id)))];
+    for (const cand of extras) {
+      if (chosen.length >= targetCount) break;
+      if (!seen.has(cand.id)) {
+        chosen.push(cand);
+        seen.add(cand.id);
+      }
+    }
+    return shuffleArray(chosen);
+  }
 
   function parseNumericAnswer(raw) {
     const clean = String(raw ?? '').trim().replace(',', '.');
@@ -108,30 +160,85 @@
     const packages = raw.packages || [];
     const allItems = raw.items || [];
 
+    const demo180Items = ref(buildRandomDemo180(allItems, 180));
+
+    // Agrupaciones por materia que exponen el demostrativo aleatorio (180) + los 2,520 reactivos agrupados
+    const subjectGroups = SUBJECT_GROUP_ORDER.map(def => {
+      if (def.isDemo180) {
+        const bySubj = new Map();
+        for (const it of demo180Items.value) bySubj.set(it.subject, (bySubj.get(it.subject) || 0) + 1);
+        const topics = [...bySubj.entries()].map(([subj, count]) => ({
+          ref: subj, title: subj, subject: subj, count, packageStage: 'EXAMEN DEMOSTRATIVO',
+        }));
+        return { ...def, count: demo180Items.value.length, topics, packages: [] };
+      }
+      const idSet = new Set(def.packageIds);
+      const pkgs = packages.filter(p => idSet.has(p.id));
+      const topics = pkgs.flatMap(p => (p.topics || []).map(t => ({ ...t, packageStage: p.stage, packageSubject: p.subject })));
+      const count = pkgs.reduce((acc, p) => acc + (p.count || 0), 0);
+      return { ...def, count, topics, packages: pkgs };
+    }).filter(g => g.count > 0);
+
     const firstPkg = packages[0] || null;
+    const selectedSubjectKey = ref(subjectGroups[0]?.key ?? 'DEMO180');
     const selectedPackageId = ref(firstPkg?.id ?? null);
-    const selectedTopicRef = ref(firstPkg?.isOriginal ? '' : (firstPkg?.topics?.[0]?.ref ?? ''));
+    const selectedTopicRef = ref('');
+    const selectionMode = ref('subject'); // 'subject' | 'package'
     const currentIndex = ref(0);
     const answers = ref({});
     const showResults = ref(false);
     const elapsedSeconds = ref(0);
     let intervalId = null;
 
+    const activeSubjectGroup = computed(() => subjectGroups.find(g => g.key === selectedSubjectKey.value) || subjectGroups[0] || null);
     const activePackage = computed(() => packages.find(p => p.id === selectedPackageId.value) || packages[0] || null);
-    const availableTopics = computed(() => activePackage.value?.topics || []);
+
+    const availableTopics = computed(() => {
+      if (selectionMode.value === 'package') return activePackage.value?.topics || [];
+      if (activeSubjectGroup.value?.isDemo180) {
+        const bySubj = new Map();
+        for (const it of demo180Items.value) bySubj.set(it.subject, (bySubj.get(it.subject) || 0) + 1);
+        return [...bySubj.entries()].map(([subj, count]) => ({ ref: subj, title: subj, subject: subj, count, packageStage: 'EXAMEN DEMOSTRATIVO' }));
+      }
+      return activeSubjectGroup.value?.topics || [];
+    });
+
+    const topicsByStage = computed(() => {
+      const map = new Map();
+      for (const t of availableTopics.value) {
+        const grp = t.packageStage || t.stage || 'General';
+        if (!map.has(grp)) map.set(grp, []);
+        map.get(grp).push(t);
+      }
+      return [...map.entries()].map(([stage, topics]) => ({ stage, topics }));
+    });
 
     const sessionItems = computed(() => {
-      if (!selectedPackageId.value) return allItems;
-      const inPkg = allItems.filter(it => it.packageId === selectedPackageId.value);
-      if (!selectedTopicRef.value) return inPkg;
-      if (activePackage.value?.isOriginal) return inPkg.filter(it => it.subject === selectedTopicRef.value);
-      return inPkg.filter(it => it.topicRef === selectedTopicRef.value);
+      let pool;
+      if (selectionMode.value === 'package') {
+        pool = selectedPackageId.value ? allItems.filter(it => it.packageId === selectedPackageId.value) : allItems;
+      } else if (activeSubjectGroup.value?.isDemo180) {
+        pool = demo180Items.value;
+      } else {
+        const ids = new Set(activeSubjectGroup.value?.packageIds || []);
+        pool = ids.size ? allItems.filter(it => ids.has(it.packageId)) : allItems;
+      }
+      if (!selectedTopicRef.value) return pool;
+      const filterBySubject = selectionMode.value === 'package'
+        ? Boolean(activePackage.value?.isOriginal)
+        : Boolean(activeSubjectGroup.value?.isOriginal || activeSubjectGroup.value?.isDemo180);
+      if (filterBySubject) return pool.filter(it => it.subject === selectedTopicRef.value);
+      return pool.filter(it => it.topicRef === selectedTopicRef.value);
     });
 
     const currentItem = computed(() => sessionItems.value[currentIndex.value] || null);
     const totalCount = computed(() => sessionItems.value.length);
     const answeredCount = computed(() => sessionItems.value.filter(it => isDemoItemAnswered(it, answers.value[it.id])).length);
     const elapsedFormatted = computed(() => formatSeconds(elapsedSeconds.value));
+    const activeTitle = computed(() => {
+      if (selectionMode.value === 'package') return activePackage.value?.subject || 'EXCOBA';
+      return activeSubjectGroup.value?.label || 'EXCOBA';
+    });
 
     function startClock() {
       if (intervalId) return;
@@ -146,10 +253,29 @@
       showResults.value = false;
       elapsedSeconds.value = 0;
     }
+    function regenerateDemo180() {
+      demo180Items.value = buildRandomDemo180(allItems, 180);
+      selectionMode.value = 'subject';
+      selectedSubjectKey.value = 'DEMO180';
+      selectedTopicRef.value = '';
+      resetSessionState();
+    }
+    function selectSubjectGroup(key, topicRef = '') {
+      const grp = subjectGroups.find(g => g.key === key) || subjectGroups[0];
+      if (!grp) return;
+      selectionMode.value = 'subject';
+      selectedSubjectKey.value = grp.key;
+      selectedPackageId.value = grp.packageIds[0] ?? null;
+      selectedTopicRef.value = String(topicRef || '');
+      resetSessionState();
+    }
     function selectPackage(pkgId, topicRef = null) {
       const idNum = Number(pkgId);
+      selectionMode.value = 'package';
       selectedPackageId.value = idNum;
       const pkg = packages.find(p => p.id === idNum);
+      const owner = subjectGroups.find(g => g.key !== 'ALL' && g.packageIds.includes(idNum));
+      if (owner) selectedSubjectKey.value = owner.key;
       if (topicRef !== null) selectedTopicRef.value = String(topicRef);
       else selectedTopicRef.value = pkg?.isOriginal ? '' : (pkg?.topics?.[0]?.ref ?? '');
       resetSessionState();
@@ -194,11 +320,12 @@
       reactivosPerTopic: raw.reactivosPerTopic,
       totalReactivos: raw.totalReactivos,
       originalCount: raw.originalCount || 0,
-      packages, activePackage, availableTopics,
-      selectedPackageId, selectedTopicRef,
+      packages, subjectGroups, activeSubjectGroup, activePackage, activeTitle,
+      availableTopics, topicsByStage,
+      selectionMode, selectedSubjectKey, selectedPackageId, selectedTopicRef,
       sessionItems, currentIndex, currentItem, totalCount, answeredCount,
       answers, showResults, elapsedSeconds, elapsedFormatted, resultsSummary,
-      startClock, stopClock, selectPackage, selectTopic, setAnswer, goTo,
+      startClock, stopClock, selectSubjectGroup, regenerateDemo180, selectPackage, selectTopic, setAnswer, goTo,
       prev: () => goTo(currentIndex.value - 1),
       next: () => goTo(currentIndex.value + 1),
       finish, resetSessionState,
@@ -207,6 +334,6 @@
     };
   };
 
-  root.EXCOBA_DEMO_UTILS = { parseNumericAnswer, gradeDemoItem, isDemoItemAnswered, formatSeconds };
+  root.EXCOBA_DEMO_UTILS = { parseNumericAnswer, gradeDemoItem, isDemoItemAnswered, formatSeconds, buildRandomDemo180 };
   if (typeof module === 'object' && module.exports) module.exports = root.EXCOBA_DEMO_UTILS;
 })(typeof window !== 'undefined' ? window : globalThis);

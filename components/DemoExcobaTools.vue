@@ -1,11 +1,11 @@
 <template>
-  <!-- Calculadora científica flotante arrastrable estilo EXCOBA (no bloquea el reactivo) -->
+  <!-- Calculadora científica flotante arrastrable con soporte de teclado físico -->
   <aside v-if="calcOpen" class="ex-calc-win" :style="calcStyle" role="dialog" aria-label="Calculadora EXCOBA">
     <div class="ex-win-bar ex-drag-handle" @pointerdown="startDrag">
       <span>Calculadora científica</span>
       <div class="ex-win-right">
         <span v-if="calcMem !== 0" class="ex-mem-tag">M</span>
-        <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-calc')" title="Cerrar">×</button>
+        <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-calc')" title="Cerrar (Esc)">×</button>
       </div>
     </div>
     <div class="ex-calc-body">
@@ -23,7 +23,7 @@
         <button type="button" class="ex-ck ex-ck-op" @click="press(')')">)</button>
         <button type="button" class="ex-ck ex-ck-eq" @click="press('=')">=</button>
       </div>
-      <div class="ex-calc-foot">Modo grados (DEG) · Puedes leer el reactivo mientras calculas</div>
+      <div class="ex-calc-foot">Modo grados (DEG)</div>
     </div>
   </aside>
 
@@ -36,7 +36,7 @@
       </header>
 
       <div class="ex-modal-body">
-        <!-- 1. CÓMO RESPONDER (con mini-ejemplos visuales reales, sin tecnicismos) -->
+        <!-- 1. CÓMO RESPONDER -->
         <template v-if="modal === 'help'">
           <p class="ex-lead">Cada reactivo indica la acción requerida en la parte superior. Estos son los formatos de respuesta del examen:</p>
           <div class="ex-help-grid">
@@ -68,7 +68,7 @@
             <div class="ex-help-card">
               <div class="ex-help-demo"><span class="ex-dot cur">1</span> <span class="ex-dot ans">2</span> <span class="ex-dot">3</span></div>
               <h4>Panel de navegación</h4>
-              <p>Borde dorado indica el reactivo actual; verde indica contestado y gris indica pendiente por responder.</p>
+              <p>Dorado indica el reactivo actual; verde indica contestado y gris indica pendiente por responder.</p>
             </div>
           </div>
         </template>
@@ -76,38 +76,55 @@
         <!-- 2. GUÍA DEL SUSTENTANTE -->
         <template v-else-if="modal === 'guide'">
           <div class="ex-guide-block">
-            <h4>Estructura del examen</h4>
-            <p>El examen evalúa competencias básicas organizadas en tres etapas formativas: <strong>Educación Primaria</strong> (Español y Matemáticas), <strong>Educación Secundaria</strong> (Español, Matemáticas, Ciencias Naturales y Ciencias Sociales) y <strong>Bachillerato / Especialidad</strong> (Matemáticas para Cálculo, Física, Química, Biología, Lenguaje y Humanidades).</p>
+            <h4>Estructura del examen y materias</h4>
+            <p>Usa la barra superior para presentar el <strong>Examen Demostrativo aleatorio de 180 preguntas</strong> (que cubre los 126 temas del temario y todos los formatos interactivos) o recorrer los <strong>2,520 reactivos</strong> agrupados por materia (<strong>Español</strong>, <strong>Matemáticas</strong>, <strong>Ciencias Naturales</strong>, <strong>Ciencias Sociales</strong>, <strong>Física</strong> y <strong>Lenguaje</strong>).</p>
           </div>
           <div class="ex-guide-block">
             <h4>Navegación y guardado</h4>
             <ul>
-              <li>Usa las flechas <strong>◄</strong> y <strong>►</strong> o el tablero numérico derecho para ir libremente a cualquier reactivo.</li>
-              <li>Puedes dejar un reactivo pendiente y volver a él antes de finalizar.</li>
+              <li>Avanza o retrocede libremente entre reactivos, o salta a un número específico con <strong>Ir al reactivo #</strong>.</li>
+              <li>Puedes dejar cualquier reactivo pendiente y volver a él antes de finalizar.</li>
               <li>El reloj superior registra el tiempo transcurrido en el bloque actual.</li>
             </ul>
           </div>
           <div class="ex-guide-block">
-            <h4>Herramientas permitidas</h4>
+            <h4>Herramientas de apoyo</h4>
             <ul>
-              <li><strong>Formulario:</strong> consulta las ecuaciones y constantes de Matemáticas, Física y Química en cualquier momento.</li>
-              <li><strong>Calculadora:</strong> se abre en una ventana flotante para realizar operaciones sin perder de vista el planteamiento.</li>
-              <li><strong>Finalizar:</strong> genera la tabla de calificación desglosada por asignatura o tema y permite revisar cada reactivo.</li>
+              <li><strong>Formulario:</strong> incluye buscador, significado de cada variable, cuándo aplicar cada ecuación y un ejemplo resuelto.</li>
+              <li><strong>Calculadora:</strong> flotante y arrastrable para realizar operaciones sin perder de vista el planteamiento.</li>
+              <li><strong>Finalizar:</strong> muestra el desglose de aciertos por asignatura o tema y permite revisar cada respuesta.</li>
             </ul>
           </div>
         </template>
 
-        <!-- 3. FORMULARIO OFICIAL CON KATEX Y PESTAÑAS -->
+        <!-- 3. FORMULARIO OFICIAL ENRIQUECIDO (BUSCADOR + VARIABLES + USO + MINI-EJEMPLOS) -->
         <template v-else-if="modal === 'form'">
-          <div class="ex-tabs">
-            <button v-for="t in formTabs" :key="t.id" type="button" class="ex-tab" :class="{ active: formTab === t.id }" @click="formTab = t.id">
-              {{ t.label }}
-            </button>
+          <div class="ex-form-bar">
+            <div class="ex-tabs">
+              <button v-for="t in formTabs" :key="t.id" type="button" class="ex-tab" :class="{ active: formTab === t.id }" @click="formTab = t.id">
+                {{ t.label }}
+              </button>
+            </div>
+            <input
+              v-model="formQuery"
+              type="search"
+              class="ex-form-search"
+              placeholder="Buscar fórmula (ej. Pitágoras, Ohm, pH, vértice)..."
+              aria-label="Buscar en el formulario"
+            />
           </div>
-          <div class="ex-form-grid">
-            <div v-for="card in activeFormulas" :key="card.title" class="ex-form-card">
+
+          <div v-if="!filteredFormulas.length" class="ex-empty">
+            No se encontraron fórmulas para «{{ formQuery }}». Prueba con otro término o limpia el buscador.
+          </div>
+
+          <div v-else class="ex-form-grid">
+            <div v-for="card in filteredFormulas" :key="card.title" class="ex-form-card">
               <h4>{{ card.title }}</h4>
               <div v-for="(line, i) in card.lines" :key="i" class="ex-form-line" v-latex="line"></div>
+              <div v-if="card.vars" class="ex-form-vars" v-latex="card.vars"></div>
+              <div v-if="card.tip" class="ex-form-tip"><strong>Uso:</strong> <span v-latex="card.tip"></span></div>
+              <div v-if="card.example" class="ex-form-ex" v-latex="card.example"></div>
             </div>
           </div>
         </template>
@@ -122,27 +139,6 @@
 
 <script>
 const { ref, computed, onMounted, onUnmounted } = Vue;
-
-const FORMULAS = {
-  mat: [
-    { title: 'Geometría plana', lines: ['$A_{\\triangle} = \\frac{bh}{2},\\quad A_{\\circ} = \\pi r^2,\\quad P_{\\circ} = 2\\pi r$', '$A_{\\text{trapecio}} = \\frac{(B+b)h}{2}$', 'Suma ángulos interiores: $S = 180^\\circ(n - 2)$'] },
-    { title: 'Teorema de Pitágoras y trigonometría', lines: ['$c^2 = a^2 + b^2$', '$\\sin\\theta = \\frac{\\text{CO}}{H},\\quad \\cos\\theta = \\frac{\\text{CA}}{H},\\quad \\tan\\theta = \\frac{\\text{CO}}{\\text{CA}}$', '$\\sin^2\\theta + \\cos^2\\theta = 1$'] },
-    { title: 'Álgebra y ecuaciones', lines: ['$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$', '$(a \\pm b)^2 = a^2 \\pm 2ab + b^2$', '$a^2 - b^2 = (a - b)(a + b)$'] },
-    { title: 'Geometría analítica y cálculo', lines: ['$m = \\frac{y_2 - y_1}{x_2 - x_1},\\quad y - y_1 = m(x - x_1)$', '$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$', '$\\frac{d}{dx}(x^n) = n x^{n-1},\\quad \\log_b(xy) = \\log_b x + \\log_b y$'] },
-  ],
-  fis: [
-    { title: 'Cinemática', lines: ['$v = \\frac{d}{t},\\quad a = \\frac{v_f - v_0}{t}$', '$d = v_0 t + \\frac{1}{2}at^2,\\quad v_f^2 = v_0^2 + 2ad$', 'Gravedad: $g \\approx 9.81\\text{ m/s}^2$'] },
-    { title: 'Dinámica, trabajo y energía', lines: ['$F = m a,\\quad W = F d \\cos\\theta,\\quad P = \\frac{W}{t}$', '$E_c = \\frac{1}{2}m v^2,\\quad E_p = m g h$'] },
-    { title: 'Fluidos y termodinámica', lines: ['$\\rho = \\frac{m}{V},\\quad P = \\frac{F}{A},\\quad P_h = \\rho g h$', '$Q = m c \\Delta T,\\quad T(\\text{K}) = T(^\\circ\\text{C}) + 273.15$'] },
-    { title: 'Electricidad y ondas', lines: ['$V = I R,\\quad P = V I = I^2 R$', '$R_{\\text{serie}} = \\sum R_i,\\quad \\frac{1}{R_{\\text{par}}} = \\sum \\frac{1}{R_i}$', '$v = \\lambda f,\\quad T = \\frac{1}{f}$'] },
-  ],
-  qui: [
-    { title: 'Estequiometría y disoluciones', lines: ['$n = \\frac{m}{M},\\quad M_{\\text{molaridad}} = \\frac{n}{V(\\text{L})}$', '$C_1 V_1 = C_2 V_2,\\quad N_A = 6.022 \\times 10^{23}\\text{ mol}^{-1}$'] },
-    { title: 'Gases ideales', lines: ['$P V = n R T,\\quad \\frac{P_1 V_1}{T_1} = \\frac{P_2 V_2}{T_2}$', '$R = 0.0821\\text{ L}\\cdot\\text{atm}/(\\text{mol}\\cdot\\text{K})$'] },
-    { title: 'Ácidos, bases y pH', lines: ['$\\text{pH} = -\\log_{10}[\\text{H}^+],\\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-]$', '$\\text{pH} + \\text{pOH} = 14\\; (25^\\circ\\text{C})$'] },
-    { title: 'Masas atómicas de referencia (g/mol)', lines: ['$\\text{H}=1,\\; \\text{C}=12,\\; \\text{N}=14,\\; \\text{O}=16$', '$\\text{Na}=23,\\; \\text{Mg}=24.3,\\; \\text{S}=32,\\; \\text{Cl}=35.5,\\; \\text{Ca}=40$'] },
-  ],
-};
 
 function evalMathExpr(raw) {
   const s = String(raw || '').replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/π/g, String(Math.PI)).trim();
@@ -183,7 +179,29 @@ export default {
   },
   emits: ['close-modal', 'close-calc'],
   setup(props, { emit }) {
-    const formTab = ref('mat');
+    const catalog = window.EXCOBA_FORMULAS || { tabs: [], sections: {} };
+    const formTab = ref(catalog.tabs[0]?.id || 'mat');
+    const formQuery = ref('');
+    const formTabs = catalog.tabs;
+
+    const filteredFormulas = computed(() => {
+      const q = formQuery.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (!q) return catalog.sections[formTab.value] || [];
+      const allCards = Object.values(catalog.sections).flat();
+      return allCards.filter(c => {
+        const hay = `${c.title} ${c.tags || ''} ${c.vars || ''} ${c.tip || ''} ${(c.lines || []).join(' ')}`
+          .toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return hay.includes(q);
+      });
+    });
+
+    const modalTitle = computed(() => ({
+      help: 'Cómo responder el examen',
+      guide: 'Guía del sustentante',
+      form: 'Formulario oficial',
+    }[props.modal] || ''));
+
+    // Calculadora arrastrable + teclado físico
     const calcPos = ref({ x: 0, y: 0 });
     const calcStyle = computed(() => (calcPos.value.x || calcPos.value.y) ? { transform: `translate(${calcPos.value.x}px, ${calcPos.value.y}px)` } : {});
     let dragState = null;
@@ -201,30 +219,12 @@ export default {
       window.addEventListener('pointermove', onDragMove);
       window.addEventListener('pointerup', onDragEnd);
     };
-    const onKeyDown = ev => {
-      if (ev.key !== 'Escape') return;
-      if (props.modal) emit('close-modal');
-      else if (props.calcOpen) emit('close-calc');
-    };
-    onMounted(() => window.addEventListener('keydown', onKeyDown));
-    onUnmounted(() => { onDragEnd(); window.removeEventListener('keydown', onKeyDown); });
-    const formTabs = [{ id: 'mat', label: 'Matemáticas' }, { id: 'fis', label: 'Física' }, { id: 'qui', label: 'Química' }];
-    const activeFormulas = computed(() => FORMULAS[formTab.value] || FORMULAS.mat);
-    const modalTitle = computed(() => ({
-      help: 'Cómo responder el examen',
-      guide: 'Guía del sustentante',
-      form: 'Formulario oficial',
-    }[props.modal] || ''));
 
     const calcExpr = ref('');
     const calcHist = ref('');
     const calcMem = ref(0);
     const calcDisp = computed(() => calcExpr.value || '0');
-
-    const currentVal = () => {
-      const v = evalMathExpr(calcExpr.value);
-      return v === null ? 0 : v;
-    };
+    const currentVal = () => { const v = evalMathExpr(calcExpr.value); return v === null ? 0 : v; };
     const fmt = v => (Number.isFinite(v) ? String(Math.round(v * 1e8) / 1e8) : 'Error');
 
     const press = k => {
@@ -256,13 +256,35 @@ export default {
       calcExpr.value += k;
     };
 
-    return { formTab, formTabs, activeFormulas, modalTitle, calcHist, calcDisp, calcMem, calcStyle, startDrag, press };
+    const onKeyDown = ev => {
+      if (ev.key === 'Escape') {
+        if (props.modal) { ev.preventDefault(); emit('close-modal'); }
+        else if (props.calcOpen) { ev.preventDefault(); emit('close-calc'); }
+        return;
+      }
+      if (!props.calcOpen || props.modal) return;
+      const tag = ev.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (/^[0-9.()]$/.test(ev.key)) { ev.preventDefault(); press(ev.key); }
+      else if (ev.key === '+') { ev.preventDefault(); press('+'); }
+      else if (ev.key === '-') { ev.preventDefault(); press('−'); }
+      else if (ev.key === '*') { ev.preventDefault(); press('×'); }
+      else if (ev.key === '/') { ev.preventDefault(); press('÷'); }
+      else if (ev.key === 'Enter' || ev.key === '=') { ev.preventDefault(); press('='); }
+      else if (ev.key === 'Backspace') { ev.preventDefault(); press('⌫'); }
+      else if (ev.key === 'Delete') { ev.preventDefault(); press('C'); }
+    };
+
+    onMounted(() => window.addEventListener('keydown', onKeyDown));
+    onUnmounted(() => { onDragEnd(); window.removeEventListener('keydown', onKeyDown); });
+
+    return { formTab, formTabs, formQuery, filteredFormulas, modalTitle, calcHist, calcDisp, calcMem, calcStyle, startDrag, press };
   },
 };
 </script>
 
 <style scoped>
-.ex-calc-win{position:fixed;right:22px;bottom:22px;width:292px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:950;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
+.ex-calc-win{position:fixed;right:22px;bottom:22px;width:296px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:950;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
 .ex-win-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#2c3340,#1c212b);padding:8px 10px;border-bottom:1px solid #374151;color:#ffc12b;font-size:12px;font-weight:700}
 .ex-drag-handle{cursor:move;user-select:none;touch-action:none}
 .ex-win-right{display:flex;align-items:center;gap:6px}
@@ -284,18 +306,18 @@ export default {
 .ex-ck-eq:hover{background:#0e7490;color:#fff}
 .ex-calc-foot{font-size:10px;color:#9ca3af;text-align:center;margin-top:2px}
 .ex-modal-bg{position:fixed;inset:0;background:rgba(4,7,12,.76);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
-.ex-modal{background:#141922;border:2px solid #ffc12b;border-radius:8px;max-width:600px;width:100%;max-height:86vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.7);color:#f3f4f6;font-family:Arial,Helvetica,sans-serif}
-.ex-modal-wide{max-width:760px}
+.ex-modal{background:#141922;border:2px solid #ffc12b;border-radius:8px;max-width:640px;width:100%;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.7);color:#f3f4f6;font-family:Arial,Helvetica,sans-serif}
+.ex-modal-wide{max-width:860px}
 .ex-modal-head{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#2a313e,#1b2029);padding:12px 16px;border-bottom:1px solid #374151}
 .ex-modal-head h3{margin:0;color:#ffc12b;font-size:15px;font-weight:700}
 .ex-modal-body{padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.55}
 .ex-lead{margin:0;color:#cbd5e1}
 .ex-help-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .ex-help-card{background:#0d1118;border:1px solid #2b3342;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:6px}
-.ex-help-card h4{margin:0;color:#ffc12b;font-size:13px}
+.ex-help-card h4,.ex-kbd-sheet h4{margin:0;color:#ffc12b;font-size:13px}
 .ex-help-card p{margin:0;color:#d1d5db;font-size:12px}
 .ex-help-demo{display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:28px;margin-bottom:2px}
-.ex-mini-tok{background:#1e293b;color:#2bc1ff;border:1px solid #2bc1ff;border-radius:3px;padding:2px 7px;font-size:11px;font-weight:700;text-decoration:underline}
+.ex-mini-tok{background:#1e293b;color:#2bc1ff;border:1px solid #2bc1ff;border-radius:3px;padding:2px 7px;font-size:11px;font-weight:700}
 .ex-mini-chip{background:#2bc1ff;color:#05222d;border-radius:3px;padding:2px 7px;font-size:11px;font-weight:700}
 .ex-mini-box{background:#232833;border:1px solid #4b5563;color:#cbd5e1;border-radius:3px;padding:2px 7px;font-size:11px}
 .ex-mini-inp{background:#2a2a2a;border:1.5px solid #2bc1ff;color:#fff;border-radius:3px;padding:2px 8px;font-size:11px;font-family:monospace}
@@ -306,19 +328,29 @@ export default {
 .ex-dot{display:inline-flex;align-items:center;justify-content:center;width:22px;height:20px;border-radius:3px;background:#2a303c;border:1px solid #4b5563;font-size:11px;font-weight:700;color:#d1d5db}
 .ex-dot.cur{border-color:#ffc12b;color:#ffc12b}
 .ex-dot.ans{background:#0e4f43;border-color:#00d8b3;color:#fff}
+.ex-kbd-sheet{background:#0d1118;border:1px solid #2b3342;border-left:3px solid #ffc12b;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ex-kbd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 14px;font-size:12px;color:#d1d5db}
+kbd{background:#232b38;border:1px solid #4b5563;border-bottom-width:2px;border-radius:4px;padding:1px 5px;font-family:monospace;font-size:11px;color:#ffc12b;font-weight:700}
 .ex-guide-block{background:#0d1118;border:1px solid #2b3342;border-left:3px solid #2bc1ff;border-radius:5px;padding:12px 14px}
 .ex-guide-block h4{margin:0 0 6px;color:#ffc12b;font-size:13px}
 .ex-guide-block p,.ex-guide-block ul{margin:0;color:#d1d5db;font-size:13px}
 .ex-guide-block ul{padding-left:18px;display:flex;flex-direction:column;gap:4px}
-.ex-tabs{display:flex;gap:6px;border-bottom:1px solid #2d3545;padding-bottom:8px}
-.ex-tab{background:#1d2330;color:#cbd5e1;border:1px solid #374151;border-radius:5px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.ex-form-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #2d3545;padding-bottom:10px}
+.ex-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.ex-tab{background:#1d2330;color:#cbd5e1;border:1px solid #374151;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer}
 .ex-tab.active{background:#0b4f6c;border-color:#2bc1ff;color:#fff}
+.ex-form-search{flex:1;min-width:200px;background:#0a0e14;color:#fff;border:1px solid #3b4659;border-radius:5px;padding:7px 10px;font-size:12px;outline:none}
+.ex-form-search:focus{border-color:#2bc1ff}
+.ex-empty{text-align:center;color:#9ca3af;padding:24px 10px}
 .ex-form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.ex-form-card{background:#0d1118;border:1px solid #2b3342;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ex-form-card{background:#0d1118;border:1px solid #2b3342;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:7px}
 .ex-form-card h4{margin:0;color:#2bc1ff;font-size:12px;text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid #242c3a;padding-bottom:5px}
-.ex-form-line{color:#f3f4f6;font-size:13px;line-height:1.6}
+.ex-form-line{color:#fff;font-size:13px;line-height:1.6}
+.ex-form-vars{font-size:11.5px;color:#cbd5e1;background:#131924;padding:6px 8px;border-radius:4px;border-left:2px solid #475569}
+.ex-form-tip{font-size:11.5px;color:#fde68a}
+.ex-form-ex{font-size:11.5px;color:#6ee7b7;background:#09201c;padding:5px 8px;border-radius:4px;border:1px solid #134e43}
 .ex-modal-foot{padding:10px 16px;background:#10141c;border-top:1px solid #2b3342;display:flex;justify-content:flex-end}
 .ex-close-btn{background:#0b4f6c;border:1px solid #2bc1ff;color:#fff;border-radius:4px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer}
 .ex-close-btn:hover{background:#0e678b}
-@media(max-width:680px){.ex-help-grid,.ex-form-grid{grid-template-columns:1fr}.ex-calc-win{right:10px;bottom:10px;width:calc(100vw - 20px);max-width:300px}}
+@media(max-width:700px){.ex-help-grid,.ex-form-grid,.ex-kbd-grid{grid-template-columns:1fr}.ex-calc-win{right:10px;bottom:10px;width:calc(100vw - 20px);max-width:300px}}
 </style>

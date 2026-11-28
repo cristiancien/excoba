@@ -15,13 +15,13 @@
     <div v-if="item.isOriginal && item.promptHtml" class="demo-prompt" v-latex="item.promptHtml"></div>
     <div v-else-if="item.question" class="demo-prompt" v-latex="item.question"></div>
 
-    <!-- Figuras vectoriales SVG y graficas HTML5 Canvas (cero imagenes externas) -->
+    <!-- Figuras vectoriales y gráficas -->
     <DemoExcobaCanvas v-if="item.canvasSpec" :spec="item.canvasSpec" />
     <div v-if="item.figureSvg && ![3, 19, 24].includes(item.tipo)" class="svg-wrap" v-html="item.figureSvg"></div>
 
-    <!-- A. MUESTRA INTERACTIVA EXCOBA (70 reactivos: 15 tipos, SVG/Canvas/LaTeX) -->
+    <!-- A. MUESTRA DEMOSTRATIVA (70 reactivos con los 15 formatos nativos) -->
     <template v-if="item.isOriginal">
-      <!-- Tipo 4 / 23: espacios desplegables en línea dentro del enunciado -->
+      <!-- Tipo 4 / 23: espacios desplegables en línea -->
       <div v-if="item.tipo === 4 || item.tipo === 23" class="orig-tokens">
         <div v-if="item.textoRefHtml" class="demo-stimulus" v-latex="item.textoRefHtml"></div>
         <div ref="htmlHost" class="demo-prompt" v-html="renderedTokenHtml" @click="onParrafoTokenClick"></div>
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <!-- Tipo 5: clasificacion en categorias (con soporte LaTeX) -->
+      <!-- Tipo 5: clasificación en categorías -->
       <div v-else-if="item.tipo === 5" class="demo-cat-wrap">
         <div class="demo-cat-pool">
           <button v-for="st in unassignedStatements" :key="st.id" type="button" class="demo-chip" :class="{ active: activeChipId === st.id }" @click="activeChipId = activeChipId === st.id ? null : st.id">
@@ -41,7 +41,7 @@
           <span v-if="!unassignedStatements.length" class="demo-pool-empty">Todas las tarjetas clasificadas. Haz clic en una para devolverla.</span>
         </div>
         <div class="demo-cat-grid">
-          <div v-for="cat in item.categories" :key="cat.id" class="demo-cat-box" @click="assignChip(cat.id)">
+          <div v-for="cat in item.categories" :key="cat.id" class="demo-cat-box" tabindex="0" @click="assignChip(cat.id)" @keydown.enter.prevent="assignChip(cat.id)">
             <h4>{{ cat.title }}</h4>
             <button v-for="st in statementsInCat(cat.id)" :key="st.id" type="button" class="demo-chip placed" @click.stop="unassignChip(st.id)">
               × <span v-latex="st.text"></span>
@@ -57,13 +57,13 @@
         </button>
       </div>
 
-      <!-- Tipo 16 / 18: seleccion de frases en parrafo -->
+      <!-- Tipo 16 / 18: selección de frases en párrafo -->
       <div v-else-if="item.tipo === 16 || item.tipo === 18" class="phrase-wrap">
         <div class="demo-prompt" v-html="renderedPhraseHtml" @click.prevent="onPhraseClick"></div>
         <div class="picked-info">Seleccionadas: {{ (answer?.picked || []).length }}</div>
       </div>
 
-      <!-- Tipo 3 / 19 / 24: diagrama SVG con poligonos interactivos -->
+      <!-- Tipo 3 / 19 / 24: diagrama con regiones interactivas -->
       <div v-else-if="[3, 19, 24].includes(item.tipo)" class="poly-stage">
         <div class="svg-wrap poly-wrap">
           <div v-if="item.figureSvg" v-html="item.figureSvg"></div>
@@ -73,13 +73,14 @@
             </polygon>
           </svg>
         </div>
-        <div class="picked-info">
-          Regiones seleccionadas: {{ (answer?.picked || []).length }}
-          <span v-if="(answer?.picked || []).length"> ({{ pickedAreaLabels }})</span>
+        <div class="area-kbd-row">
+          <button v-for="a in item.areas" :key="a.id" type="button" class="area-kbd-btn" :class="{ sel: (answer?.picked || []).includes(a.id) }" @click="togglePicked(a.id)">
+            {{ a.title }}
+          </button>
         </div>
       </div>
 
-      <!-- Tipo 12: tabla desplegable / inputs -->
+      <!-- Tipo 12: tabla desplegable -->
       <div v-else-if="item.tipo === 12" class="rows-wrap">
         <div v-for="r in item.rows" :key="r.key" class="demo-num-box">
           <span style="flex:1" v-latex="r.prompt"></span>
@@ -91,21 +92,21 @@
         </div>
       </div>
 
-      <!-- Tipos numericos / algebraicos (7, 8, 11, 15, 22) -->
+      <!-- Tipos numéricos / algebraicos (7, 8, 11, 15, 22) -->
       <div v-else class="rows-wrap">
-        <div v-for="f in item.fields" :key="f.key" class="demo-num-box">
+        <div v-for="(f, idx) in item.fields" :key="f.key" class="demo-num-box">
           <label v-latex="f.label"></label>
-          <input class="demo-num-input" placeholder="Escribe tu respuesta" :value="answer?.fields?.[f.key] || ''" @input="setField(f.key, $event.target.value)">
+          <input :ref="el => { if (idx === 0) primaryInput = el; }" class="demo-num-input" placeholder="Escribe tu respuesta" :value="answer?.fields?.[f.key] || ''" @input="setField(f.key, $event.target.value)" @keydown.enter.prevent="$emit('check-item')">
           <span v-if="f.unit" class="demo-unit">{{ f.unit }}</span>
         </div>
       </div>
     </template>
 
-    <!-- B. REACTIVOS DEL TEMARIO (20 x 126 = 2,520, estilo DemoExcoba + LaTeX) -->
+    <!-- B. REACTIVOS DEL TEMARIO (2,520 reactivos) -->
     <template v-else>
       <div v-if="item.tipo === 7" class="demo-num-box">
         <label :for="'demo-num-' + item.id">Respuesta:</label>
-        <input :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.5 o 1/4" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })">
+        <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.5 o 1/4" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @keydown.enter.prevent="$emit('check-item')">
         <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
       </div>
 
@@ -126,11 +127,13 @@
 
       <div v-else-if="item.tipo === 5" class="demo-cat-wrap">
         <div class="demo-cat-pool">
-          <button v-for="st in unassignedStatements" :key="st.id" type="button" class="demo-chip" :class="{ active: activeChipId === st.id }" @click="activeChipId = activeChipId === st.id ? null : st.id"><span v-latex="st.text"></span></button>
+          <button v-for="st in unassignedStatements" :key="st.id" type="button" class="demo-chip" :class="{ active: activeChipId === st.id }" @click="activeChipId = activeChipId === st.id ? null : st.id">
+            <span v-latex="st.text"></span>
+          </button>
           <span v-if="!unassignedStatements.length" class="demo-pool-empty">Tarjetas clasificadas. Haz clic en una tarjeta para devolverla.</span>
         </div>
         <div class="demo-cat-grid">
-          <div v-for="cat in item.categories" :key="cat.id" class="demo-cat-box" @click="assignChip(cat.id)">
+          <div v-for="cat in item.categories" :key="cat.id" class="demo-cat-box" tabindex="0" @click="assignChip(cat.id)" @keydown.enter.prevent="assignChip(cat.id)">
             <h4>{{ cat.title }}</h4>
             <button v-for="st in statementsInCat(cat.id)" :key="st.id" type="button" class="demo-chip placed" @click.stop="unassignChip(st.id)">× <span v-latex="st.text"></span></button>
           </div>
@@ -141,7 +144,7 @@
 </template>
 
 <script>
-const { ref, computed, watch } = Vue;
+const { ref, computed, watch, onMounted, onUnmounted, nextTick } = Vue;
 const { loadModule } = window['vue3-sfc-loader'];
 const sfcOpts = window.__SFC_OPTIONS__;
 
@@ -149,10 +152,14 @@ export default {
   components: {
     DemoExcobaCanvas: Vue.defineAsyncComponent(() => loadModule('./components/DemoExcobaCanvas.vue', sfcOpts)),
   },
-  props: { item: { type: Object, required: true }, answer: { type: Object, default: null } },
-  emits: ['answer'],
+  props: {
+    item: { type: Object, required: true },
+    answer: { type: Object, default: null },
+    keyboardDisabled: { type: Boolean, default: false },
+  },
+  emits: ['answer', 'check-item'],
   setup(props, { emit }) {
-    const tokenMenuOpen = ref(false), openTok = ref(''), activeChipId = ref(null), htmlHost = ref(null);
+    const tokenMenuOpen = ref(false), openTok = ref(''), activeChipId = ref(null), htmlHost = ref(null), primaryInput = ref(null);
     const renderMathInHost = () => {
       if (htmlHost.value && window.renderMathInElement) {
         window.renderMathInElement(htmlHost.value, {
@@ -174,7 +181,19 @@ export default {
       });
     });
 
-    watch(() => props.item.id, () => { tokenMenuOpen.value = false; openTok.value = ''; activeChipId.value = null; }, { immediate: true });
+    const phraseIds = computed(() => {
+      const out = [];
+      String(props.item.parrafoHtml || '').replace(/<a\b[^>]*href="([^"]+)"[^>]*>/gi, (_, id) => { out.push(id); return _; });
+      return out;
+    });
+
+    watch(() => props.item.id, () => {
+      tokenMenuOpen.value = false;
+      openTok.value = '';
+      activeChipId.value = null;
+      primaryInput.value = null;
+      nextTick(() => { if (primaryInput.value && !props.keyboardDisabled) primaryInput.value.focus(); });
+    }, { immediate: true });
     watch(() => [props.item.id, renderedTokenHtml.value, htmlHost.value], renderMathInHost, { flush: 'post', immediate: true });
 
     const selectedTemarioOpt = computed(() => (props.item.options || []).find(o => o.id === props.answer?.optionId) || null);
@@ -215,10 +234,6 @@ export default {
         picked.has(id) ? `<a${a}href="${id}"${b} class="phrase-sel">` : m
       );
     });
-    const pickedAreaLabels = computed(() => {
-      const ids = props.answer?.picked || [];
-      return ids.map(id => (props.item.areas || []).find(a => a.id === id)?.title || id).join(', ');
-    });
     const onPhraseClick = ev => {
       const a = ev.target.closest?.('a[href]'); if (!a) return;
       togglePicked(a.getAttribute('href'));
@@ -231,10 +246,87 @@ export default {
       return out.join(' ');
     };
 
+    // Atajos de teclado específicos del reactivo activo
+    const onKeyDown = ev => {
+      if (props.keyboardDisabled || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+      const tag = ev.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      const it = props.item;
+      if (!it) return;
+
+      if (ev.key === 'Escape') {
+        if (tokenMenuOpen.value || openTok.value) { ev.preventDefault(); tokenMenuOpen.value = false; openTok.value = ''; }
+        return;
+      }
+
+      // Shift+1 / Shift+2 (o ! / ") asigna la tarjeta activa en Tipo 5
+      if (it.tipo === 5 && (ev.shiftKey || ev.key === '!' || ev.key === '@' || ev.key === '"')) {
+        const catIdx = (ev.code === 'Digit1' || ev.key === '!') ? 0 : (ev.code === 'Digit2' || ev.key === '@' || ev.key === '"') ? 1 : -1;
+        if (catIdx >= 0 && it.categories?.[catIdx]) {
+          ev.preventDefault();
+          if (!activeChipId.value && unassignedStatements.value.length) activeChipId.value = unassignedStatements.value[0].id;
+          assignChip(it.categories[catIdx].id);
+          return;
+        }
+      }
+
+      const num = /^[1-9]$/.test(ev.key) ? Number(ev.key) - 1 : -1;
+      const letterIdx = /^[a-dA-D]$/.test(ev.key) ? ev.key.toUpperCase().charCodeAt(0) - 65 : -1;
+      const choiceIdx = num >= 0 ? num : letterIdx;
+
+      if (!it.isOriginal && it.tipo === 4) {
+        if (ev.key === ' ') { ev.preventDefault(); tokenMenuOpen.value = !tokenMenuOpen.value; return; }
+        if (choiceIdx >= 0 && it.options?.[choiceIdx]) {
+          ev.preventDefault();
+          emit('answer', { optionId: it.options[choiceIdx].id });
+          tokenMenuOpen.value = false;
+        }
+        return;
+      }
+
+      if (it.isOriginal && (it.tipo === 4 || it.tipo === 23)) {
+        const toks = it.tokens || [];
+        if (ev.key === ' ') {
+          ev.preventDefault();
+          const curIdx = toks.findIndex(t => t.id === openTok.value);
+          openTok.value = toks[(curIdx + 1) % Math.max(1, toks.length)]?.id || '';
+          return;
+        }
+        if (choiceIdx >= 0) {
+          const target = activeTokenObj.value || toks.find(t => !props.answer?.tokens?.[t.id]) || toks[0];
+          if (target?.options?.[choiceIdx]) {
+            ev.preventDefault();
+            pickOrigToken(target.id, target.options[choiceIdx].val);
+          }
+        }
+        return;
+      }
+
+      if (it.tipo === 5 && num >= 0 && unassignedStatements.value[num]) {
+        ev.preventDefault();
+        const sid = unassignedStatements.value[num].id;
+        activeChipId.value = activeChipId.value === sid ? null : sid;
+        return;
+      }
+
+      if (it.isOriginal && it.tipo === 6 && num >= 0 && it.sentences?.[num]) {
+        ev.preventDefault(); toggleSeq(it.sentences[num].id); return;
+      }
+      if (it.isOriginal && (it.tipo === 16 || it.tipo === 18) && num >= 0 && phraseIds.value[num]) {
+        ev.preventDefault(); togglePicked(phraseIds.value[num]); return;
+      }
+      if (it.isOriginal && [3, 19, 24].includes(it.tipo) && num >= 0 && it.areas?.[num]) {
+        ev.preventDefault(); togglePicked(it.areas[num].id);
+      }
+    };
+
+    onMounted(() => window.addEventListener('keydown', onKeyDown));
+    onUnmounted(() => window.removeEventListener('keydown', onKeyDown));
+
     return {
-      tokenMenuOpen, openTok, activeChipId, htmlHost, activeTokenObj, renderedTokenHtml, selectedTemarioOpt, unassignedStatements,
-      statementsInCat, assignChip, unassignChip, pickOrigToken, onParrafoTokenClick,
-      seqIndex, toggleSeq, togglePicked, renderedPhraseHtml, pickedAreaLabels, onPhraseClick, setRow, setField, formatPoly,
+      tokenMenuOpen, openTok, activeChipId, htmlHost, primaryInput, activeTokenObj, renderedTokenHtml, phraseIds,
+      selectedTemarioOpt, unassignedStatements, statementsInCat, assignChip, unassignChip, pickOrigToken,
+      onParrafoTokenClick, seqIndex, toggleSeq, togglePicked, renderedPhraseHtml, onPhraseClick, setRow, setField, formatPoly,
     };
   },
 };
@@ -256,6 +348,11 @@ export default {
 .poly-hit{fill:rgba(43,193,255,.12);stroke:#2bc1ff;stroke-width:2;cursor:pointer}
 .poly-hit:hover{fill:rgba(43,193,255,.28)}
 .poly-hit.sel{fill:rgba(0,216,179,.42);stroke:#00d8b3;stroke-width:3}
+.area-kbd-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.area-kbd-btn{background:#1d2330;color:#e5e7eb;border:1px solid #4b5563;border-radius:4px;padding:5px 9px;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.area-kbd-btn.sel{background:#0d2d26;border-color:#00d8b3;color:#a7f3d0;font-weight:700}
+.key-pill{background:#1f2937;color:#ffc12b;border:1px solid #475569;border-radius:3px;padding:1px 5px;font-family:monospace;font-size:10px;font-weight:700;margin-right:4px}
+.key-pill.dark{background:#072430;color:#7dd3fc;border-color:#0e7490}
 .demo-num-box{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#141821;padding:12px;border-radius:5px;border:1px solid #334155}
 .demo-num-input{background:#2a2a2a;color:#fff;border:2px solid #2bc1ff;border-radius:4px;padding:8px 12px;font-size:15px;width:210px}
 .demo-num-input:focus{outline:none;border-color:#00d8b3}
@@ -264,19 +361,20 @@ export default {
 .demo-cloze-line{font-size:14px;color:#e5e7eb;line-height:1.8}
 .demo-token-btn{background:#1e293b;color:#2bc1ff;border:1px solid #2bc1ff;border-radius:4px;padding:4px 10px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:underline}
 .demo-token-btn.filled{color:#00d8b3;border-color:#00d8b3;background:#0c2b25}
-.demo-token-menu{margin-top:6px;background:#2f343d;border:2px solid #2bc1ff;border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px;max-width:520px}
-.demo-token-opt{text-align:left;background:transparent;color:#fff;border:0;padding:8px 10px;border-radius:4px;cursor:pointer;font-size:13px}
+.demo-token-menu{margin-top:6px;background:#2f343d;border:2px solid #2bc1ff;border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px;max-width:560px}
+.demo-token-opt{text-align:left;background:transparent;color:#fff;border:0;padding:8px 10px;border-radius:4px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px}
 .demo-token-opt:hover,.demo-token-opt.active{background:#2bc1ff;color:#000;font-weight:700}
-.token-pills,.rows-wrap,.order-list{display:flex;flex-direction:column;gap:8px}
+.rows-wrap,.order-list{display:flex;flex-direction:column;gap:8px}
 .order-item{background:#222630;border:1px solid #4b5563;color:#fff;padding:8px 10px;border-radius:4px;text-align:left;cursor:pointer;font-size:13px}
 .order-item.picked{border-color:#00d8b3;background:#0d2d26}
 .demo-cat-pool{display:flex;flex-wrap:wrap;gap:8px;padding:10px;background:#11161f;border:1px dashed #4b5563;border-radius:5px;min-height:50px}
 .demo-pool-empty{font-size:12px;color:#9ca3af}
-.demo-chip{background:#2bc1ff;color:#072430;border:0;border-radius:4px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer;text-align:left}
+.demo-chip{background:#2bc1ff;color:#072430;border:0;border-radius:4px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer;text-align:left;display:inline-flex;align-items:center;gap:4px}
 .demo-chip.active{background:#00d8b3;outline:2px solid #fff}
 .demo-chip.placed{display:block;width:100%;margin-bottom:6px;background:#00d8b3;color:#03221c}
 .demo-cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .demo-cat-box{background:#232833;border:1px solid #4b5563;border-radius:5px;padding:10px;min-height:120px;cursor:pointer}
+.demo-cat-box:focus{outline:2px solid #ffc12b}
 .demo-cat-box h4{margin:0 0 8px;color:#2bc1ff;font-size:13px;text-align:center;border-bottom:1px solid #3b4252;padding-bottom:6px}
 @media(max-width:720px){.demo-cat-grid{grid-template-columns:1fr}}
 </style>
