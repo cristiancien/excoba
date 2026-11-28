@@ -27,14 +27,19 @@
     </div>
   </aside>
 
-  <!-- Formulario oficial flotante y arrastrable (no bloquea el reactivo) -->
+  <!-- Formulario oficial compacto, flotante y arrastrable (estilo panel 380px) -->
   <aside v-if="formOpen" class="ex-form-win" :style="formStyle" role="dialog" aria-label="Formulario oficial">
     <div class="ex-win-bar ex-drag-handle" @pointerdown="startFormDrag">
-      <span>Formulario oficial</span>
-      <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-form')" title="Cerrar">×</button>
+      <span>§ Formulario oficial</span>
+      <div class="ex-win-right">
+        <button type="button" class="ex-mini-toggle" :class="{ active: showExamples }" @pointerdown.stop @click="showExamples = !showExamples">
+          {{ showExamples ? 'Ocultar ejemplos' : 'Ejemplos' }}
+        </button>
+        <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-form')" title="Cerrar">×</button>
+      </div>
     </div>
     <div class="ex-form-win-body">
-      <div class="ex-form-bar">
+      <div class="ex-form-controls">
         <div class="ex-tabs">
           <button v-for="t in formTabs" :key="t.id" type="button" class="ex-tab" :class="{ active: formTab === t.id }" @click="formTab = t.id">
             {{ t.label }}
@@ -44,22 +49,24 @@
           v-model="formQuery"
           type="search"
           class="ex-form-search"
-          placeholder="Buscar fórmula (ej. Pitágoras, Ohm, pH, vértice)..."
+          placeholder="Buscar fórmula..."
           aria-label="Buscar en el formulario"
         />
       </div>
 
       <div v-if="!filteredFormulas.length" class="ex-empty">
-        No se encontraron fórmulas para «{{ formQuery }}». Prueba con otro término o limpia el buscador.
+        Sin coincidencias para «{{ formQuery }}».
       </div>
 
-      <div v-else class="ex-form-grid">
+      <div v-else class="ex-form-list">
         <div v-for="card in filteredFormulas" :key="card.title" class="ex-form-card">
           <h4>{{ card.title }}</h4>
           <div v-for="(line, i) in card.lines" :key="i" class="ex-form-line" v-latex="line"></div>
           <div v-if="card.vars" class="ex-form-vars" v-latex="card.vars"></div>
-          <div v-if="card.tip" class="ex-form-tip"><strong>Uso:</strong> <span v-latex="card.tip"></span></div>
-          <div v-if="card.example" class="ex-form-ex" v-latex="card.example"></div>
+          <template v-if="showExamples">
+            <div v-if="card.tip" class="ex-form-tip"><strong>Uso:</strong> <span v-latex="card.tip"></span></div>
+            <div v-if="card.example" class="ex-form-ex" v-latex="card.example"></div>
+          </template>
         </div>
       </div>
     </div>
@@ -189,6 +196,7 @@ export default {
     const catalog = window.EXCOBA_FORMULAS || { tabs: [], sections: {} };
     const formTab = ref(catalog.tabs[0]?.id || 'mat');
     const formQuery = ref('');
+    const showExamples = ref(false);
     const formTabs = catalog.tabs;
 
     const filteredFormulas = computed(() => {
@@ -291,7 +299,7 @@ export default {
     onUnmounted(() => { calcDrag.end(); formDrag.end(); window.removeEventListener('keydown', onKeyDown); });
 
     return {
-      formTab, formTabs, formQuery, filteredFormulas, modalTitle, calcHist, calcDisp, calcMem,
+      formTab, formTabs, formQuery, showExamples, filteredFormulas, modalTitle, calcHist, calcDisp, calcMem,
       calcStyle: calcDrag.style, startDrag: calcDrag.start,
       formStyle: formDrag.style, startFormDrag: formDrag.start, press,
     };
@@ -301,8 +309,12 @@ export default {
 
 <style scoped>
 .ex-calc-win{position:fixed;right:22px;bottom:22px;width:296px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:960;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
-.ex-form-win{position:fixed;left:24px;top:64px;width:min(760px,calc(100vw - 48px));max-height:calc(100vh - 96px);background:#141922;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 22px 54px rgba(0,0,0,.72);z-index:950;display:flex;flex-direction:column;overflow:hidden;color:#f3f4f6;font-family:Arial,Helvetica,sans-serif}
-.ex-form-win-body{padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.5}
+.ex-form-win{position:fixed;right:24px;top:68px;width:min(390px,calc(100vw - 24px));max-height:76vh;background:#141922;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 46px rgba(0,0,0,.7);z-index:950;display:flex;flex-direction:column;overflow:hidden;color:#f3f4f6;font-family:Arial,Helvetica,sans-serif}
+.ex-form-win-body{padding:10px 12px;overflow-y:auto;display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.45}
+.ex-mini-toggle{background:#1f2735;color:#cbd5e1;border:1px solid #475569;border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:700;cursor:pointer}
+.ex-mini-toggle.active,.ex-mini-toggle:hover{border-color:#2bc1ff;color:#2bc1ff;background:#152b3c}
+.ex-form-controls{display:flex;flex-direction:column;gap:7px;border-bottom:1px solid #2d3545;padding-bottom:8px}
+.ex-form-list{display:flex;flex-direction:column;gap:8px}
 .ex-win-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#2c3340,#1c212b);padding:8px 10px;border-bottom:1px solid #374151;color:#ffc12b;font-size:12px;font-weight:700}
 .ex-drag-handle{cursor:move;user-select:none;touch-action:none}
 .ex-win-right{display:flex;align-items:center;gap:6px}
@@ -353,20 +365,18 @@ kbd{background:#232b38;border:1px solid #4b5563;border-bottom-width:2px;border-r
 .ex-guide-block h4{margin:0 0 6px;color:#ffc12b;font-size:13px}
 .ex-guide-block p,.ex-guide-block ul{margin:0;color:#d1d5db;font-size:13px}
 .ex-guide-block ul{padding-left:18px;display:flex;flex-direction:column;gap:4px}
-.ex-form-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #2d3545;padding-bottom:10px}
-.ex-tabs{display:flex;gap:6px;flex-wrap:wrap}
-.ex-tab{background:#1d2330;color:#cbd5e1;border:1px solid #374151;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.ex-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.ex-tab{background:#1d2330;color:#cbd5e1;border:1px solid #374151;border-radius:4px;padding:5px 8px;font-size:11px;font-weight:700;cursor:pointer}
 .ex-tab.active{background:#0b4f6c;border-color:#2bc1ff;color:#fff}
-.ex-form-search{flex:1;min-width:200px;background:#0a0e14;color:#fff;border:1px solid #3b4659;border-radius:5px;padding:7px 10px;font-size:12px;outline:none}
+.ex-form-search{width:100%;background:#0a0e14;color:#fff;border:1px solid #3b4659;border-radius:4px;padding:6px 9px;font-size:12px;outline:none}
 .ex-form-search:focus{border-color:#2bc1ff}
-.ex-empty{text-align:center;color:#9ca3af;padding:24px 10px}
-.ex-form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.ex-form-card{background:#0d1118;border:1px solid #2b3342;border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:7px}
-.ex-form-card h4{margin:0;color:#2bc1ff;font-size:12px;text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid #242c3a;padding-bottom:5px}
-.ex-form-line{color:#fff;font-size:13px;line-height:1.6}
-.ex-form-vars{font-size:11.5px;color:#cbd5e1;background:#131924;padding:6px 8px;border-radius:4px;border-left:2px solid #475569}
-.ex-form-tip{font-size:11.5px;color:#fde68a}
-.ex-form-ex{font-size:11.5px;color:#6ee7b7;background:#09201c;padding:5px 8px;border-radius:4px;border:1px solid #134e43}
+.ex-empty{text-align:center;color:#9ca3af;padding:16px 8px}
+.ex-form-card{background:#0d1118;border:1px solid #2b3342;border-radius:5px;padding:9px 10px;display:flex;flex-direction:column;gap:5px}
+.ex-form-card h4{margin:0;color:#2bc1ff;font-size:11px;text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid #242c3a;padding-bottom:4px}
+.ex-form-line{color:#fff;font-size:12.5px;line-height:1.5}
+.ex-form-vars{font-size:11px;color:#cbd5e1;background:#131924;padding:4px 7px;border-radius:4px;border-left:2px solid #475569}
+.ex-form-tip{font-size:11px;color:#fde68a}
+.ex-form-ex{font-size:11px;color:#6ee7b7;background:#09201c;padding:4px 7px;border-radius:4px;border:1px solid #134e43}
 .ex-modal-foot{padding:10px 16px;background:#10141c;border-top:1px solid #2b3342;display:flex;justify-content:flex-end}
 .ex-close-btn{background:#0b4f6c;border:1px solid #2bc1ff;color:#fff;border-radius:4px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer}
 .ex-close-btn:hover{background:#0e678b}
