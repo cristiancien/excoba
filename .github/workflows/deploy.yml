@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Se ejecuta cada vez que haces un push a la rama principal
-  push:
-    branches: ["main", "master"]
-  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña Actions
+  # GitHub Pages despliega directo desde la rama master (sin consumir minutos de Actions).
+  # Mantener solo disparo manual si algún día se cambia a build_type: workflow.
   workflow_dispatch:
 
 # Otorga permisos para subir a GitHub Pages
