@@ -463,8 +463,8 @@ export default {
   .demo-workspace{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;gap:8px;padding:7px}
   .demo-stage{padding:12px;gap:10px;overflow-y:visible}
   .demo-sidebar{height:auto;padding:8px;gap:6px;width:100%;max-width:100%;overflow:hidden}
-  .demo-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;width:100%;max-width:100%;gap:5px;max-height:none;padding:2px 0 6px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
-  .demo-gbtn{flex:0 0 auto;min-width:36px;padding:6px 8px;font-size:11.5px;scroll-snap-align:center}
+  .demo-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:minmax(36px,auto);overflow-x:auto;overflow-y:hidden;width:100%;max-width:100%;gap:5px;max-height:none;padding:2px 0 6px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  .demo-gbtn{min-width:36px;padding:6px 6px;font-size:11.5px;scroll-snap-align:start}
 }
 @media(max-width:520px){
   .demo-mbtn{padding:5px 7px;font-size:11px}
