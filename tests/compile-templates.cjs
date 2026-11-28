@@ -9,7 +9,7 @@ vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(vuePath, 'utf8'), ctx, { filename: vuePath });
 let failed = false;
 const reports = [];
-for (const file of ['App.vue', 'components/QuizView.vue', 'components/SettingsPanel.vue', 'components/FeedbackOverlay.vue', 'components/DemoExcobaView.vue', 'components/DemoExcobaStage.vue', 'components/DemoExcobaCanvas.vue', 'components/DemoExcobaTools.vue']) {
+for (const file of ['App.vue', 'components/HomeMenu.vue', 'components/QuizView.vue', 'components/SettingsPanel.vue', 'components/FeedbackOverlay.vue', 'components/DemoExcobaView.vue', 'components/DemoExcobaStage.vue', 'components/DemoExcobaCanvas.vue', 'components/DemoExcobaTools.vue']) {
   const text = fs.readFileSync(path.resolve(__dirname, '..', file), 'utf8');
   const template = text.slice(text.indexOf('<template>') + 10, text.lastIndexOf('</template>'));
   const errors = [], warnings = [];

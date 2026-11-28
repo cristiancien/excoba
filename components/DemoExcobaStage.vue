@@ -21,21 +21,14 @@
 
     <!-- A. MUESTRA INTERACTIVA EXCOBA (70 reactivos: 15 tipos, SVG/Canvas/LaTeX) -->
     <template v-if="item.isOriginal">
-      <!-- Tipo 4 / 23: tokens con menu desplegable -->
+      <!-- Tipo 4 / 23: espacios desplegables en línea dentro del enunciado -->
       <div v-if="item.tipo === 4 || item.tipo === 23" class="orig-tokens">
         <div v-if="item.textoRefHtml" class="demo-stimulus" v-latex="item.textoRefHtml"></div>
-        <div ref="htmlHost" class="demo-prompt" v-html="item.parrafoHtml" @click="onParrafoTokenClick"></div>
-        <div class="token-pills">
-          <div v-for="tok in item.tokens" :key="tok.id" class="token-pill-row">
-            <button type="button" class="demo-token-btn" :class="{ filled: Boolean(answer?.tokens?.[tok.id]) }" @click="openTok = openTok === tok.id ? '' : tok.id">
-              <span v-latex="answer?.tokens?.[tok.id] || tok.mostrar"></span>
-            </button>
-            <div v-if="openTok === tok.id" class="demo-token-menu">
-              <button v-for="opt in tok.options" :key="opt.id" type="button" class="demo-token-opt" :class="{ active: answer?.tokens?.[tok.id] === opt.val }" @click="pickOrigToken(tok.id, opt.val)">
-                <span v-latex="opt.val"></span>
-              </button>
-            </div>
-          </div>
+        <div ref="htmlHost" class="demo-prompt" v-html="renderedTokenHtml" @click="onParrafoTokenClick"></div>
+        <div v-if="activeTokenObj" class="demo-token-menu">
+          <button v-for="opt in activeTokenObj.options" :key="opt.id" type="button" class="demo-token-opt" :class="{ active: answer?.tokens?.[activeTokenObj.id] === opt.val }" @click="pickOrigToken(activeTokenObj.id, opt.val)">
+            <span v-latex="opt.val"></span>
+          </button>
         </div>
       </div>
 
@@ -168,8 +161,21 @@ export default {
         });
       }
     };
+    const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+    const activeTokenObj = computed(() => (props.item.tokens || []).find(t => t.id === openTok.value) || null);
+    const renderedTokenHtml = computed(() => {
+      const picked = props.answer?.tokens || {};
+      return String(props.item.parrafoHtml || '').replace(/<a\b[^>]*href="([^"]+)"[^>]*>[\s\S]*?<\/a>/gi, (_, tid) => {
+        const tok = (props.item.tokens || []).find(t => t.id === tid);
+        const val = picked[tid];
+        const cls = ['inline-tok', val ? 'filled' : '', openTok.value === tid ? 'open' : ''].filter(Boolean).join(' ');
+        const label = escapeHtml(val || tok?.mostrar || '______');
+        return `<a href="${escapeHtml(tid)}" class="${cls}">${label} ▾</a>`;
+      });
+    });
+
     watch(() => props.item.id, () => { tokenMenuOpen.value = false; openTok.value = ''; activeChipId.value = null; }, { immediate: true });
-    watch(() => [props.item.id, htmlHost.value], renderMathInHost, { flush: 'post', immediate: true });
+    watch(() => [props.item.id, renderedTokenHtml.value, htmlHost.value], renderMathInHost, { flush: 'post', immediate: true });
 
     const selectedTemarioOpt = computed(() => (props.item.options || []).find(o => o.id === props.answer?.optionId) || null);
     const catMap = computed(() => props.answer?.map || {});
@@ -190,7 +196,9 @@ export default {
     };
     const onParrafoTokenClick = ev => {
       const a = ev.target.closest?.('a[href]'); if (!a) return;
-      ev.preventDefault(); openTok.value = a.getAttribute('href');
+      ev.preventDefault();
+      const id = a.getAttribute('href');
+      openTok.value = openTok.value === id ? '' : id;
     };
     const seqIndex = id => (props.answer?.seq || []).indexOf(id);
     const toggleSeq = id => {
@@ -224,7 +232,7 @@ export default {
     };
 
     return {
-      tokenMenuOpen, openTok, activeChipId, htmlHost, selectedTemarioOpt, unassignedStatements,
+      tokenMenuOpen, openTok, activeChipId, htmlHost, activeTokenObj, renderedTokenHtml, selectedTemarioOpt, unassignedStatements,
       statementsInCat, assignChip, unassignChip, pickOrigToken, onParrafoTokenClick,
       seqIndex, toggleSeq, togglePicked, renderedPhraseHtml, pickedAreaLabels, onPhraseClick, setRow, setField, formatPoly,
     };
@@ -238,7 +246,10 @@ export default {
 .demo-topic-caption{color:#9ca3af;font-size:11px}
 .demo-stimulus{background:#141923;border:1px solid #2d3748;padding:10px 12px;border-radius:4px;font-size:13px;line-height:1.5;color:#dbeafe}
 .demo-prompt{font-size:15px;line-height:1.6;color:#fff}
-.demo-prompt :deep(a){color:#2bc1ff;text-decoration:underline;cursor:pointer;padding:1px 4px;border-radius:3px}
+.demo-prompt :deep(a){color:#2bc1ff;text-decoration:underline;cursor:pointer;padding:1px 5px;border-radius:3px}
+.demo-prompt :deep(a.inline-tok){background:#1a2538;border:1px solid #2bc1ff;text-decoration:none;font-weight:700;display:inline-block;margin:0 2px}
+.demo-prompt :deep(a.inline-tok.filled){background:#0d2d26;border-color:#00d8b3;color:#00d8b3}
+.demo-prompt :deep(a.inline-tok.open){outline:2px solid #ffc12b}
 .demo-prompt :deep(a.phrase-sel){background:#00d8b3;color:#000;font-weight:700}
 .svg-wrap{position:relative;display:inline-block;max-width:100%;margin:0 auto;border:1px solid #374151;border-radius:5px;overflow:hidden;background:#0a0e14}
 .poly-svg{position:absolute;inset:0;width:100%;height:100%}

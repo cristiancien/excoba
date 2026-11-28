@@ -1,11 +1,11 @@
 <template>
-  <!-- Calculadora científica flotante estilo EXCOBA (no bloquea el reactivo) -->
-  <aside v-if="calcOpen" class="ex-calc-win" role="dialog" aria-label="Calculadora EXCOBA">
-    <div class="ex-win-bar">
+  <!-- Calculadora científica flotante arrastrable estilo EXCOBA (no bloquea el reactivo) -->
+  <aside v-if="calcOpen" class="ex-calc-win" :style="calcStyle" role="dialog" aria-label="Calculadora EXCOBA">
+    <div class="ex-win-bar ex-drag-handle" @pointerdown="startDrag">
       <span>Calculadora científica</span>
       <div class="ex-win-right">
         <span v-if="calcMem !== 0" class="ex-mem-tag">M</span>
-        <button type="button" class="ex-win-x" @click="$emit('close-calc')" title="Cerrar">×</button>
+        <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-calc')" title="Cerrar">×</button>
       </div>
     </div>
     <div class="ex-calc-body">
@@ -121,7 +121,7 @@
 </template>
 
 <script>
-const { ref, computed } = Vue;
+const { ref, computed, onMounted, onUnmounted } = Vue;
 
 const FORMULAS = {
   mat: [
@@ -182,8 +182,32 @@ export default {
     calcOpen: { type: Boolean, default: false },
   },
   emits: ['close-modal', 'close-calc'],
-  setup(props) {
+  setup(props, { emit }) {
     const formTab = ref('mat');
+    const calcPos = ref({ x: 0, y: 0 });
+    const calcStyle = computed(() => (calcPos.value.x || calcPos.value.y) ? { transform: `translate(${calcPos.value.x}px, ${calcPos.value.y}px)` } : {});
+    let dragState = null;
+    const onDragMove = ev => {
+      if (!dragState) return;
+      calcPos.value = { x: dragState.ox + (ev.clientX - dragState.sx), y: dragState.oy + (ev.clientY - dragState.sy) };
+    };
+    const onDragEnd = () => {
+      dragState = null;
+      window.removeEventListener('pointermove', onDragMove);
+      window.removeEventListener('pointerup', onDragEnd);
+    };
+    const startDrag = ev => {
+      dragState = { sx: ev.clientX, sy: ev.clientY, ox: calcPos.value.x, oy: calcPos.value.y };
+      window.addEventListener('pointermove', onDragMove);
+      window.addEventListener('pointerup', onDragEnd);
+    };
+    const onKeyDown = ev => {
+      if (ev.key !== 'Escape') return;
+      if (props.modal) emit('close-modal');
+      else if (props.calcOpen) emit('close-calc');
+    };
+    onMounted(() => window.addEventListener('keydown', onKeyDown));
+    onUnmounted(() => { onDragEnd(); window.removeEventListener('keydown', onKeyDown); });
     const formTabs = [{ id: 'mat', label: 'Matemáticas' }, { id: 'fis', label: 'Física' }, { id: 'qui', label: 'Química' }];
     const activeFormulas = computed(() => FORMULAS[formTab.value] || FORMULAS.mat);
     const modalTitle = computed(() => ({
@@ -232,7 +256,7 @@ export default {
       calcExpr.value += k;
     };
 
-    return { formTab, formTabs, activeFormulas, modalTitle, calcHist, calcDisp, calcMem, press };
+    return { formTab, formTabs, activeFormulas, modalTitle, calcHist, calcDisp, calcMem, calcStyle, startDrag, press };
   },
 };
 </script>
@@ -240,6 +264,7 @@ export default {
 <style scoped>
 .ex-calc-win{position:fixed;right:22px;bottom:22px;width:292px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:950;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
 .ex-win-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#2c3340,#1c212b);padding:8px 10px;border-bottom:1px solid #374151;color:#ffc12b;font-size:12px;font-weight:700}
+.ex-drag-handle{cursor:move;user-select:none;touch-action:none}
 .ex-win-right{display:flex;align-items:center;gap:6px}
 .ex-mem-tag{background:#00d8b3;color:#052e27;font-size:10px;font-weight:800;padding:1px 5px;border-radius:3px}
 .ex-win-x{background:transparent;border:0;color:#cbd5e1;font-size:18px;line-height:1;cursor:pointer;padding:0 4px}

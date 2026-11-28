@@ -14,161 +14,51 @@
     <!-- 0. MODO RÉPLICA DEMOEXCOBA.EXE (20 reactivos x 126 temas de Temario.pdf) -->
     <DemoExcobaView v-if="uiMode === 'demoexcoba'" @switch-classic="setUiMode('classic')" />
 
-    <!-- 1. PANTALLA: MENÚ PRINCIPAL (Interfaz actual intacta) -->
+    <!-- 1. PANTALLA: MENÚ PRINCIPAL (Homepage rediseñado) -->
     <transition v-else name="fade" mode="out-in">
-      <div v-if="currentScreen === 'menu'" class="main-menu-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 1rem; position: relative;">
-        
-        <!-- Versión del Simulador -->
-        <div style="position: absolute; bottom: 25px; left: 25px; z-index: 10;">
-          <span class="glass-panel" style="padding: 6px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow);">
-            v2.0
-          </span>
-        </div>
-
-        <!-- Theme Switcher (Claro/Oscuro) -->
-        <div style="position: absolute; top: 25px; right: 25px; z-index: 10;">
-          <button @click="toggleTheme" class="btn glass-panel theme-toggle-btn" style="padding: 10px 16px; border-radius: 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); font-weight: 700;">
-            <span v-if="isDarkMode">☼ Modo Claro</span>
-            <span v-else>☾ Modo Oscuro</span>
-          </button>
-        </div>
-
-        <!-- Tarjeta Central Premium -->
-        <div class="glass-panel menu-hero-card" style="max-width: 650px; width: 100%; padding: 3.5rem 2.5rem; text-align: center; display: flex; flex-direction: column; gap: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 24px;">
-          
-          <!-- Logo / Icono Lúdico Académico con Favicon -->
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <div class="pulse-icon" style="background: linear-gradient(135deg, var(--primary), #818cf8); width: 90px; height: 90px; border-radius: 26px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4); animation: float 3s ease-in-out infinite; padding: 4px;">
-              <img src="favicon.png" alt="EXCOBA Prep Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 22px;" />
-            </div>
-          </div>
-
-          <!-- Título y Descripción -->
-          <div>
-            <h1 style="font-size: 2.3rem; color: var(--text-main); margin-bottom: 0.4rem; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
-              EXCOBA Prep
-            </h1>
-            <h2 style="font-size: 1.2rem; color: var(--text-muted); font-weight: 700; margin-bottom: 1.2rem;">
-              Simulador Especialidad: Arquitectura & Diseño
-            </h2>
-            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin: 0 auto; max-width: 480px;">
-              Practica por tema y dificultad, o prepara una sesión de 180 reactivos con las nueve materias del simulacro.
-            </p>
-          </div>
-
-          <!-- Resumen del Temario -->
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 0.5rem 0;" class="menu-stats-grid">
-            <div class="glass-panel" style="padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.5);">
-              <span style="font-size: 1.6rem; font-weight: 800; color: var(--primary); display: block;">180</span>
-              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Reactivos</span>
-            </div>
-            <div class="glass-panel" style="padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.5);">
-              <span style="font-size: 1.6rem; font-weight: 800; color: var(--secondary); display: block;">3</span>
-              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Secciones</span>
-            </div>
-            <div class="glass-panel" style="padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.5);">
-              <span style="font-size: 1.6rem; font-weight: 800; color: var(--warning); display: block;">9</span>
-              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Subtemas</span>
-            </div>
-          </div>
-
-          <!-- Secciones de Estudio y Pruebas Disponibles -->
-          <div style="text-align: left; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 1rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); font-weight: 800; display: flex; align-items: center; gap: 6px; border-bottom: 2px solid var(--glass-border); padding-bottom: 0.5rem; margin: 0;">
-              ☷ Secciones y Pruebas de Estudio
-            </h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <!-- Selector de Interfaz: Actual vs Réplica DemoExcoba.exe -->
-              <div class="glass-panel" style="padding: 1rem 1.2rem; border-radius: 16px; border: 2px solid var(--secondary); background: rgba(16, 185, 129, 0.06); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 240px;">
-                  <span style="font-size: 1rem; font-weight: 800; color: var(--text-main);">Simulador estilo EXCOBA</span>
-                  <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
-                    Entorno de examen tipo EXCOBA · Examen demostrativo (70 reactivos) y práctica completa por tema (2 520 reactivos)
-                  </span>
-                </div>
-                <button type="button" @click="setUiMode('demoexcoba')" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.88rem; border-radius: 12px; font-weight: 800;">
-                  Abrir entorno EXCOBA
-                </button>
-              </div>
-
-              <!-- Tarjeta 1: Especialidad de Arquitectura & Diseño (Activa) -->
-              <div class="glass-panel" style="padding: 1.2rem; border-radius: 16px; border: 2px solid var(--primary); background: rgba(79, 70, 229, 0.04); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 250px;">
-                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-main);">Prueba de Arquitectura & Diseño</span>
-                  <div style="display: flex; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
-                    <span>abc 180 Preguntas</span>
-                    <span>•</span>
-                    <span>☇ Simulación EXCOBA Completa</span>
-                  </div>
-                  <!-- Progreso Badge -->
-                  <div v-if="questions.length > 0 && overallSolvedCount > 0" style="margin-top: 6px; display: inline-flex;">
-                    <span style="font-size: 0.75rem; font-weight: 800; color: var(--secondary); background: rgba(16, 185, 129, 0.1); padding: 3px 8px; border-radius: 8px;">
-                      Sesión actual: {{ overallSolvedCount }} de {{ totalQuestions }} resueltas ({{ progressPercentage }}%)
-                    </span>
-                  </div>
-                </div>
-                <div style="display: flex; gap: 8px; flex-shrink: 0;">
-                  <button v-if="questions.length > 0" @click="resumeExamFromMenu" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 12px; font-weight: 800;">
-                    Continuar
-                  </button>
-                  <button @click="startExam" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.9rem; border-radius: 12px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
-                    {{ questions.length > 0 ? 'Nuevo simulacro' : 'Comenzar' }}
-                  </button>
-                </div>
-              </div>
-
-              <section class="practice-card glass-panel" aria-labelledby="practice-title">
-                <div class="practice-heading"><div><h3 id="practice-title">Práctica por tema</h3><p>{{ activeBankCount.toLocaleString('es-MX') }} ejercicios · {{ activeCatalogue.length }} temas · {{ activeBankSource === 'markdown' ? activeBankMeta.title : 'cuatro niveles' }}</p></div><span class="practice-symbol">✎</span></div>
-                <div class="practice-fields">
-                  <label>Etapa<select v-model="practiceSection"><option value="">Todas</option><option v-for="sec in practiceSections" :key="sec" :value="sec">{{ sec }}</option></select></label>
-                  <label>Materia<select v-model="practiceTopic"><option value="">Todas</option><option v-for="topic in practiceTopics" :key="topic" :value="topic">{{ topic }}</option></select></label>
-                  <label class="wide">Tema<select v-model="practiceThemeId"><option value="">Todos los temas de la selección</option><option v-for="item in practiceThemes" :key="item.id" :value="item.id">{{ item.id }} · {{ item.title }} ({{ item.count }})</option></select></label>
-                  <label>Nivel<select v-model="practiceLevel"><option value="">Todos</option><option v-for="(label,number) in levelLabels" :key="number" :value="number">{{ label }}</option></select></label>
-                  <label>Ejercicios<select v-model.number="practiceCount"><option :value="10">10</option><option :value="25">25</option><option :value="50">50</option><option :value="100">100</option></select></label>
-                  <label class="wide">Habilidad<select v-model="practiceSkill" :disabled="!practiceThemeId"><option value="">Todas las habilidades del tema</option><option v-for="skill in practiceSkills" :key="skill" :value="skill">{{ skill }}</option></select></label>
-                </div>
-                <div class="practice-bottom"><label class="ordered-choice"><input type="checkbox" v-model="practiceOrdered"> Orden progresivo</label><span>{{ practiceAvailable }} disponibles</span><button class="btn btn-primary" :disabled="!practiceAvailable" @click="startPractice">Comenzar práctica</button></div>
-                <p class="practice-note">La nueva sesión sustituye la sesión activa. El banco completo permanece disponible.</p>
-                <p v-if="sessionError" class="practice-error" role="alert">{{ sessionError }}</p>
-              </section>
-
-              <section class="markdown-card glass-panel" aria-labelledby="md-bank-title">
-                <div class="practice-heading">
-                  <div>
-                    <h3 id="md-bank-title">Banco Markdown (.md)</h3>
-                    <p>Carga tus propios reactivos en formato EXCOBA-MD (opción múltiple, abiertas, tablas y LaTeX).</p>
-                  </div>
-                  <span class="md-symbol">M↓</span>
-                </div>
-                <div class="md-actions">
-                  <label class="btn btn-secondary md-file-btn">Cargar archivos .md<input type="file" accept=".md,.markdown,.txt" @change="handleMarkdownFile" multiple hidden></label>
-                  <button type="button" class="btn btn-secondary" @click="showMarkdownEditor=!showMarkdownEditor">{{ showMarkdownEditor ? 'Ocultar editor' : 'Pegar Markdown' }}</button>
-                  <button type="button" class="btn text-button" @click="loadSampleMarkdown">Cargar ejemplo</button>
-                  <a class="btn text-button" href="./data/ejemplo-banco.md" download="plantilla-excoba.md">Descargar plantilla</a>
-                </div>
-                <div v-if="showMarkdownEditor" class="md-editor">
-                  <textarea v-model="markdownInput" rows="7" placeholder="## Q1 | multiple | Álgebra&#10;¿Cuánto es $2+2$?&#10;- [ ] 3&#10;- [x] 4&#10;!explicacion: $2+2=4$."></textarea>
-                  <div class="md-actions"><button type="button" class="btn btn-primary" :disabled="!markdownInput.trim()" @click="applyMarkdownText">Cargar Markdown</button></div>
-                </div>
-                <div v-if="activeBankSource==='markdown'" class="md-status">
-                  <strong>Activo: {{ activeBankMeta.title }} ({{ activeBankCount }} reactivos)</strong>
-                  <small>Opción múltiple: {{ activeBankMeta.byType?.multiple || 0 }} · Abiertas: {{ activeBankMeta.byType?.open || 0 }} · Tabla: {{ activeBankMeta.byType?.table || 0 }}</small>
-                  <ul v-if="activeBankWarnings.length" class="md-warnings"><li v-for="(w,i) in activeBankWarnings" :key="i">{{ w }}</li></ul>
-                  <div class="md-actions">
-                    <button type="button" class="btn btn-primary" @click="startMarkdownPractice">Practicar banco .md</button>
-                    <button type="button" class="btn btn-secondary" @click="restoreDefaultBank">Volver al banco base</button>
-                  </div>
-                </div>
-                <p v-if="markdownError" class="practice-error" role="alert">{{ markdownError }}</p>
-              </section>
-              <button @click="showSettings=true" class="settings-entry"><span>✦</span><span><strong>Configuración y Gemini opcional</strong><small>Tu clave, tus modelos y revisión de respuestas abiertas.</small></span><b>›</b></button>
-              <div class="reset-progress"><button class="text-button" @click="showResetConfirm=true">Restablecer progreso</button><div v-if="showResetConfirm" class="reset-confirm" role="alert"><p>Se borrarán la sesión activa, sus puntos y sus tiempos. La configuración de Gemini se conserva.</p><button class="btn btn-secondary" @click="showResetConfirm=false">Conservar progreso</button><button class="btn btn-primary" @click="resetProgress">Restablecer</button></div></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <HomeMenu
+        v-if="currentScreen === 'menu'"
+        :is-dark-mode="isDarkMode"
+        :questions-count="questions.length"
+        :total-questions="totalQuestions"
+        :overall-solved-count="overallSolvedCount"
+        :progress-percentage="progressPercentage"
+        :active-bank-count="activeBankCount"
+        :active-catalogue-count="activeCatalogue.length"
+        :active-bank-source="activeBankSource"
+        :active-bank-meta="activeBankMeta"
+        :active-bank-warnings="activeBankWarnings"
+        :level-labels="levelLabels"
+        v-model:practice-section="practiceSection"
+        v-model:practice-topic="practiceTopic"
+        v-model:practice-theme-id="practiceThemeId"
+        v-model:practice-level="practiceLevel"
+        v-model:practice-count="practiceCount"
+        v-model:practice-skill="practiceSkill"
+        v-model:practice-ordered="practiceOrdered"
+        :practice-sections="practiceSections"
+        :practice-topics="practiceTopics"
+        :practice-themes="practiceThemes"
+        :practice-skills="practiceSkills"
+        :practice-available="practiceAvailable"
+        :session-error="sessionError"
+        v-model:show-markdown-editor="showMarkdownEditor"
+        v-model:markdown-input="markdownInput"
+        :markdown-error="markdownError"
+        v-model:show-reset-confirm="showResetConfirm"
+        @toggle-theme="toggleTheme"
+        @open-settings="showSettings = true"
+        @open-excoba="setUiMode('demoexcoba')"
+        @start-exam="startExam"
+        @resume-exam="resumeExamFromMenu"
+        @start-practice="startPractice"
+        @markdown-file="handleMarkdownFile"
+        @load-sample-markdown="loadSampleMarkdown"
+        @apply-markdown="applyMarkdownText"
+        @start-markdown-practice="startMarkdownPractice"
+        @restore-default-bank="restoreDefaultBank"
+        @reset-progress="resetProgress"
+      />
 
       <!-- 2. PANTALLA: EXAMEN ACTIVO -->
       <div v-else-if="currentScreen === 'exam'" style="display: flex; flex-direction: column; gap: 0;">
@@ -879,6 +769,7 @@ const options = window.__SFC_OPTIONS__;
 
 export default {
   components: {
+    HomeMenu: Vue.defineAsyncComponent(() => loadModule('./components/HomeMenu.vue', options)),
     QuizView: Vue.defineAsyncComponent(() => loadModule('./components/QuizView.vue', options)),
     FeedbackOverlay: Vue.defineAsyncComponent(() => loadModule('./components/FeedbackOverlay.vue', options)),
     SettingsPanel: Vue.defineAsyncComponent(() => loadModule('./components/SettingsPanel.vue', options)),
