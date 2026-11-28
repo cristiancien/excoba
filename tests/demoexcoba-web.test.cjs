@@ -91,6 +91,20 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
     assert.ok(cards.every(c => c.vars && c.tip && c.example));
   }
 
+  // Verify finish() grades by general group (Etapa › Materia) and lists wrong items
+  demo.selectSubjectGroup('DEMO180');
+  const firstItem = demo.sessionItems.value[0];
+  if (firstItem.tipo === 7) demo.setAnswer(firstItem.id, { text: String(firstItem.numericValue) });
+  else if (firstItem.tipo === 4) demo.setAnswer(firstItem.id, { optionId: firstItem.options.find(o => o.isCorrect).id });
+  else if (firstItem.tipo === 5) demo.setAnswer(firstItem.id, { map: Object.fromEntries(firstItem.statements.map(s => [s.id, s.category])) });
+  demo.finish();
+  assert.equal(demo.hasFinished.value, true);
+  assert.equal(demo.resultsSummary.value.totalCorrect, 1);
+  assert.equal(demo.resultsSummary.value.totalWrong, 179);
+  assert.equal(demo.resultsSummary.value.rows.length, 9);
+  assert.equal(demo.resultsSummary.value.rows[0].title, 'Primaria › Español');
+  assert.equal(demo.resultsSummary.value.rows[0].wrongItems.length, 19);
+
   // Switch to Bachillerato Matematicas para Calculo (176) and verify 20 reactivos per topic
   demo.selectPackage(176);
   assert.equal(demo.availableTopics.value.length, 25);
@@ -136,6 +150,12 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
 
   assert.equal(utils.gradeDemoItem(t7, { text: String(t7.numericValue) }), true);
   assert.equal(utils.gradeDemoItem(t7, { text: String(t7.numericValue + 9999) }), false);
+  // Automatic rounding to 2 decimals + power (^) syntax support
+  assert.equal(utils.parseNumericAnswer('2^3'), 8);
+  assert.equal(utils.parseNumericAnswer('10^-2'), 0.01);
+  assert.equal(utils.roundToTwo(3.14159), 3.14);
+  assert.equal(utils.numbersMatchRounded(3.14159, 3.14, 0.01), true);
+  assert.equal(utils.numbersMatchRounded(0.333333, 0.33, 0.01), true);
 
   const rightOpt = t4.options.find(o => o.isCorrect);
   const wrongOpt = t4.options.find(o => !o.isCorrect);

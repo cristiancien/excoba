@@ -27,9 +27,47 @@
     </div>
   </aside>
 
-  <!-- Ventanas de referencia institucional estilo EXCOBA -->
+  <!-- Formulario oficial flotante y arrastrable (no bloquea el reactivo) -->
+  <aside v-if="formOpen" class="ex-form-win" :style="formStyle" role="dialog" aria-label="Formulario oficial">
+    <div class="ex-win-bar ex-drag-handle" @pointerdown="startFormDrag">
+      <span>Formulario oficial</span>
+      <button type="button" class="ex-win-x" @pointerdown.stop @click="$emit('close-form')" title="Cerrar">×</button>
+    </div>
+    <div class="ex-form-win-body">
+      <div class="ex-form-bar">
+        <div class="ex-tabs">
+          <button v-for="t in formTabs" :key="t.id" type="button" class="ex-tab" :class="{ active: formTab === t.id }" @click="formTab = t.id">
+            {{ t.label }}
+          </button>
+        </div>
+        <input
+          v-model="formQuery"
+          type="search"
+          class="ex-form-search"
+          placeholder="Buscar fórmula (ej. Pitágoras, Ohm, pH, vértice)..."
+          aria-label="Buscar en el formulario"
+        />
+      </div>
+
+      <div v-if="!filteredFormulas.length" class="ex-empty">
+        No se encontraron fórmulas para «{{ formQuery }}». Prueba con otro término o limpia el buscador.
+      </div>
+
+      <div v-else class="ex-form-grid">
+        <div v-for="card in filteredFormulas" :key="card.title" class="ex-form-card">
+          <h4>{{ card.title }}</h4>
+          <div v-for="(line, i) in card.lines" :key="i" class="ex-form-line" v-latex="line"></div>
+          <div v-if="card.vars" class="ex-form-vars" v-latex="card.vars"></div>
+          <div v-if="card.tip" class="ex-form-tip"><strong>Uso:</strong> <span v-latex="card.tip"></span></div>
+          <div v-if="card.example" class="ex-form-ex" v-latex="card.example"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Ventanas de referencia institucional estilo EXCOBA (Cómo responder / Guía) -->
   <div v-if="modal" class="ex-modal-bg" @click.self="$emit('close-modal')">
-    <div class="ex-modal" :class="{ 'ex-modal-wide': modal === 'form' || modal === 'help' }">
+    <div class="ex-modal" :class="{ 'ex-modal-wide': modal === 'help' }">
       <header class="ex-modal-head">
         <h3>{{ modalTitle }}</h3>
         <button type="button" class="ex-win-x" @click="$emit('close-modal')" aria-label="Cerrar">×</button>
@@ -51,9 +89,9 @@
               <p>Selecciona una tarjeta azul y haz clic en el recuadro correspondiente. Para devolverla, haz clic sobre ella.</p>
             </div>
             <div class="ex-help-card">
-              <div class="ex-help-demo"><span class="ex-mini-inp">12.5</span> <span class="ex-mini-u">m/s</span></div>
-              <h4>Respuesta numérica</h4>
-              <p>Escribe el valor con teclado. Se aceptan enteros, decimales con punto (<code>3.5</code>) y fracciones (<code>7/8</code>).</p>
+              <div class="ex-help-demo"><span class="ex-mini-inp">x^2</span> <span class="ex-mini-inp">3/4</span> <span class="ex-mini-inp">3.14</span></div>
+              <h4>Captura numérica y algebraica</h4>
+              <p>Potencias con <code>^</code> (ej. <code>x^2</code>, <code>2^3</code>, <code>10^-3</code>), fracciones con <code>/</code> (<code>3/4</code>), raíces con <code>sqrt(x)</code> y decimales con punto (redondeo automático a 2 decimales, ej. <code>3.1416 → 3.14</code>).</p>
             </div>
             <div class="ex-help-card">
               <div class="ex-help-demo"><span class="ex-mini-hl">frase clave</span> · <span class="ex-mini-reg">zona</span></div>
@@ -90,42 +128,10 @@
           <div class="ex-guide-block">
             <h4>Herramientas de apoyo</h4>
             <ul>
-              <li><strong>Formulario:</strong> incluye buscador, significado de cada variable, cuándo aplicar cada ecuación y un ejemplo resuelto.</li>
+              <li><strong>Formulario:</strong> flotante y arrastrable, con buscador, significado de cada variable, cuándo aplicar cada ecuación y un ejemplo resuelto.</li>
               <li><strong>Calculadora:</strong> flotante y arrastrable para realizar operaciones sin perder de vista el planteamiento.</li>
               <li><strong>Finalizar:</strong> muestra el desglose de aciertos por asignatura o tema y permite revisar cada respuesta.</li>
             </ul>
-          </div>
-        </template>
-
-        <!-- 3. FORMULARIO OFICIAL ENRIQUECIDO (BUSCADOR + VARIABLES + USO + MINI-EJEMPLOS) -->
-        <template v-else-if="modal === 'form'">
-          <div class="ex-form-bar">
-            <div class="ex-tabs">
-              <button v-for="t in formTabs" :key="t.id" type="button" class="ex-tab" :class="{ active: formTab === t.id }" @click="formTab = t.id">
-                {{ t.label }}
-              </button>
-            </div>
-            <input
-              v-model="formQuery"
-              type="search"
-              class="ex-form-search"
-              placeholder="Buscar fórmula (ej. Pitágoras, Ohm, pH, vértice)..."
-              aria-label="Buscar en el formulario"
-            />
-          </div>
-
-          <div v-if="!filteredFormulas.length" class="ex-empty">
-            No se encontraron fórmulas para «{{ formQuery }}». Prueba con otro término o limpia el buscador.
-          </div>
-
-          <div v-else class="ex-form-grid">
-            <div v-for="card in filteredFormulas" :key="card.title" class="ex-form-card">
-              <h4>{{ card.title }}</h4>
-              <div v-for="(line, i) in card.lines" :key="i" class="ex-form-line" v-latex="line"></div>
-              <div v-if="card.vars" class="ex-form-vars" v-latex="card.vars"></div>
-              <div v-if="card.tip" class="ex-form-tip"><strong>Uso:</strong> <span v-latex="card.tip"></span></div>
-              <div v-if="card.example" class="ex-form-ex" v-latex="card.example"></div>
-            </div>
           </div>
         </template>
       </div>
@@ -176,8 +182,9 @@ export default {
   props: {
     modal: { type: String, default: '' },
     calcOpen: { type: Boolean, default: false },
+    formOpen: { type: Boolean, default: false },
   },
-  emits: ['close-modal', 'close-calc'],
+  emits: ['close-modal', 'close-calc', 'close-form'],
   setup(props, { emit }) {
     const catalog = window.EXCOBA_FORMULAS || { tabs: [], sections: {} };
     const formTab = ref(catalog.tabs[0]?.id || 'mat');
@@ -198,27 +205,31 @@ export default {
     const modalTitle = computed(() => ({
       help: 'Cómo responder el examen',
       guide: 'Guía del sustentante',
-      form: 'Formulario oficial',
     }[props.modal] || ''));
 
-    // Calculadora arrastrable + teclado físico
-    const calcPos = ref({ x: 0, y: 0 });
-    const calcStyle = computed(() => (calcPos.value.x || calcPos.value.y) ? { transform: `translate(${calcPos.value.x}px, ${calcPos.value.y}px)` } : {});
-    let dragState = null;
-    const onDragMove = ev => {
-      if (!dragState) return;
-      calcPos.value = { x: dragState.ox + (ev.clientX - dragState.sx), y: dragState.oy + (ev.clientY - dragState.sy) };
+    // Helper DRY para arrastrar ventanas flotantes (Calculadora y Formulario)
+    const makeDraggable = () => {
+      const pos = ref({ x: 0, y: 0 });
+      const style = computed(() => (pos.value.x || pos.value.y) ? { transform: `translate(${pos.value.x}px, ${pos.value.y}px)` } : {});
+      let drag = null;
+      const move = ev => {
+        if (!drag) return;
+        pos.value = { x: drag.ox + (ev.clientX - drag.sx), y: drag.oy + (ev.clientY - drag.sy) };
+      };
+      const end = () => {
+        drag = null;
+        window.removeEventListener('pointermove', move);
+        window.removeEventListener('pointerup', end);
+      };
+      const start = ev => {
+        drag = { sx: ev.clientX, sy: ev.clientY, ox: pos.value.x, oy: pos.value.y };
+        window.addEventListener('pointermove', move);
+        window.addEventListener('pointerup', end);
+      };
+      return { style, start, end };
     };
-    const onDragEnd = () => {
-      dragState = null;
-      window.removeEventListener('pointermove', onDragMove);
-      window.removeEventListener('pointerup', onDragEnd);
-    };
-    const startDrag = ev => {
-      dragState = { sx: ev.clientX, sy: ev.clientY, ox: calcPos.value.x, oy: calcPos.value.y };
-      window.addEventListener('pointermove', onDragMove);
-      window.addEventListener('pointerup', onDragEnd);
-    };
+    const calcDrag = makeDraggable();
+    const formDrag = makeDraggable();
 
     const calcExpr = ref('');
     const calcHist = ref('');
@@ -259,6 +270,7 @@ export default {
     const onKeyDown = ev => {
       if (ev.key === 'Escape') {
         if (props.modal) { ev.preventDefault(); emit('close-modal'); }
+        else if (props.formOpen) { ev.preventDefault(); emit('close-form'); }
         else if (props.calcOpen) { ev.preventDefault(); emit('close-calc'); }
         return;
       }
@@ -276,15 +288,21 @@ export default {
     };
 
     onMounted(() => window.addEventListener('keydown', onKeyDown));
-    onUnmounted(() => { onDragEnd(); window.removeEventListener('keydown', onKeyDown); });
+    onUnmounted(() => { calcDrag.end(); formDrag.end(); window.removeEventListener('keydown', onKeyDown); });
 
-    return { formTab, formTabs, formQuery, filteredFormulas, modalTitle, calcHist, calcDisp, calcMem, calcStyle, startDrag, press };
+    return {
+      formTab, formTabs, formQuery, filteredFormulas, modalTitle, calcHist, calcDisp, calcMem,
+      calcStyle: calcDrag.style, startDrag: calcDrag.start,
+      formStyle: formDrag.style, startFormDrag: formDrag.start, press,
+    };
   },
 };
 </script>
 
 <style scoped>
-.ex-calc-win{position:fixed;right:22px;bottom:22px;width:296px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:950;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
+.ex-calc-win{position:fixed;right:22px;bottom:22px;width:296px;background:#161b24;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 18px 42px rgba(0,0,0,.65);z-index:960;overflow:hidden;font-family:Arial,Helvetica,sans-serif}
+.ex-form-win{position:fixed;left:24px;top:64px;width:min(760px,calc(100vw - 48px));max-height:calc(100vh - 96px);background:#141922;border:2px solid #ffc12b;border-radius:8px;box-shadow:0 22px 54px rgba(0,0,0,.72);z-index:950;display:flex;flex-direction:column;overflow:hidden;color:#f3f4f6;font-family:Arial,Helvetica,sans-serif}
+.ex-form-win-body{padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.5}
 .ex-win-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#2c3340,#1c212b);padding:8px 10px;border-bottom:1px solid #374151;color:#ffc12b;font-size:12px;font-weight:700}
 .ex-drag-handle{cursor:move;user-select:none;touch-action:none}
 .ex-win-right{display:flex;align-items:center;gap:6px}

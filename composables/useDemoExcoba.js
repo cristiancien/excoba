@@ -82,16 +82,92 @@
     return chosen;
   }
 
+  function roundToTwo(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+  }
+
   function parseNumericAnswer(raw) {
-    const clean = String(raw ?? '').trim().replace(',', '.');
+    const clean = String(raw ?? '').trim().replace(',', '.').replace(/\s+/g, '');
     if (!clean) return null;
-    const frac = clean.match(/^([+-]?\d+(?:\.\d+)?)\s*\/\s*([+-]?\d+(?:\.\d+)?)$/);
+    // Potencia simple a^b (ej. 2^3, 10^-3, (-2)^4)
+    const pow = clean.match(/^\(?([+-]?\d+(?:\.\d+)?)\)?\^\(?([+-]?\d+(?:\.\d+)?)\)?$/);
+    if (pow) {
+      const val = Math.pow(Number(pow[1]), Number(pow[2]));
+      return Number.isFinite(val) ? val : null;
+    }
+    // Raíz cuadrada sqrt(x) o √x
+    const sq = clean.match(/^(?:sqrt\(|√\(?)\s*([+-]?\d+(?:\.\d+)?)\)?$/i);
+    if (sq) {
+      const base = Number(sq[1]);
+      return base >= 0 ? Math.sqrt(base) : null;
+    }
+    // Fracción a/b
+    const frac = clean.match(/^([+-]?\d+(?:\.\d+)?)\/([+-]?\d+(?:\.\d+)?)$/);
     if (frac) {
       const den = Number(frac[2]);
       return den !== 0 ? Number(frac[1]) / den : null;
     }
     const num = Number(clean.replace(/[^\d.+-eE]/g, ''));
     return Number.isFinite(num) ? num : null;
+  }
+
+  function numbersMatchRounded(userNum, expectedNum, tol = 0.01) {
+    if (userNum === null || !Number.isFinite(expectedNum)) return false;
+    const u2 = roundToTwo(userNum);
+    const e2 = roundToTwo(expectedNum);
+    if (Math.abs(u2 - e2) <= 0.005) return true;
+    return Math.abs(u2 - e2) <= Math.max(Number(tol) || 0.01, 0.01);
+  }
+
+  function formatAnswerPreview(item, answer) {
+    if (!item || answer == null) return 'Sin responder';
+    if (item.isOriginal) {
+      if (item.tipo === 4 || item.tipo === 23) {
+        const vals = (item.tokens || []).map(t => answer.tokens?.[t.id] || '—');
+        return vals.some(v => v !== '—') ? vals.join(' | ') : 'Sin responder';
+      }
+      if (item.tipo === 5) {
+        const map = answer.map || {};
+        if (!Object.keys(map).length) return 'Sin responder';
+        return (item.categories || []).map(c => `${c.title}: ${(item.statements || []).filter(s => map[s.id] === c.id).map(s => s.text).join('; ') || '—'}`).join(' | ');
+      }
+      if (item.tipo === 6) {
+        const seq = Array.isArray(answer.seq) ? answer.seq : [];
+        return seq.length ? seq.map((id, i) => `${i + 1}. ${(item.sentences || []).find(s => s.id === id)?.text || id}`).join(' ') : 'Sin responder';
+      }
+      if (item.tipo === 12) {
+        const rows = (item.rows || []).map(r => `${r.prompt} → ${answer.rows?.[r.key] || '—'}`);
+        return Object.values(answer.rows || {}).some(Boolean) ? rows.join(' | ') : 'Sin responder';
+      }
+      if ([3, 16, 18, 19, 24].includes(item.tipo)) {
+        const picked = Array.isArray(answer.picked) ? answer.picked : [];
+        if (!picked.length) return 'Sin responder';
+        if (item.areas) return picked.map(id => item.areas.find(a => a.id === id)?.title || id).join(' | ');
+        return `${picked.length} frase(s) seleccionada(s)`;
+      }
+      if (item.fields) {
+        const vals = item.fields.map(f => {
+          const v = String(answer.fields?.[f.key] || '').trim();
+          return v ? `${v}${f.unit ? ' ' + f.unit : ''}` : '—';
+        });
+        return vals.some(v => v !== '—') ? vals.join(' | ') : 'Sin responder';
+      }
+      return 'Sin responder';
+    }
+    if (item.tipo === 7) {
+      const txt = String(answer.text ?? '').trim();
+      return txt ? `${txt}${item.unit ? ' ' + item.unit : ''}` : 'Sin responder';
+    }
+    if (item.tipo === 4) {
+      const opt = (item.options || []).find(o => o.id === answer.optionId);
+      return opt ? `${opt.id}) ${opt.text}` : 'Sin responder';
+    }
+    if (item.tipo === 5) {
+      const map = answer.map || {};
+      if (!Object.keys(map).length) return 'Sin responder';
+      return (item.categories || []).map(c => `${c.title}: ${(item.statements || []).filter(s => map[s.id] === c.id).map(s => s.text).join('; ') || '—'}`).join(' | ');
+    }
+    return 'Sin responder';
   }
 
   function gradeDemoItem(item, answer) {
@@ -133,7 +209,7 @@
           if (!raw) return false;
           const u = parseNumericAnswer(raw), e = parseNumericAnswer(f.expected);
           return u !== null && e !== null
-            ? Math.abs(u - e) <= Math.max(Number(f.tol) || 0.05, 0.01)
+            ? numbersMatchRounded(u, e, Number(f.tol) || 0.05)
             : raw.toLowerCase() === String(f.expected).trim().toLowerCase();
         });
       }
@@ -142,8 +218,7 @@
 
     if (item.tipo === 7) {
       const userNum = parseNumericAnswer(answer.text ?? answer);
-      if (userNum === null || !Number.isFinite(Number(item.numericValue))) return false;
-      return Math.abs(userNum - Number(item.numericValue)) <= Math.max(Number(item.tolerance) || 0.01, 0.01);
+      return numbersMatchRounded(userNum, Number(item.numericValue), Number(item.tolerance) || 0.01);
     }
     if (item.tipo === 4) {
       const chosen = String(answer.optionId || '');
@@ -218,6 +293,7 @@
     const currentIndex = ref(0);
     const answers = ref({});
     const showResults = ref(false);
+    const hasFinished = ref(false);
     const elapsedSeconds = ref(0);
     let intervalId = null;
 
@@ -299,6 +375,7 @@
       currentIndex.value = 0;
       answers.value = {};
       showResults.value = false;
+      hasFinished.value = false;
       elapsedSeconds.value = 0;
     }
     function regenerateDemo180() {
@@ -338,27 +415,48 @@
     function goTo(index) {
       if (index >= 0 && index < sessionItems.value.length) currentIndex.value = index;
     }
-    function finish() { stopClock(); showResults.value = true; }
+    function finish() { stopClock(); hasFinished.value = true; showResults.value = true; }
+
+    function formatStageLabel(stage) {
+      const s = String(stage || '').trim();
+      const map = {
+        'EDUCACIÓN PRIMARIA': 'Primaria',
+        'EDUCACIÓN SECUNDARIA': 'Secundaria',
+        'BACHILLERATO': 'Bachillerato',
+        'EXAMEN DEMOSTRATIVO': 'Examen Demostrativo',
+      };
+      return map[s.toUpperCase()] || s || 'General';
+    }
 
     const resultsSummary = computed(() => {
       const byGroup = new Map();
+      const wrongIndices = [];
       let totalCorrect = 0;
-      for (const it of sessionItems.value) {
+      sessionItems.value.forEach((it, idx) => {
         const ok = gradeDemoItem(it, answers.value[it.id]);
         if (ok) totalCorrect++;
-        const key = it.isOriginal ? it.subject : it.topicRef;
-        if (!byGroup.has(key)) {
-          byGroup.set(key, { ref: it.isOriginal ? 'ORIG' : it.topicRef, title: it.isOriginal ? it.subject : it.topicTitle, correct: 0, total: 0 });
+        else wrongIndices.push(idx);
+        const groupLabel = `${formatStageLabel(it.stage)} › ${it.subject}`;
+        if (!byGroup.has(groupLabel)) {
+          byGroup.set(groupLabel, { key: groupLabel, title: groupLabel, correct: 0, wrongCount: 0, total: 0, wrongItems: [] });
         }
-        const row = byGroup.get(key);
+        const row = byGroup.get(groupLabel);
         row.total++;
         if (ok) row.correct++;
-      }
+        else {
+          row.wrongCount++;
+          row.wrongItems.push({ index: idx, number: idx + 1, id: it.id, topicRef: it.topicRef, topicTitle: it.topicTitle });
+        }
+      });
+      const rows = [...byGroup.values()];
       return {
         totalCorrect,
+        totalWrong: wrongIndices.length,
         totalQuestions: sessionItems.value.length,
         percentage: sessionItems.value.length ? Math.round((totalCorrect / sessionItems.value.length) * 100) : 0,
-        rows: [...byGroup.values()],
+        rows,
+        wrongRows: rows.filter(r => r.wrongCount > 0),
+        wrongIndices,
       };
     });
 
@@ -372,16 +470,17 @@
       availableTopics, topicsByStage,
       selectionMode, selectedSubjectKey, selectedPackageId, selectedTopicRef,
       sessionItems, currentIndex, currentItem, totalCount, answeredCount,
-      answers, showResults, elapsedSeconds, elapsedFormatted, resultsSummary,
+      answers, showResults, hasFinished, elapsedSeconds, elapsedFormatted, resultsSummary,
       startClock, stopClock, selectSubjectGroup, regenerateDemo180, selectPackage, selectTopic, setAnswer, goTo,
       prev: () => goTo(currentIndex.value - 1),
       next: () => goTo(currentIndex.value + 1),
       finish, resetSessionState,
       isAnswered: it => isDemoItemAnswered(it, answers.value[it.id]),
       isCorrect: it => gradeDemoItem(it, answers.value[it.id]),
+      userAnswerText: it => formatAnswerPreview(it, answers.value[it.id]),
     };
   };
 
-  root.EXCOBA_DEMO_UTILS = { parseNumericAnswer, gradeDemoItem, isDemoItemAnswered, formatSeconds, buildRandomDemo180 };
+  root.EXCOBA_DEMO_UTILS = { roundToTwo, parseNumericAnswer, numbersMatchRounded, formatAnswerPreview, gradeDemoItem, isDemoItemAnswered, formatSeconds, buildRandomDemo180 };
   if (typeof module === 'object' && module.exports) module.exports = root.EXCOBA_DEMO_UTILS;
 })(typeof window !== 'undefined' ? window : globalThis);

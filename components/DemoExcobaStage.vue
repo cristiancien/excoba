@@ -96,18 +96,26 @@
       <div v-else class="rows-wrap">
         <div v-for="(f, idx) in item.fields" :key="f.key" class="demo-num-box">
           <label v-latex="f.label"></label>
-          <input :ref="el => { if (idx === 0) primaryInput = el; }" class="demo-num-input" placeholder="Escribe tu respuesta" :value="answer?.fields?.[f.key] || ''" @input="setField(f.key, $event.target.value)" @keydown.enter.prevent="$emit('check-item')">
+          <input :ref="el => { if (idx === 0) primaryInput = el; }" class="demo-num-input" placeholder="Ej. 12.5, 3/4 o 2^3" :value="answer?.fields?.[f.key] || ''" @input="setField(f.key, $event.target.value)" @blur="normalizeField(f.key)" @keydown.enter.prevent="normalizeField(f.key); $emit('check-item')">
           <span v-if="f.unit" class="demo-unit">{{ f.unit }}</span>
+        </div>
+        <div class="demo-format-hint">
+          <strong>Formato de captura:</strong> decimales con punto (se redondean automáticamente a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>3/4</code>), potencias con <code>^</code> (ej. <code>x^2</code>, <code>2^3</code>, <code>10^-3</code>) y raíces con <code>sqrt(x)</code>.
         </div>
       </div>
     </template>
 
     <!-- B. REACTIVOS DEL TEMARIO (2,520 reactivos) -->
     <template v-else>
-      <div v-if="item.tipo === 7" class="demo-num-box">
-        <label :for="'demo-num-' + item.id">Respuesta:</label>
-        <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.5 o 1/4" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @keydown.enter.prevent="$emit('check-item')">
-        <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
+      <div v-if="item.tipo === 7" class="rows-wrap">
+        <div class="demo-num-box">
+          <label :for="'demo-num-' + item.id">Respuesta:</label>
+          <input :ref="el => { primaryInput = el; }" :id="'demo-num-' + item.id" type="text" class="demo-num-input" placeholder="Ej. 42, 3.14, 3/4 o 2^3" :value="answer?.text ?? ''" @input="$emit('answer', { text: $event.target.value })" @blur="normalizeTemarioNum" @keydown.enter.prevent="normalizeTemarioNum(); $emit('check-item')">
+          <span v-if="item.unit" class="demo-unit">{{ item.unit }}</span>
+        </div>
+        <div class="demo-format-hint">
+          <strong>Formato de captura:</strong> decimales con punto (se redondean automáticamente a 2 decimales, ej. <code>3.1416 → 3.14</code>), fracciones con <code>/</code> (ej. <code>7/8</code>) y potencias con <code>^</code> (ej. <code>2^3</code>, <code>10^-2</code>).
+        </div>
       </div>
 
       <div v-else-if="item.tipo === 4" class="demo-cloze-wrap">
@@ -192,7 +200,7 @@ export default {
       openTok.value = '';
       activeChipId.value = null;
       primaryInput.value = null;
-      nextTick(() => { if (primaryInput.value && !props.keyboardDisabled) primaryInput.value.focus(); });
+      if (document.activeElement?.tagName === 'INPUT') document.activeElement.blur();
     }, { immediate: true });
     watch(() => [props.item.id, renderedTokenHtml.value, htmlHost.value], renderMathInHost, { flush: 'post', immediate: true });
 
@@ -238,8 +246,24 @@ export default {
       const a = ev.target.closest?.('a[href]'); if (!a) return;
       togglePicked(a.getAttribute('href'));
     };
+    const roundDecimalInput = raw => {
+      const s = String(raw ?? '').trim().replace(',', '.');
+      if (!/^[+-]?\d+\.\d{3,}$/.test(s)) return raw;
+      const n = Number(s);
+      return Number.isFinite(n) ? String(Math.round((n + Number.EPSILON) * 100) / 100) : raw;
+    };
     const setRow = (k, v) => emit('answer', { rows: { ...(props.answer?.rows || {}), [k]: v } });
     const setField = (k, v) => emit('answer', { fields: { ...(props.answer?.fields || {}), [k]: v } });
+    const normalizeField = k => {
+      const cur = props.answer?.fields?.[k];
+      const next = roundDecimalInput(cur);
+      if (next !== cur) setField(k, next);
+    };
+    const normalizeTemarioNum = () => {
+      const cur = props.answer?.text;
+      const next = roundDecimalInput(cur);
+      if (next !== cur) emit('answer', { text: next });
+    };
     const formatPoly = poly => {
       const pts = String(poly || '').split(',').map(Number);
       const out = []; for (let i = 0; i + 1 < pts.length; i += 2) out.push(`${pts[i]},${pts[i + 1]}`);
@@ -316,7 +340,13 @@ export default {
         ev.preventDefault(); togglePicked(phraseIds.value[num]); return;
       }
       if (it.isOriginal && [3, 19, 24].includes(it.tipo) && num >= 0 && it.areas?.[num]) {
-        ev.preventDefault(); togglePicked(it.areas[num].id);
+        ev.preventDefault(); togglePicked(it.areas[num].id); return;
+      }
+
+      // Enter enfoca el campo numérico cuando el usuario decide escribir (sin autofocus automático)
+      if (ev.key === 'Enter' && primaryInput.value) {
+        ev.preventDefault();
+        primaryInput.value.focus();
       }
     };
 
@@ -326,7 +356,8 @@ export default {
     return {
       tokenMenuOpen, openTok, activeChipId, htmlHost, primaryInput, activeTokenObj, renderedTokenHtml, phraseIds,
       selectedTemarioOpt, unassignedStatements, statementsInCat, assignChip, unassignChip, pickOrigToken,
-      onParrafoTokenClick, seqIndex, toggleSeq, togglePicked, renderedPhraseHtml, onPhraseClick, setRow, setField, formatPoly,
+      onParrafoTokenClick, seqIndex, toggleSeq, togglePicked, renderedPhraseHtml, onPhraseClick,
+      setRow, setField, normalizeField, normalizeTemarioNum, formatPoly,
     };
   },
 };
@@ -356,6 +387,9 @@ export default {
 .demo-num-box{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#141821;padding:12px;border-radius:5px;border:1px solid #334155}
 .demo-num-input{background:#2a2a2a;color:#fff;border:2px solid #2bc1ff;border-radius:4px;padding:8px 12px;font-size:15px;width:210px}
 .demo-num-input:focus{outline:none;border-color:#00d8b3}
+.demo-format-hint{background:#101520;border:1px solid #263142;border-left:3px solid #ffc12b;border-radius:4px;padding:7px 10px;font-size:11.5px;line-height:1.5;color:#cbd5e1}
+.demo-format-hint strong{color:#ffc12b}
+.demo-format-hint code{background:#1e2636;color:#7dd3fc;padding:1px 4px;border-radius:3px;font-family:monospace}
 .demo-unit,.picked-info{color:#9ca3af;font-size:12px}
 .row-sel{background:#222834;color:#fff;border:1px solid #2bc1ff;border-radius:4px;padding:6px 10px;font-size:13px}
 .demo-cloze-line{font-size:14px;color:#e5e7eb;line-height:1.8}
