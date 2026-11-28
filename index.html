@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     
     <!-- App Styles -->
-    <link rel="stylesheet" href="./styles.css?v=20261128d">
+    <link rel="stylesheet" href="./styles.css?v=20261128e">
 </head>
 <body>
     <!-- Animated background blobs -->
@@ -40,25 +40,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
     
     <!-- Question Data -->
-    <script src="./data/questions.js?v=20261128d"></script>
-    <script src="./data/demoexcoba-temario.js?v=20261128d"></script>
-    <script src="./data/excoba-formulas.js?v=20261128d"></script>
+    <script src="./data/questions.js?v=20261128e"></script>
+    <script src="./data/demoexcoba-temario.js?v=20261128e"></script>
+    <script src="./data/excoba-formulas.js?v=20261128e"></script>
 
     <!-- Composables (DI via window, loaded before App) -->
-    <script src="./composables/answerValidation.js?v=20261128d"></script>
-    <script src="./composables/markdownBank.js?v=20261128d"></script>
-    <script src="./composables/useGemini.js?v=20261128d"></script>
-    <script src="./composables/useTimer.js?v=20261128d"></script>
-    <script src="./composables/useScoring.js?v=20261128d"></script>
-    <script src="./composables/useTheme.js?v=20261128d"></script>
-    <script src="./composables/useQuestionBank.js?v=20261128d"></script>
-    <script src="./composables/useCalculator.js?v=20261128d"></script>
-    <script src="./composables/useDemoExcoba.js?v=20261128d"></script>
+    <script src="./composables/answerValidation.js?v=20261128e"></script>
+    <script src="./composables/markdownBank.js?v=20261128e"></script>
+    <script src="./composables/useGemini.js?v=20261128e"></script>
+    <script src="./composables/useTimer.js?v=20261128e"></script>
+    <script src="./composables/useScoring.js?v=20261128e"></script>
+    <script src="./composables/useTheme.js?v=20261128e"></script>
+    <script src="./composables/useQuestionBank.js?v=20261128e"></script>
+    <script src="./composables/useCalculator.js?v=20261128e"></script>
+    <script src="./composables/openAnswerEvaluator.js?v=20261128e"></script>
+    <script src="./composables/useDemoExcoba.js?v=20261128e"></script>
 
     <!-- App Bootstrap -->
     <script>
         const { loadModule } = window['vue3-sfc-loader'];
-        const APP_ASSET_VER = '20261128d';
+        const APP_ASSET_VER = '20261128e';
 
         const sfcLoaderOptions = {
             moduleCache: { vue: Vue },

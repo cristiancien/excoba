@@ -16,6 +16,7 @@ function loadDemoEnv(storage = memoryStorage()) {
     'composables/useScoring.js',
     'composables/useTheme.js',
     'composables/useCalculator.js',
+    'composables/openAnswerEvaluator.js',
     'composables/useDemoExcoba.js',
   ]) env.load(file);
   return env;
@@ -172,6 +173,15 @@ test('useDemoExcoba serves 70 original unique items + 20 reactivos per topic acr
   }
   assert.equal(utils.matchOpenMathExpression('-6, 6', 'x = -6; x = 6.'), true);
   assert.equal(utils.matchOpenMathExpression('6, -6', 'x = -6; x = 6.'), true);
+  assert.equal(utils.matchOpenMathExpression('  14 y 12 ', '12 y 14 años.'), true);
+  assert.equal(utils.matchOpenMathExpression('0, 4.25', 'x=0; x=(17)/(4).'), true);
+  assert.equal(utils.matchOpenMathExpression('7x + 4x^2', '4 x^2 + 7 x'), true);
+  assert.equal(utils.matchOpenMathExpression('y = 0.5x - 2', 'y=(x)/(2) - 2.'), true);
+  assert.equal(utils.matchOpenMathExpression('6.28', '2 π cm.'), true);
+  assert.equal(utils.matchOpenMathExpression('7, -4', '(7,-4).'), true);
+  assert.equal(utils.matchOpenMathExpression('54x + 63', '(9)(6 x + 7)'), true);
+  assert.equal(utils.matchOpenMathExpression('  no  ', 'No.'), true);
+  assert.equal(utils.matchOpenMathExpression('999', '4 x^2 + 7 x'), false);
   // Automatic rounding to 2 decimals + power (^) syntax support
   assert.equal(utils.parseNumericAnswer('2^3'), 8);
   assert.equal(utils.parseNumericAnswer('10^-2'), 0.01);

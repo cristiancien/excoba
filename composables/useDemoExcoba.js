@@ -82,82 +82,8 @@
     return chosen;
   }
 
-  function roundToTwo(num) {
-    return Math.round((num + Number.EPSILON) * 100) / 100;
-  }
-
-  function parseNumericAnswer(raw) {
-    const clean = String(raw ?? '').trim().replace(',', '.').replace(/\s+/g, '');
-    if (!clean) return null;
-    // Potencia simple a^b (ej. 2^3, 10^-3, (-2)^4)
-    const pow = clean.match(/^\(?([+-]?\d+(?:\.\d+)?)\)?\^\(?([+-]?\d+(?:\.\d+)?)\)?$/);
-    if (pow) {
-      const val = Math.pow(Number(pow[1]), Number(pow[2]));
-      return Number.isFinite(val) ? val : null;
-    }
-    // Raíz cuadrada sqrt(x) o √x
-    const sq = clean.match(/^(?:sqrt\(|√\(?)\s*([+-]?\d+(?:\.\d+)?)\)?$/i);
-    if (sq) {
-      const base = Number(sq[1]);
-      return base >= 0 ? Math.sqrt(base) : null;
-    }
-    // Fracción a/b
-    const frac = clean.match(/^([+-]?\d+(?:\.\d+)?)\/([+-]?\d+(?:\.\d+)?)$/);
-    if (frac) {
-      const den = Number(frac[2]);
-      return den !== 0 ? Number(frac[1]) / den : null;
-    }
-    const num = Number(clean.replace(/[^\d.+-eE]/g, ''));
-    return Number.isFinite(num) ? num : null;
-  }
-
-  function normalizeOpenMath(raw) {
-    return String(raw ?? '')
-      .replace(/\$/g, '')
-      .replace(/\\text\{([^{}]+)\}/g, '$1')
-      .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '($1)/($2)')
-      .replace(/\\sqrt\{([^{}]+)\}/g, 'sqrt($1)')
-      .replace(/\\times|\\cdot/g, '*').replace(/\\div/g, '/')
-      .replace(/\\pi/g, 'pi').replace(/\\pm/g, '+-')
-      .replace(/\\le/g, '<=').replace(/\\ge/g, '>=').replace(/\\neq/g, '!=')
-      .replace(/[{}]/g, '')
-      .replace(/−/g, '-').replace(/×/g, '*').replace(/÷/g, '/')
-      .replace(/\.+$/g, '')
-      .toLowerCase()
-      .replace(/\s+/g, '')
-      .trim();
-  }
-
-  function matchOpenMathExpression(userRaw, expectedRaw) {
-    const u = normalizeOpenMath(userRaw);
-    const e = normalizeOpenMath(expectedRaw);
-    if (!u || !e) return false;
-    if (u === e) return true;
-    // Compara listas de soluciones separadas por ';' o ',' (ej. "x=-6;x=6" vs "-6, 6")
-    const splitParts = s => s.split(/[;,]/).map(p => p.replace(/^[a-z]=/i, '').trim()).filter(Boolean).sort();
-    const uParts = splitParts(u);
-    const eParts = splitParts(e);
-    if (uParts.length > 1 && uParts.length === eParts.length) {
-      return uParts.every((p, i) => {
-        if (p === eParts[i]) return true;
-        const un = parseNumericAnswer(p), en = parseNumericAnswer(eParts[i]);
-        return un !== null && en !== null && numbersMatchRounded(un, en, 0.01);
-      });
-    }
-    // Permite omitir "x=" si la clave trae "x=15"
-    const stripVar = s => s.replace(/^[a-z]=/i, '');
-    if (stripVar(u) === stripVar(e)) return true;
-    const un = parseNumericAnswer(stripVar(u)), en = parseNumericAnswer(stripVar(e));
-    return un !== null && en !== null && numbersMatchRounded(un, en, 0.01);
-  }
-
-  function numbersMatchRounded(userNum, expectedNum, tol = 0.01) {
-    if (userNum === null || !Number.isFinite(expectedNum)) return false;
-    const u2 = roundToTwo(userNum);
-    const e2 = roundToTwo(expectedNum);
-    if (Math.abs(u2 - e2) <= 0.005) return true;
-    return Math.abs(u2 - e2) <= Math.max(Number(tol) || 0.01, 0.01);
-  }
+  const openEval = root.EXCOBA_OPEN_EVAL || (typeof require === 'function' ? require('./openAnswerEvaluator.js') : null);
+  const { roundToTwo, parseNumericAnswer, numbersMatchRounded, matchOpenMathExpression } = openEval;
 
   function formatAnswerPreview(item, answer) {
     if (!item || answer == null) return 'Sin responder';
